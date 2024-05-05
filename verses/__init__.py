@@ -1,1 +1,1 @@
-""" Verses """
+""" Quran API Verses """

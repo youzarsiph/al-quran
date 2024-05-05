@@ -5,7 +5,7 @@ from django.apps import AppConfig
 
 
 # Create your config here.
-class SubpartConfig(AppConfig):
+class PartConfig(AppConfig):
     """App configuration for quran_api.parts"""
 
     name = "quran_api.parts"

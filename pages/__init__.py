@@ -1,1 +1,1 @@
-""" Pages """
+""" Quran API Pages """

@@ -1,16 +1,15 @@
 """ Serializers for quran_api.parts """
 
-
-from rest_framework.serializers import HyperlinkedModelSerializer
+from rest_framework.serializers import ModelSerializer
 from quran_api.parts.models import Part
 
 
 # Create your serializers here.
-class PartSerializer(HyperlinkedModelSerializer):
+class PartSerializer(ModelSerializer):
     """Part Serializer"""
 
     class Meta:
         """Meta data"""
 
         model = Part
-        fields = ["id", "url"]
+        fields = ["id", "url", "verse_count", "created_at", "updated_at"]

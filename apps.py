@@ -1,6 +1,5 @@
 """ AppConf for quran_api """
 
-
 from django.apps import AppConfig
 
 

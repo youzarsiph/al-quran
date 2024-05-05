@@ -1,20 +1,14 @@
 """ URLConf for quran_api """
 
-
 from django.urls import path, include
-from rest_framework.routers import DefaultRouter
 
 
 # Create your patterns here.
-router = DefaultRouter(trailing_slash=False)
-
-sub_router = DefaultRouter()
-
-
 urlpatterns = [
-    path("", include(router.urls)),
-    path(
-        "/<int:id>/",
-        include((sub_router.urls, ""), namespace=""),
-    ),
+    path("", include("quran_api.chapters.urls")),
+    path("", include("quran_api.parts.urls")),
+    path("", include("quran_api.groups.urls")),
+    path("", include("quran_api.quarters.urls")),
+    path("", include("quran_api.pages.urls")),
+    path("", include("quran_api.verses.urls")),
 ]

@@ -1,1 +1,1 @@
-""" Chapters """
+""" Quran API Chapters """

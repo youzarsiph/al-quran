@@ -1,1 +1,1 @@
-""" Parts """
+""" Quran API Parts """
