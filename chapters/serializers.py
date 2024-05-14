@@ -17,7 +17,7 @@ class ChapterSerializer(ModelSerializer):
             "url",
             "name",
             "transliteration",
-            "is_meccan",
+            "type",
             "verse_count",
             "created_at",
             "updated_at",

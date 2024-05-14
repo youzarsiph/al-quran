@@ -16,8 +16,11 @@ class Part(models.Model):
         help_text="Last update",
     )
 
+    def __str__(self) -> str:
+        return f"Part (Juz) {self.pk}"
+
     @property
     def verse_count(self) -> int:
-        """Returns number of verses of a part (hizb)"""
+        """Returns number of verses of a part (juz)"""
 
         return self.verses.count()

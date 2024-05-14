@@ -13,4 +13,14 @@ class VerseSerializer(ModelSerializer):
 
         model = Verse
         read_only_fields = ["chapter", "part", "group", "page"]
-        fields = ["id", "url", "chapter", "part", "group", "page", "number", "text"]
+        fields = [
+            "id",
+            "url",
+            "chapter",
+            "part",
+            "group",
+            "page",
+            "number",
+            "text",
+            "transliteration",
+        ]

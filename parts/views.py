@@ -8,7 +8,7 @@ from quran_api.parts.serializers import PartSerializer
 
 # Create your views here.
 class PartViewSet(ReadOnlyModelViewSet):
-    """Create, view, update and delete"""
+    """List and retrieve Quran Parts (Juz) with filtering and sorting support"""
 
     queryset = Part.objects.all()
     serializer_class = PartSerializer

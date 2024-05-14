@@ -8,7 +8,7 @@ from quran_api.verses.serializers import VerseSerializer
 
 # Create your views here.
 class VerseViewSet(ReadOnlyModelViewSet):
-    """Create, view, update and delete"""
+    """List and retrieve Quran verses (ayah) with filtering and sorting support"""
 
     queryset = Verse.objects.all()
     serializer_class = VerseSerializer

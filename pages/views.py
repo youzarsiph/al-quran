@@ -8,17 +8,10 @@ from quran_api.pages.serializers import PageSerializer
 
 # Create your views here.
 class PageViewSet(ReadOnlyModelViewSet):
-    """Create, view, update and delete"""
+    """List and retrieve Quran Pages (Safhah) with filtering and sorting support"""
 
     queryset = Page.objects.all()
     serializer_class = PageSerializer
     permission_classes = [IsAuthenticated]
-    ordering_fields = ["id", "verse_count"]
-    filterset_fields = [
-        "id",
-        "chapter",
-        "part",
-        "verse_count",
-        "created_at",
-        "updated_at",
-    ]
+    ordering_fields = ["id", "chapter", "part", "group", "quarter"]
+    filterset_fields = ["id", "chapter", "part", "group", "quarter"]

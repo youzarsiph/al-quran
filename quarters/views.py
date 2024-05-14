@@ -8,7 +8,7 @@ from quran_api.quarters.serializers import QuarterSerializer
 
 # Create your views here.
 class QuarterViewSet(ReadOnlyModelViewSet):
-    """Create, view, update and delete"""
+    """List and retrieve Quran quarters (Hizb quarter) with filtering and sorting support"""
 
     queryset = Quarter.objects.all()
     serializer_class = QuarterSerializer

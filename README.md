@@ -1,3 +1,3 @@
 # quran-api
 
-Quran API endpoints built  using Python, Django and DRF.
+Quran API endpoints built using Python, Django and DRF.

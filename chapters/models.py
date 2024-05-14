@@ -13,11 +13,18 @@ class Chapter(models.Model):
         db_index=True,
         help_text="Chapter name",
     )
-    type = models.CharField(
-        max_length=8,
-        default="Meccan",
-        help_text="Designates where the chapter is revealed",
-        choices=[("Meccan", "Meccan"), ("Medinan", "Medinan")],
+    order = models.IntegerField(
+        unique=True,
+        db_index=True,
+        help_text="Refers to the chronological order in which the chapters of the Quran were revealed.",
+    )
+    type = models.BooleanField(
+        default=True,
+        help_text="Designates where the chapter is revealed, True means the chapter revealed in Mecca. False means the chapter revealed in Medina",
+    )
+    verse_count = models.IntegerField(
+        db_index=True,
+        help_text="Number of verses of the chapter",
     )
     translation = models.CharField(
         max_length=32,
@@ -40,8 +47,5 @@ class Chapter(models.Model):
         help_text="Last update",
     )
 
-    @property
-    def verse_count(self) -> int:
-        """Returns number of verses of a chapter"""
-
-        return self.verses.count()
+    def __str__(self) -> str:
+        return self.name

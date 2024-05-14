@@ -16,6 +16,9 @@ class Group(models.Model):
         help_text="Last update",
     )
 
+    def __str__(self) -> str:
+        return f"Group (Hizb) {self.pk}"
+
     @property
     def verse_count(self) -> int:
         """Returns number of verses of a group"""
