@@ -11,7 +11,7 @@ class Chapter(models.Model):
         max_length=16,
         unique=True,
         db_index=True,
-        help_text="Chapter name",
+        help_text="Chapter name (Arabic)",
     )
     order = models.IntegerField(
         unique=True,
@@ -30,13 +30,13 @@ class Chapter(models.Model):
         max_length=32,
         unique=True,
         db_index=True,
-        help_text="Chapter translation",
+        help_text="Chapter translation (English)",
     )
     transliteration = models.CharField(
         max_length=32,
         unique=True,
         db_index=True,
-        help_text="Chapter transliteration",
+        help_text="Chapter transliteration (English)",
     )
     created_at = models.DateTimeField(
         auto_now_add=True,

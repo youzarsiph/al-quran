@@ -13,7 +13,7 @@ class Page(models.Model):
         null=True,
         blank=True,
         related_name="pages",
-        help_text="Page chapter",
+        help_text="Page chapter (Sura)",
     )
     part = models.ForeignKey(
         "parts.Part",
@@ -21,7 +21,7 @@ class Page(models.Model):
         null=True,
         blank=True,
         related_name="pages",
-        help_text="Page part",
+        help_text="Page part (Juz)",
     )
     group = models.ForeignKey(
         "groups.Group",
@@ -29,7 +29,7 @@ class Page(models.Model):
         null=True,
         blank=True,
         related_name="pages",
-        help_text="Page group",
+        help_text="Page group (Hizb)",
     )
     quarter = models.ForeignKey(
         "quarters.Quarter",

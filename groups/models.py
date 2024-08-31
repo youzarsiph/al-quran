@@ -5,7 +5,7 @@ from django.db import models
 
 # Create your models here.
 class Group(models.Model):
-    """Quran Groups (Hizb)"""
+    """Quran Groups (Hizbs)"""
 
     created_at = models.DateTimeField(
         auto_now_add=True,

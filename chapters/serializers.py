@@ -2,6 +2,7 @@
 
 from rest_framework.serializers import ModelSerializer
 from quran_api.chapters.models import Chapter
+from quran_api.pages.serializers import ChapterPageSerializer
 
 
 # Create your serializers here.
@@ -16,9 +17,23 @@ class ChapterSerializer(ModelSerializer):
             "id",
             "url",
             "name",
-            "transliteration",
+            "order",
             "type",
             "verse_count",
+            "translation",
+            "transliteration",
             "created_at",
             "updated_at",
         ]
+
+
+class ChapterRetrieveSerializer(ChapterSerializer):
+    """Chapter serializer for retrieve action"""
+
+    pages = ChapterPageSerializer(many=True)
+
+    class Meta(ChapterSerializer.Meta):
+        """Meta data"""
+
+        depth = 1
+        fields = ChapterSerializer.Meta.fields + ["pages"]

@@ -45,12 +45,12 @@ class Verse(models.Model):
     text = models.CharField(
         max_length=1024,
         db_index=True,
-        help_text="Verse text",
+        help_text="Verse text (Arabic)",
     )
     transliteration = models.CharField(
         max_length=2048,
         db_index=True,
-        help_text="Verse transliteration",
+        help_text="Verse transliteration (English)",
     )
 
     def __str__(self) -> str:

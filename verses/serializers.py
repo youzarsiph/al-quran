@@ -12,15 +12,24 @@ class VerseSerializer(ModelSerializer):
         """Meta data"""
 
         model = Verse
-        read_only_fields = ["chapter", "part", "group", "page"]
         fields = [
             "id",
             "url",
             "chapter",
             "part",
             "group",
+            "quarter",
             "page",
             "number",
             "text",
             "transliteration",
         ]
+
+
+class PageVerseSerializer(VerseSerializer):
+    """Verse serializer for pages"""
+
+    class Meta(VerseSerializer.Meta):
+        """Meta data"""
+
+        fields = ["id", "url", "number", "text", "transliteration"]

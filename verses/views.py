@@ -13,7 +13,7 @@ class VerseViewSet(ReadOnlyModelViewSet):
     queryset = Verse.objects.all()
     serializer_class = VerseSerializer
     permission_classes = [IsAuthenticated]
-    search_fields = ["text"]
+    search_fields = ["text", "transliteration"]
     ordering_fields = ["id", "number"]
     filterset_fields = [
         "id",
