@@ -22,7 +22,6 @@ class VerseSerializer(ModelSerializer):
             "page",
             "number",
             "text",
-            "transliteration",
         ]
 
 

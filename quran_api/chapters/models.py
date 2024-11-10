@@ -20,23 +20,11 @@ class Chapter(models.Model):
     )
     type = models.BooleanField(
         default=True,
-        help_text="Designates where the chapter is revealed, True means the chapter revealed in Mecca. False means the chapter revealed in Medina",
+        help_text="Designates where the chapter is revealed, True means Mecca, False Medina",
     )
     verse_count = models.IntegerField(
         db_index=True,
         help_text="Number of verses of the chapter",
-    )
-    translation = models.CharField(
-        max_length=32,
-        unique=True,
-        db_index=True,
-        help_text="Chapter translation (English)",
-    )
-    transliteration = models.CharField(
-        max_length=32,
-        unique=True,
-        db_index=True,
-        help_text="Chapter transliteration (English)",
     )
     created_at = models.DateTimeField(
         auto_now_add=True,

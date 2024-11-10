@@ -19,28 +19,27 @@ jobs:
         run: |
           git clone https://github.com/youzarsiph/quran-api
           mv quran-api quran_api
-          
-      - name: Install Dependencies
+
+      - name: Install dependencies
         run: |
-          cp quran_api/requirements.txt requirements.txt
+          python -m venv .venv
+          source .venv/bin/activate
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
 
       - name: Create a Django project and configure settings
         run: |
+          source .venv/bin/activate
           python -m django startproject mysite
           cp -r quran_api mysite/quran_api
           cd mysite
           echo "INSTALLED_APPS += ['quran_api', 'quran_api.chapters', 'quran_api.groups', 'quran_api.pages', 'quran_api.parts', 'quran_api.quarters', 'quran_api.verses', 'rest_framework']" >> mysite/settings.py
-
-      - name: Configure URLConf
-        run: |
-          cd mysite
           echo "from django.urls import include" >> mysite/urls.py
           echo "urlpatterns += [path('', include('quran_api.urls'))]" >> mysite/urls.py
 
       - name: Run Migrations, System checks and test
         run: |
+          source .venv/bin/activate
           cd mysite
           python manage.py migrate
           python manage.py check

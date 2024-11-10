@@ -14,13 +14,11 @@ Clone the repo:
 
 ```bash
 git clone https://github.com/youzarsiph/quran-api
-mv quran-api quran_api
 ```
 
 Install dependencies:
 
 ```bash
-cp quran_api/requirements.txt .
 python -m pip install -r requirements.txt
 ```
 
@@ -28,15 +26,12 @@ Create a Django project:
 
 ```bash
 python -m django startproject mysite
-mv -r quran_api mysite/quran_api
+mv quran_api mysite/quran_api
 ```
 
 Configure the settings, open `mysite/settings.py` in your favorite editor:
 
 ```python
-...
-
-# Find INSTALLED_APPS setting
 INSTALLED_APPS = [
     # Add the following lines
     "quran_api",
@@ -50,27 +45,8 @@ INSTALLED_APPS = [
     "drf_redesign",
     "rest_framework",
     "django_filters",
-    # Default apps
     ...
 ]
-
-...
-
-# Scroll down to the bottom of the file and add the following lines
-REST_FRAMEWORK = {
-    "DEFAULT_FILTER_BACKENDS": [
-        "rest_framework.filters.SearchFilter",
-        "rest_framework.filters.OrderingFilter",
-        "django_filters.rest_framework.DjangoFilterBackend",
-    ],
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.BasicAuthentication",
-        "rest_framework.authentication.SessionAuthentication",
-        "rest_framework.authentication.TokenAuthentication",
-    ],
-    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
-    "PAGE_SIZE": 25,
-}
 ```
 
 Configure URLConf, open `mysite/urls.py`
@@ -107,8 +83,6 @@ Run the server on your machine:
 ```bash
 python manage.py runserver
 ```
-
-Open this [page](http://127.0.0.1:8000/) on your browser. Now you are ready to go.
 
 ## License
 

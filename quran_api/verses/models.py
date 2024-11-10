@@ -47,11 +47,6 @@ class Verse(models.Model):
         db_index=True,
         help_text="Verse text (Arabic)",
     )
-    transliteration = models.CharField(
-        max_length=2048,
-        db_index=True,
-        help_text="Verse transliteration (English)",
-    )
 
     def __str__(self) -> str:
         return f"Chapter {self.chapter.id}, Verse {self.number}: {self.text[:20]}"
