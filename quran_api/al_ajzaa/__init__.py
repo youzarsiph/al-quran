@@ -1,0 +1,1 @@
+""" Ajzaa Al-Quran """

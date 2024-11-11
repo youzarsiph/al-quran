@@ -1,0 +1,1 @@
+""" Suwar Al-Quran """

@@ -33,7 +33,7 @@ jobs:
           python -m django startproject mysite
           cp -r quran_api mysite/quran_api
           cd mysite
-          echo "INSTALLED_APPS += ['quran_api', 'quran_api.chapters', 'quran_api.groups', 'quran_api.pages', 'quran_api.parts', 'quran_api.quarters', 'quran_api.verses', 'rest_framework']" >> mysite/settings.py
+          echo "INSTALLED_APPS += ['quran_api', 'quran_api.as_suwar', 'quran_api.al_ahzab', 'quran_api.as_safahat', 'quran_api.al_ajzaa', 'quran_api.al_arbaa', 'quran_api.al_aayat', 'drf_redesign', 'rest_framework']" >> mysite/settings.py
           echo "from django.urls import include" >> mysite/urls.py
           echo "urlpatterns += [path('', include('quran_api.urls'))]" >> mysite/urls.py
 

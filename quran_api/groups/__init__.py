@@ -1,1 +1,0 @@
-""" Quran API Groups (Hizbs) """
