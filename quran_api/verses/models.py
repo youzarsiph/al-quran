@@ -62,4 +62,5 @@ class Verse(models.Model):
     class Meta:
         """Meta data"""
 
+        db_table = "verses"
         unique_together = ["chapter", "number"]

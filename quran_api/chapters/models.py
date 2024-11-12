@@ -38,3 +38,8 @@ class Chapter(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+    class Meta:
+        """Meta data"""
+
+        db_table = "chapters"

@@ -7,6 +7,12 @@ from django.db import models
 class Quarter(models.Model):
     """Arbaa Al-Quran"""
 
+    part = models.ForeignKey(
+        "parts.Part",
+        on_delete=models.CASCADE,
+        related_name="quarters",
+        help_text="Part",
+    )
     group = models.ForeignKey(
         "groups.Group",
         on_delete=models.CASCADE,
@@ -35,3 +41,8 @@ class Quarter(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+    class Meta:
+        """Meta data"""
+
+        db_table = "quarters"
