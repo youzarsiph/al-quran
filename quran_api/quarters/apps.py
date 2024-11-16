@@ -4,7 +4,7 @@ from django.apps import AppConfig
 
 
 # Create your config here.
-class AlArbaaConfig(AppConfig):
+class QuartersConfig(AppConfig):
     """App configuration for quran_api.quarters"""
 
     name = "quran_api.quarters"

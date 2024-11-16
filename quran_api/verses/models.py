@@ -37,7 +37,7 @@ class Verse(models.Model):
         related_name="verses",
         help_text="Verse page",
     )
-    number = models.IntegerField(
+    number = models.PositiveSmallIntegerField(
         default=1,
         db_index=True,
         help_text="Verse number",

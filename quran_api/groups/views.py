@@ -14,5 +14,5 @@ class GroupViewSet(ReadOnlyModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [IsAuthenticated]
-    ordering_fields = ["id", "verse_count"]
-    filterset_fields = ["id", "part", "verse_count"]
+    ordering_fields = ["id", "verse_count", "page_count"]
+    filterset_fields = ["id", "part", "verse_count", "page_count"]

@@ -4,7 +4,7 @@ from django.apps import AppConfig
 
 
 # Create your config here.
-class AlAayatConfig(AppConfig):
+class VersesConfig(AppConfig):
     """App configuration for quran_api.verses"""
 
     name = "quran_api.verses"

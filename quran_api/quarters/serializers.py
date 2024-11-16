@@ -19,6 +19,7 @@ class QuarterSerializer(ModelSerializer):
             "group",
             "name",
             "verse_count",
+            "page_count",
             "created_at",
             "updated_at",
         ]

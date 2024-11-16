@@ -4,7 +4,7 @@ from django.apps import AppConfig
 
 
 # Create your config here.
-class AlAhzabConfig(AppConfig):
+class GroupsConfig(AppConfig):
     """App configuration for quran_api.groups"""
 
     name = "quran_api.groups"

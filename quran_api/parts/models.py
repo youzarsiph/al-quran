@@ -8,15 +8,20 @@ class Part(models.Model):
     """Ajzaa Al-Quran"""
 
     name = models.CharField(
-        max_length=32,
+        max_length=16,
         unique=True,
         db_index=True,
         help_text="Part name",
     )
-    verse_count = models.IntegerField(
+    verse_count = models.PositiveSmallIntegerField(
         default=1,
         db_index=True,
-        help_text="Number of verses of the chapter",
+        help_text="Number of verses of the part",
+    )
+    page_count = models.PositiveSmallIntegerField(
+        default=1,
+        db_index=True,
+        help_text="Number of pages of the part",
     )
     created_at = models.DateTimeField(
         auto_now_add=True,

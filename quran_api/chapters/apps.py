@@ -4,7 +4,7 @@ from django.apps import AppConfig
 
 
 # Create your config here.
-class AsSuwarConfig(AppConfig):
+class ChaptersConfig(AppConfig):
     """App configuration for quran_api.chapters"""
 
     name = "quran_api.chapters"

@@ -13,7 +13,7 @@ class Chapter(models.Model):
         db_index=True,
         help_text="Chapter name (Arabic)",
     )
-    order = models.IntegerField(
+    order = models.PositiveSmallIntegerField(
         unique=True,
         db_index=True,
         help_text="Refers to the chronological order in which the chapters of the Quran were revealed.",
@@ -22,10 +22,15 @@ class Chapter(models.Model):
         default=True,
         help_text="Designates where the chapter is revealed, True means Mecca, False Medina",
     )
-    verse_count = models.IntegerField(
+    verse_count = models.PositiveSmallIntegerField(
         default=1,
         db_index=True,
         help_text="Number of verses of the chapter",
+    )
+    page_count = models.PositiveSmallIntegerField(
+        default=1,
+        db_index=True,
+        help_text="Number of pages of the chapter",
     )
     created_at = models.DateTimeField(
         auto_now_add=True,

@@ -20,15 +20,20 @@ class Quarter(models.Model):
         help_text="Group",
     )
     name = models.CharField(
-        max_length=32,
+        max_length=16,
         unique=True,
         db_index=True,
         help_text="Quarter name",
     )
-    verse_count = models.IntegerField(
+    verse_count = models.PositiveSmallIntegerField(
         default=1,
         db_index=True,
-        help_text="Number of verses of the chapter",
+        help_text="Number of verses of the quarter",
+    )
+    page_count = models.PositiveSmallIntegerField(
+        default=1,
+        db_index=True,
+        help_text="Number of pages of the quarter",
     )
     created_at = models.DateTimeField(
         auto_now_add=True,

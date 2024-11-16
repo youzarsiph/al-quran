@@ -4,7 +4,7 @@ from django.apps import AppConfig
 
 
 # Create your config here.
-class AlAjzaaConfig(AppConfig):
+class PartsConfig(AppConfig):
     """App configuration for quran_api.parts"""
 
     name = "quran_api.parts"

@@ -19,6 +19,7 @@ class GroupSerializer(ModelSerializer):
             "part",
             "name",
             "verse_count",
+            "page_count",
             "created_at",
             "updated_at",
         ]
