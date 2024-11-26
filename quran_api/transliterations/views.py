@@ -1,10 +1,10 @@
-""" API endpoints for quran_api.i18n.transliterations """
+""" API endpoints for quran_api.transliterations """
 
 from rest_framework.viewsets import ReadOnlyModelViewSet
 from rest_framework.permissions import IsAuthenticated
 
-from quran_api.i18n.transliterations.models import Transliteration
-from quran_api.i18n.transliterations.serializers import TransliterationSerializer
+from quran_api.transliterations.models import Transliteration
+from quran_api.transliterations.serializers import TransliterationSerializer
 
 
 # Create your views here.

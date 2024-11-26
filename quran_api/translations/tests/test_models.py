@@ -1,11 +1,11 @@
-""" Tests for quran_api.i18n.languages.views """
+""" Tests for quran_api.translations.models """
 
 from django.test import TestCase
 
 
 # Create your tests here.
-class LanguageViewSetTests(TestCase):
-    """Tests for Language ViewSet"""
+class TranslationTests(TestCase):
+    """Tests for Translation model"""
 
     def setUp(self) -> None:
         """Setup test data"""

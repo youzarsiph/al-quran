@@ -1,4 +1,4 @@
-""" Data Models for quran_api.i18n.languages """
+""" Data Models for quran_api.languages """
 
 from django.db import models
 

@@ -1,11 +1,11 @@
-""" Tests for quran_api.i18n.translations.models """
+""" Tests for quran_api.transliterations.models """
 
 from django.test import TestCase
 
 
 # Create your tests here.
-class TranslationTests(TestCase):
-    """Tests for Translation model"""
+class TransliterationsTests(TestCase):
+    """Tests for Transliterations model"""
 
     def setUp(self) -> None:
         """Setup test data"""

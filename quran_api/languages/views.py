@@ -1,10 +1,10 @@
-""" API endpoints for quran_api.i18n.languages """
+""" API endpoints for quran_api.languages """
 
 from rest_framework.viewsets import ReadOnlyModelViewSet
 from rest_framework.permissions import IsAuthenticated
 
-from quran_api.i18n.languages.models import Language
-from quran_api.i18n.languages.serializers import LanguageSerializer
+from quran_api.languages.models import Language
+from quran_api.languages.serializers import LanguageSerializer
 
 
 # Create your views here.

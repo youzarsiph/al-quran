@@ -1,16 +1,16 @@
-""" Data Models for quran_api.i18n.transliterations """
+""" Data Models for quran_api.translations """
 
 from django.db import models
 
 
 # Create your models here.
-class Transliteration(models.Model):
-    """Transliterations"""
+class Translation(models.Model):
+    """Translations"""
 
     language = models.ForeignKey(
         "languages.Language",
         on_delete=models.CASCADE,
-        related_name="transliterations",
+        related_name="translations",
         help_text="Language",
     )
     chapter = models.ForeignKey(
@@ -18,7 +18,7 @@ class Transliteration(models.Model):
         on_delete=models.CASCADE,
         null=True,
         blank=True,
-        related_name="transliterations",
+        related_name="translations",
         help_text="Chapter",
     )
     verse = models.ForeignKey(
@@ -26,12 +26,12 @@ class Transliteration(models.Model):
         on_delete=models.CASCADE,
         null=True,
         blank=True,
-        related_name="transliterations",
+        related_name="translations",
         help_text="Verse",
     )
     content = models.TextField(
         db_index=True,
-        help_text="Transliteration",
+        help_text="Translation",
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
@@ -43,9 +43,9 @@ class Transliteration(models.Model):
     )
 
     def __str__(self) -> str:
-        return f"{self.language} transliteration of {self.chapter if self.chapter else self.verse}"
+        return f"{self.language} translation of {self.chapter if self.chapter else self.verse}"
 
     class Meta:
         """Meta data"""
 
-        db_table = "transliterations"
+        db_table = "translations"

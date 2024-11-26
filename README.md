@@ -78,9 +78,9 @@ Ensure you have the following installed on your system:
          "quran_api.pages",
          "quran_api.verses",
          # Multilingual features
-         "quran_api.i18n.languages",
-         "quran_api.i18n.translations",
-         "quran_api.i18n.transliterations",
+         "quran_api.languages",
+         "quran_api.translations",
+         "quran_api.transliterations",
          # Required libraries
          "corsheaders",
          "drf_redesign",
@@ -148,8 +148,6 @@ Ensure you have the following installed on your system:
          path("admin/", admin.site.urls),
          path("api/", include("quran_api.urls")),
          path("api/auth/", include("rest_framework.urls")),
-         # Multilingual features
-         path("i18n/", include("quran_api.i18n.urls")),
      ]
      ```
 

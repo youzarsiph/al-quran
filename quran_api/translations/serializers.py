@@ -1,8 +1,8 @@
-""" Serializers for quran_api.i18n.translations """
+""" Serializers for quran_api.translations """
 
 from rest_framework.serializers import ModelSerializer
 
-from quran_api.i18n.translations.models import Translation
+from quran_api.translations.models import Translation
 
 
 # Create your serializers here.
