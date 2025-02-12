@@ -40,7 +40,7 @@ class Page(models.Model):
     verse_count = models.PositiveSmallIntegerField(
         default=1,
         db_index=True,
-        help_text="Number of verses of the page",
+        help_text="Number of verses",
     )
     created_at = models.DateTimeField(
         auto_now_add=True,

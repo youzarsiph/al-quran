@@ -14,5 +14,5 @@ class PartViewSet(ReadOnlyModelViewSet):
     queryset = Part.objects.all()
     serializer_class = PartSerializer
     permission_classes = [IsAuthenticated]
-    ordering_fields = ["id", "verse_count", "page_count"]
+    ordering_fields = ["id", "verse_count", "page_count", "created_at", "updated_at"]
     filterset_fields = ["id", "verse_count", "page_count"]

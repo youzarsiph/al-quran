@@ -38,8 +38,8 @@ Ensure you have the following installed on your system:
 2. **Set Up a Virtual Environment:**
 
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   python -m venv .venv
+   source venv/bin/activate  # On Windows, use `.venv\Scripts\activate`
    ```
 
 3. **Install Dependencies:**
@@ -73,26 +73,19 @@ Ensure you have the following installed on your system:
          # Core applications
          "quran_api",
          "quran_api.chapters",
+         "quran_api.parts",
          "quran_api.groups",
-         "quran_api.juz",
+         "quran_api.quarters",
          "quran_api.pages",
          "quran_api.verses",
-         # Multilingual features
-         "quran_api.languages",
-         "quran_api.translations",
-         "quran_api.transliterations",
          # Required libraries
          "corsheaders",
          "drf_redesign",
          "rest_framework",
          "django_filters",
+         "django_extensions",
          # Default Django applications
-         "django.contrib.admin",
-         "django.contrib.auth",
-         "django.contrib.contenttypes",
-         "django.contrib.sessions",
-         "django.contrib.messages",
-         "django.contrib.staticfiles",
+         ...
      ]
      ```
 
@@ -100,14 +93,10 @@ Ensure you have the following installed on your system:
 
      ```python
      MIDDLEWARE = [
-         "django.middleware.security.SecurityMiddleware",
-         "django.contrib.sessions.middleware.SessionMiddleware",
-         "corsheaders.middleware.CorsMiddleware",
+         ...
+         "corsheaders.middleware.CorsMiddleware",  # Add this line
          "django.middleware.common.CommonMiddleware",
-         "django.middleware.csrf.CsrfViewMiddleware",
-         "django.contrib.auth.middleware.AuthenticationMiddleware",
-         "django.contrib.messages.middleware.MessageMiddleware",
-         "django.middleware.clickjacking.XFrameOptionsMiddleware",
+         ...
      ]
      ```
 

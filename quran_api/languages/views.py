@@ -14,6 +14,6 @@ class LanguageViewSet(ReadOnlyModelViewSet):
     queryset = Language.objects.all()
     serializer_class = LanguageSerializer
     permission_classes = [IsAuthenticated]
-    filterset_fields = ["id", "name", "code"]
-    ordering_fields = ["namer", "code"]
     search_fields = ["name", "code"]
+    ordering_fields = ["namer", "code", "created_at", "updated_at"]
+    filterset_fields = ["id", "name", "code"]

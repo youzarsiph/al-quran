@@ -14,5 +14,5 @@ class QuarterViewSet(ReadOnlyModelViewSet):
     queryset = Quarter.objects.all()
     serializer_class = QuarterSerializer
     permission_classes = [IsAuthenticated]
-    ordering_fields = ["id", "verse_count", "page_count"]
+    ordering_fields = ["id", "verse_count", "page_count", "created_at", "updated_at"]
     filterset_fields = ["id", "group", "verse_count", "page_count"]

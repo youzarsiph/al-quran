@@ -11,26 +11,28 @@ class Chapter(models.Model):
         max_length=16,
         unique=True,
         db_index=True,
-        help_text="Chapter name (Arabic)",
+        help_text="Chapter name",
     )
     order = models.PositiveSmallIntegerField(
         unique=True,
         db_index=True,
-        help_text="Refers to the chronological order in which the chapters of the Quran were revealed.",
+        help_text="Refers to the chronological order "
+        "in which the chapters of the Quran were revealed",
     )
     type = models.BooleanField(
         default=True,
-        help_text="Designates where the chapter is revealed, True means Mecca, False Medina",
+        help_text="Designates where the chapter is revealed "
+        "True = Mecca, False = Medina",
     )
     verse_count = models.PositiveSmallIntegerField(
         default=1,
         db_index=True,
-        help_text="Number of verses of the chapter",
+        help_text="Number of verses",
     )
     page_count = models.PositiveSmallIntegerField(
         default=1,
         db_index=True,
-        help_text="Number of pages of the chapter",
+        help_text="Number of pages",
     )
     created_at = models.DateTimeField(
         auto_now_add=True,

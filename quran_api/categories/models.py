@@ -1,27 +1,22 @@
-""" Data Models for quran_api.parts """
+""" Data Models for quran_api.categories """
 
 from django.db import models
 
 
 # Create your models here.
-class Part(models.Model):
-    """Ajzaa Al-Quran"""
+class Category(models.Model):
+    """Categories"""
 
     name = models.CharField(
-        max_length=16,
+        max_length=32,
         unique=True,
         db_index=True,
-        help_text="Part name",
+        help_text="Category name",
     )
-    verse_count = models.PositiveSmallIntegerField(
-        default=1,
+    description = models.CharField(
+        max_length=256,
         db_index=True,
-        help_text="Number of verses",
-    )
-    page_count = models.PositiveSmallIntegerField(
-        default=1,
-        db_index=True,
-        help_text="Number of pages",
+        help_text="Category description",
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
@@ -38,4 +33,4 @@ class Part(models.Model):
     class Meta:
         """Meta data"""
 
-        db_table = "parts"
+        db_table = "categories"

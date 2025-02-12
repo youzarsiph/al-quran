@@ -1,1 +1,1 @@
-""" Tarjamat Al-Quran """
+""" Languages """

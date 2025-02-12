@@ -14,6 +14,13 @@ class ChapterViewSet(ReadOnlyModelViewSet):
     queryset = Chapter.objects.all()
     serializer_class = ChapterSerializer
     permission_classes = [IsAuthenticated]
-    filterset_fields = ["id", "name", "type", "order", "verse_count", "page_count"]
-    ordering_fields = ["id", "name", "order", "verse_count", "page_count"]
     search_fields = ["name"]
+    ordering_fields = [
+        "name",
+        "order",
+        "verse_count",
+        "page_count",
+        "created_at",
+        "updated_at",
+    ]
+    filterset_fields = ["id", "name", "type", "order", "verse_count", "page_count"]

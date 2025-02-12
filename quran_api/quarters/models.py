@@ -28,12 +28,12 @@ class Quarter(models.Model):
     verse_count = models.PositiveSmallIntegerField(
         default=1,
         db_index=True,
-        help_text="Number of verses of the quarter",
+        help_text="Number of verses",
     )
     page_count = models.PositiveSmallIntegerField(
         default=1,
         db_index=True,
-        help_text="Number of pages of the quarter",
+        help_text="Number of pages",
     )
     created_at = models.DateTimeField(
         auto_now_add=True,

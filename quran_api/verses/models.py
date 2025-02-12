@@ -45,7 +45,7 @@ class Verse(models.Model):
     content = models.CharField(
         max_length=1024,
         db_index=True,
-        help_text="Verse content (Arabic)",
+        help_text="Verse content",
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
