@@ -1,0 +1,128 @@
+{% extends 'ui/base.html' %}
+
+{% load i18n %}
+
+{% block nav_styles %} hidden lg:block{% endblock %}
+{% block content_styles %} hidden lg:block{% endblock %}
+
+{% block sidebar %}
+<article class="relative flex h-full flex-col gap-6 rounded-box bg-base-200">
+  <header class="absolute inset-x-0 top-0 z-10 flex items-center justify-between p-4 gap-4 glass lg:rounded-t-box">
+    <div class="flex items-center gap-4">
+      <div class="tooltip tooltip-bottom lg:hidden" data-tip="{% translate 'Back' %}">
+        <a href="{% block back_url %}{% url 'al-quran:index' %}{% endblock %}" class="btn btn-square btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-chevron-left">
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+          <span class="sr-only">{% translate 'Back' %}</span>
+        </a>
+      </div>
+
+      <h2 class="text-xl font-semibold">
+        {% block page_title %}{% endblock %}
+      </h2>
+    </div>
+
+    <div class="tooltip tooltip-bottom tooltip-primary" data-tip="{% translate 'Info' %}">
+      <button type="button" onclick="details.showModal()" class="btn btn-square btn-sm btn-primary btn-soft">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-badge-info">
+          <path
+            d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
+          <line x1="12" x2="12" y1="16" y2="12" />
+          <line x1="12" x2="12.01" y1="8" y2="8" />
+        </svg>
+
+        <span class="sr-only">{% translate 'Info' %}</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="grid grow gap-4 h-full w-full p-4 py-20 max-h-screen overflow-y-auto">
+    <div class="flex items-center flex-wrap gap-2">
+      <a href="{% url 'al-quran:chapters' %}" class="btn btn-sm btn-primary">
+        {% translate 'Chapters' %}
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-chevron-right size-4">
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </a>
+      <a href="{% url 'al-quran:parts' %}" class="btn btn-sm btn-secondary">
+        {% translate 'Parts' %}
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-chevron-right size-4">
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </a>
+      <a href="{% url 'al-quran:groups' %}" class="btn btn-sm btn-accent">
+        {% translate 'Groups' %}
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-chevron-right size-4">
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </a>
+      <a href="{% url 'al-quran:quarters' %}" class="btn btn-sm btn-success">
+        {% translate 'Quarters' %}
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-chevron-right size-4">
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </a>
+    </div>
+
+    <ol class="list w-full rounded-box bg-base-100">
+      {% block sidebar_content %}{% endblock %}
+    </ol>
+  </main>
+
+  {% block pagination %}
+  <footer class="absolute inset-x-0 bottom-0 z-10 flex items-center p-4 gap-4 glass lg:rounded-b-box">
+    {% include 'ui/components/pagination.html' %}
+  </footer>
+  {% endblock %}
+</article>
+{% endblock %}
+
+{% block scripts %}
+<dialog id="details" class="modal rounded-box">
+  <article class="modal-box grid gap-4 glass bg-base-100/50">
+    <header class="flex items-center justify-between gap-4">
+      <h3 class="text-2xl font-semibold">
+        {% block modal_title %}{% endblock %}
+      </h3>
+
+      <form method="dialog" class="tooltip tooltip-bottom" data-tip="{% translate 'Close' %}">
+        <button type="submit" class="btn flex btn-square btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-x">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+
+          <span class="sr-only">{% translate 'Close' %}</span>
+        </button>
+      </form>
+    </header>
+
+    <main class="grid gap-4">
+      {% block modal_content %}{% endblock %}
+    </main>
+
+    <form method="dialog" class="modal-action justify-center">
+      <button type="submit" class="btn w-full btn-primary">{% translate 'Close' %}</button>
+    </form>
+  </article>
+</dialog>
+{% endblock %}

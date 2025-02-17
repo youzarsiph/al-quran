@@ -1,0 +1,27 @@
+{% extends 'ui/detail/base.html' %}
+
+{% load i18n %}
+
+{% block title %}{{ block.super }} | {{ chapter.name }}{% endblock %}
+
+{% block header_back_url %}{% url 'al-quran:chapters' %}{% endblock %}
+
+{% block header_content %}
+<div class="grid gap-1">
+  <div class="flex items-center gap-2">
+    <h2 class="text-xl font-black" style="font-family: 'Noto Kufi Arabic';">
+      {{ chapter.name }}
+    </h2>
+
+    <span class="badge badge-sm badge-primary">
+      {% if chapter.type %}{% translate 'Meccan' %}{% else %}{% translate 'Medinan' %}{% endif %}
+    </span>
+  </div>
+  <span class="text-xs">
+    {{ chapter.page_count }} {% translate 'pages' %}, {{ chapter.verse_count }} {% translate 'verses' %}
+  </span>
+</div>
+{% endblock %}
+
+{% block prev_url %}{% url 'al-quran:chapter-details' prev_id %}{% endblock %}
+{% block next_url %}{% url 'al-quran:chapter-details' next_id %}{% endblock %}

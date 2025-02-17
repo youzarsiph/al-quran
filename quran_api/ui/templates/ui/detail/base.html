@@ -1,0 +1,70 @@
+{% extends template_name %}
+
+{% load i18n %}
+
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block sidebar_styles %} hidden lg:block{% endblock %}
+{% block content_styles %}{% endblock %}
+
+{% block pagination %}{% endblock %}
+
+{% block content %}
+<article class="relative flex h-full flex-col gap-6 rounded-box bg-base-200">
+  <header
+    class="absolute inset-x-0 top-0 z-10 flex items-center justify-between px-4 py-2 gap-4 glass lg:rounded-t-box">
+    <div class="flex items-center gap-4">
+      <div class="tooltip tooltip-bottom lg:hidden" data-tip="{% translate 'Back' %}">
+        <a href="{% block header_back_url %}{% endblock %}" class="btn btn-square btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-chevron-left">
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+          <span class="sr-only">{% translate 'Back' %}</span>
+        </a>
+      </div>
+
+      {% block header_content %}{% endblock %}
+    </div>
+
+    <div class="flex items-center gap-4">
+      <div class="tooltip tooltip-bottom" data-tip="{% translate 'Previous' %}">
+        <a href="{% block prev_url %}{% endblock %}" class="btn btn-square btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-chevron-left">
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+
+          <span class="sr-only">{% translate 'Previous' %}</span>
+        </a>
+      </div>
+
+      <div class="tooltip tooltip-bottom" data-tip="{% translate 'Next' %}">
+        <a href="{% block next_url %}{% endblock %}" class="btn btn-square btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-chevron-right">
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+
+          <span class="sr-only">{% translate 'Next' %}</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main dir="rtl" class="h-full w-ful pt-16 lg:pt-20 lg:px-4 lg:pb-4">
+    <div class="carousel gap-4 h-full w-full lg:rounded-box">
+      {% for page in pages %}
+      {% include 'ui/components/page.html' %}
+      {% endfor %}
+    </div>
+  </main>
+</article>
+{% endblock %}

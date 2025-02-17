@@ -1,0 +1,69 @@
+{% extends 'ui/base.html' %}
+
+{% load i18n %}
+
+{% block body_styles %}{% endblock %}
+
+{% block main %}
+<div class="grid h-full w-full grid-cols-12 gap-4 px-4 lg:px-0 lg:py-4 lg:pr-4 lg:grid-rows-12">
+  <!-- Top Left -->
+  <section class="col-span-12 lg:col-span-6 lg:row-span-6">
+    <div class="card card-body gap-6 h-full w-full bg-base-200 rounded-box">
+      <h1 class="text-5xl font-black tracking-wide lg:text-6xl" style="font-family: 'Noto Serif';">
+        {% blocktranslate %}
+        Experience <span class="text-primary">Al-Quran</span> Like Never Before
+        {% endblocktranslate %}
+      </h1>
+
+      <p class="text-xl font-semibold">
+        An open-source, interactive journey bringing you closer to the Divine Word.
+      </p>
+
+      <a href="{% url 'al-quran:chapters' %}" class="btn btn-lg btn-wide btn-primary">
+        Start Your Journey
+      </a>
+    </div>
+  </section>
+
+  <!-- Top Right -->
+  <section class="col-span-12 lg:col-span-3 lg:row-span-3">
+    <div class="card card-body p-4 gap-4 h-full w-full bg-base-200 rounded-box">
+      <h1 class="text-3xl font-black tracking-wide text-secondary lg:text-4xl">
+        {% translate 'Al-Quran' %}
+      </h1>
+
+      <p class="font-semibold">TEXT</p>
+    </div>
+  </section>
+
+  <section class="col-span-12 lg:col-span-3 lg:row-span-3">
+    <div class="card card-body p-4 gap-4 h-full w-full bg-base-200 rounded-box">
+      <h1 class="text-3xl font-black tracking-wide text-secondary lg:text-4xl">
+        {% translate 'Al-Quran' %}
+      </h1>
+
+      <p class="font-semibold">TEXT</p>
+    </div>
+  </section>
+
+  <section class="col-span-12 lg:col-span-3 lg:row-span-3">
+    <div class="card card-body p-4 gap-4 h-full w-full bg-base-200 rounded-box">
+      <h1 class="text-3xl font-black tracking-wide text-secondary lg:text-4xl">
+        {% translate 'Al-Quran' %}
+      </h1>
+
+      <p class="font-semibold">TEXT</p>
+    </div>
+  </section>
+
+  <section class="col-span-12 lg:col-span-3 lg:row-span-3">
+    <div class="card card-body p-4 gap-4 h-full w-full bg-base-200 rounded-box">
+      <h1 class="text-3xl font-black tracking-wide text-secondary lg:text-4xl">
+        {% translate 'Al-Quran' %}
+      </h1>
+
+      <p class="font-semibold">TEXT</p>
+    </div>
+  </section>
+</div>
+{% endblock %}
