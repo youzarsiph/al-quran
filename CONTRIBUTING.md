@@ -36,14 +36,14 @@ Ensure your local development environment is set up correctly by following these
 
 1. **Fork the Repository:**
 
-   - Navigate to the [Quran API repository](https://github.com/youzarsiph/quran-api) on GitHub.
+   - Navigate to the [Quran API repository](https://github.com/youzarsiph/al-quran) on GitHub.
    - Click on the "Fork" button to create a personal copy of the repository.
 
 2. **Clone Your Fork:**
 
    ```bash
-   git clone https://github.com/<your-username>/quran-api.git
-   cd quran-api
+   git clone https://github.com/<your-username>/al-quran.git
+   cd al-quran
    ```
 
 3. **Set Up a Virtual Environment:**

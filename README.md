@@ -1,8 +1,8 @@
-# Quran API
+# Al-Quran
 
-[![Django CI](https://github.com/youzarsiph/quran-api/actions/workflows/django.yml/badge.svg)](https://github.com/youzarsiph/quran-api/actions/workflows/django.yml)
-[![Code Style](https://github.com/youzarsiph/quran-api/actions/workflows/black.yml/badge.svg)](https://github.com/youzarsiph/quran-api/actions/workflows/black.yml)
-[![Linting](https://github.com/youzarsiph/quran-api/actions/workflows/ruff.yml/badge.svg)](https://github.com/youzarsiph/quran-api/actions/workflows/ruff.yml)
+[![Django CI](https://github.com/youzarsiph/al-quran/actions/workflows/django.yml/badge.svg)](https://github.com/youzarsiph/al-quran/actions/workflows/django.yml)
+[![Code Style](https://github.com/youzarsiph/al-quran/actions/workflows/black.yml/badge.svg)](https://github.com/youzarsiph/al-quran/actions/workflows/black.yml)
+[![Linting](https://github.com/youzarsiph/al-quran/actions/workflows/ruff.yml/badge.svg)](https://github.com/youzarsiph/al-quran/actions/workflows/ruff.yml)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Overview
@@ -31,8 +31,8 @@ Ensure you have the following installed on your system:
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/youzarsiph/quran-api.git
-   cd quran-api
+   git clone https://github.com/youzarsiph/al-quran.git
+   cd al-quran
    ```
 
 2. **Set Up a Virtual Environment:**
@@ -58,10 +58,10 @@ Ensure you have the following installed on your system:
      django-admin startproject mysite
      ```
 
-   - Move the `quran_api` directory into the `mysite` directory:
+   - Move the `al_quran` directory into the `mysite` directory:
 
      ```bash
-     mv quran_api mysite/quran_api
+     mv al_quran mysite/al_quran
      ```
 
 2. **Configure the Django Settings:**
@@ -71,13 +71,13 @@ Ensure you have the following installed on your system:
      ```python
      INSTALLED_APPS = [
          # Core applications
-         "quran_api",
-         "quran_api.chapters",
-         "quran_api.parts",
-         "quran_api.groups",
-         "quran_api.quarters",
-         "quran_api.pages",
-         "quran_api.verses",
+         "al_quran",
+         "al_quran.chapters",
+         "al_quran.parts",
+         "al_quran.groups",
+         "al_quran.quarters",
+         "al_quran.pages",
+         "al_quran.verses",
          # Required libraries
          "corsheaders",
          "drf_redesign",
@@ -135,7 +135,7 @@ Ensure you have the following installed on your system:
 
      urlpatterns = [
          path("admin/", admin.site.urls),
-         path("api/", include("quran_api.urls")),
+         path("api/", include("al_quran.urls")),
          path("api/auth/", include("rest_framework.urls")),
      ]
      ```

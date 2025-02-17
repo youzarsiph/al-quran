@@ -1,13 +1,13 @@
 [tool.poetry]
 package-mode = false
-name = "quran-api"
+name = "al-quran"
 version = "0.1.0"
 description = "Quran API built with Python and Django."
 authors = ["Yousef Abu Shanab <josephyousef249@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/youzarsiph/quran-api"
-repository = "https://github.com/youzarsiph/quran-api"
+homepage = "https://github.com/youzarsiph/al-quran"
+repository = "https://github.com/youzarsiph/al-quran"
 
 [tool.poetry.dependencies]
 python = "^3.10"
