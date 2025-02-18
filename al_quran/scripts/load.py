@@ -1,4 +1,4 @@
-""" Load Quran data """
+"""Load Quran data"""
 
 import json
 from pathlib import Path

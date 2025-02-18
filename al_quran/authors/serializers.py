@@ -1,4 +1,4 @@
-""" Serializers for al_quran.authors """
+"""Serializers for al_quran.authors"""
 
 from rest_framework.serializers import ModelSerializer
 

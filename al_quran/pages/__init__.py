@@ -1,1 +1,1 @@
-""" Safahat Al-Quran """
+"""Safahat Al-Quran"""

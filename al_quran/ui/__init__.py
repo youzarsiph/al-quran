@@ -1,1 +1,1 @@
-""" Al-Quran UI """
+"""Al-Quran UI"""

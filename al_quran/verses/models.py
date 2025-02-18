@@ -1,4 +1,4 @@
-""" Data Models for al_quran.verses """
+"""Data Models for al_quran.verses"""
 
 from django.db import models
 

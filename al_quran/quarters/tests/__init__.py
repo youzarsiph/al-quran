@@ -1,1 +1,1 @@
-""" Tests for al_quran.quarters """
+"""Tests for al_quran.quarters"""

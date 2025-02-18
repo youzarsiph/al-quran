@@ -1,4 +1,4 @@
-""" Tests for al_quran.chapters.models """
+"""Tests for al_quran.chapters.models"""
 
 from django.test import TestCase
 

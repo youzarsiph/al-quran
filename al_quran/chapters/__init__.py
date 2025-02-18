@@ -1,1 +1,1 @@
-""" Suwar Al-Quran """
+"""Suwar Al-Quran"""

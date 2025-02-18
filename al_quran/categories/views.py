@@ -1,4 +1,4 @@
-""" API endpoints for al_quran.categories """
+"""API endpoints for al_quran.categories"""
 
 from rest_framework.viewsets import ReadOnlyModelViewSet
 from rest_framework.permissions import IsAuthenticated

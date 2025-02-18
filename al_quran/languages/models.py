@@ -1,4 +1,4 @@
-""" Data Models for al_quran.languages """
+"""Data Models for al_quran.languages"""
 
 from django.db import models
 

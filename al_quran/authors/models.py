@@ -1,4 +1,4 @@
-""" Data Models for al_quran.authors """
+"""Data Models for al_quran.authors"""
 
 from django.db import models
 

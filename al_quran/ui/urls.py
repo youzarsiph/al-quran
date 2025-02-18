@@ -1,4 +1,4 @@
-""" URLConf for al_quran.ui """
+"""URLConf for al_quran.ui"""
 
 from django.urls import path
 

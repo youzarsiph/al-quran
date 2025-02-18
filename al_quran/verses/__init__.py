@@ -1,1 +1,1 @@
-""" Aayat Al-Quran """
+"""Aayat Al-Quran"""

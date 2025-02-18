@@ -1,1 +1,1 @@
-""" Tests for al_quran.ui """
+"""Tests for al_quran.ui"""

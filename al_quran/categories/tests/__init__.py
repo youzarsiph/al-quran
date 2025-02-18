@@ -1,1 +1,1 @@
-""" Tests for al_quran.categories """
+"""Tests for al_quran.categories"""

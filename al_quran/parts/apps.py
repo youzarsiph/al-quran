@@ -1,4 +1,4 @@
-""" AppConf for al_quran.parts """
+"""AppConf for al_quran.parts"""
 
 from django.apps import AppConfig
 

@@ -1,1 +1,1 @@
-""" Ajzaa Al-Quran """
+"""Ajzaa Al-Quran"""

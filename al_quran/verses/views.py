@@ -1,4 +1,4 @@
-""" API endpoints for al_quran.verses """
+"""API endpoints for al_quran.verses"""
 
 from rest_framework.viewsets import ReadOnlyModelViewSet
 from rest_framework.permissions import IsAuthenticated

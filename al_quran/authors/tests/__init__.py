@@ -1,1 +1,1 @@
-""" Tests for al_quran.authors """
+"""Tests for al_quran.authors"""

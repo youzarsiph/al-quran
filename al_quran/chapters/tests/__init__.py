@@ -1,1 +1,1 @@
-""" Tests for al_quran.chapters """
+"""Tests for al_quran.chapters"""

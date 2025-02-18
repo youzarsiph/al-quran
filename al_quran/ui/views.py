@@ -1,4 +1,4 @@
-""" API endpoints for al_quran.ui """
+"""API endpoints for al_quran.ui"""
 
 from typing import Any, Dict
 from django.views import generic

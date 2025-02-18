@@ -1,1 +1,1 @@
-""" Book items """
+"""Book items"""

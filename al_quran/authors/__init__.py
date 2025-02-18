@@ -1,1 +1,1 @@
-""" Authors of the translations, transliterations and interpretations """
+"""Authors of the translations, transliterations and interpretations"""

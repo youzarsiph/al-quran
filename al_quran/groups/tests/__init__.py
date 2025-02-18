@@ -1,1 +1,1 @@
-""" Tests for al_quran.groups """
+"""Tests for al_quran.groups"""

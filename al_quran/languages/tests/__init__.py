@@ -1,1 +1,1 @@
-""" Tests for al_quran.languages """
+"""Tests for al_quran.languages"""
