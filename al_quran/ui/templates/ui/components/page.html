@@ -1,6 +1,6 @@
 {% load i18n %}
 
-<div class="carousel-item w-full lg:w-1/2">
+<div class="carousel-item h-fit min-h-full w-full lg:w-1/2">
   <article id="page-{{ page.id }}" class="relative card bg-base-100 rounded-box">
     <header class="absolute inset-x-0 top-0 flex items-center justify-between gap-4 px-4 py-2 glass lg:rounded-t-box">
       <div class="tooltip tooltip-bottom" data-tip="{% translate 'Read' %}">
@@ -16,7 +16,7 @@
       </div>
     </header>
 
-    <main class="card-body grow px-4 py-12 overflow-auto">
+    <main class="card-body grow px-4 py-12">
       <div role="text" class="text-center" style="font-family: 'Noto Kufi Arabic';">
         {% for verse in page.verses.all %}
         {% if verse.number == 1 %}
@@ -37,9 +37,9 @@
 
         <span class="block text-primary text-3xl/12 mb-4">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</span>
 
-        <span class="text-xl/12">{{ verse.content|slice:'39:' }}</span>
+        <span id="verse-{{ verse.number }}" class="text-xl/12">{{ verse.content|slice:'39:' }}</span>
         {% else %}
-        <span class="text-xl/12">{{ verse.content }}</span>
+        <span id="verse-{{ verse.number }}" class="text-xl/12">{{ verse.content }}</span>
         {% endif %}
 
         <span class="btn btn-xs btn-soft btn-primary">{{ verse.number }} </span>
