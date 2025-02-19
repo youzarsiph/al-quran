@@ -17,9 +17,10 @@
       {% if chapter.type %}{% translate 'Meccan' %}{% else %}{% translate 'Medinan' %}{% endif %}
     </span>
   </div>
-  <span class="text-xs">
-    {{ chapter.page_count }} {% translate 'pages' %}, {{ chapter.verse_count }} {% translate 'verses' %}
-  </span>
+  <div class="flex items-center gap-2 text-xs">
+    <span class="badge badge-xs badge-accent">{{ chapter.page_count }} {% translate 'pages' %}</span>
+    <span class="badge badge-xs badge-info">{{ chapter.verse_count }} {% translate 'verses' %}</span>
+  </div>
 </div>
 {% endblock %}
 

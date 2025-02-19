@@ -8,7 +8,7 @@
 
 {% block sidebar_content %}
 {% for part in part_list.all %}
-<li id="part-{{ part.id }}" class="list-row items-center">
+<li id="item-{{ part.id }}" class="list-row items-center">
   <div>
     <div class="avatar avatar-placeholder">
       <div
@@ -28,7 +28,7 @@
     <a href="{% url 'al-quran:part-details' part.id %}" class="btn btn-square btn-primary">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-        class="lucide lucide-chevron-right">
+        class="lucide lucide-chevron-right rtl:rotate-180">
         <path d="m9 18 6-6-6-6" />
       </svg>
 

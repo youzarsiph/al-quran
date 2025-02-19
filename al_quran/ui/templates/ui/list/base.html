@@ -48,7 +48,7 @@
 
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="lucide lucide-chevron-right size-4">
+          class="lucide lucide-chevron-right size-4 rtl:rotate-180">
           <path d="m9 18 6-6-6-6" />
         </svg>
       </a>
@@ -57,7 +57,7 @@
 
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="lucide lucide-chevron-right size-4">
+          class="lucide lucide-chevron-right size-4 rtl:rotate-180">
           <path d="m9 18 6-6-6-6" />
         </svg>
       </a>
@@ -66,7 +66,7 @@
 
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="lucide lucide-chevron-right size-4">
+          class="lucide lucide-chevron-right size-4 rtl:rotate-180">
           <path d="m9 18 6-6-6-6" />
         </svg>
       </a>
@@ -75,7 +75,7 @@
 
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="lucide lucide-chevron-right size-4">
+          class="lucide lucide-chevron-right size-4 rtl:rotate-180">
           <path d="m9 18 6-6-6-6" />
         </svg>
       </a>
@@ -91,6 +91,26 @@
     {% include 'ui/components/pagination.html' %}
   </footer>
   {% endblock %}
+</article>
+{% endblock %}
+
+{% block content %}
+<article class="flex h-full w-full flex-col items-center justify-center gap-12 rounded-box bg-base-200 p-8">
+  <h2 class="text-4xl font-semibold" style="font-family: 'Noto Serif';">
+    {% translate 'In times of trouble and chaos' %}
+  </h2>
+
+  <div class="flex items-end gap-2">
+    <h1 class="text-4xl text-primary font-black" style="font-family: 'Noto Kufi Arabic';">
+      إِنَّ هَـٰذَا ٱلْقُرْءَانَ يَهْدِى لِلَّتِى هِىَ أَقْوَمُ
+    </h1>
+
+    <span class="text-xs font-black">{% translate 'Quran 17:9' %}</span>
+  </div>
+
+  <p class="text-xl">
+    {% translate 'Turning to the Quran can bring peace to our hearts. Its words are a source of comfort and solace.' %}
+  </p>
 </article>
 {% endblock %}
 

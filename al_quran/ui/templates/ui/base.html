@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" data-theme="autumn">
+<html lang="en" data-theme="dim">
 
 <head>
   {% load i18n %}
@@ -23,7 +23,7 @@
   class="flex h-screen {% block body_styles %}overflow-hidden{% endblock %} flex-col gap-4 lg:flex-row">
   <!-- Nav -->
   <section class="w-full lg:h-full lg:w-auto{% block nav_styles %}{% endblock %}">
-    <header class="w-full p-4 pb-0 lg:h-full lg:w-auto lg:pr-0 lg:pb-4">
+    <header class="w-full p-4 pb-0 lg:h-full lg:w-auto lg:pr-0 lg:pb-4 rtl:lg:pl-0 rtl:lg:pr-4">
       <nav
         class="menu menu-horizontal z-50 w-full items-center justify-between gap-4 rounded-box bg-base-200 lg:menu-vertical lg:h-full lg:w-auto">
         <ul class="menu menu-horizontal items-center gap-2 p-0 lg:menu-vertical">
@@ -110,19 +110,6 @@
         </ul>
 
         <ul class="menu menu-horizontal items-center gap-2 p-0 lg:menu-vertical">
-          <li class="tooltip tooltip-bottom tooltip-secondary" data-tip="{% translate 'Settings' %}">
-            <button class="btn btn-square btn-ghost">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-bolt size-5">
-                <path
-                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                <circle cx="12" cy="12" r="4" />
-              </svg>
-
-              <span class="sr-only">{% translate 'Settings' %}</span>
-            </button>
-          </li>
           <li class="tooltip tooltip-bottom tooltip-accent lg:tooltip-top" data-tip="{% translate 'Profile' %}">
             <button class="btn btn-square btn-ghost" popovertarget="profile" style="anchor-name:--profile-anchor">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -195,7 +182,7 @@
       </section>
 
       <section
-        class="col-span-12 h-full max-h-screen lg:p-4 lg:col-span-9 lg:h-full lg:pr-4 lg:pl-0{% block content_styles %}{% endblock %}">
+        class="col-span-12 h-full max-h-screen lg:p-4 lg:col-span-9 lg:h-full lg:pr-4 lg:pl-0 rtl:lg:pr-0 rtl:lg:pl-4{% block content_styles %}{% endblock %}">
         {% block content %}{% endblock %}
       </section>
     </div>

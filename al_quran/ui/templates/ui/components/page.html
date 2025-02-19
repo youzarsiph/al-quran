@@ -4,7 +4,7 @@
   <article id="page-{{ page.id }}" class="relative card bg-base-100 rounded-box">
     <header class="absolute inset-x-0 top-0 flex items-center justify-between gap-4 px-4 py-2 glass lg:rounded-t-box">
       <div class="tooltip tooltip-bottom" data-tip="{% translate 'Read' %}">
-        <a href="{% url 'al-quran:chapter-details' page.part_id %}" class="badge badge-xs badge-primary">
+        <a href="{% url 'al-quran:chapter-details' page.chapter_id %}" class="badge badge-xs badge-primary">
           <h4 style="font-family: 'Noto Kufi Arabic';">{{ page.chapter }}</h4>
         </a>
       </div>
@@ -21,7 +21,7 @@
         {% for verse in page.verses.all %}
         {% if verse.number == 1 %}
         {% with chapter=verse.chapter %}
-        <div class="flex items-center justify-between gap-4 p-4 rounded-box bg-base-300 my-4">
+        <div class="flex items-center justify-between gap-4 p-4 -mx-4 bg-base-300 my-4">
           <span class="badge badge-xs badge-accent">
             {% if chapter.type %}{% translate 'Meccan' %}{% else %}{% translate 'Medinan' %}{% endif %},
             {{ chapter.verse_count }} {% translate 'verses' %}
@@ -30,7 +30,7 @@
           <span class="text-2xl font-black">{{ chapter }}</span>
 
           <div class="tooltip tooltip-right" data-tip="{% translate 'Order of the chapter' %}">
-            <span class="badge badge-xs badge-success">#{{ chapter.id }}</span>
+            <span class="badge badge-xs badge-success">{% translate 'Chapter' %} {{ chapter.id }}</span>
           </div>
         </div>
         {% endwith %}
@@ -42,7 +42,7 @@
         <span id="verse-{{ verse.number }}" class="text-xl/12">{{ verse.content }}</span>
         {% endif %}
 
-        <span class="btn btn-xs btn-soft btn-primary">{{ verse.number }} </span>
+        <button type="button" class="btn btn-sm btn-soft btn-primary font-black"> {{ verse.number }} </button>
         {% endfor %}
       </div>
     </main>

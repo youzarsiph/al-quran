@@ -9,9 +9,12 @@
 {% block header_content %}
 <div class="grid gap-1">
   <h2 class="text-xl font-black">{{ quarter.name }}</h2>
-  <span class="text-xs">
-    {{ quarter.page_count }} {% translate 'pages' %}, {{ quarter.verse_count }} {% translate 'verses' %}
-  </span>
+  <div class="flex items-center gap-2 text-xs">
+    <span class="badge badge-xs badge-primary">{{ quarter.part }}</span>
+    <span class="badge badge-xs badge-secondary">{{ quarter.group }}</span>
+    <span class="badge badge-xs badge-accent">{{ quarter.page_count }} {% translate 'pages' %}</span>
+    <span class="badge badge-xs badge-info">{{ quarter.verse_count }} {% translate 'verses' %}</span>
+  </div>
 </div>
 {% endblock %}
 

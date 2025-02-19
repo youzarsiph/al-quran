@@ -9,9 +9,10 @@
 {% block header_content %}
 <div class="grid gap-1">
   <h2 class="text-xl font-black">{{ part.name }}</h2>
-  <span class="text-xs">
-    {{ part.page_count }} {% translate 'pages' %}, {{ part.verse_count }} {% translate 'verses' %}
-  </span>
+  <div class="flex items-center gap-2 text-xs">
+    <span class="badge badge-xs badge-accent">{{ part.page_count }} {% translate 'pages' %}</span>
+    <span class="badge badge-xs badge-info">{{ part.verse_count }} {% translate 'verses' %}</span>
+  </div>
 </div>
 {% endblock %}
 
