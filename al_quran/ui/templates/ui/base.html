@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 
-<html lang="en" data-theme="dim">
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}" data-theme="emerald">
 
 <head>
-  {% load i18n %}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}{% translate 'Al-Quran' %}{% endblock %}</title>
@@ -89,27 +91,122 @@
               <span class="sr-only">{% translate 'Chapters' %}</span>
             </a>
           </li>
-          <li class="tooltip tooltip-bottom tooltip-secondary" data-tip="{% translate 'Parts' %}">
-            <a href="{% url 'al-quran:parts' %}" class="btn btn-square btn-ghost">
+          <li class="tooltip tooltip-bottom tooltip-secondary" data-tip="{% translate 'More' %}">
+            <button class="btn btn-square btn-ghost" popovertarget="parts" style="anchor-name:--parts-anchor">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-component size-5">
-                <path
-                  d="M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z" />
-                <path
-                  d="M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.916a1 1 0 0 0-1.414 0z" />
-                <path
-                  d="M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z" />
-                <path
-                  d="M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z" />
+                class="lucide lucide-ellipsis-vertical size-5">
+                <circle cx="12" cy="12" r="1" />
+                <circle cx="12" cy="5" r="1" />
+                <circle cx="12" cy="19" r="1" />
               </svg>
 
-              <span class="sr-only">{% translate 'Parts' %}</span>
-            </a>
+              <span class="sr-only">{% translate 'More' %}</span>
+            </button>
+
+            <ul class="menu dropdown dropdown-bottom w-32 rounded-box bg-base-100 shadow-sm lg:dropdown-right" popover
+              id="parts" style="position-anchor:--parts-anchor">
+              <li class="menu-title">{% translate 'More' %}</li>
+              <li>
+                <a class="flex items-center gap-4" href="{% url 'al-quran:parts' %}">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-component size-4">
+                    <path
+                      d="M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z" />
+                    <path
+                      d="M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.916a1 1 0 0 0-1.414 0z" />
+                    <path
+                      d="M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z" />
+                    <path
+                      d="M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z" />
+                  </svg>
+
+                  <span>{% translate 'Parts' %}</span>
+                </a>
+              </li>
+              <li>
+                <a class="flex items-center gap-4" href="{% url 'al-quran:groups' %}">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-grid-2x2 size-4">
+                    <path d="M12 3v18" />
+                    <path d="M3 12h18" />
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                  </svg>
+
+                  <span>{% translate 'Groups' %}</span>
+                </a>
+              </li>
+              <li>
+                <a class="flex items-center gap-4" href="{% url 'al-quran:quarters' %}">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-grid-3x3 size-4">
+                    <rect width="18" height="18" x="3" y="3" rx="2" />
+                    <path d="M3 9h18" />
+                    <path d="M3 15h18" />
+                    <path d="M9 3v18" />
+                    <path d="M15 3v18" />
+                  </svg>
+
+                  <span>{% translate 'Quarters' %}</span>
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
 
         <ul class="menu menu-horizontal items-center gap-2 p-0 lg:menu-vertical">
+          <li class="tooltip tooltip-bottom tooltip-accent lg:tooltip-top" data-tip="{% translate 'Language' %}">
+            <button class="btn btn-square btn-ghost" popovertarget="language" style="anchor-name:--language-anchor">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-languages size-5">
+                <path d="m5 8 6 6" />
+                <path d="m4 14 6-6 2-3" />
+                <path d="M2 5h12" />
+                <path d="M7 2h1" />
+                <path d="m22 22-5-10-5 10" />
+                <path d="M14 18h6" />
+              </svg>
+
+              <span class="sr-only">{% translate 'Language' %}</span>
+            </button>
+
+            <ul
+              class="menu dropdown dropdown-left dropdown-bottom rounded-box bg-base-100 shadow-sm lg:dropdown-right lg:dropdown-top"
+              popover id="language" style="position-anchor:--language-anchor">
+              <li class="menu-title">{% translate 'Language' %}</li>
+              <form id="lang-form" class="hidden" action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+              </form>
+
+              {% get_available_languages as LANGUAGES %}
+              {% get_language_info_list for LANGUAGES as languages %}
+              {% for language in languages %}
+              <li>
+                <label class="flex flex-row items-center justify-between gap-8">
+                  <div class="flex flex-row items-center gap-2">
+                    <input form="lang-form" type="submit" name="language" value="{{ language.code|upper }}"
+                      aria-label="{{ language.name_local }} ({{ language.code }})" />
+                    <span>{{ language.name_local }} ({{ language.code }})</span>
+                  </div>
+
+                  {% if language.code == LANGUAGE_CODE %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-check text-primary">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                  {% endif %}
+                </label>
+
+              </li>
+              {% endfor %}
+            </ul>
+          </li>
           <li class="tooltip tooltip-bottom tooltip-accent lg:tooltip-top" data-tip="{% translate 'Profile' %}">
             <button class="btn btn-square btn-ghost" popovertarget="profile" style="anchor-name:--profile-anchor">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -123,7 +220,7 @@
             </button>
 
             <ul
-              class="menu dropdown dropdown-left dropdown-bottom w-32 rounded-box bg-base-100 shadow-sm lg:dropdown-right lg:dropdown-top"
+              class="menu dropdown dropdown-left dropdown-bottom rounded-box bg-base-100 shadow-sm lg:dropdown-right lg:dropdown-top"
               popover id="profile" style="position-anchor:--profile-anchor">
               <li class="menu-title">Profile</li>
               <li>

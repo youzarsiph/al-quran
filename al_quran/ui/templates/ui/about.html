@@ -8,57 +8,64 @@
 
 {% block main %}
 <div class="grid h-full w-full grid-cols-12 gap-4 px-4 lg:px-0 lg:py-4 lg:pr-4 lg:grid-rows-12 rtl:lg:pr-0 rtl:lg:pl-4">
-  <!-- Top Left -->
+  <section class="col-span-12 lg:col-span-8 lg:row-span-6">
+    <div class="card w-full h-full bg-primary text-primary-content">
+      <div class="card-body">
+        <h1 class="text-5xl font-black lg:text-6xl" style="font-family: 'Noto Serif';">
+          {% translate 'Embracing Tradition through Innovation' %}
+        </h1>
+
+        <p class="mt-6 text-lg">
+          {% blocktranslate %}For centuries, the Quran has guided hearts and minds. We're honored to continue this
+          legacy by harnessing modern technology to make its teachings more accessible than ever before. Join us in
+          bridging the past and the future.{% endblocktranslate %}
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="col-span-12 lg:col-span-4 lg:row-span-6">
+    <div class="card w-full h-full bg-accent text-accent-content">
+      <div class="card-body">
+        <h1 class="text-3xl font-bold">
+          {% translate 'Our Mission' %}
+        </h1>
+        <p class="mt-6">
+          {% blocktranslate %}We believe in the power of technology to bring hearts closer to the Quran. Born out of a
+          passion to serve Islam, our open-source project aims to make the timeless wisdom of the Quran accessible to
+          everyone, everywhere.{% endblocktranslate %}
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="col-span-12 lg:col-span-6 lg:row-span-6">
-    <div class="card card-body gap-6 h-full w-full bg-base-200 rounded-box">
-      <h1 class="text-5xl font-black tracking-wide lg:text-7xl">
-        {% translate 'About' %} <span class="text-primary">{% translate 'Al-Quran' %}</span>
-      </h1>
-
-      <p class="text-xl font-semibold">
-        TEXT
-      </p>
+    <div class="card w-full h-full bg-neutral text-neutral-content">
+      <div class="card-body">
+        <h1 class="text-3xl font-bold">
+          {% translate 'Get Involved' %}
+        </h1>
+        <p class="mt-6">
+          {% blocktranslate %}Your feedback and support are the heartbeat of this project. Share your thoughts, suggest
+          features, or report issues. Together, we can build something truly impactful.{% endblocktranslate %}
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- Top Right -->
-  <section class="col-span-12 lg:col-span-3 lg:row-span-3">
-    <div class="card card-body p-4 gap-4 h-full w-full bg-base-200 rounded-box">
-      <h1 class="text-3xl font-black tracking-wide text-secondary lg:text-4xl">
-        {% translate 'Al-Quran' %}
-      </h1>
-
-      <p class="font-semibold">TEXT</p>
-    </div>
-  </section>
-
-  <section class="col-span-12 lg:col-span-3 lg:row-span-3">
-    <div class="card card-body p-4 gap-4 h-full w-full bg-base-200 rounded-box">
-      <h1 class="text-3xl font-black tracking-wide text-secondary lg:text-4xl">
-        {% translate 'Al-Quran' %}
-      </h1>
-
-      <p class="font-semibold">TEXT</p>
-    </div>
-  </section>
-
-  <section class="col-span-12 lg:col-span-3 lg:row-span-3">
-    <div class="card card-body p-4 gap-4 h-full w-full bg-base-200 rounded-box">
-      <h1 class="text-3xl font-black tracking-wide text-secondary lg:text-4xl">
-        {% translate 'Al-Quran' %}
-      </h1>
-
-      <p class="font-semibold">TEXT</p>
-    </div>
-  </section>
-
-  <section class="col-span-12 lg:col-span-3 lg:row-span-3">
-    <div class="card card-body p-4 gap-4 h-full w-full bg-base-200 rounded-box">
-      <h1 class="text-3xl font-black tracking-wide text-secondary lg:text-4xl">
-        {% translate 'Al-Quran' %}
-      </h1>
-
-      <p class="font-semibold">TEXT</p>
+  <section class="col-span-12 lg:col-span-6 lg:row-span-6">
+    <div class="card w-full h-full bg-warning text-warning-content">
+      <div class="card-body">
+        <h1 class="text-3xl font-bold">
+          {% translate 'Imagine the Possibilities' %}
+        </h1>
+        <p class="mt-6">
+          {% blocktranslate %}By joining us, you're not just using an app—you're becoming part of a community dedicated
+          to exploring and sharing the profound wisdom of the Quran. Let's make a difference together.
+          {% endblocktranslate %}
+        </p>
+      </div>
     </div>
   </section>
 </div>
