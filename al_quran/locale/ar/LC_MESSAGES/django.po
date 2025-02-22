@@ -1,0 +1,504 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-21 09:12+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+#: al-quran/al_quran/ui/templates/ui/about.html:5  
+#: al-quran/al_quran/ui/templates/ui/base.html:62  
+#: al-quran/al_quran/ui/templates/ui/base.html:73  
+#: al-quran/ui/templates/ui/about.html:5 al_quran/ui/templates/ui/base.html:62  
+#: al-quran/ui/templates/ui/base.html:73  
+msgid "About"  
+msgstr "حول"  
+
+#: al-quran/al_quran/ui/templates/ui/about.html:15  
+#: al-quran/ui/templates/ui/about.html:15  
+msgid "Embracing Tradition through Innovation"  
+msgstr "احتضان التقليد من خلال الابتكار"  
+
+#: al-quran/al_quran/ui/templates/ui/about.html:19  
+#: al-quran/ui/templates/ui/about.html:19  
+msgid ""  
+"For centuries, the Quran has guided hearts and minds. We're honored to "  
+"continue this\n"  
+"          legacy by harnessing modern technology to make its teachings more "  
+"accessible than ever before. Join us in\n"  
+"          bridging the past and the future."  
+msgstr ""  
+"على مدى قرون، كان القرآن يوجه القلوب والعقول. نحن فخورون بمواصلة هذا\n"  
+"          الإرث من خلال استغلال التكنولوجيا الحديثة لجعل تعاليمه أكثر "  
+"تيسيرًا من أي وقت مضى. انضم إلينا في\n"  
+"          ربط الماضي بالمستقبل."  
+
+#: al-quran/al_quran/ui/templates/ui/about.html:32  
+#: al-quran/ui/templates/ui/about.html:32  
+msgid "Our Mission"  
+msgstr "مهمتنا"  
+
+#: al-quran/al_quran/ui/templates/ui/about.html:35  
+#: al-quran/ui/templates/ui/about.html:35  
+msgid ""  
+"We believe in the power of technology to bring hearts closer to the Quran. "  
+"Born out of a\n"  
+"          passion to serve Islam, our open-source project aims to make the "  
+"timeless wisdom of the Quran accessible to\n"  
+"          everyone, everywhere."  
+msgstr ""  
+"نحن نؤمن بقوة التكنولوجيا في تقريب القلوب من القرآن. وُلد هذا المشروع\n"  
+"          مفتوح المصدر من شغف لخدمة الإسلام، ويهدف إلى جعل الحكمة الخالدة "  
+"للقرآن في متناول\n"  
+"          الجميع، في كل مكان."  
+
+#: al-quran/al_quran/ui/templates/ui/about.html:47  
+#: al-quran/ui/templates/ui/about.html:47  
+msgid "Get Involved"  
+msgstr "شارك معنا"  
+
+#: al-quran/al_quran/ui/templates/ui/about.html:50  
+#: al-quran/ui/templates/ui/about.html:50  
+msgid ""  
+"Your feedback and support are the heartbeat of this project. Share your "  
+"thoughts, suggest\n"  
+"          features, or report issues. Together, we can build something truly "  
+"impactful."  
+msgstr ""  
+"إن ملاحظاتك ودعمك هما نبض هذا المشروع. شارك أفكارك، واقترح\n"  
+"          ميزات، أو أبلغ عن مشكلات. معًا، يمكننا بناء شيء مؤثر حقًا."  
+
+#: al-quran/al_quran/ui/templates/ui/about.html:61  
+#: al-quran/ui/templates/ui/about.html:61  
+msgid "Imagine the Possibilities"  
+msgstr "تخيل الإمكانيات"  
+
+#: al-quran/al_quran/ui/templates/ui/about.html:64  
+#: al-quran/ui/templates/ui/about.html:64  
+msgid ""  
+"By joining us, you're not just using an app—you're becoming part of a "  
+"community dedicated\n"  
+"          to exploring and sharing the profound wisdom of the Quran. Let's "  
+"make a difference together.\n"  
+"          "  
+msgstr ""  
+"من خلال الانضمام إلينا، أنت لا تستخدم مجرد تطبيق—بل تصبح جزءًا من مجتمع\n"  
+"          مكرس لاستكشاف ومشاركة الحكمة العميقة للقرآن. دعونا نحدث فرقًا معًا.\n"  
+"          "  
+
+#: al-quran/al_quran/ui/templates/ui/base.html:11  
+#: al-quran/al_quran/ui/templates/ui/base.html:32  
+#: al-quran/al_quran/ui/templates/ui/base.html:46  
+#: al-quran/ui/templates/ui/base.html:11 al_quran/ui/templates/ui/base.html:32  
+#: al-quran/ui/templates/ui/base.html:46  
+msgid "Al-Quran"  
+msgstr "القرآن الكريم"  
+
+#: al-quran/al_quran/ui/templates/ui/base.html:49  
+#: al-quran/al_quran/ui/templates/ui/base.html:59  
+#: al-quran/ui/templates/ui/base.html:49 al_quran/ui/templates/ui/base.html:59  
+msgid "Home"  
+msgstr "الرئيسية"  
+
+#: al-quran/al_quran/ui/templates/ui/base.html:76  
+#: al-quran/al_quran/ui/templates/ui/base.html:91  
+#: al-quran/al_quran/ui/templates/ui/list/chapters.html:5  
+#: al-quran/al_quran/ui/templates/ui/list/chapters.html:7  
+#: al-quran/al_quran/ui/templates/ui/list/chapters.html:42  
+#: al-quran/ui/templates/ui/base.html:76 al_quran/ui/templates/ui/base.html:91  
+#: al-quran/ui/templates/ui/list/chapters.html:5  
+#: al-quran/ui/templates/ui/list/chapters.html:7  
+#: al-quran/ui/templates/ui/list/chapters.html:42  
+msgid "Chapters"  
+msgstr "السور"  
+
+#: al-quran/al_quran/ui/templates/ui/base.html:94  
+#: al-quran/al_quran/ui/templates/ui/base.html:104  
+#: al-quran/al_quran/ui/templates/ui/base.html:109  
+#: al-quran/ui/templates/ui/base.html:94 al_quran/ui/templates/ui/base.html:104  
+#: al-quran/ui/templates/ui/base.html:109  
+msgid "More"  
+msgstr "المزيد"
+
+#: al-quran/al_quran/ui/templates/ui/base.html:125  
+#: al-quran/al_quran/ui/templates/ui/list/parts.html:5  
+#: al-quran/al_quran/ui/templates/ui/list/parts.html:7  
+#: al-quran/al_quran/ui/templates/ui/list/parts.html:42  
+#: al_quran/ui/templates/ui/base.html:125  
+#: al_quran/ui/templates/ui/list/parts.html:5  
+#: al_quran/ui/templates/ui/list/parts.html:7  
+#: al_quran/ui/templates/ui/list/parts.html:42  
+msgid "Parts"  
+msgstr "أجزاء"  
+
+#: al-quran/al_quran/ui/templates/ui/base.html:138  
+#: al-quran/al_quran/ui/templates/ui/list/groups.html:5  
+#: al-quran/al_quran/ui/templates/ui/list/groups.html:7  
+#: al-quran/al_quran/ui/templates/ui/list/groups.html:42  
+#: al_quran/ui/templates/ui/base.html:138  
+#: al_quran/ui/templates/ui/list/groups.html:5  
+#: al_quran/ui/templates/ui/list/groups.html:7  
+#: al_quran/ui/templates/ui/list/groups.html:42  
+msgid "Groups"  
+msgstr "مجموعة"  
+
+#: al-quran/al_quran/ui/templates/ui/base.html:153  
+#: al-quran/al_quran/ui/templates/ui/list/quarters.html:5  
+#: al-quran/al_quran/ui/templates/ui/list/quarters.html:7  
+#: al-quran/al_quran/ui/templates/ui/list/quarters.html:42  
+#: al_quran/ui/templates/ui/base.html:153  
+#: al_quran/ui/templates/ui/list/quarters.html:5  
+#: al_quran/ui/templates/ui/list/quarters.html:7  
+#: al_quran/ui/templates/ui/list/quarters.html:42  
+msgid "Quarters"  
+msgstr "أرباع"  
+
+#: al-quran/al_quran/ui/templates/ui/base.html:161  
+#: al-quran/al_quran/ui/templates/ui/base.html:174  
+#: al-quran/al_quran/ui/templates/ui/base.html:180  
+#: al_quran/ui/templates/ui/base.html:161  
+#: al_quran/ui/templates/ui/base.html:174  
+#: al_quran/ui/templates/ui/base.html:180  
+msgid "Language"  
+msgstr "اللغة"  
+
+#: al-quran/al_quran/ui/templates/ui/base.html:210  
+#: al-quran/al_quran/ui/templates/ui/base.html:219  
+#: al_quran/ui/templates/ui/base.html:210  
+#: al_quran/ui/templates/ui/base.html:219  
+msgid "Profile"  
+msgstr "الملف الشخصي"  
+
+#: al-quran/al_quran/ui/templates/ui/components/page.html:6  
+#: al-quran/al_quran/ui/templates/ui/components/page.html:12  
+#: al-quran/al_quran/ui/templates/ui/components/page.html:52  
+#: al-quran/al_quran/ui/templates/ui/components/page.html:60  
+#: al-quran/al_quran/ui/templates/ui/list/chapters.html:27  
+#: al-quran/al_quran/ui/templates/ui/list/chapters.html:35  
+#: al-quran/al_quran/ui/templates/ui/list/groups.html:27  
+#: al-quran/al_quran/ui/templates/ui/list/groups.html:35  
+#: al-quran/al_quran/ui/templates/ui/list/parts.html:27  
+#: al-quran/al_quran/ui/templates/ui/list/parts.html:35  
+#: al-quran/al_quran/ui/templates/ui/list/quarters.html:27  
+#: al-quran/al_quran/ui/templates/ui/list/quarters.html:35  
+#: al_quran/ui/templates/ui/components/page.html:6  
+#: al_quran/ui/templates/ui/components/page.html:12  
+#: al_quran/ui/templates/ui/components/page.html:52  
+#: al_quran/ui/templates/ui/components/page.html:60  
+#: al_quran/ui/templates/ui/list/chapters.html:27  
+#: al_quran/ui/templates/ui/list/chapters.html:35  
+#: al_quran/ui/templates/ui/list/groups.html:27  
+#: al_quran/ui/templates/ui/list/groups.html:35  
+#: al_quran/ui/templates/ui/list/parts.html:27  
+#: al_quran/ui/templates/ui/list/parts.html:35  
+#: al_quran/ui/templates/ui/list/quarters.html:27  
+#: al_quran/ui/templates/ui/list/quarters.html:35  
+msgid "Read"  
+msgstr "اقرأ"
+
+#: al-quran/al_quran/ui/templates/ui/components/page.html:26  
+#: al-quran/al_quran/ui/templates/ui/detail/chapter.html:17  
+#: al-quran/al_quran/ui/templates/ui/list/chapters.html:23  
+#: al_quran/ui/templates/ui/components/page.html:26  
+#: al-quran/ui/templates/ui/detail/chapter.html:17  
+#: al_quran/ui/templates/ui/list/chapters.html:23  
+msgid "Meccan"  
+msgstr "مكية"  
+
+#: al-quran/al_quran/ui/templates/ui/components/page.html:26  
+#: al-quran/al_quran/ui/templates/ui/detail/chapter.html:17  
+#: al-quran/al_quran/ui/templates/ui/list/chapters.html:23  
+#: al_quran/ui/templates/ui/components/page.html:26  
+#: al_quran/ui/templates/ui/detail/chapter.html:17  
+#: al_quran/ui/templates/ui/list/chapters.html:23  
+msgid "Medinan"  
+msgstr "مدنية"  
+
+#: al-quran/al_quran/ui/templates/ui/components/page.html:27  
+#: al-quran/al_quran/ui/templates/ui/detail/chapter.html:22  
+#: al-quran/al_quran/ui/templates/ui/detail/group.html:15  
+#: al-quran/al_quran/ui/templates/ui/detail/part.html:14  
+#: al-quran/al_quran/ui/templates/ui/detail/quarter.html:16  
+#: al-quran/al_quran/ui/templates/ui/list/chapters.html:24  
+#: al-quran/al_quran/ui/templates/ui/list/groups.html:24  
+#: al-quran/al_quran/ui/templates/ui/list/parts.html:24  
+#: al-quran/al_quran/ui/templates/ui/list/quarters.html:24  
+#: al_quran/ui/templates/ui/components/page.html:27  
+#: al_quran/ui/templates/ui/detail/chapter.html:22  
+#: al_quran/ui/templates/ui/detail/group.html:15  
+#: al_quran/ui/templates/ui/detail/part.html:14  
+#: al_quran/ui/templates/ui/detail/quarter.html:16  
+#: al_quran/ui/templates/ui/list/chapters.html:24  
+#: al_quran/ui/templates/ui/list/groups.html:24  
+#: al_quran/ui/templates/ui/list/parts.html:24  
+#: al_quran/ui/templates/ui/list/quarters.html:24  
+msgid "verses"  
+msgstr "آيات"  
+
+#: al-quran/al_quran/ui/templates/ui/components/page.html:32  
+#: al_quran/ui/templates/ui/components/page.html:32  
+msgid "Order of the chapter"  
+msgstr "ترتيب السورة"  
+
+#: al-quran/al_quran/ui/templates/ui/components/page.html:33  
+#: al_quran/ui/templates/ui/components/page.html:33  
+msgid "Chapter"  
+msgstr "سورة"  
+
+#: al-quran/al_quran/ui/templates/ui/components/pagination.html:6  
+#: al-quran/al_quran/ui/templates/ui/components/pagination.html:14  
+#: al-quran/al_quran/ui/templates/ui/detail/base.html:36  
+#: al-quran/al_quran/ui/templates/ui/detail/base.html:44  
+#: al_quran/ui/templates/ui/components/pagination.html:6  
+#: al_quran/ui/templates/ui/components/pagination.html:14  
+#: al_quran/ui/templates/ui/detail/base.html:36  
+#: al_quran/ui/templates/ui/detail/base.html:44  
+msgid "Previous"  
+msgstr "السابق"  
+
+#: al-quran/al_quran/ui/templates/ui/components/pagination.html:18  
+#: al-quran/al_quran/ui/templates/ui/components/pagination.html:20  
+#: al_quran/ui/templates/ui/components/pagination.html:18  
+#: al_quran/ui/templates/ui/components/pagination.html:20  
+msgid "First"  
+msgstr "الأول"  
+
+#: al-quran/al_quran/ui/templates/ui/components/pagination.html:25  
+#: al-quran/ui/templates/ui/components/pagination.html:25  
+msgid "Current"  
+msgstr "الحالي"  
+
+#: al-quran/al_quran/ui/templates/ui/components/pagination.html:32  
+#: al-quran/al_quran/ui/templates/ui/components/pagination.html:34  
+#: al_quran/ui/templates/ui/components/pagination.html:32  
+#: al_quran/ui/templates/ui/components/pagination.html:34  
+msgid "Last"  
+msgstr "الأخير"  
+
+#: al-quran/al_quran/ui/templates/ui/components/pagination.html:38  
+#: al-quran/al_quran/ui/templates/ui/components/pagination.html:46  
+#: al-quran/al_quran/ui/templates/ui/detail/base.html:48  
+#: al-quran/al_quran/ui/templates/ui/detail/base.html:56  
+#: al_quran/ui/templates/ui/components/pagination.html:38  
+#: al_quran/ui/templates/ui/components/pagination.html:46  
+#: al_quran/ui/templates/ui/detail/base.html:48  
+#: al_quran/ui/templates/ui/detail/base.html:56  
+msgid "Next"  
+msgstr "التالي"  
+
+#: al-quran/al_quran/ui/templates/ui/detail/base.html:21  
+#: al-quran/al_quran/ui/templates/ui/detail/base.html:28  
+#: al-quran/al_quran/ui/templates/ui/list/base.html:12  
+#: al-quran/al_quran/ui/templates/ui/list/base.html:19  
+#: al_quran/ui/templates/ui/detail/base.html:21  
+#: al_quran/ui/templates/ui/detail/base.html:28  
+#: al_quran/ui/templates/ui/list/base.html:12  
+#: al_quran/ui/templates/ui/list/base.html:19  
+msgid "Back"  
+msgstr "عودة"  
+
+#: al-quran/al_quran/ui/templates/ui/detail/chapter.html:21  
+#: al-quran/al_quran/ui/templates/ui/detail/group.html:14  
+#: al-quran/al_quran/ui/templates/ui/detail/part.html:13  
+#: al-quran/al_quran/ui/templates/ui/detail/quarter.html:15  
+#: al-quran/al_quran/ui/templates/ui/list/groups.html:23  
+#: al-quran/al_quran/ui/templates/ui/list/parts.html:23  
+#: al-quran/al_quran/ui/templates/ui/list/quarters.html:23  
+#: al_quran/ui/templates/ui/detail/chapter.html:21  
+#: al_quran/ui/templates/ui/detail/group.html:14  
+#: al_quran/ui/templates/ui/detail/part.html:13  
+#: al_quran/ui/templates/ui/detail/quarter.html:15  
+#: al_quran/ui/templates/ui/list/groups.html:23  
+#: al_quran/ui/templates/ui/list/parts.html:23  
+#: al_quran/ui/templates/ui/list/quarters.html:23  
+msgid "pages"  
+msgstr "صفحات"
+
+#: al-quran/al_quran/ui/templates/ui/index.html:14  
+#: al-quran/ui/templates/ui/index.html:14  
+msgid "Experience Al-Quran Like Never Before"  
+msgstr "اختبر القرآن كما لم تفعل من قبل"  
+
+#: al-quran/al_quran/ui/templates/ui/index.html:18  
+#: al-quran/ui/templates/ui/index.html:18  
+msgid ""  
+"An open-source, interactive journey bringing you closer to the Divine Word."  
+msgstr "رحلة تفاعلية مفتوحة المصدر تقربك من الكلمة الإلهية."  
+
+#: al-quran/al_quran/ui/templates/ui/index.html:22  
+#: al-quran/ui/templates/ui/index.html:22  
+msgid "Start Your Journey"  
+msgstr "ابدأ رحلتك"  
+
+#: al-quran/al_quran/ui/templates/ui/index.html:32  
+#: al-quran/ui/templates/ui/index.html:32  
+msgid "Interactive Reading Experience"  
+msgstr "تجربة قراءة تفاعلية"  
+
+#: al-quran/al_quran/ui/templates/ui/index.html:36  
+#: al-quran/ui/templates/ui/index.html:36  
+msgid ""  
+"Personalize your reading with customizable themes and fonts. Dive deep into "  
+"the Quran in a\n"  
+"          way that feels just right for\n"  
+"          you."  
+msgstr ""  
+"خصص قراءتك بمواضيع وخطوط قابلة للتخصيص. اغمر في القرآن بطريقة "  
+"          تناسبك تمامًا."  
+
+#: al-quran/al_quran/ui/templates/ui/index.html:48  
+#: al-quran/al_quran/ui/templates/ui/index.html:67  
+#: al-quran/al_quran/ui/templates/ui/index.html:86  
+#: al-quran/ui/templates/ui/index.html:48  
+#: al-quran/ui/templates/ui/index.html:67  
+#: al-quran/ui/templates/ui/index.html:86  
+msgid "Coming soon"  
+msgstr "قريبًا"  
+
+#: al-quran/al_quran/ui/templates/ui/index.html:52  
+#: al-quran/ui/templates/ui/index.html:52  
+msgid "Multi-Language Support"  
+msgstr "دعم متعدد اللغات"  
+
+#: al-quran/al_quran/ui/templates/ui/index.html:56  
+#: al-quran/ui/templates/ui/index.html:56  
+msgid ""  
+"Access translations and tafsir in multiple languages. Bridge understanding "  
+"across cultures\n"  
+"          and deepen your reflections."  
+msgstr ""  
+"احصل على ترجمات وتفسير بلغات متعددة. اجسر الفهم عبر الثقافات "  
+"          وعمق تأملاتك."  
+
+#: al-quran/al_quran/ui/templates/ui/index.html:71  
+#: al-quran/ui/templates/ui/index.html:71  
+msgid "Beautiful Recitations"  
+msgstr "تلاوات جميلة"  
+
+#: al-quran/al_quran/ui/templates/ui/index.html:75  
+#: al-quran/ui/templates/ui/index.html:75  
+msgid ""  
+"Listen to soulful recitations by renowned Qaris from around the world. Let "  
+"the melodious\n"  
+"          voices enhance your connection and understanding."  
+msgstr ""  
+"استمع إلى تلاوات مؤثرة من قراء مشهورين من جميع أنحاء العالم. دع "  
+"          الأصوات العذبة تعزز من اتصالك وفهمك."  
+
+#: al-quran/al_quran/ui/templates/ui/index.html:90  
+#: al-quran/ui/templates/ui/index.html:90  
+msgid "Advanced Search & Bookmarking"  
+msgstr "بحث متقدم وإضافة إلى المفضلة"  
+
+#: al-quran/al_quran/ui/templates/ui/index.html:94  
+#: al-quran/ui/templates/ui/index.html:94  
+msgid ""  
+"Find verses effortlessly with our powerful search tool. Bookmark your "  
+"favorite Ayahs and\n"  
+"          track your progress seamlessly."  
+msgstr ""  
+"ابحث عن الآيات بسهولة باستخدام أداة البحث القوية لدينا. أضف آياتك "  
+"المفضلة إلى المفضلة و"  
+"          تتبع تقدمك بسلاسة."  
+
+#: al-quran/al_quran/ui/templates/ui/list/base.html:28  
+#: al-quran/al_quran/ui/templates/ui/list/base.html:39  
+#: al-quran/ui/templates/ui/list/base.html:28  
+#: al-quran/ui/templates/ui/list/base.html:39  
+msgid "Info"  
+msgstr "معلومات"  
+
+#: al-quran/al_quran/ui/templates/ui/list/base.html:61  
+#: al-quran/ui/templates/ui/list/base.html:61  
+msgid "In times of trouble and chaos"  
+msgstr "في أوقات الشدائد والفوضى"  
+
+#: al-quran/al_quran/ui/templates/ui/list/base.html:69  
+#: al-quran/ui/templates/ui/list/base.html:69  
+msgid "Quran 17:9"  
+msgstr "القرآن 17:9"  
+
+#: al-quran/al_quran/ui/templates/ui/list/base.html:73  
+#: al-quran/ui/templates/ui/list/base.html:73  
+msgid ""  
+"Turning to the Quran can bring peace to our hearts. Its words are a source "  
+"of comfort and solace."  
+msgstr ""  
+"اللجوء إلى القرآن يمكن أن يجلب السلام إلى قلوبنا. كلماته مصدر "  
+"لراحة النفس والسكون."  
+
+#: al-quran/al_quran/ui/templates/ui/list/base.html:86  
+#: al-quran/al_quran/ui/templates/ui/list/base.html:95  
+#: al-quran/al_quran/ui/templates/ui/list/base.html:105  
+#: al-quran/ui/templates/ui/list/base.html:86  
+#: al-quran/ui/templates/ui/list/base.html:95  
+#: al-quran/ui/templates/ui/list/base.html:105  
+msgid "Close"  
+msgstr "إغلاق"  
+
+#: al-quran/al_quran/ui/templates/ui/list/chapters.html:12  
+#: al-quran/ui/templates/ui/list/chapters.html:12  
+msgid "Order"  
+msgstr "ترتيب"  
+
+#: al-quran/al_quran/ui/templates/ui/list/chapters.html:46  
+#: al-quran/ui/templates/ui/list/chapters.html:46  
+msgid ""  
+"The Quran consists of 114 suras, each of which varies in length and covers "  
+"various aspects of\n"  
+"  guidance, laws, and stories. Each surah has a unique theme and message "  
+"that contributes to the overall teachings of\n"  
+"  the Quran."  
+msgstr ""  
+"يتكون القرآن من 114 سورة، تختلف كل منها في الطول وتغطي جوانب "  
+"متنوعة من\n"  
+"  الإرشاد والقوانين والقصص. كل سورة لها موضوع ورسالة فريدة "  
+"تساهم في التعاليم العامة للقرآن."  
+
+#: al-quran/al_quran/ui/templates/ui/list/groups.html:46  
+#: al-quran/ui/templates/ui/list/groups.html:46  
+msgid ""  
+"Each part is further divided into two groups, making a total of 60 groups in "  
+"the Quran. This\n"  
+"  division aids in the structured recitation and memorization of the Quran."  
+msgstr ""  
+"كل جزء ينقسم إلى مجموعتين، مما يجعل المجموع الكلي 60 مجموعة في "  
+"القرآن. هذا\n"  
+"  التقسيم يساعد في التلاوة المنظمة وحفظ القرآن."  
+
+#: al-quran/al_quran/ui/templates/ui/list/parts.html:46  
+#: al-quran/ui/templates/ui/list/parts.html:46  
+msgid ""  
+"The Quran is divided into 30 equal parts. Each part makes it easier for "  
+"Muslims to\n"  
+"  recite the Quran over a period of 30 days, especially during the month of "  
+"Ramadan."  
+msgstr ""  
+"القرآن مقسم إلى 30 جزءًا متساويًا. كل جزء يسهل على المسلمين "  
+"  تلاوة القرآن على مدى 30 يومًا، خاصة خلال شهر رمضان."  
+
+#: al-quran/al_quran/ui/templates/ui/list/quarters.html:46  
+#: al-quran/ui/templates/ui/list/quarters.html:46  
+msgid ""  
+"Each group is divided into four quarters, also known as quarters. This makes a total of 240\n"  
+"  quarters in the Quran. It provides an even more granular division, making "  
+"it easier to track recitation and\n"  
+"  memorization progress."  
+msgstr ""  
+"كل مجموعة مقسمة إلى أربعة أرباع، تُعرف أيضًا باسم "  
+"الأرباع. هذا يجعل الإجمالي 240\n"  
+"  ربعًا في القرآن. توفر هذه التقسيمات توزيعًا أكثر تفصيلاً، مما يجعل من "  
+"الأسهل تتبع تقدم التلاوة و\n"  
+"  الحفظ."
