@@ -1,1 +1,1 @@
-"""Quran API"""
+"""Al-Quran"""

@@ -3,11 +3,11 @@
 from typing import Any, Dict
 from django.views import generic
 
-from al_quran.chapters.models import Chapter
-from al_quran.groups.models import Group
-from al_quran.pages.models import Page
-from al_quran.parts.models import Part
-from al_quran.quarters.models import Quarter
+from al_quran.core.chapters.models import Chapter
+from al_quran.core.groups.models import Group
+from al_quran.core.pages.models import Page
+from al_quran.core.parts.models import Part
+from al_quran.core.quarters.models import Quarter
 from al_quran.ui.mixins import ExtraContextMixin
 
 

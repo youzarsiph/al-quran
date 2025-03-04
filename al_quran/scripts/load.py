@@ -1,14 +1,14 @@
-"""Load Quran data"""
+"""A script to load Quran data"""
 
 import json
 from pathlib import Path
 
-from al_quran.chapters.models import Chapter
-from al_quran.groups.models import Group
-from al_quran.pages.models import Page
-from al_quran.parts.models import Part
-from al_quran.quarters.models import Quarter
-from al_quran.verses.models import Verse
+from al_quran.core.chapters.models import Chapter
+from al_quran.core.groups.models import Group
+from al_quran.core.pages.models import Page
+from al_quran.core.parts.models import Part
+from al_quran.core.quarters.models import Quarter
+from al_quran.core.verses.models import Verse
 
 
 def load_chapters(src: Path) -> None:
@@ -115,6 +115,17 @@ def load_verses(src: Path) -> None:
     )
 
 
+def load_quran(src: Path) -> None:
+    """Load Quran data"""
+
+    load_chapters(src)
+    load_parts(src)
+    load_groups(src)
+    load_quarters(src)
+    load_pages(src)
+    load_verses(src)
+
+
 def run(src: str = "quran") -> None:
     """Load quran data"""
 
@@ -128,10 +139,5 @@ def run(src: str = "quran") -> None:
         return
 
     print("Loading Quran data")
-    load_chapters(src_path)
-    load_parts(src_path)
-    load_groups(src_path)
-    load_quarters(src_path)
-    load_pages(src_path)
-    load_verses(src_path)
+    load_quran(src_path)
     print("Done")

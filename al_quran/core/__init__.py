@@ -1,0 +1,1 @@
+"""Quran core apps"""
