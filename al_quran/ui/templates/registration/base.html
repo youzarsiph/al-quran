@@ -4,8 +4,6 @@
 
 {% block title %}{{ block.super }} | {% translate 'Profile' %}{% endblock %}
 
-{% block content_styles %} hidden lg:block{% endblock %}
-
 <div class="hidden">
   <div class="lg:block"></div>
 </div>
@@ -103,7 +101,7 @@
 <section class="relative h-full w-full">
   <header class="absolute inset-x-0 top-0 z-10">
     <nav class="flex items-center p-4 gap-2 backdrop-blur-3xl rounded-t-box">
-      <div class="breadcrumbs p-0">
+      <div class="breadcrumbs text-xs p-0 lg:text-base">
         <ol>
           <li>
             <a href="{% url 'al-quran:profile' %}">

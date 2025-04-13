@@ -25,7 +25,8 @@
         <div class="card card-body flex-row items-center justify-between rounded-box bg-base-100 shadow-sm my-4">
           <div class="tooltip tooltip-bottom" data-tip="{% translate 'Order' %}">
             <span class="badge badge-xs badge-neutral lg:badge-md">
-              {% translate 'Chapter' %} {{ verse.chapter.id }}
+              <span class="hidden md:block">{% translate 'Chapter' %} </span>
+              {{ verse.chapter.id }}
             </span>
           </div>
 
@@ -33,7 +34,8 @@
 
           <div class="tooltip tooltip-bottom" data-tip="{% translate 'Verse count' %}">
             <span class="badge badge-xs badge-neutral lg:badge-md">
-              {% translate 'Verses' %} {{ verse.chapter.verse_count }}
+              <span class="hidden md:block">{% translate 'Verses' %} </span>
+              {{ verse.chapter.verse_count }}
             </span>
           </div>
         </div>
@@ -44,7 +46,7 @@
         <span id="verse-{{ verse.number }}" class="text-base/8 lg:text-2xl/12">{{ verse.content }}</span>
         {% endif %}
 
-        <button type="button" class="btn btn-xs btn-soft btn-primary lg:btn-md"> {{ verse.number }} </button>
+        <button type="button" class="btn btn-xs btn-square btn-primary lg:btn-sm"> {{ verse.number }} </button>
         {% endfor %}
       </div>
     </main>

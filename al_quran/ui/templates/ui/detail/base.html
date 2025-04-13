@@ -2,8 +2,8 @@
 
 {% load i18n %}
 
-{% block sidebar_styles %} hidden lg:block{% endblock %}
-{% block content_styles %}{% endblock %}
+{% block nav_styles %} hidden lg:block{% endblock %}
+{% block main_styles %}lg:pl-0{% endblock %}
 
 {% block pagination %}{% endblock %}
 
@@ -12,7 +12,7 @@
   <section class="relative flex h-full flex-col gap-6">
     <header class="absolute inset-x-0 top-0 z-20">
       <nav class="flex items-center justify-between px-4 py-2 gap-2 backdrop-blur-3xl rounded-t-box lg:py-4">
-        <div class="breadcrumbs p-0">
+        <div class="breadcrumbs text-xs/6 p-0 lg:text-base/8">
           <ol>
             {% block breadcrumbs %}{% endblock %}
           </ol>
