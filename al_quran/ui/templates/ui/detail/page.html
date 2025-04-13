@@ -1,0 +1,18 @@
+{% extends 'ui/detail/base.html' %}
+
+{% load i18n %}
+
+{% block title %}{{ block.super }} | {{ page.name }}{% endblock %}
+
+{% block breadcrumbs %}
+<li>
+  <a href="{% url 'al-quran:pages' %}">{% translate 'Pages' %}</a>
+</li>
+<li>
+  {{ page.name }}
+</li>
+{% endblock %}
+
+
+{% block prev_url %}{% url 'al-quran:page-details' prev_id %}{% endblock %}
+{% block next_url %}{% url 'al-quran:page-details' next_id %}{% endblock %}

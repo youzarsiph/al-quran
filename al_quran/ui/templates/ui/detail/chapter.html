@@ -4,25 +4,126 @@
 
 {% block title %}{{ block.super }} | {{ chapter.name }}{% endblock %}
 
-{% block header_back_url %}{% url 'al-quran:chapters' %}{% endblock %}
-
-{% block header_content %}
-<div class="grid gap-1">
-  <div class="flex items-center gap-2">
-    <h2 class="text-xl font-black" style="font-family: 'Noto Kufi Arabic';">
-      {{ chapter.name }}
-    </h2>
-
-    <span class="badge badge-sm badge-primary">
-      {% if chapter.type %}{% translate 'Meccan' %}{% else %}{% translate 'Medinan' %}{% endif %}
-    </span>
-  </div>
-  <div class="flex items-center gap-2 text-xs">
-    <span class="badge badge-xs badge-accent">{{ chapter.page_count }} {% translate 'pages' %}</span>
-    <span class="badge badge-xs badge-info">{{ chapter.verse_count }} {% translate 'verses' %}</span>
-  </div>
-</div>
+{% block breadcrumbs %}
+<li>
+  <a href="{% url 'al-quran:chapters' %}">{% translate 'Chapters' %}</a>
+</li>
+<li>
+  <h2 class="text-base/8" style="font-family: '{{ user.font|default:'Noto Kufi Arabic' }}';">
+    سُورَةُ {{ chapter.name }}
+  </h2>
+</li>
 {% endblock %}
 
 {% block prev_url %}{% url 'al-quran:chapter-details' prev_id %}{% endblock %}
 {% block next_url %}{% url 'al-quran:chapter-details' next_id %}{% endblock %}
+
+{% block extra_btns %}
+<div class="tooltip tooltip-bottom tooltip-primary" data-tip="{% translate 'Info' %}">
+  <button type="button" onclick="info.showModal()" class="btn btn-sm btn-square btn-ghost lg:btn-md">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-info size-4 lg:size-6">
+      <path
+        d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
+      <line x1="12" x2="12" y1="16" y2="12" />
+      <line x1="12" x2="12.01" y1="8" y2="8" />
+    </svg>
+
+    <span class="sr-only">{% translate 'Info' %}</span>
+  </button>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+
+<dialog id="info" class="modal rounded-box">
+  <section class="modal-box grid gap-2 backdrop-blur-3xl bg-base-100">
+    <header class="flex items-center justify-between gap-2">
+      <h1 class="text-2xl font-semibold">
+        {% translate 'Chapter' %} {{ chapter.id }}
+      </h1>
+
+      <form method="dialog" class="tooltip tooltip-bottom" data-tip="{% translate 'Close' %}">
+        <button type="submit" class="btn flex btn-square btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-x size-4 lg:size-6">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+
+          <span class="sr-only">{% translate 'Close' %}</span>
+        </button>
+      </form>
+    </header>
+
+    <main class="grid gap-2">
+      <ol class="list">
+        <li class="list-row items-center">
+          <div></div>
+          <div>
+            <h2 class="text-lg font-semibold">{% translate 'Chapter' %}</h2>
+          </div>
+          <div>
+            <p class="badge badge-neutral">{{ chapter.id }}</p>
+          </div>
+        </li>
+        <li class="list-row items-center">
+          <div></div>
+          <div>
+            <h2 class="text-lg font-semibold">{% translate 'Name' %}</h2>
+          </div>
+          <div>
+            <p class="badge badge-neutral" style="font-family: '{{ user.font|default:'Noto Kufi Arabic' }}';">
+              سُورَةُ {{ chapter.name }}
+            </p>
+          </div>
+        </li>
+        <li class="list-row items-center">
+          <div></div>
+          <div>
+            <h2 class="text-lg font-semibold">{% translate 'Type' %}</h2>
+          </div>
+          <div>
+            <p class="badge badge-neutral">
+              {% if chapter.type %}{% translate 'Meccan' %}{% else %}{% translate 'Medinan' %}{% endif %}
+            </p>
+          </div>
+        </li>
+        <li class="list-row items-center">
+          <div></div>
+          <div>
+            <h2 class="text-lg font-semibold">{% translate 'Order' %}</h2>
+          </div>
+          <div>
+            <p class="badge badge-neutral"> {{ chapter.order }}</p>
+          </div>
+        </li>
+        <li class="list-row items-center">
+          <div></div>
+          <div>
+            <h2 class="text-lg font-semibold">{% translate 'Page count' %}</h2>
+          </div>
+          <div>
+            <p class="badge badge-neutral"> {{ chapter.page_count }}</p>
+          </div>
+        </li>
+        <li class="list-row items-center">
+          <div></div>
+          <div>
+            <h2 class="text-lg font-semibold">{% translate 'Verse count' %}</h2>
+          </div>
+          <div>
+            <p class="badge badge-neutral"> {{ chapter.verse_count }}</p>
+          </div>
+        </li>
+      </ol>
+    </main>
+
+    <form method="dialog" class="modal-action justify-center">
+      <button type="submit" class="btn w-full btn-primary">{% translate 'Close' %}</button>
+    </form>
+  </section>
+</dialog>
+{% endblock %}

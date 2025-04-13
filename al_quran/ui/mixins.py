@@ -12,6 +12,13 @@ class AdminUserMixin(UserPassesTestMixin):
         return self.request.user.is_staff
 
 
+class AccountOwnerMixin(UserPassesTestMixin):
+    """Check if the user is owner of the account"""
+
+    def test_func(self) -> bool | None:
+        return self.request.user == self.get_object()
+
+
 class ExtraContextMixin:
     """Passes extra context to templates"""
 

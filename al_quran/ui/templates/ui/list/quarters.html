@@ -8,11 +8,10 @@
 
 {% block sidebar_content %}
 {% for quarter in quarter_list.all %}
-<li id="item-{{ quarter.id }}" class="list-row items-center">
-  <div class="tooltip tooltip-bottom" data-tip="{{ quarter.part }}-{{ quarter.group }}">
+<li id="item-{{ quarter.id }}" class="list-row relative items-center">
+  <div class="tooltip tooltip-right z-10" data-tip="{{ quarter.part }}, {{ quarter.group }}">
     <div class="avatar avatar-placeholder">
-      <div
-        class="w-10 rounded-full {% cycle 'bg-primary text-primary-content' 'bg-secondary text-secondary-content' 'bg-accent text-accent-content' 'bg-success text-success-content' 'bg-warning text-warning-content' 'bg-error text-error-content' 'bg-neutral text-neutral-content' %}">
+      <div class="w-10 rounded-full bg-primary text-primary-content">
         <span class="text-lg font-black">{{ quarter.id }}</span>
       </div>
     </div>
@@ -24,25 +23,20 @@
       {{ quarter.verse_count }} {% translate 'verses' %}
     </div>
   </div>
-  <div class="tooltip tooltip-bottom" data-tip="{% translate 'Read' %}">
-    <a href="{% url 'al-quran:quarter-details' quarter.id %}" class="btn btn-square btn-primary">
+  <div class="tooltip tooltip-bottom z-10" data-tip="{% translate 'Read' %}">
+    <button class="btn btn-sm btn-square btn-ghost lg:btn-md">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-        class="lucide lucide-chevron-right rtl:rotate-180">
+        class="lucide lucide-chevron-right size-4 lg:size-6 rtl:rotate-180">
         <path d="m9 18 6-6-6-6" />
       </svg>
 
       <span class="sr-only">{% translate 'Read' %}</span>
-    </a>
+    </button>
   </div>
+  <a href="{% url 'al-quran:quarter-details' quarter.id %}" class="absolute inset-0">
+    <span class="sr-only">{% translate 'Read' %}</span>
+  </a>
 </li>
 {% endfor %}
-{% endblock %}
-
-{% block modal_title %}{% translate 'Quarters' %}{% endblock %}
-
-{% block modal_content %}
-<p>
-  {% translate 'Each group is divided into four quarters, also known as quarters. This makes a total of 240 quarters in the Quran. It provides an even more granular division, making it easier to track recitation and memorization progress.' %}
-</p>
 {% endblock %}

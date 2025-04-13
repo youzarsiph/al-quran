@@ -1,0 +1,15 @@
+/* Run this command to generate the output file
+npx @tailwindcss/cli -i ..\static\ui\css\app.css -o ..\static\ui\css\styles.css --cwd ..\..\templates\ -m
+*/
+
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: light --default, dark --prefers-dark, silk, lofi, caramellatte, cupcake, winter, dim, luxury, night, forest, sunset;
+}
+
+@layer base {
+  * {
+    @apply transition-all
+  }
+}

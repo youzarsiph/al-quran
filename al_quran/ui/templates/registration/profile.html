@@ -1,0 +1,11 @@
+{% extends 'registration/base.html' %}
+
+{% load i18n %}
+
+{% block title %}{{ block.super }} | {% translate 'Profile' %}{% endblock %}
+
+{% block main_content %}
+<div class="h-full w-full flex items-center justify-center">
+  <h1 class="text-3xl lg:text-5xl">{% translate 'Welcome' %} {{ request.user }}</h1>
+</div>
+{% endblock %}

@@ -4,17 +4,15 @@
 
 {% block title %}{{ block.super }} | {{ part.name }}{% endblock %}
 
-{% block header_back_url %}{% url 'al-quran:parts' %}{% endblock %}
-
-{% block header_content %}
-<div class="grid gap-1">
-  <h2 class="text-xl font-black">{{ part.name }}</h2>
-  <div class="flex items-center gap-2 text-xs">
-    <span class="badge badge-xs badge-accent">{{ part.page_count }} {% translate 'pages' %}</span>
-    <span class="badge badge-xs badge-info">{{ part.verse_count }} {% translate 'verses' %}</span>
-  </div>
-</div>
+{% block breadcrumbs %}
+<li>
+  <a href="{% url 'al-quran:parts' %}">{% translate 'Parts' %}</a>
+</li>
+<li>
+  {{ part.name }}
+</li>
 {% endblock %}
+
 
 {% block prev_url %}{% url 'al-quran:part-details' prev_id %}{% endblock %}
 {% block next_url %}{% url 'al-quran:part-details' next_id %}{% endblock %}

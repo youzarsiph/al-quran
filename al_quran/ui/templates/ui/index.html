@@ -5,92 +5,139 @@
 {% block body_styles %}{% endblock %}
 
 {% block main %}
-<div class="grid h-full w-full grid-cols-12 gap-4 px-4 lg:px-0 lg:py-4 lg:pr-4 lg:grid-rows-12 rtl:lg:pr-0 rtl:lg:pl-4">
-  <!-- Top Left -->
-  <section class="col-span-12 lg:col-span-8 lg:row-span-6">
-    <div class="card w-full h-full bg-primary text-primary-content">
-      <div class="card-body">
-        <h1 class="text-5xl font-black lg:text-6xl" style="font-family: 'Noto Serif';">
-          {% translate 'Experience Al-Quran Like Never Before' %}
+<div class="grid h-full w-full grid-cols-12 rounded-box bg-base-100">
+  <div class="carousel carousel-vertical h-full w-full col-span-12 rounded-box">
+    <div class="carousel-item h-full w-full">
+      <section class="flex flex-col gap-12 w-full p-4 overflow-auto lg:p-20">
+        <div class="flex flex-col gap-8">
+          <h1 class="text-5xl font-black tracking-wide lg:text-7xl" style="font-family: 'Noto Serif';">Al-Quran</h1>
+          <h2 class="text-xl font-bold lg:text-3xl">{% translate 'Experience Al-Quran Like Never Before' %}</h2>
+
+          <p>
+            {% blocktranslate %}
+            For centuries, the Quran has guided hearts and minds. We are honored to continue this legacy by
+            harnessing modern technology to make its teachings more accessible than ever before. Join us in bridging the
+            past and the future.
+            {% endblocktranslate %}
+          </p>
+
+          <a href="{% url 'al-quran:chapters' %}" class="btn btn-lg btn-primary">
+            {% translate 'Try Now' %}
+          </a>
+        </div>
+
+        <div class="flex flex-col gap-8">
+          <h1 class="text-5xl font-black tracking-wide lg:text-7xl" style="font-family: 'Noto Serif';">
+            {% translate 'Our Mission' %}
+          </h1>
+
+          <p>
+            {% blocktranslate %}
+            We believe in the power of technology to bring hearts closer to the Quran. Born out of a passion
+            to serve Islam, our open-source project aims to make the timeless wisdom of the Quran accessible to
+            everyone, everywhere.
+            {% endblocktranslate %}
+          </p>
+        </div>
+      </section>
+    </div>
+    <div class="carousel-item h-full w-full">
+      <section class="flex flex-col gap-8 justify-around w-full p-4 overflow-auto lg:p-20">
+        <h1 class="text-5xl font-black tracking-wide lg:text-7xl" style="font-family: 'Noto Serif';">
+          {% translate 'Features' %}
         </h1>
 
-        <p class="mt-8 text-xl">
-          {% translate 'An open-source, interactive journey bringing you closer to the Divine Word.' %}
-        </p>
+        <ul class="grid gap-8 lg:grid-cols-3">
+          <li>
+            <div class="card h-full w-full shadow-sm">
+              <div class="card-body gap-6">
+                <div class="flex justify-between">
+                  <h2 class="text-3xl font-bold">
+                    {% translate 'Interactive Reading Experience' %}
+                  </h2>
+                </div>
 
-        <a href="{% url 'al-quran:chapters' %}" class="btn btn-lg btn-neutral">
-          {% translate 'Start Your Journey' %}
-        </a>
-      </div>
+                <p>
+                  {% blocktranslate %}
+                  Personalize your reading with customizable themes and fonts. Dive deep into the Quran in a way
+                  that feels just right for you.
+                  {% endblocktranslate %}
+                </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card h-full w-full shadow-sm">
+              <div class="card-body gap-6">
+                <div class="flex items-center gap-4">
+                  <h2 class="text-3xl font-bold">
+                    {% translate 'Beautiful Recitations' %}
+                  </h2>
+
+                  <span class="badge badge-neutral">{% translate 'Soon' %}</span>
+                </div>
+
+                <p>
+                  {% blocktranslate %}
+                  Listen to soulful recitations by renowned Qaris from around the world. Let the melodious voices
+                  enhance your connection and understanding.
+                  {% endblocktranslate %}
+                </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card h-full w-full shadow-sm">
+              <div class="card-body gap-6">
+                <div class="flex items-center gap-4">
+                  <h2 class="text-3xl font-bold">
+                    {% translate 'Advanced Search & Bookmarking' %}
+                  </h2>
+
+                  <span class="badge badge-neutral">{% translate 'Soon' %}</span>
+                </div>
+
+                <p>
+                  {% blocktranslate %}
+                  Find verses effortlessly with our powerful search tool. Collectionmark your favorite Ayahs and
+                  track your progress seamlessly.
+                  {% endblocktranslate %}
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
     </div>
-  </section>
+    <div class="carousel-item h-full w-full">
+      <section class="grid gap-8 w-full p-4 overflow-auto lg:p-20 lg:grid-cols-2">
+        <div class="flex flex-col gap-4">
+          <h1 class="text-5xl font-black tracking-wide lg:text-7xl" style="font-family: 'Noto Serif';">
+            {% translate 'Imagine the Possibilities' %}
+          </h1>
 
-  <section class="col-span-12 lg:col-span-4 lg:row-span-6">
-    <div class="card w-full h-full bg-secondary text-secondary-content">
-      <div class="card-body">
-        <h2 class="text-3xl font-bold">
-          {% translate 'Interactive Reading Experience' %}
-        </h2>
+          <p>
+            {% blocktranslate %}
+            By joining us, you are not just using an app—you are becoming part of a community dedicated to
+            exploring and sharing the profound wisdom of the Quran. Lets make a difference together.
+            {% endblocktranslate %}
+          </p>
+        </div>
 
-        <p class="mt-6">
-          {% translate 'Personalize your reading with customizable themes and fonts. Dive deep into the Quran in a way that feels just right for you.' %}
-        </p>
-      </div>
+        <div class="flex flex-col gap-4">
+          <h1 class="text-5xl font-black tracking-wide lg:text-7xl" style="font-family: 'Noto Serif';">
+            {% translate 'Get Involved' %}
+          </h1>
+
+          <p>
+            {% blocktranslate %}
+            Your feedback and support are the heartbeat of this project. Share your thoughts, suggest
+            features, or report issues. Together, we can build something truly impactful.
+            {% endblocktranslate %}
+          </p>
+        </div>
+      </section>
     </div>
-  </section>
-
-  <section class="col-span-12 lg:col-span-4 lg:row-span-6">
-    <div class="card w-full h-full bg-accent text-accent-content">
-      <div class="card-body">
-        <span class="badge badge-xs badge-warning">
-          {% translate 'Coming soon' %}
-        </span>
-
-        <h2 class="text-3xl font-bold">
-          {% translate 'Multi-Language Support' %}
-        </h2>
-
-        <p class="mt-6">
-          {% translate 'Access translations and tafsir in multiple languages. Bridge understanding across cultures and deepen your reflections.' %}
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="col-span-12 lg:col-span-4 lg:row-span-6">
-    <div class="card w-full h-full bg-info text-info-content">
-      <div class="card-body">
-        <span class="badge badge-xs badge-warning">
-          {% translate 'Coming soon' %}
-        </span>
-
-        <h2 class="text-3xl font-bold">
-          {% translate 'Beautiful Recitations' %}
-        </h2>
-        
-        <p class="mt-6">
-          {% translate 'Listen to soulful recitations by renowned Qaris from around the world. Let the melodious voices enhance your connection and understanding.' %}
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="col-span-12 lg:col-span-4 lg:row-span-6">
-    <div class="card w-full h-full bg-accent text-accent-content">
-      <div class="card-body">
-        <span class="badge badge-xs badge-warning">
-          {% translate 'Coming soon' %}
-        </span>
-
-        <h2 class="text-3xl font-bold">
-          {% translate 'Advanced Search & Bookmarking' %}
-        </h2>
-        
-        <p class="mt-6">
-          {% translate 'Find verses effortlessly with our powerful search tool. Bookmark your favorite Ayahs and track your progress seamlessly.' %}
-        </p>
-      </div>
-    </div>
-  </section>
+  </div>
 </div>
 {% endblock %}

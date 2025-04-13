@@ -126,7 +126,7 @@ def load_quran(src: Path) -> None:
     load_verses(src)
 
 
-def run(src: str = "quran") -> None:
+def run(src: str = "quran-db/json") -> None:
     """Load quran data"""
 
     src_path = Path(src)

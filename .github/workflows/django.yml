@@ -37,11 +37,9 @@ jobs:
           echo "    'al_quran.core.quarters'," >> mysite/settings.py
           echo "    'al_quran.core.pages'," >> mysite/settings.py
           echo "    'al_quran.core.verses'," >> mysite/settings.py
-          echo "    'al_quran.i18n.authors'," >> mysite/settings.py
-          echo "    'al_quran.i18n.books'," >> mysite/settings.py
-          echo "    'al_quran.i18n.categories'," >> mysite/settings.py
-          echo "    'al_quran.i18n.items'," >> mysite/settings.py
-          echo "    'al_quran.i18n.languages'," >> mysite/settings.py
+          echo "    'al_quran.comp.collections'," >> mysite/settings.py
+          echo "    'al_quran.comp.items'," >> mysite/settings.py
+          echo "    'al_quran.comp.languages'," >> mysite/settings.py
           echo "    'al_quran.ui'," >> mysite/settings.py
           echo "]" >> mysite/settings.py
           echo "from django.urls import include" >> mysite/urls.py
