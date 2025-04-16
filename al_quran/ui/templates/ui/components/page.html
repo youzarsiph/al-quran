@@ -1,8 +1,7 @@
 {% load i18n %}
 
 <div class="carousel-item h-full w-full">
-  <section id="page-{{ page.id }}"
-    class="relative card border border-base-300 bg-base-200 rounded-box lg:mx-auto lg:max-w-4xl">
+  <section id="page-{{ page.id }}" class="relative card border-2 border-base-300 rounded-box lg:mx-auto lg:max-w-4xl">
     <header
       class="absolute inset-x-0 top-0 z-10 backdrop-blur-3xl flex items-center justify-between gap-2 p-4 rounded-t-box">
       <div class="tooltip tooltip-bottom" data-tip="{% translate 'Read' %}">
@@ -22,7 +21,7 @@
       <div role="text" class="text-center " style="font-family: '{{ user.font|default:'Noto Kufi Arabic' }}';">
         {% for verse in page.verses.all %}
         {% if verse.number == 1 %}
-        <div class="card card-body flex-row items-center justify-between rounded-box bg-base-100 shadow-sm my-4">
+        <div class="card card-body flex-row items-center justify-between rounded-box bg-base-200 shadow-sm my-4">
           <div class="tooltip tooltip-bottom" data-tip="{% translate 'Order' %}">
             <span class="badge badge-xs badge-neutral lg:badge-md">
               <span class="hidden md:block">{% translate 'Chapter' %} </span>
@@ -46,7 +45,7 @@
         <span id="verse-{{ verse.number }}" class="text-base/8 lg:text-2xl/12">{{ verse.content }}</span>
         {% endif %}
 
-        <button type="button" class="btn btn-xs btn-square btn-primary lg:btn-sm"> {{ verse.number }} </button>
+        <button type="button" class="btn btn-xs btn-circle btn-primary lg:btn-sm"> {{ verse.number }} </button>
         {% endfor %}
       </div>
     </main>
