@@ -1,17 +1,20 @@
-{% extends 'ui/detail/base.html' %}
-
-{% load i18n %}
-
-{% block title %}{{ block.super }} | {{ group.name }}{% endblock %}
-
-{% block breadcrumbs %}
-<li>
-  <a href="{% url 'al-quran:groups' %}">{% translate 'Groups' %}</a>
-</li>
-<li>
-  {{ group.name }}
-</li>
+<!-- prettier-ignore -->
+{% extends 'ui/detail/base.html' %}{% load i18n %}
+<!-- prettier-ignore -->
+{% block title %}
+{{ block.super }} | {{ group.name }}
+<!-- prettier-ignore -->
 {% endblock %}
 
+<!-- prettier-ignore -->
+{% block breadcrumbs %}
+<li><a href="{% url 'al-quran:groups' %}">{% translate 'Groups' %}</a></li>
+<li>{{ group.name }}</li>
+<!-- prettier-ignore -->
+{% endblock %}
+
+<!-- prettier-ignore -->
 {% block prev_url %}{% url 'al-quran:group-details' prev_id %}{% endblock %}
+
+<!-- prettier-ignore -->
 {% block next_url %}{% url 'al-quran:group-details' next_id %}{% endblock %}

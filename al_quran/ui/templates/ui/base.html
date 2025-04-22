@@ -1,313 +1,570 @@
-{% load i18n static %}
-{% get_current_language as LANGUAGE_CODE %}
-<!DOCTYPE html>
+<!-- prettier-ignore -->
+{% load i18n static %}{% get_current_language as LANGUAGE_CODE %}
+<!doctype html>
 
-<html class="overflow-hidden" data-theme="{{ user.theme|default:'default' }}" lang="{{ LANGUAGE_CODE }}"
-  dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}">
+<html
+  class="overflow-hidden"
+  lang="{{ LANGUAGE_CODE }}"
+  data-theme="{{ user.theme|default:'default' }}"
+  dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- prettier-ignore -->
+    <title>{% block title %}{% translate 'Al-Quran' %}{% endblock %}</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}{% translate 'Al-Quran' %}{% endblock %}</title>
+    <!-- Styles -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" /> -->
+    <link
+      href="{% static 'ui/css/styles.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-  <!-- Styles -->
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0/themes.css" rel="stylesheet" type="text/css" />
+    <!-- Scripts -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Almarai&family=Amiri&family=Amiri+Quran&family=Cairo+Play&family=Fustat&family=Kufam&family=Noto+Sans+Arabic&family=Reem+Kufi&family=Reem+Kufi+Fun&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Almarai&family=Amiri&family=Amiri+Quran&family=Cairo+Play&family=Fustat&family=Kufam&family=Noto+Sans+Arabic&family=Noto+Kufi+Arabic&family=Noto+Sans&family=Noto+Serif&family=Reem+Kufi&family=Reem+Kufi+Fun&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Almarai&family=Amiri&family=Amiri+Quran&family=Cairo+Play&family=Fustat&family=Kufam&family=Noto+Sans+Arabic&family=Reem+Kufi&family=Reem+Kufi+Fun&display=swap"
-    rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Almarai&family=Amiri&family=Amiri+Quran&family=Cairo+Play&family=Fustat&family=Kufam&family=Noto+Sans+Arabic&family=Noto+Kufi+Arabic&family=Noto+Sans&family=Noto+Serif&family=Reem+Kufi&family=Reem+Kufi+Fun&display=swap"
-    rel="stylesheet">
-  {% block head %}{% endblock %}
-</head>
+    <!-- prettier-ignore -->
+    {% block head %}{% endblock %}
+  </head>
 
-<body class="flex h-dvh bg-base-300 overflow-hidden">
-  <!-- Nav -->
-  <section class="h-full z-30 {% block nav_styles %}{% endblock %}">
-    <header class="h-full">
-      <nav class="menu menu-vertical h-full items-center justify-between gap-2">
-        <ul class="menu menu-vertical items-center gap-1 p-0 lg:gap-2">
-          <li role="heading" class="tooltip tooltip-right tooltip-primary rtl:tooltip-left"
-            data-tip="{% translate 'Al-Quran' %}">
-            <a href="{% url 'al-quran:index' %}" class="btn btn-square btn-primary lg:btn-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-collection-open-text lg:size-8">
-                <path d="M12 7v14" />
-                <path d="M16 12h2" />
-                <path d="M16 8h2" />
-                <path
-                  d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" />
-                <path d="M6 12h2" />
-                <path d="M6 8h2" />
-              </svg>
+  <body class="flex h-dvh bg-base-300 overflow-hidden">
+    <!-- Nav -->
+    <section class="h-full z-30 {% block nav_styles %}{% endblock %}">
+      <header class="h-full">
+        <nav
+          class="menu menu-vertical h-full items-center justify-between gap-2"
+        >
+          <ul class="menu menu-vertical items-center gap-1 p-0 lg:gap-2">
+            <li
+              role="heading"
+              class="tooltip tooltip-right tooltip-primary rtl:tooltip-left"
+              data-tip="{% translate 'Al-Quran' %}"
+            >
+              <a
+                href="{% url 'al-quran:index' %}"
+                class="btn btn-square btn-primary lg:btn-lg"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-collection-open-text lg:size-8"
+                >
+                  <path d="M12 7v14" />
+                  <path d="M16 12h2" />
+                  <path d="M16 8h2" />
+                  <path
+                    d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+                  />
+                  <path d="M6 12h2" />
+                  <path d="M6 8h2" />
+                </svg>
 
-              <span class="sr-only">{% translate 'Al-Quran' %}</span>
-            </a>
-          </li>
-          <li class="tooltip tooltip-right tooltip-secondary rtl:tooltip-left" data-tip="{% translate 'Home' %}">
-            <a href="{% url 'al-quran:index' %}" class="btn btn-sm btn-square btn-ghost lg:btn-md">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-house size-4 lg:size-6">
-                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
-                <path
-                  d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-              </svg>
+                <span class="sr-only">{% translate 'Al-Quran' %}</span>
+              </a>
+            </li>
+            <li
+              class="tooltip tooltip-right tooltip-secondary rtl:tooltip-left"
+              data-tip="{% translate 'Home' %}"
+            >
+              <a
+                href="{% url 'al-quran:index' %}"
+                class="btn btn-sm btn-square btn-ghost lg:btn-md"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-house size-4 lg:size-6"
+                >
+                  <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                  <path
+                    d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                  />
+                </svg>
 
-              <span class="sr-only">{% translate 'Home' %}</span>
-            </a>
-          </li>
-          <li class="tooltip tooltip-right tooltip-secondary rtl:tooltip-left" data-tip="{% translate 'Chapters' %}">
-            <a href="{% url 'al-quran:chapters' %}" class="btn btn-sm btn-square btn-ghost lg:btn-md">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-notecollection-text size-4 lg:size-6">
-                <path d="M2 6h4" />
-                <path d="M2 10h4" />
-                <path d="M2 14h4" />
-                <path d="M2 18h4" />
-                <rect width="16" height="20" x="4" y="2" rx="2" />
-                <path d="M9.5 8h5" />
-                <path d="M9.5 12H16" />
-                <path d="M9.5 16H14" />
-              </svg>
+                <span class="sr-only">{% translate 'Home' %}</span>
+              </a>
+            </li>
+            <li
+              class="tooltip tooltip-right tooltip-secondary rtl:tooltip-left"
+              data-tip="{% translate 'Chapters' %}"
+            >
+              <a
+                href="{% url 'al-quran:chapters' %}"
+                class="btn btn-sm btn-square btn-ghost lg:btn-md"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-notecollection-text size-4 lg:size-6"
+                >
+                  <path d="M2 6h4" />
+                  <path d="M2 10h4" />
+                  <path d="M2 14h4" />
+                  <path d="M2 18h4" />
+                  <rect width="16" height="20" x="4" y="2" rx="2" />
+                  <path d="M9.5 8h5" />
+                  <path d="M9.5 12H16" />
+                  <path d="M9.5 16H14" />
+                </svg>
 
-              <span class="sr-only">{% translate 'Chapters' %}</span>
-            </a>
-          </li>
-          <li class="tooltip tooltip-right tooltip-secondary rtl:tooltip-left" data-tip="{% translate 'Parts' %}">
-            <a href="{% url 'al-quran:parts' %}" class="btn btn-sm btn-square btn-ghost lg:btn-md">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-component size-4 lg:size-6">
-                <path
-                  d="M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z" />
-                <path
-                  d="M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.916a1 1 0 0 0-1.414 0z" />
-                <path
-                  d="M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z" />
-                <path
-                  d="M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z" />
-              </svg>
+                <span class="sr-only">{% translate 'Chapters' %}</span>
+              </a>
+            </li>
+            <li
+              class="tooltip tooltip-right tooltip-secondary rtl:tooltip-left"
+              data-tip="{% translate 'Parts' %}"
+            >
+              <a
+                href="{% url 'al-quran:parts' %}"
+                class="btn btn-sm btn-square btn-ghost lg:btn-md"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-component size-4 lg:size-6"
+                >
+                  <path
+                    d="M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z"
+                  />
+                  <path
+                    d="M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.916a1 1 0 0 0-1.414 0z"
+                  />
+                  <path
+                    d="M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z"
+                  />
+                  <path
+                    d="M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z"
+                  />
+                </svg>
 
-              <span class="sr-only">{% translate 'Parts' %}</span>
-            </a>
-          </li>
-          <li class="tooltip tooltip-right tooltip-secondary rtl:tooltip-left" data-tip="{% translate 'More' %}">
-            <button popovertarget="more" style="anchor-name:--more" class="btn btn-sm btn-square btn-ghost lg:btn-md">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-ellipsis-vertical size-4 lg:size-6">
-                <circle cx="12" cy="12" r="1" />
-                <circle cx="12" cy="5" r="1" />
-                <circle cx="12" cy="19" r="1" />
-              </svg>
+                <span class="sr-only">{% translate 'Parts' %}</span>
+              </a>
+            </li>
+            <li
+              class="tooltip tooltip-right tooltip-secondary rtl:tooltip-left"
+              data-tip="{% translate 'More' %}"
+            >
+              <button
+                popovertarget="more"
+                style="anchor-name: --more"
+                class="btn btn-sm btn-square btn-ghost lg:btn-md"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-ellipsis-vertical size-4 lg:size-6"
+                >
+                  <circle cx="12" cy="12" r="1" />
+                  <circle cx="12" cy="5" r="1" />
+                  <circle cx="12" cy="19" r="1" />
+                </svg>
 
-              <span class="sr-only">{% translate 'More' %}</span>
-            </button>
+                <span class="sr-only">{% translate 'More' %}</span>
+              </button>
 
-            <ul id="more" popover style="position-anchor:--more"
-              class="menu dropdown dropdown-right rounded-box bg-base-100 shadow-sm rtl:dropdown-left">
-              <li class="menu-title">{% translate 'More' %}</li>
-              <li>
-                <a class="flex items-center gap-2" href="{% url 'al-quran:groups' %}">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-grid-2x2 size-4 lg:size-6">
-                    <path d="M12 3v18" />
-                    <path d="M3 12h18" />
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                  </svg>
+              <ul
+                id="more"
+                popover
+                style="position-anchor: --more"
+                class="menu dropdown dropdown-right rounded-box bg-base-100 shadow-sm rtl:dropdown-left"
+              >
+                <li class="menu-title">{% translate 'More' %}</li>
+                <li>
+                  <a
+                    class="flex items-center gap-2"
+                    href="{% url 'al-quran:groups' %}"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-grid-2x2 size-4 lg:size-6"
+                    >
+                      <path d="M12 3v18" />
+                      <path d="M3 12h18" />
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                    </svg>
 
-                  <span>{% translate 'Groups' %}</span>
-                </a>
-              </li>
-              <li>
-                <a class="flex items-center gap-2" href="{% url 'al-quran:quarters' %}">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-grid-3x3 size-4 lg:size-6">
-                    <rect width="18" height="18" x="3" y="3" rx="2" />
-                    <path d="M3 9h18" />
-                    <path d="M3 15h18" />
-                    <path d="M9 3v18" />
-                    <path d="M15 3v18" />
-                  </svg>
+                    <span>{% translate 'Groups' %}</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="flex items-center gap-2"
+                    href="{% url 'al-quran:quarters' %}"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-grid-3x3 size-4 lg:size-6"
+                    >
+                      <rect width="18" height="18" x="3" y="3" rx="2" />
+                      <path d="M3 9h18" />
+                      <path d="M3 15h18" />
+                      <path d="M9 3v18" />
+                      <path d="M15 3v18" />
+                    </svg>
 
-                  <span>{% translate 'Quarters' %}</span>
-                </a>
-              </li>
-              <li>
-                <a class="flex items-center gap-2" href="{% url 'al-quran:pages' %}">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-grip-icon lucide-grip size-4 lg:size-6">
-                    <circle cx="12" cy="5" r="1" />
-                    <circle cx="19" cy="5" r="1" />
-                    <circle cx="5" cy="5" r="1" />
-                    <circle cx="12" cy="12" r="1" />
-                    <circle cx="19" cy="12" r="1" />
-                    <circle cx="5" cy="12" r="1" />
-                    <circle cx="12" cy="19" r="1" />
-                    <circle cx="19" cy="19" r="1" />
-                    <circle cx="5" cy="19" r="1" />
-                  </svg>
+                    <span>{% translate 'Quarters' %}</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="flex items-center gap-2"
+                    href="{% url 'al-quran:pages' %}"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-grip-icon lucide-grip size-4 lg:size-6"
+                    >
+                      <circle cx="12" cy="5" r="1" />
+                      <circle cx="19" cy="5" r="1" />
+                      <circle cx="5" cy="5" r="1" />
+                      <circle cx="12" cy="12" r="1" />
+                      <circle cx="19" cy="12" r="1" />
+                      <circle cx="5" cy="12" r="1" />
+                      <circle cx="12" cy="19" r="1" />
+                      <circle cx="19" cy="19" r="1" />
+                      <circle cx="5" cy="19" r="1" />
+                    </svg>
 
-                  <span>{% translate 'Pages' %}</span>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
+                    <span>{% translate 'Pages' %}</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
 
-        <ul class="menu menu-vertical items-center gap-1 p-0 lg:gap-2">
-          <li class="tooltip tooltip-right tooltip-accent rtl:tooltip-left" data-tip="{% translate 'Language' %}">
-            <button popovertarget="language" style="anchor-name:--language"
-              class="btn btn-sm btn-square btn-ghost lg:btn-md">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-languages size-4 lg:size-6">
-                <path d="m5 8 6 6" />
-                <path d="m4 14 6-6 2-3" />
-                <path d="M2 5h12" />
-                <path d="M7 2h1" />
-                <path d="m22 22-5-10-5 10" />
-                <path d="M14 18h6" />
-              </svg>
+          <ul class="menu menu-vertical items-center gap-1 p-0 lg:gap-2">
+            <li
+              class="tooltip tooltip-right tooltip-accent rtl:tooltip-left"
+              data-tip="{% translate 'Language' %}"
+            >
+              <button
+                popovertarget="language"
+                style="anchor-name: --language"
+                class="btn btn-sm btn-square btn-ghost lg:btn-md"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-languages size-4 lg:size-6"
+                >
+                  <path d="m5 8 6 6" />
+                  <path d="m4 14 6-6 2-3" />
+                  <path d="M2 5h12" />
+                  <path d="M7 2h1" />
+                  <path d="m22 22-5-10-5 10" />
+                  <path d="M14 18h6" />
+                </svg>
 
-              <span class="sr-only">{% translate 'Language' %}</span>
-            </button>
+                <span class="sr-only">{% translate 'Language' %}</span>
+              </button>
 
-            <ul id="language" popover style="position-anchor:--language"
-              class="menu dropdown dropdown-right dropdown-top rounded-box bg-base-100 shadow-sm rtl:dropdown-left">
-              <li class="menu-title">{% translate 'Language' %}</li>
-              <form id="lang-form" class="hidden" action="{% url 'set_language' %}" method="post">
-                {% csrf_token %}
-                <input name="next" type="hidden" value="{{ redirect_to }}">
-              </form>
-
-              {% get_available_languages as LANGUAGES %}
-              {% get_language_info_list for LANGUAGES as languages %}
-              {% for language in languages %}
-              <li>
-                <label class="flex flex-row items-center justify-between gap-8">
-                  <div class="flex flex-row items-center gap-2">
-                    <input form="lang-form" type="submit" name="language" value="{{ language.code|upper }}"
-                      aria-label="{{ language.name_local }} ({{ language.code }})" />
-                    <span>{{ language.name_local }} ({{ language.code }})</span>
-                  </div>
-
-                  {% if language.code == LANGUAGE_CODE %}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-check text-primary size-4 lg:size-6">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                  {% endif %}
-                </label>
-
-              </li>
-              {% endfor %}
-            </ul>
-          </li>
-          <li class="tooltip tooltip-right tooltip-accent rtl:tooltip-left" data-tip="{% translate 'Profile' %}">
-            <button popovertarget="profile" style="anchor-name:--profile"
-              class="btn btn-md btn-square btn-ghost lg:btn-md">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-user size-4 lg:size-6">
-                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
-
-              <span class="sr-only">{% translate 'Profile' %}</span>
-            </button>
-
-            <ul id="profile" popover style="position-anchor:--profile"
-              class="menu dropdown dropdown-right dropdown-top rounded-box bg-base-100 shadow-sm rtl:dropdown-left">
-              <li class="menu-title">{% translate 'Profile' %}</li>
-              <li>
-                <a href="{% url 'al-quran:profile' %}" class="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-circle-user size-4 lg:size-5">
-                    <circle cx="12" cy="12" r="10" />
-                    <circle cx="12" cy="10" r="3" />
-                    <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662" />
-                  </svg>
-
-                  <span>{% translate 'Profile' %}</span>
-                </a>
-              </li>
-              {% if request.user.is_authenticated %}
-              <li>
-                <form id="logout-form" class="hidden" action="{% url 'al-quran:logout' %}" method="post">
+              <ul
+                id="language"
+                popover
+                style="position-anchor: --language"
+                class="menu dropdown dropdown-right dropdown-top rounded-box bg-base-100 shadow-sm rtl:dropdown-left rtl:dropdown-top"
+              >
+                <li class="menu-title">{% translate 'Language' %}</li>
+                <form
+                  id="lang-form"
+                  class="hidden"
+                  action="{% url 'set_language' %}"
+                  method="post"
+                >
                   {% csrf_token %}
+                  <input name="next" type="hidden" value="{{ redirect_to }}" />
                 </form>
 
-                <button type="submit" form="logout-form" class="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-log-out size-4 lg:size-5">
-                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-                    <polyline points="16 17 21 12 16 7" />
-                    <line x1="21" x2="9" y1="12" y2="12" />
-                  </svg>
+                <!-- prettier ignore -->
+                {% get_available_languages as LANGUAGES %}
+                <!-- prettier ignore -->
+                {% get_language_info_list for LANGUAGES as languages %}
+                <!-- prettier ignore -->
+                {% for language in languages %}
+                <li>
+                  <label
+                    class="flex flex-row items-center justify-between gap-8"
+                  >
+                    <div class="flex flex-row items-center gap-2">
+                      <input
+                        form="lang-form"
+                        type="submit"
+                        name="language"
+                        value="{{ language.code|upper }}"
+                        aria-label="{{ language.name_local }} ({{ language.code }})"
+                      />
+                      <span
+                        >{{ language.name_local }} ({{ language.code }})</span
+                      >
+                    </div>
+                    <!-- prettier-ignore -->
+                    {% if language.code == LANGUAGE_CODE %}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-check text-primary size-4 lg:size-6"
+                    >
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                    {% endif %}
+                  </label>
+                </li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li
+              class="tooltip tooltip-right tooltip-accent rtl:tooltip-left"
+              data-tip="{% translate 'Profile' %}"
+            >
+              <button
+                popovertarget="profile"
+                style="anchor-name: --profile"
+                class="btn btn-md btn-square btn-ghost lg:btn-md"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-user size-4 lg:size-6"
+                >
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
 
-                  <span>{% translate 'Log out' %}</span>
-                </button>
-              </li>
-              {% else %}
-              <li>
-                <a href="{% url 'al-quran:login' %}" class="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-log-in size-4 lg:size-5">
-                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
-                    <polyline points="10 17 15 12 10 7" />
-                    <line x1="15" x2="3" y1="12" y2="12" />
-                  </svg>
+                <span class="sr-only">{% translate 'Profile' %}</span>
+              </button>
 
-                  <span>{% translate 'Log in' %}</span>
-                </a>
-              </li>
-              {% endif %}
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  </section>
+              <ul
+                id="profile"
+                popover
+                style="position-anchor: --profile"
+                class="menu dropdown dropdown-right dropdown-top rounded-box bg-base-100 shadow-sm rtl:dropdown-left rtl:dropdown-top"
+              >
+                <li class="menu-title">{% translate 'Profile' %}</li>
+                <li>
+                  <a
+                    href="{% url 'al-quran:profile' %}"
+                    class="flex items-center gap-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-circle-user size-4 lg:size-5"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <circle cx="12" cy="10" r="3" />
+                      <path
+                        d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"
+                      />
+                    </svg>
 
-  <!-- Main content -->
-  <main
-    class="relative flex h-dvh w-full flex-col gap-2 p-1 overflow-hidden lg:p-2 {% block main_styles %} pl-0 lg:pl-0 rtl:pr-0 rtl:lg:pr-0 {% endblock %}">
-    {% block main %}
-    <div class="grid h-full w-full grid-cols-12 rounded-box bg-base-100">
-      <section class="col-span-12 h-dvh pb-2 lg:pb-4 lg:col-span-3 {% block sidebar_styles %}{% endblock %}">
-        {% block sidebar %}{% endblock %}
-      </section>
+                    <span>{% translate 'Profile' %}</span>
+                  </a>
+                </li>
 
-      <section class="col-span-12 h-dvh pb-2 lg:pb-4 lg:col-span-9 {% block content_styles %}{% endblock %}">
-        {% block content %}{% endblock %}
-      </section>
-    </div>
-    {% endblock %}
-  </main>
+                <!-- prettier-ignore -->
+                {% if request.user.is_authenticated %}
+                <li>
+                  <form
+                    id="logout-form"
+                    class="hidden"
+                    action="{% url 'al-quran:logout' %}"
+                    method="post"
+                  >
+                    {% csrf_token %}
+                  </form>
 
-  {% block scripts %}{% endblock %}
-</body>
+                  <button
+                    type="submit"
+                    form="logout-form"
+                    class="flex items-center gap-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-log-out size-4 lg:size-5"
+                    >
+                      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                      <polyline points="16 17 21 12 16 7" />
+                      <line x1="21" x2="9" y1="12" y2="12" />
+                    </svg>
 
+                    <span>{% translate 'Log out' %}</span>
+                  </button>
+                </li>
+                <!-- prettier-ignore -->
+                {% else %}
+                <li>
+                  <a
+                    href="{% url 'al-quran:login' %}"
+                    class="flex items-center gap-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-log-in size-4 lg:size-5"
+                    >
+                      <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                      <polyline points="10 17 15 12 10 7" />
+                      <line x1="15" x2="3" y1="12" y2="12" />
+                    </svg>
+
+                    <span>{% translate 'Log in' %}</span>
+                  </a>
+                </li>
+                {% endif %}
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </section>
+
+    <!-- Main content -->
+    <main
+      class="relative flex h-dvh w-full flex-col gap-2 p-1 overflow-hidden lg:p-2 {% block main_styles %} pl-0 lg:pl-0 rtl:pl-1 rtl:lg:pl-2 rtl:pr-0 rtl:lg:pr-0 {% endblock %}"
+    >
+      <!-- prettier-ignore -->
+      {% block main %}
+      <div class="grid h-full w-full grid-cols-12 rounded-box bg-base-100">
+        <section
+          class="col-span-12 h-dvh pb-2 lg:pb-4 lg:col-span-3 {% block sidebar_styles %}{% endblock %}"
+        >
+          <!-- prettier-ignore -->
+          {% block sidebar %}{% endblock %}
+        </section>
+
+        <section
+          class="col-span-12 h-dvh pb-2 lg:pb-4 lg:col-span-9 {% block content_styles %}{% endblock %}"
+        >
+          <!-- prettier-ignore -->
+          {% block content %}{% endblock %}
+        </section>
+      </div>
+      <!-- prettier-ignore -->
+      {% endblock %}
+    </main>
+
+    <!-- prettier-ignore -->
+    {% block scripts %}{% endblock %}
+  </body>
 </html>

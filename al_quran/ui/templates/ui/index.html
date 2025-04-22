@@ -1,47 +1,74 @@
-{% extends 'ui/base.html' %}
-
-{% load i18n %}
-
+{% extends 'ui/base.html' %} {% load i18n %}
+<!-- prettier-ignore -->
 {% block main %}
 <div class="grid h-full w-full grid-cols-12 rounded-box bg-base-100">
   <div class="carousel carousel-vertical h-full w-full col-span-12 rounded-box">
     <div class="carousel-item h-full w-full">
       <section class="flex flex-col gap-12 w-full p-4 overflow-auto lg:p-20">
         <div class="flex flex-col gap-8">
-          <h1 class="text-5xl font-black tracking-wide lg:text-7xl" style="font-family: 'Noto Serif';">Al-Quran</h1>
-          <h2 class="text-xl font-bold lg:text-3xl">{% translate 'Experience Al-Quran Like Never Before' %}</h2>
+          <h1
+            class="text-5xl font-black tracking-wide lg:text-7xl"
+            style="font-family: &quot;Noto Serif&quot;"
+          >
+            <!-- prettier-ignore -->
+            {% translate 'Al Quran' %}
+          </h1>
+          <h2 class="text-xl font-bold lg:text-3xl">
+            <!-- prettier-ignore -->
+            {% translate 'Experience Al-Quran Like Never Before' %}
+          </h2>
 
           <p>
+            <!-- prettier-ignore -->
             {% blocktranslate %}
-            For centuries, the Quran has guided hearts and minds. We are honored to continue this legacy by
-            harnessing modern technology to make its teachings more accessible than ever before. Join us in bridging the
-            past and the future.
+            For centuries, the Quran has guided hearts and
+            minds. We are honored to continue this legacy by harnessing modern
+            technology to make its teachings more accessible than ever before.
+            Join us in bridging the past and the future.
+            <!-- prettier-ignore -->
             {% endblocktranslate %}
           </p>
 
-          <a href="{% url 'al-quran:chapters' %}" class="btn btn-lg btn-primary">
+          <a
+            href="{% url 'al-quran:chapters' %}"
+            class="btn btn-lg btn-primary"
+          >
+            <!-- prettier-ignore -->
             {% translate 'Try Now' %}
           </a>
         </div>
 
         <div class="flex flex-col gap-8">
-          <h1 class="text-5xl font-black tracking-wide lg:text-7xl" style="font-family: 'Noto Serif';">
+          <h1
+            class="text-5xl font-black tracking-wide lg:text-7xl"
+            style="font-family: &quot;Noto Serif&quot;"
+          >
+            <!-- prettier-ignore -->
             {% translate 'Our Mission' %}
           </h1>
 
           <p>
+            <!-- prettier-ignore -->
             {% blocktranslate %}
-            We believe in the power of technology to bring hearts closer to the Quran. Born out of a passion
-            to serve Islam, our open-source project aims to make the timeless wisdom of the Quran accessible to
-            everyone, everywhere.
+            We believe in the power of technology to bring
+            hearts closer to the Quran. Born out of a passion to serve Islam,
+            our open-source project aims to make the timeless wisdom of the
+            Quran accessible to everyone, everywhere.
+            <!-- prettier-ignore -->
             {% endblocktranslate %}
           </p>
         </div>
       </section>
     </div>
     <div class="carousel-item h-full w-full">
-      <section class="flex flex-col gap-8 justify-around w-full p-4 overflow-auto lg:p-20">
-        <h1 class="text-5xl font-black tracking-wide lg:text-7xl" style="font-family: 'Noto Serif';">
+      <section
+        class="flex flex-col gap-8 justify-around w-full p-4 overflow-auto lg:p-20"
+      >
+        <h1
+          class="text-5xl font-black tracking-wide lg:text-7xl"
+          style="font-family: &quot;Noto Serif&quot;"
+        >
+          <!-- prettier-ignore -->
           {% translate 'Features' %}
         </h1>
 
@@ -51,14 +78,18 @@
               <div class="card-body gap-6">
                 <div class="flex justify-between">
                   <h2 class="text-3xl font-bold">
+                    <!-- prettier-ignore -->
                     {% translate 'Interactive Reading Experience' %}
                   </h2>
                 </div>
 
                 <p>
+                  <!-- prettier-ignore -->
                   {% blocktranslate %}
-                  Personalize your reading with customizable themes and fonts. Dive deep into the Quran in a way
-                  that feels just right for you.
+                  Personalize your reading with
+                  customizable themes and fonts. Dive deep into the Quran in a
+                  way that feels just right for you.
+                  <!-- prettier-ignore -->
                   {% endblocktranslate %}
                 </p>
               </div>
@@ -69,16 +100,22 @@
               <div class="card-body gap-6">
                 <div class="flex items-center gap-4">
                   <h2 class="text-3xl font-bold">
+                    <!-- prettier-ignore -->
                     {% translate 'Beautiful Recitations' %}
                   </h2>
 
-                  <span class="badge badge-neutral">{% translate 'Soon' %}</span>
+                  <span class="badge badge-neutral"
+                    >{% translate 'Soon' %}</span
+                  >
                 </div>
 
                 <p>
+                  <!-- prettier-ignore -->
                   {% blocktranslate %}
-                  Listen to soulful recitations by renowned Qaris from around the world. Let the melodious voices
-                  enhance your connection and understanding.
+                  Listen to soulful recitations by renowned
+                  Qaris from around the world. Let the melodious voices enhance
+                  your connection and understanding.
+                  <!-- prettier-ignore -->
                   {% endblocktranslate %}
                 </p>
               </div>
@@ -89,16 +126,22 @@
               <div class="card-body gap-6">
                 <div class="flex items-center gap-4">
                   <h2 class="text-3xl font-bold">
+                    <!-- prettier-ignore -->
                     {% translate 'Advanced Search & Bookmarking' %}
                   </h2>
 
-                  <span class="badge badge-neutral">{% translate 'Soon' %}</span>
+                  <span class="badge badge-neutral"
+                    >{% translate 'Soon' %}</span
+                  >
                 </div>
 
                 <p>
+                  <!-- prettier-ignore -->
                   {% blocktranslate %}
-                  Find verses effortlessly with our powerful search tool. Collectionmark your favorite Ayahs and
+                  Find verses effortlessly with our
+                  powerful search tool. Collectionmark your favorite Ayahs and
                   track your progress seamlessly.
+                  <!-- prettier-ignore -->
                   {% endblocktranslate %}
                 </p>
               </div>
@@ -108,29 +151,46 @@
       </section>
     </div>
     <div class="carousel-item h-full w-full">
-      <section class="grid gap-8 w-full p-4 overflow-auto lg:p-20 lg:grid-cols-2">
+      <section
+        class="grid gap-8 w-full p-4 overflow-auto lg:p-20 lg:grid-cols-2"
+      >
         <div class="flex flex-col gap-4">
-          <h1 class="text-5xl font-black tracking-wide lg:text-7xl" style="font-family: 'Noto Serif';">
+          <h1
+            class="text-5xl font-black tracking-wide lg:text-7xl"
+            style="font-family: &quot;Noto Serif&quot;"
+          >
+            <!-- prettier-ignore -->
             {% translate 'Imagine the Possibilities' %}
           </h1>
 
           <p>
+            <!-- prettier-ignore -->
             {% blocktranslate %}
-            By joining us, you are not just using an app—you are becoming part of a community dedicated to
-            exploring and sharing the profound wisdom of the Quran. Lets make a difference together.
+            By joining us, you are not just using an
+            app—you are becoming part of a community dedicated to exploring and
+            sharing the profound wisdom of the Quran. Lets make a difference
+            together.
+            <!-- prettier-ignore -->
             {% endblocktranslate %}
           </p>
         </div>
 
         <div class="flex flex-col gap-4">
-          <h1 class="text-5xl font-black tracking-wide lg:text-7xl" style="font-family: 'Noto Serif';">
+          <h1
+            class="text-5xl font-black tracking-wide lg:text-7xl"
+            style="font-family: &quot;Noto Serif&quot;"
+          >
+            <!-- prettier-ignore -->
             {% translate 'Get Involved' %}
           </h1>
 
           <p>
+            <!-- prettier-ignore -->
             {% blocktranslate %}
-            Your feedback and support are the heartbeat of this project. Share your thoughts, suggest
-            features, or report issues. Together, we can build something truly impactful.
+            Your feedback and support are the heartbeat of
+            this project. Share your thoughts, suggest features, or report
+            issues. Together, we can build something truly impactful.
+            <!-- prettier-ignore -->
             {% endblocktranslate %}
           </p>
         </div>
@@ -138,4 +198,5 @@
     </div>
   </div>
 </div>
+<!-- prettier-ignore -->
 {% endblock %}

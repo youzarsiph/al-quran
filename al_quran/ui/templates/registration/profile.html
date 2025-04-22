@@ -1,11 +1,19 @@
-{% extends 'registration/base.html' %}
-
-{% load i18n %}
-
-{% block title %}{{ block.super }} | {% translate 'Profile' %}{% endblock %}
-
+{% extends 'registration/base.html' %}{% load i18n %}
+<!-- prettier-ignore -->
+{% block title %}
+<!-- prettier-ignore -->
+{{ block.super }} |
+<!-- prettier-ignore -->
+{% translate 'Profile' %}
+<!-- prettier-ignore -->
+{% endblock %}
+<!-- prettier-ignore -->
 {% block main_content %}
 <div class="h-full w-full flex items-center justify-center">
-  <h1 class="text-3xl lg:text-5xl">{% translate 'Welcome' %} {{ request.user }}</h1>
+  <h1 class="text-3xl lg:text-5xl">
+    <!-- prettier-ignore -->
+    {% translate 'Welcome' %} {{ request.user }}
+  </h1>
 </div>
+<!-- prettier-ignore -->
 {% endblock %}

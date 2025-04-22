@@ -1,12 +1,15 @@
-{% extends 'ui/list/base.html' %}
+<!-- prettier-ignore -->
+{% extends 'ui/list/base.html' %}{% load i18n %}
 
-{% load i18n %}
-
+<!-- prettier-ignore -->
 {% block title %}{{ block.super }} | {% translate 'Parts' %}{% endblock %}
 
+<!-- prettier-ignore -->
 {% block page_title %}{% translate 'Parts' %}{% endblock %}
 
+<!-- prettier-ignore -->
 {% block sidebar_content %}
+<!-- prettier-ignore -->
 {% for part in part_list.all %}
 <li id="item-{{ part.id }}" class="list-row relative items-center">
   <div>
@@ -19,15 +22,25 @@
   <div>
     <div>{{ part.name }}</div>
     <div class="text-xs font-semibold uppercase opacity-60">
-      {{ part.page_count }} {% translate 'pages' %},
-      {{ part.verse_count }} {% translate 'verses' %}
+      {{ part.page_count }}
+      <!-- prettier-ignore -->
+      {% translate 'pages' %}, {{ part.verse_count }} {% translate 'verses' %}
     </div>
   </div>
   <div class="tooltip tooltip-bottom z-10" data-tip="{% translate 'Read' %}">
     <button class="btn btn-sm btn-square btn-ghost lg:btn-md">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-        class="lucide lucide-chevron-right size-4 lg:size-6 rtl:rotate-180">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-chevron-right size-4 lg:size-6 rtl:rotate-180"
+      >
         <path d="m9 18 6-6-6-6" />
       </svg>
 
@@ -39,4 +52,5 @@
   </a>
 </li>
 {% endfor %}
+<!-- prettier-ignore -->
 {% endblock %}

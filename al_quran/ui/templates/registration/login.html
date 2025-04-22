@@ -1,55 +1,86 @@
-{% extends "registration/base.html" %}
+<!-- prettier-ignore -->
+{% extends "registration/base.html" %}{% load i18n %}
+<!-- prettier-ignore -->
+{% block title %}
+<!-- prettier-ignore -->
+{{ block.super }} |
+<!-- prettier-ignore -->
+{% translate 'Login' %}
+<!-- prettier-ignore -->
+{% endblock %}
 
-{% load i18n %}
-
-{% block title %}{{ block.super }} | {% translate 'Login' %}{% endblock %}
-
+<!-- prettier-ignore -->
 {% block main %}
-<section class="flex h-full w-full items-center justify-center rounded-box bg-base-100 lg:p-40">
+<section
+  class="flex h-full w-full items-center justify-center rounded-box bg-base-100 lg:p-40"
+>
   <div class="card mx-4 max-w-md rounded-box bg-base-200 shadow-xl">
     <div class="card-body gap-6">
-      <h1 class="text-5xl" style="font-family: 'Noto Serif';">
+      <h1 class="text-5xl" style="font-family: &quot;Noto Serif&quot;">
+        <!-- prettier-ignore -->
         {% translate 'Al Quran' %}
       </h1>
 
       <h2 class="text-3xl">
+        <!-- prettier-ignore -->
         {% translate 'Login' %}
       </h2>
 
-      <p>{% translate 'Welcome, please login to continue.' %}</p>
+      <!-- prettier-ignore -->
+      <p>
+        <!-- prettier-ignore -->
+        {% translate 'Welcome, please login to continue.' %}
+      </p>
 
+      <!-- prettier-ignore -->
       {% if form.errors %}
       <p>
+        <!-- prettier-ignore -->
         {% translate 'Your username and password did not match. Please try again.' %}
       </p>
+      <!-- prettier-ignore -->
       {% endif %}
 
+      <!-- prettier-ignore -->
       {% if next %}
+      <!-- prettier-ignore -->
       {% if user.is_authenticated %}
       <p>
+        <!-- prettier-ignore -->
         {% blocktranslate %}
         Your account doesn't have access to this page. To proceed,
         please login with an account that has access.
+        <!-- prettier-ignore -->
         {% endblocktranslate %}
       </p>
+
+      <!-- prettier-ignore -->
       {% else %}
+      <!-- prettier-ignore -->
       <p>
+        <!-- prettier-ignore -->
         {% translate 'Please login to see this page.' %}
       </p>
-      {% endif %}
-      {% endif %}
 
+      <!-- prettier-ignore -->
+      {% endif %}{% endif %}
+      <!-- prettier-ignore -->
+
+      <!-- prettier-ignore -->
       {% include 'ui/components/form.html' %}
 
       <p>
         <a href="{% url 'al-quran:signup' %}" class="btn btn-ghost">
+          <!-- prettier-ignore -->
           {% translate 'Do not have an account?' %}
         </a>
         <a href="{% url 'al-quran:password_reset' %}" class="btn btn-ghost">
+          <!-- prettier-ignore -->
           {% translate 'Lost password?' %}
         </a>
       </p>
     </div>
   </div>
 </section>
+<!-- prettier-ignore -->
 {% endblock %}

@@ -1,102 +1,208 @@
-{% extends "ui/base.html" %}
-
-{% load i18n %}
-
-{% block title %}{{ block.super }} | {% translate 'Profile' %}{% endblock %}
+<!-- prettier-ignore -->
+{% extends "ui/base.html" %}{% load i18n %}
+<!-- prettier-ignore -->
+{% block title %}
+<!-- prettier-ignore -->
+{{ block.super }} |
+<!-- prettier-ignore -->
+{% translate 'Profile' %}
+<!-- prettier-ignore -->
+{% endblock %}
 
 <div class="hidden">
   <div class="lg:block"></div>
 </div>
 
+<!-- prettier-ignore -->
 {% block sidebar %}
 <section class="relative flex h-full flex-col gap-6 rounded-box">
   <header class="absolute inset-x-0 top-0 z-10">
-    <nav class="flex items-center justify-between p-4 gap-2 backdrop-blur-3xl rounded-t-box">
-      <h1 class="text-xl font-semibold">{% translate 'Profile' %}</h1>
+    <nav
+      class="flex items-center justify-between p-4 gap-2 backdrop-blur-3xl rounded-t-box"
+    >
+      <h1 class="text-xl font-semibold">
+        <!-- prettier-ignore -->
+        {% translate 'Profile' %}
+      </h1>
     </nav>
   </header>
 
-  <main class="grid grow gap-2 h-full w-full p-4 pt-20 max-h-dvh overflow-y-auto">
+  <main
+    class="grid grow gap-2 h-full w-full p-4 pt-20 max-h-dvh overflow-y-auto"
+  >
     <nav class="menu menu-vertical gap-2 w-full justify-between p-0">
       <ul class="menu menu-vertical gap-2 w-full p-0">
         <li class="menu-title">
+          <!-- prettier-ignore -->
           {% translate 'Welcome' %} {{ request.user }}
         </li>
-        <li class="tooltip tooltip-bottom tooltip-primary" data-tip="{% translate 'My Profile' %}">
-          <a href="{% url 'al-quran:index' %}" class="btn btn-soft btn-primary justify-start gap-2 w-full">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-user size-4 lg:size-6">
+        <li
+          class="tooltip tooltip-bottom tooltip-primary"
+          data-tip="{% translate 'My Profile' %}"
+        >
+          <a
+            href="{% url 'al-quran:index' %}"
+            class="btn btn-soft btn-primary justify-start gap-2 w-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-user size-4 lg:size-6"
+            >
               <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
               <circle cx="12" cy="7" r="4" />
             </svg>
 
-            <span>{% translate 'Profile' %}</span>
+            <span>
+              <!-- prettier-ignore -->
+              {% translate 'Profile' %}</span
+            >
           </a>
         </li>
-        <li class="tooltip tooltip-bottom" data-tip="{% translate 'App Settings' %}">
-          <a href="{% url 'al-quran:update-user' request.user.id %}" class="btn btn-ghost justify-start gap-2 w-full">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-settings-icon lucide-settings size-4 lg:size-6">
+        <li
+          class="tooltip tooltip-bottom"
+          data-tip="{% translate 'App Settings' %}"
+        >
+          <a
+            href="{% url 'al-quran:update-user' request.user.id %}"
+            class="btn btn-ghost justify-start gap-2 w-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-settings-icon lucide-settings size-4 lg:size-6"
+            >
               <path
-                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+              />
               <circle cx="12" cy="12" r="3" />
             </svg>
 
-            <span>{% translate 'Settings' %}</span>
+            <span>
+              <!-- prettier-ignore -->
+              {% translate 'Settings' %}</span
+            >
           </a>
         </li>
-        <li class="tooltip tooltip-bottom" data-tip="{% translate 'Update Your Password' %}">
-          <a href="{% url 'al-quran:password_change' %}" class="btn btn-ghost justify-start gap-2 w-full">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-key-icon lucide-key size-4 lg:size-6">
-              <path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4" />
+        <li
+          class="tooltip tooltip-bottom"
+          data-tip="{% translate 'Update Your Password' %}"
+        >
+          <a
+            href="{% url 'al-quran:password_change' %}"
+            class="btn btn-ghost justify-start gap-2 w-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-key-icon lucide-key size-4 lg:size-6"
+            >
+              <path
+                d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4"
+              />
               <path d="m21 2-9.6 9.6" />
               <circle cx="7.5" cy="15.5" r="5.5" />
             </svg>
 
-            <span>{% translate 'Change Password' %}</span>
+            <span>
+              <!-- prettier-ignore -->
+              {% translate 'Change Password' %}</span
+            >
           </a>
         </li>
       </ul>
 
       <ul class="menu menu-vertical gap-2 w-full p-0">
-        <li class="tooltip tooltip-top tooltip-error" data-tip="{% translate 'Delete account' %}">
-          <a href="{% url 'al-quran:delete-user' request.user.id %}"
-            class="btn btn-soft btn-error justify-start gap-2 w-full">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-user-x-icon lucide-user-x size-4 lg:size-6">
+        <li
+          class="tooltip tooltip-top tooltip-error"
+          data-tip="{% translate 'Delete account' %}"
+        >
+          <a
+            href="{% url 'al-quran:delete-user' request.user.id %}"
+            class="btn btn-soft btn-error justify-start gap-2 w-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-user-x-icon lucide-user-x size-4 lg:size-6"
+            >
               <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
               <circle cx="9" cy="7" r="4" />
               <line x1="17" x2="22" y1="8" y2="13" />
               <line x1="22" x2="17" y1="8" y2="13" />
             </svg>
 
-            <span>{% translate 'Delete account' %}</span>
+            <span>
+              <!-- prettier-ignore -->
+              {% translate 'Delete account' %}</span
+            >
           </a>
         </li>
         <li class="tooltip tooltip-top" data-tip="{% translate 'Logout' %}">
-          <button form="logout-form" type="submit" class="btn btn-ghost justify-start gap-2 w-full">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-log-out size-4 lg:size-6">
+          <button
+            form="logout-form"
+            type="submit"
+            class="btn btn-ghost justify-start gap-2 w-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-log-out size-4 lg:size-6"
+            >
               <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
               <polyline points="16 17 21 12 16 7" />
               <line x1="21" x2="9" y1="12" y2="12" />
             </svg>
 
-            <span>{% translate 'Logout' %}</span>
+            <span>
+              <!-- prettier-ignore -->
+              {% translate 'Logout' %}</span
+            >
           </button>
         </li>
       </ul>
     </nav>
   </main>
 </section>
+<!-- prettier-ignore -->
 {% endblock %}
 
+<!-- prettier-ignore -->
 {% block content %}
 <section class="relative h-full w-full">
   <header class="absolute inset-x-0 top-0 z-10">
@@ -105,19 +211,30 @@
         <ol>
           <li>
             <a href="{% url 'al-quran:profile' %}">
+              <!-- prettier-ignore -->
               {% translate 'Profile' %}
             </a>
           </li>
-          {% block breadcrumbs %}{% endblock %}
+
+          <!-- prettier-ignore -->
+          {% block breadcrumbs %}
+          <!-- prettier-ignore -->
+          {% endblock %}
         </ol>
       </div>
     </nav>
   </header>
 
   <main class="h-full w-full p-4 pt-16 max-h-dvh overflow-y-auto">
-    {% include 'ui/components/messages.html' %}
+    <!-- prettier-ignore -->
 
-    {% block main_content %}{% endblock %}
+    <!-- prettier-ignore -->
+    {% include 'ui/components/messages.html' %}
+    <!-- prettier-ignore -->
+    {% block main_content %}
+    <!-- prettier-ignore -->
+    {% endblock %}
   </main>
 </section>
+<!-- prettier-ignore -->
 {% endblock %}

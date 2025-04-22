@@ -5,11 +5,23 @@ npx @tailwindcss/cli -i ..\static\ui\css\app.css -o ..\static\ui\css\styles.css 
 @import "tailwindcss";
 
 @plugin "daisyui" {
-  themes: light --default, dark --prefers-dark, silk, lofi, caramellatte, cupcake, winter, dim, luxury, night, forest, sunset;
+  themes:
+    light --default,
+    dark --prefers-dark,
+    silk,
+    lofi,
+    caramellatte,
+    cupcake,
+    winter,
+    dim,
+    luxury,
+    night,
+    forest,
+    sunset;
 }
 
 @layer base {
   * {
-    @apply transition-all
+    @apply transition-all;
   }
 }

@@ -1,30 +1,60 @@
-{% extends 'ui/detail/base.html' %}
+<!-- prettier-ignore -->
+{% extends 'ui/detail/base.html' %}{% load i18n %}
+<!-- prettier-ignore -->
+{% block title %}
+<!-- prettier-ignore -->
+{{ block.super }} | {{ chapter.name }}
+<!-- prettier-ignore -->
+{% endblock %}
 
-{% load i18n %}
-
-{% block title %}{{ block.super }} | {{ chapter.name }}{% endblock %}
-
+<!-- prettier-ignore -->
 {% block breadcrumbs %}
 <li>
-  <a href="{% url 'al-quran:chapters' %}">{% translate 'Chapters' %}</a>
+  <a href="{% url 'al-quran:chapters' %}">
+    <!-- prettier-ignore -->
+    {% translate 'Chapters' %}</a
+  >
 </li>
 <li>
   <h2 style="font-family: '{{ user.font|default:'Noto Kufi Arabic' }}';">
     سُورَةُ {{ chapter.name }}
   </h2>
 </li>
+<!-- prettier-ignore -->
 {% endblock %}
 
+<!-- prettier-ignore -->
 {% block prev_url %}{% url 'al-quran:chapter-details' prev_id %}{% endblock %}
+
+<!-- prettier-ignore -->
 {% block next_url %}{% url 'al-quran:chapter-details' next_id %}{% endblock %}
 
+<!-- prettier-ignore -->
 {% block extra_btns %}
-<div class="tooltip tooltip-bottom tooltip-primary" data-tip="{% translate 'Info' %}">
-  <button type="button" onclick="info.showModal()" class="btn btn-sm btn-square btn-ghost lg:btn-md">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-info size-4 lg:size-6">
+<div
+  class="tooltip tooltip-bottom tooltip-primary"
+  data-tip="{% translate 'Info' %}"
+>
+  <button
+    type="button"
+    onclick="info.showModal()"
+    class="btn btn-sm btn-square btn-ghost lg:btn-md"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-badge-info size-4 lg:size-6"
+    >
       <path
-        d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
+        d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"
+      />
       <line x1="12" x2="12" y1="16" y2="12" />
       <line x1="12" x2="12.01" y1="8" y2="8" />
     </svg>
@@ -32,28 +62,48 @@
     <span class="sr-only">{% translate 'Info' %}</span>
   </button>
 </div>
+<!-- prettier-ignore -->
 {% endblock %}
 
+<!-- prettier-ignore -->
 {% block scripts %}
+<!-- prettier-ignore -->
 {{ block.super }}
 
 <dialog id="info" class="modal">
   <section class="modal-box grid gap-2 bg-base-100">
     <header class="flex items-center justify-between gap-2">
       <h1 class="text-2xl font-semibold">
+        <!-- prettier-ignore -->
         {% translate 'Chapter' %} {{ chapter.name }}
       </h1>
 
-      <form method="dialog" class="tooltip tooltip-bottom" data-tip="{% translate 'Close' %}">
+      <form
+        method="dialog"
+        class="tooltip tooltip-bottom"
+        data-tip="{% translate 'Close' %}"
+      >
         <button type="submit" class="btn flex btn-square btn-ghost">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-x size-4 lg:size-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-x size-4 lg:size-6"
+          >
             <path d="M18 6 6 18" />
             <path d="m6 6 12 12" />
           </svg>
 
-          <span class="sr-only">{% translate 'Close' %}</span>
+          <span class="sr-only">
+            <!-- prettier-ignore -->
+            {% translate 'Close' %}</span
+          >
         </button>
       </form>
     </header>
@@ -63,7 +113,10 @@
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">{% translate 'Chapter' %}</h2>
+            <h2 class="text-lg font-semibold">
+              <!-- prettier-ignore -->
+              {% translate 'Chapter' %}
+            </h2>
           </div>
           <div>
             <p class="badge badge-neutral">{{ chapter.id }}</p>
@@ -72,10 +125,16 @@
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">{% translate 'Name' %}</h2>
+            <h2 class="text-lg font-semibold">
+              <!-- prettier-ignore -->
+              {% translate 'Name' %}
+            </h2>
           </div>
           <div>
-            <p class="badge badge-neutral" style="font-family: '{{ user.font|default:'Noto Kufi Arabic' }}';">
+            <p
+              class="badge badge-neutral"
+              style="font-family: '{{ user.font|default:'Noto Kufi Arabic' }}';"
+            >
               سُورَةُ {{ chapter.name }}
             </p>
           </div>
@@ -83,10 +142,14 @@
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">{% translate 'Type' %}</h2>
+            <h2 class="text-lg font-semibold">
+              <!-- prettier-ignore -->
+              {% translate 'Type' %}
+            </h2>
           </div>
           <div>
             <p class="badge badge-neutral">
+              <!-- prettier-ignore -->
               {% if chapter.type %}{% translate 'Meccan' %}{% else %}{% translate 'Medinan' %}{% endif %}
             </p>
           </div>
@@ -94,36 +157,49 @@
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">{% translate 'Order' %}</h2>
+            <h2 class="text-lg font-semibold">
+              <!-- prettier-ignore -->
+              {% translate 'Order' %}
+            </h2>
           </div>
           <div>
-            <p class="badge badge-neutral"> {{ chapter.order }}</p>
-          </div>
-        </li>
-        <li class="list-row items-center">
-          <div></div>
-          <div>
-            <h2 class="text-lg font-semibold">{% translate 'Page count' %}</h2>
-          </div>
-          <div>
-            <p class="badge badge-neutral"> {{ chapter.page_count }}</p>
+            <p class="badge badge-neutral">{{ chapter.order }}</p>
           </div>
         </li>
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">{% translate 'Verse count' %}</h2>
+            <h2 class="text-lg font-semibold">
+              <!-- prettier-ignore -->
+              {% translate 'Page count' %}
+            </h2>
           </div>
           <div>
-            <p class="badge badge-neutral"> {{ chapter.verse_count }}</p>
+            <p class="badge badge-neutral">{{ chapter.page_count }}</p>
+          </div>
+        </li>
+        <li class="list-row items-center">
+          <div></div>
+          <div>
+            <h2 class="text-lg font-semibold">
+              <!-- prettier-ignore -->
+              {% translate 'Verse count' %}
+            </h2>
+          </div>
+          <div>
+            <p class="badge badge-neutral">{{ chapter.verse_count }}</p>
           </div>
         </li>
       </ol>
     </main>
 
     <form method="dialog" class="modal-action justify-center">
-      <button type="submit" class="btn w-full btn-primary">{% translate 'Close' %}</button>
+      <button type="submit" class="btn w-full btn-primary">
+        <!-- prettier-ignore -->
+        {% translate 'Close' %}
+      </button>
     </form>
   </section>
 </dialog>
+<!-- prettier-ignore -->
 {% endblock %}

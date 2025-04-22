@@ -1,43 +1,60 @@
-{% extends 'ui/base.html' %}
-
-{% load i18n %}
-
-{% block content_styles %}hidden lg:block{% endblock %}
-
+{% extends 'ui/base.html' %} {% load i18n %}
+<!-- prettier-ignore -->
+{% block content_styles %}hidden
+lg:block
+<!-- prettier-ignore -->
+{% endblock %}
+<!-- prettier-ignore -->
 {% block sidebar %}
 <section class="relative flex h-full flex-col gap-6">
   <header class="absolute inset-x-0 top-0 z-20">
-    <nav class="flex items-center justify-between p-4 gap-2 backdrop-blur-3xl rounded-t-box">
+    <nav
+      class="flex items-center justify-between p-4 gap-2 backdrop-blur-3xl rounded-t-box"
+    >
       <h2 class="text-xl font-semibold">
+        <!-- prettier-ignore -->
         {% block page_title %}{% endblock %}
       </h2>
     </nav>
   </header>
 
-  <main class="grid grow gap-2 h-full w-full p-4 py-20 max-h-dvh overflow-y-auto">
+  <main
+    class="grid grow gap-2 h-full w-full p-4 py-20 max-h-dvh overflow-y-auto"
+  >
     <ol class="list w-full rounded-box bg-base-200">
+      <!-- prettier-ignore -->
       {% block sidebar_content %}{% endblock %}
     </ol>
   </main>
 
+  <!-- prettier-ignore -->
   {% block pagination %}
   <footer class="absolute inset-x-0 bottom-0 z-10">
     <nav class="flex items-center p-4 gap-2 backdrop-blur-3xl rounded-b-box">
+      <!-- prettier-ignore -->
       {% include 'ui/components/pagination.html' %}
     </nav>
   </footer>
+  <!-- prettier-ignore -->
   {% endblock %}
 </section>
+<!-- prettier-ignore -->
 {% endblock %}
-
+<!-- prettier-ignore -->
 {% block content %}
-<section class="flex h-full w-full flex-col items-center justify-center gap-12 rounded-box p-8">
-  <h2 class="text-4xl font-black" style="font-family: 'Noto Serif';">
+<section
+  class="flex h-full w-full flex-col items-center justify-center gap-12 rounded-box p-8"
+>
+  <h2 class="text-4xl font-black" style="font-family: &quot;Noto Serif&quot;">
+    <!-- prettier-ignore -->
     {% translate 'In times of trouble and chaos' %}
   </h2>
 
   <div class="grid gap-2">
-    <h1 class="text-4xl text-primary" style="font-family: '{{ user.font|default:'Noto Kufi Arabic' }}';">
+    <h1
+      class="text-4xl text-primary"
+      style="font-family: '{{ user.font|default:'Noto Kufi Arabic' }}';"
+    >
       إِنَّ هَـٰذَا ٱلْقُرْءَانَ يَهْدِى لِلَّتِى هِىَ أَقْوَمُ
     </h1>
 
@@ -45,7 +62,9 @@
   </div>
 
   <p class="text-xl">
+    <!-- prettier-ignore -->
     {% translate 'Turning to the Quran can bring peace to our hearts. Its words are a source of comfort and solace.' %}
   </p>
 </section>
+<!-- prettier-ignore -->
 {% endblock %}
