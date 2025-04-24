@@ -5,16 +5,16 @@ from django.contrib.auth.models import AbstractUser
 
 # Constants
 FONTS = [
-    ("Noto Kufi Arabic", "Noto Kufi Arabic"),
-    ("Noto Sans Arabic", "Noto Sans Arabic"),
-    ("Reem Kufi Fun", "Reem Kufi Fun"),
-    ("Cairo Play", "Cairo Play"),
-    ("Fustat", "Fustat"),
-    ("Kufam", "Kufam"),
-    ("Reem Kufi", "Reem Kufi"),
-    ("Almarai", "Almarai"),
-    ("Amiri Quran", "Amiri Quran"),
     ("Amiri", "Amiri"),
+    ("font-kufam", "Kufam"),
+    ("font-fustat", "Fustat"),
+    ("font-reem", "Reem Kufi"),
+    ("font-almarai", "Almarai"),
+    ("font-cairo", "Cairo Play"),
+    ("Amiri Quran", "Amiri Quran"),
+    ("font-kufi", "Noto Kufi Arabic"),
+    ("font-reem-fun", "Reem Kufi Fun"),
+    ("font-noto-ar", "Noto Sans Arabic"),
 ]
 
 THEMES = [

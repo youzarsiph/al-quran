@@ -297,7 +297,7 @@ msgstr "المزيد"
 #: al_quran/ui/templates/ui/list/groups.html:5  
 #: al_quran/ui/templates/ui/list/groups.html:7  
 msgid "Groups"  
-msgstr "المجموعات"  
+msgstr "الأحزاب"  
 
 #: al_quran/ui/templates/rest_framework/api.html:116  
 #: al_quran/ui/templates/ui/base.html:149  
@@ -361,7 +361,19 @@ msgstr "الترتيب"
 #: al_quran/ui/templates/ui/detail/chapter.html:44  
 #: al_quran/ui/templates/ui/detail/chapter.html:66  
 msgid "Chapter"  
-msgstr "سورة"  
+msgstr "سورة"
+
+#: al_quran/ui/templates/ui/components/page.html:35
+msgid "Part"  
+msgstr "الجزء"
+
+#: al_quran/ui/templates/ui/components/page.html:111
+msgid "Group"  
+msgstr "الحزب"
+
+#: al_quran/ui/templates/ui/components/page.html:132
+msgid "Quarter"  
+msgstr "الربع"
 
 #: al_quran/ui/templates/ui/components/page.html:34  
 #: al_quran/ui/templates/ui/detail/chapter.html:115  
@@ -372,9 +384,9 @@ msgstr "عدد الآيات"
 msgid "Verses"  
 msgstr "آيات"  
 
-#: al_quran/ui/templates/ui/components/page.html:61  
-msgid "Page number"  
-msgstr "رقم الصفحة"  
+#: al_quran/ui/templates/ui/components/page.html:117  
+msgid "Page"  
+msgstr "الصفحة"  
 
 #: al_quran/ui/templates/ui/components/pagination.html:6  
 #: al_quran/ui/templates/ui/components/pagination.html:14  

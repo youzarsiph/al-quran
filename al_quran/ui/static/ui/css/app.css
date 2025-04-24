@@ -2,7 +2,24 @@
 npx @tailwindcss/cli -i ..\static\ui\css\app.css -o ..\static\ui\css\styles.css --cwd ..\..\templates\ -m
 */
 
+@import url('https: //fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https: //fonts.googleapis.com/css2?family=Almarai&family=Amiri&family=Amiri+Quran&family=Cairo+Play&family=Fustat&family=Kufam&family=Noto+Sans+Arabic&family=Noto+Kufi+Arabic&family=Noto+Sans&family=Noto+Serif&family=Reem+Kufi&family=Reem+Kufi+Fun&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-serif: "Noto Serif", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-kufam: Kufam, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-amiri: Amiri, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-fustat: Fustat, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-almarai: Almarai, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-reem: "Reem Kufi", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-cairo: "Cairo Play", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-kufi: "Noto Kufi Arabic", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-reem-fun: "Reem Kufi Fun", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-amiri-quran: "Amiri Quran", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-noto-ar: "Noto Sans Arabic", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Noto Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
 
 @plugin "daisyui" {
   themes:
@@ -22,6 +39,6 @@ npx @tailwindcss/cli -i ..\static\ui\css\app.css -o ..\static\ui\css\styles.css 
 
 @layer base {
   * {
-    @apply transition-all;
+    @apply font-sans transition-all rtl:font-kufi;
   }
 }

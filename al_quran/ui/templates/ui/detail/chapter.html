@@ -16,7 +16,7 @@
   >
 </li>
 <li>
-  <h2 style="font-family: '{{ user.font|default:'Noto Kufi Arabic' }}';">
+  <h2 class="{{ user.font|default:'font-kufi' }}">
     سُورَةُ {{ chapter.name }}
   </h2>
 </li>
@@ -131,10 +131,7 @@
             </h2>
           </div>
           <div>
-            <p
-              class="badge badge-neutral"
-              style="font-family: '{{ user.font|default:'Noto Kufi Arabic' }}';"
-            >
+            <p class="badge badge-neutral {{ user.font|default:'font-kufi' }}">
               سُورَةُ {{ chapter.name }}
             </p>
           </div>

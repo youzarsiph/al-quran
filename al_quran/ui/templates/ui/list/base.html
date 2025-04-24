@@ -45,16 +45,13 @@ lg:block
 <section
   class="flex h-full w-full flex-col items-center justify-center gap-12 rounded-box p-8"
 >
-  <h2 class="text-4xl font-black" style="font-family: &quot;Noto Serif&quot;">
+  <h2 class="text-4xl font-black font-serif">
     <!-- prettier-ignore -->
     {% translate 'In times of trouble and chaos' %}
   </h2>
 
   <div class="grid gap-2">
-    <h1
-      class="text-4xl text-primary"
-      style="font-family: '{{ user.font|default:'Noto Kufi Arabic' }}';"
-    >
+    <h1 class="text-4xl text-primary {{ user.font|default:'font-kufi' }}">
       إِنَّ هَـٰذَا ٱلْقُرْءَانَ يَهْدِى لِلَّتِى هِىَ أَقْوَمُ
     </h1>
 
