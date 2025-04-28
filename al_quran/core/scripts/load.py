@@ -3,6 +3,9 @@
 import json
 from pathlib import Path
 
+from al_quran.comp.collections.models import Collection
+from al_quran.comp.items.models import Item
+from al_quran.comp.languages.models import Language
 from al_quran.core.chapters.models import Chapter
 from al_quran.core.groups.models import Group
 from al_quran.core.pages.models import Page
@@ -115,6 +118,53 @@ def load_verses(src: Path) -> None:
     )
 
 
+def load_languages(src: Path) -> None:
+    """Load language data to languages table."""
+
+    Language.objects.bulk_create(
+        [
+            Language(name=lang["name"], code=lang["code"])
+            for lang in json.load(
+                open(src.joinpath("languages.json"), "r", encoding="utf-8")
+            )
+        ]
+    )
+
+
+def load_collections(src: Path) -> None:
+    """Load collection data to collections table."""
+
+    Collection.objects.bulk_create(
+        [
+            Collection(
+                language_id=c["language_id"],
+                type=c["type"],
+                name=c["name"],
+                description=c["description"] if c["description"] else "N/A",
+            )
+            for c in json.load(
+                open(src.joinpath("collections.json"), "r", encoding="utf-8")
+            )
+        ]
+    )
+
+
+def load_items(src: Path) -> None:
+    """Load item data to items table."""
+
+    Item.objects.bulk_create(
+        [
+            Item(
+                collection_id=i["collection_id"],
+                chapter_id=i["chapter_id"],
+                verse_id=i["verse_id"],
+                content=i["content"],
+            )
+            for i in json.load(open(src.joinpath("items.json"), "r", encoding="utf-8"))
+        ]
+    )
+
+
 def load_quran(src: Path) -> None:
     """Load Quran data"""
 
@@ -126,8 +176,22 @@ def load_quran(src: Path) -> None:
     load_verses(src)
 
 
-def run(src: str = "quran-db/json") -> None:
-    """Load quran data"""
+def load_comp(src: Path) -> None:
+    """Load complementary data"""
+
+    load_languages(src)
+    load_collections(src)
+    load_items(src)
+
+
+def run(src: str = "quran-db/json", with_comp: bool = True) -> None:
+    """
+    Load quran data
+
+    Args:
+        src (str): Path to data
+        with_comp (bool): Weather to include complementary data
+    """
 
     src_path = Path(src)
     if not src_path.exists():
@@ -141,3 +205,8 @@ def run(src: str = "quran-db/json") -> None:
     print("Loading Quran data")
     load_quran(src_path)
     print("Done")
+
+    if with_comp:
+        print("Loading complementary data")
+        load_comp(src_path)
+        print("Done")

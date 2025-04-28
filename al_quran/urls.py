@@ -3,7 +3,9 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from al_quran.comp.urls import comp_router
+from al_quran.comp.collections.views import CollectionViewSet
+from al_quran.comp.items.views import ItemViewSet
+from al_quran.comp.languages.views import LanguageViewSet
 from al_quran.core.chapters.views import ChapterViewSet
 from al_quran.core.groups.views import GroupViewSet
 from al_quran.core.pages.views import PageViewSet
@@ -20,8 +22,11 @@ router.register("groups", GroupViewSet, "group")
 router.register("quarters", QuarterViewSet, "quarter")
 router.register("pages", PageViewSet, "page")
 router.register("verses", VerseViewSet, "verse")
+router.register("languages", LanguageViewSet, "language")
+router.register("collections", CollectionViewSet, "collection")
+router.register("items", ItemViewSet, "item")
 
 
 urlpatterns = [
-    path("", include(router.urls + comp_router.urls)),
+    path("", include(router.urls)),
 ]

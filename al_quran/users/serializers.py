@@ -21,4 +21,8 @@ class UserSerializer(ModelSerializer):
             "email",
             "first_name",
             "last_name",
+            "font",
+            "theme",
+            "show_translations",
+            "show_transliterations",
         )

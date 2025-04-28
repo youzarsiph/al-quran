@@ -7,6 +7,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.views import generic
 
+from al_quran.comp.collections.models import Collection
 from al_quran.core.chapters.models import Chapter
 from al_quran.core.groups.models import Group
 from al_quran.core.pages.models import Page
@@ -55,7 +56,7 @@ class UserUpdateView(
 
     model = User
     template_name = "registration/form.html"
-    fields = ["font", "theme"]
+    fields = ["font", "theme", "interpretation", "translation", "transliteration"]
     success_url = reverse_lazy("al-quran:profile")
     success_message = "Your settings was updated successfully!"
     extra_context = {"title": "Settings"}

@@ -100,7 +100,20 @@
     <main dir="rtl" class="max-h-dvh h-full w-full pt-12 pb-2 lg:pt-18 lg:pb-8">
       <div class="carousel carousel-vertical gap-2 h-full w-full rounded-box">
         <!-- prettier-ignore -->
-        {% for page in pages %}{% include 'ui/components/page.html' %}{%endfor %}
+        {% with user=request.user %}
+        <!-- prettier-ignore -->
+        {% if user.interpretation or user.translation or user.transliteration %}
+        <!-- prettier-ignore -->
+        {% for page in pages %}{% include 'ui/components/page_full.html' %}{% endfor %}
+        <!-- prettier-ignore -->
+        {% else %}
+        <!-- prettier-ignore -->
+        {% for page in pages %}{% include 'ui/components/page.html' %}{% endfor %}
+        <!-- prettier-ignore -->
+        {% endif %}
+
+        <!-- prettier-ignore -->
+        {% endwith %}
       </div>
     </main>
   </section>

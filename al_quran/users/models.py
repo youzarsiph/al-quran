@@ -3,34 +3,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-# Constants
-FONTS = [
-    ("Amiri", "Amiri"),
-    ("font-kufam", "Kufam"),
-    ("font-fustat", "Fustat"),
-    ("font-reem", "Reem Kufi"),
-    ("font-almarai", "Almarai"),
-    ("font-cairo", "Cairo Play"),
-    ("Amiri Quran", "Amiri Quran"),
-    ("font-kufi", "Noto Kufi Arabic"),
-    ("font-reem-fun", "Reem Kufi Fun"),
-    ("font-noto-ar", "Noto Sans Arabic"),
-]
-
-THEMES = [
-    ("light", "Light"),
-    ("silk", "Light (Silk)"),
-    ("lofi", "Light (Simple)"),
-    ("caramellatte", "Light (Gold)"),
-    ("cupcake", "Light (Lightblue)"),
-    ("winter", "Light (Blue)"),
-    ("dark", "Dark"),
-    ("dim", "Dark (Simple)"),
-    ("luxury", "Dark (Gold)"),
-    ("night", "Dark (Lightblue)"),
-    ("forest", "Dark (Green)"),
-    ("sunset", "Dark (Orange)"),
-]
+from al_quran.users import FONTS, THEMES
 
 
 # Create your models here.
@@ -50,4 +23,28 @@ class User(AbstractUser):
         blank=True,
         choices=THEMES,
         help_text="App Theme",
+    )
+    interpretation = models.ForeignKey(
+        "collections.Collection",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="interpretations",
+        help_text="Quran interpretation",
+    )
+    translation = models.ForeignKey(
+        "collections.Collection",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="translations",
+        help_text="Quran translation",
+    )
+    transliteration = models.ForeignKey(
+        "collections.Collection",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="transliterations",
+        help_text="Quran transliteration",
     )
