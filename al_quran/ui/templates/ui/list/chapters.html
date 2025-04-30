@@ -1,10 +1,9 @@
-{% extends 'ui/list/base.html' %} {% load i18n %}
 <!-- prettier-ignore -->
-{% block title %}
+{% extends 'ui/list/base.html' %}{% load i18n %}
+
 <!-- prettier-ignore -->
-{{ block.super }} | {% translate 'Chapters' %}
-<!-- prettier-ignore -->
-{% endblock %}
+{% block title %}{{ block.super }} | {% translate 'Chapters' %}{% endblock %}
+
 <!-- prettier-ignore -->
 {% block page_title %}{% translate 'Chapters' %}{% endblock %}
 

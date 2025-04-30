@@ -11,6 +11,7 @@ app_name = "al-quran"
 
 urlpatterns = [
     path("", views.HomeView.as_view(), name="index"),
+    path("about/", views.AboutView.as_view(), name="about"),
     path("chapters/", views.ChapterListView.as_view(), name="chapters"),
     path(
         "chapters/<int:pk>/", views.ChapterDetailView.as_view(), name="chapter-details"

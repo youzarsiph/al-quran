@@ -1,13 +1,9 @@
 <!-- prettier-ignore -->
 {% extends 'registration/base.html' %}{% load i18n %}
+
 <!-- prettier-ignore -->
-{% block title %}
-<!-- prettier-ignore -->
-{{ block.super }} |
-<!-- prettier-ignore -->
-{% translate 'Logged out' %}
-<!-- prettier-ignore -->
-{% endblock %}
+{% block title %}{{ block.super }} | {% translate 'Logged out' %}{% endblock %}
+
 <!-- prettier-ignore -->
 {% block main %}
 <section
@@ -15,10 +11,7 @@
 >
   <div class="card mx-4 max-w-md rounded-box bg-base-200 shadow">
     <div class="card-body gap-6">
-      <h1 class="text-3xl">
-        <!-- prettier-ignore -->
-        {% translate 'Logged out' %}
-      </h1>
+      <h1 class="text-3xl">{% translate 'Logged out' %}</h1>
 
       <p>
         <!-- prettier-ignore -->
@@ -26,7 +19,6 @@
       </p>
 
       <a href="{% url 'al-quran:login' %}" class="btn btn-lg btn-primary">
-        <!-- prettier-ignore -->
         {% translate 'Login' %}
       </a>
     </div>

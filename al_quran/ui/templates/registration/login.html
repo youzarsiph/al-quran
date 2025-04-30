@@ -1,13 +1,8 @@
 <!-- prettier-ignore -->
-{% extends "registration/base.html" %}{% load i18n %}
+{% extends 'registration/base.html' %}{% load i18n %}
+
 <!-- prettier-ignore -->
-{% block title %}
-<!-- prettier-ignore -->
-{{ block.super }} |
-<!-- prettier-ignore -->
-{% translate 'Login' %}
-<!-- prettier-ignore -->
-{% endblock %}
+{% block title %}{{ block.super }} | {% translate 'Login' %}{% endblock %}
 
 <!-- prettier-ignore -->
 {% block main %}
@@ -26,7 +21,6 @@
         {% translate 'Login' %}
       </h2>
 
-      <!-- prettier-ignore -->
       <p>
         <!-- prettier-ignore -->
         {% translate 'Welcome, please login to continue.' %}
@@ -71,11 +65,9 @@
 
       <p>
         <a href="{% url 'al-quran:signup' %}" class="btn btn-ghost">
-          <!-- prettier-ignore -->
           {% translate 'Do not have an account?' %}
         </a>
         <a href="{% url 'al-quran:password_reset' %}" class="btn btn-ghost">
-          <!-- prettier-ignore -->
           {% translate 'Lost password?' %}
         </a>
       </p>

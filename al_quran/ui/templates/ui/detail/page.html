@@ -1,11 +1,8 @@
 <!-- prettier-ignore -->
 {% extends 'ui/detail/base.html' %}{% load i18n %}
+
 <!-- prettier-ignore -->
-{% block title %}
-<!-- prettier-ignore -->
-{{ block.super }} | {{ page.name }}
-<!-- prettier-ignore -->
-{% endblock %}
+{% block title %}{{ block.super }} | {{ page.name }}{% endblock %}
 
 <!-- prettier-ignore -->
 {% block breadcrumbs %}

@@ -28,6 +28,12 @@ class HomeView(generic.TemplateView):
     template_name = "ui/index.html"
 
 
+class AboutView(generic.TemplateView):
+    """Home page"""
+
+    template_name = "ui/about.html"
+
+
 class ProfileView(LoginRequiredMixin, generic.TemplateView):
     """Profile page"""
 

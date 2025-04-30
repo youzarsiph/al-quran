@@ -1,18 +1,14 @@
 <!-- prettier-ignore -->
 {% extends 'ui/base.html' %}{% load i18n %}
-<!-- prettier-ignore -->
-{% block nav_styles %}hidden lg:block
-<!-- prettier-ignore -->
-{% endblock %}
 
 <!-- prettier-ignore -->
-{% block main_styles %}lg:pl-0 rtl:lg:pl-2 rtl:lg:pr-0
+{% block nav_styles %}hidden lg:block{% endblock %}
+
 <!-- prettier-ignore -->
-{% endblock %}
+{% block main_styles %}lg:pl-0 rtl:lg:pl-2 rtl:lg:pr-0{% endblock %}
+
 <!-- prettier-ignore -->
-{% block pagination %}
-<!-- prettier-ignore -->
-{% endblock %}
+{% block pagination %}{% endblock %}
 
 <!-- prettier-ignore -->
 {% block main %}
@@ -25,11 +21,7 @@
         <div class="breadcrumbs text-xs/6 p-0 lg:text-base/8">
           <ol>
             <!-- prettier-ignore -->
-
-            <!-- prettier-ignore -->
-            {% block breadcrumbs %}
-            <!-- prettier-ignore -->
-            {% endblock %}
+            {% block breadcrumbs %}{% endblock %}
           </ol>
         </div>
 
@@ -57,10 +49,7 @@
                 <path d="m15 18-6-6 6-6" />
               </svg>
 
-              <span class="sr-only">
-                <!-- prettier-ignore -->
-                {% translate 'Previous' %}</span
-              >
+              <span class="sr-only">{% translate 'Previous' %}</span>
             </a>
           </div>
 
@@ -84,10 +73,7 @@
                 <path d="m9 18 6-6-6-6" />
               </svg>
 
-              <span class="sr-only">
-                <!-- prettier-ignore -->
-                {% translate 'Next' %}</span
-              >
+              <span class="sr-only">{% translate 'Next' %}</span>
             </a>
           </div>
 
@@ -105,13 +91,10 @@
         {% if user.interpretation or user.translation or user.transliteration %}
         <!-- prettier-ignore -->
         {% for page in pages %}{% include 'ui/components/page_full.html' %}{% endfor %}
-        <!-- prettier-ignore -->
         {% else %}
         <!-- prettier-ignore -->
         {% for page in pages %}{% include 'ui/components/page.html' %}{% endfor %}
-        <!-- prettier-ignore -->
         {% endif %}
-
         <!-- prettier-ignore -->
         {% endwith %}
       </div>

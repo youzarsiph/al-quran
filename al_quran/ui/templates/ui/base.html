@@ -16,6 +16,18 @@
 
     <!-- Styles -->
     <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link
       href="{% static 'ui/css/styles.css' %}"
       rel="stylesheet"
       type="text/css"
@@ -37,6 +49,8 @@
     {% block head %}{% endblock %}
   </head>
 
+  <!-- prettier ignore -->
+  {% block body %}
   <body class="flex h-dvh bg-base-300 overflow-hidden">
     <!-- Nav -->
     <section class="h-full z-30 {% block nav_styles %}{% endblock %}">
@@ -558,4 +572,5 @@
     <!-- prettier-ignore -->
     {% block scripts %}{% endblock %}
   </body>
+  {% endblock %}
 </html>

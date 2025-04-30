@@ -1,12 +1,9 @@
 <!-- prettier-ignore -->
-{% extends "registration/base.html" %}{% load i18n %}<!-- prettier-ignore -->
-{% block title %}
+{% extends 'registration/base.html' %}{% load i18n %}
+
 <!-- prettier-ignore -->
-{{ block.super }} |
-<!-- prettier-ignore -->
-{% translate 'Sign up' %}
-<!-- prettier-ignore -->
-{% endblock %}
+{% block title %}{{ block.super }} |  {% translate 'Sign up' %}{% endblock %}
+
 <!-- prettier-ignore -->
 {% block main %}
 <section
@@ -18,10 +15,7 @@
     <h1 class="text-3xl">
       <!-- prettier-ignore -->
       {% translate 'Sign up' %}
-      <span class="text-primary">
-        <!-- prettier-ignore -->
-        {% translate 'al-quran' %}</span
-      >
+      <span class="text-primary"> {% translate 'Al Quran' %} </span>
     </h1>
 
     <p>
@@ -34,11 +28,9 @@
 
     <p>
       <a href="{% url 'al-quran:login' %}" class="btn btn-ghost">
-        <!-- prettier-ignore -->
         {% translate 'Already have an account?' %}
       </a>
       <a href="{% url 'al-quran:password_reset' %}" class="btn btn-ghost">
-        <!-- prettier-ignore -->
         {% translate 'Lost password?' %}
       </a>
     </p>

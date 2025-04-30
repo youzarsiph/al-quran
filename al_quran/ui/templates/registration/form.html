@@ -1,20 +1,15 @@
 <!-- prettier-ignore -->
 {% extends 'registration/base.html' %}{% load i18n %}
+
 <!-- prettier-ignore -->
-{% block title %}
+{% block title %}{{ block.super }} | {{ title }}{% endblock %}
+
 <!-- prettier-ignore -->
-{{ block.super }} | {{ title }}
-<!-- prettier-ignore -->
-{% endblock %}
-<!-- prettier-ignore -->
-{% block sidebar_styles %}hidden lg:block
-<!-- prettier-ignore -->
-{% endblock %}
+{% block sidebar_styles %}hidden lg:block{% endblock %}
 
 <!-- prettier-ignore -->
 {% block breadcrumbs %}
 <li>{{ title }}</li>
-<!-- prettier-ignore -->
 {% endblock %}
 
 <!-- prettier-ignore -->
@@ -22,8 +17,6 @@
 <div class="grid gap-4">
   <h1 class="text-lg">{{ title }}</h1>
   <p>{{ description }}</p>
-
-  <!-- prettier-ignore -->
 
   <!-- prettier-ignore -->
   {% include 'ui/components/form.html' %}

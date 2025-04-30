@@ -1,13 +1,8 @@
 <!-- prettier-ignore -->
-{% extends "ui/base.html" %}{% load i18n %}
+{% extends 'ui/base.html' %}{% load i18n %}
+
 <!-- prettier-ignore -->
-{% block title %}
-<!-- prettier-ignore -->
-{{ block.super }} |
-<!-- prettier-ignore -->
-{% translate 'Profile' %}
-<!-- prettier-ignore -->
-{% endblock %}
+{% block title %}{{ block.super }} | {% translate 'Profile' %}{% endblock %}
 
 <div class="hidden">
   <div class="lg:block"></div>
