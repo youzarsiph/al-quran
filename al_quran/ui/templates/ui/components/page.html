@@ -1,20 +1,20 @@
 {% load i18n %}
 
-<div class="carousel-item h-full w-full">
+<div class="carousel-item size-full lg:w-1/2">
   <section
     id="page-{{ page.id }}"
-    class="relative card border-2 border-base-300 rounded-box lg:mx-auto lg:max-w-4xl"
+    class="relative card ring-1 ring-base-300 rounded-box"
   >
     <header
       class="absolute inset-x-0 top-0 z-10 backdrop-blur-3xl flex items-center justify-between gap-2 p-4 rounded-t-box"
     >
       <div
         class="tooltip tooltip-bottom tooltip-primary"
-        data-tip="{% translate 'Read' %}"
+        data-tip="{% trans 'Read' %}"
       >
         <a
-          href="{% url 'al-quran:chapter-details' page.chapter_id %}"
-          class="badge badge-xs badge-primary lg:badge-md"
+          href="{% url 'al-quran:chapter' page.chapter_id %}"
+          class="badge badge-xs badge-soft badge-primary lg:badge-md"
         >
           <h4 class="{{ user.font|default:'font-kufi' }}">
             سُورَةُ {{ page.chapter }}
@@ -23,51 +23,52 @@
       </div>
 
       <div
-        class="tooltip tooltip-bottom tooltip-secondary"
-        data-tip="{% translate 'Read' %}"
+        class="tooltip tooltip-bottom tooltip-primary"
+        data-tip="{% trans 'Read' %}"
       >
         <a
-          href="{% url 'al-quran:part-details' page.part_id %}"
-          class="badge badge-xs badge-secondary lg:badge-md"
+          href="{% url 'al-quran:part' page.part_id %}"
+          class="badge badge-xs badge-soft badge-primary lg:badge-md"
         >
-          {% translate 'Part' %} {{ page.part_id }}
+          {% trans 'Part' %} {{ page.part_id }}
         </a>
       </div>
     </header>
 
     <main class="card-body px-4 grow py-20 overflow-y-auto lg:px-6">
       <div role="text" class="text-center {{ user.font|default:'font-kufi' }}">
-        <!-- prettier-ignore -->
         {% for verse in page.verses.all %}
-        <!-- prettier-ignore -->
+        <!---->
         {% if verse.number == 1 %}
         <div
           class="card card-body flex-row items-center justify-between rounded-box bg-base-200 shadow-sm my-4"
         >
           <div
-            class="tooltip tooltip-bottom tooltip-neutral"
-            data-tip="{% translate 'Order' %}"
+            class="tooltip tooltip-bottom tooltip-success"
+            data-tip="{% trans 'Order' %}"
           >
             <span
-              class="badge badge-xs badge-neutral font-[inherit] lg:badge-md"
+              class="badge badge-xs badge-success font-[inherit] lg:badge-md"
             >
-              <span class="hidden md:block">{% translate 'Chapter' %}</span>
+              <span>تَرْتِيبُهَا</span>
               {{ verse.chapter.id }}
             </span>
           </div>
 
-          <h1 class="text-lg font-bold font-[inherit] lg:text-2xl">
+          <h1
+            class="text-lg font-bold text-primary text-shadow-lg font-[inherit] lg:text-2xl"
+          >
             سُورَةُ {{ verse.chapter }}
           </h1>
 
           <div
-            class="tooltip tooltip-bottom tooltip-neutral"
-            data-tip="{% translate 'Verse count' %}"
+            class="tooltip tooltip-bottom tooltip-success"
+            data-tip="{% trans 'Verse count' %}"
           >
             <span
-              class="badge badge-xs badge-neutral font-[inherit] lg:badge-md"
+              class="badge badge-xs badge-success font-[inherit] lg:badge-md"
             >
-              <span class="hidden md:block"> {% translate 'Verses' %}</span>
+              <span>آيَاتُهَا</span>
               {{ verse.chapter.verse_count }}
             </span>
           </div>
@@ -78,13 +79,14 @@
         >
           {{ verse.content|slice:'0:39' }}
         </span>
+
         <span
           id="verse-{{ verse.number }}"
           class="text-base/8 font-[inherit] lg:text-2xl/12"
         >
           {{ verse.content|slice:'39:' }}
         </span>
-        <!-- prettier-ignore -->
+
         {% else %}
         <span
           id="verse-{{ verse.number }}"
@@ -93,12 +95,19 @@
           {{ verse.content }}
         </span>
         {% endif %}
-        <button
-          type="button"
-          class="btn btn-xs btn-circle btn-primary lg:btn-sm"
+
+        <div
+          class="tooltip tooltip-bottom tooltip-primary"
+          data-tip="{% trans 'Options' %}"
         >
-          {{ verse.number }}
-        </button>
+          <button
+            onclick="onVerseClick('{{ verse.number }}')"
+            class="btn btn-xs btn-square btn-primary md:btn-sm"
+          >
+            {{ verse.number }}
+            <span class="sr-only">{% trans 'Options' %}</span>
+          </button>
+        </div>
         {% endfor %}
       </div>
     </main>
@@ -107,20 +116,20 @@
       class="absolute inset-x-0 bottom-0 z-10 backdrop-blur-3xl flex items-center justify-between gap-2 p-4 rounded-b-box"
     >
       <div
-        class="tooltip tooltip-top tooltip-accent"
-        data-tip="{% translate 'Read' %}"
+        class="tooltip tooltip-top tooltip-primary"
+        data-tip="{% trans 'Read' %}"
       >
         <a
-          href="{% url 'al-quran:group-details' page.group_id %}"
-          class="badge badge-xs badge-accent font-[inherit] lg:badge-md"
+          href="{% url 'al-quran:group' page.group_id %}"
+          class="badge badge-xs badge-soft badge-primary font-[inherit] lg:badge-md"
         >
-          {% translate 'Group' %} {{ page.group_id }}
+          {% trans 'Group' %} {{ page.group_id }}
         </a>
       </div>
 
       <div
         class="tooltip tooltip-top tooltip-primary"
-        data-tip="{% translate 'Page' %}"
+        data-tip="{% trans 'Page' %}"
       >
         <span class="badge badge-xs badge-primary font-[inherit] lg:badge-lg">
           {{ page.id }}
@@ -128,14 +137,14 @@
       </div>
 
       <div
-        class="tooltip tooltip-top tooltip-success"
-        data-tip="{% translate 'Read' %}"
+        class="tooltip tooltip-top tooltip-primary"
+        data-tip="{% trans 'Read' %}"
       >
         <a
-          href="{% url 'al-quran:quarter-details' page.quarter_id %}"
-          class="badge badge-xs badge-success font-[inherit] lg:badge-md"
+          href="{% url 'al-quran:quarter' page.quarter_id %}"
+          class="badge badge-xs badge-soft badge-primary font-[inherit] lg:badge-md"
         >
-          {% translate 'Quarter' %} {{ page.quarter_id }}
+          {% trans 'Quarter' %} {{ page.quarter_id }}
         </a>
       </div>
     </footer>

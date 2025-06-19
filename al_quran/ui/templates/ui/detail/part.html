@@ -1,17 +1,4 @@
-<!-- prettier-ignore -->
 {% extends 'ui/detail/base.html' %}{% load i18n %}
 
-<!-- prettier-ignore -->
-{% block title %}{{ block.super }} | {{ part.name }}{% endblock %}
-
-<!-- prettier-ignore -->
-{% block breadcrumbs %}
-<li><a href="{% url 'al-quran:parts' %}">{% translate 'Parts' %}</a></li>
-<li>{{ part.name }}</li>
-{% endblock %}
-
-<!-- prettier-ignore -->
-{% block prev_url %}{% url 'al-quran:part-details' prev_id %}{% endblock %}
-
-<!-- prettier-ignore -->
-{% block next_url %}{% url 'al-quran:part-details' next_id %}{% endblock %}
+<!---->
+{% block title %} {{ block.super }} | {{ part.name }}{% endblock %}

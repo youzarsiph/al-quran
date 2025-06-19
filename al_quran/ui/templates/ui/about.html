@@ -1,130 +1,109 @@
-<!-- prettier ignore -->
-{% extends 'ui/index.html' %}{% load i18n %}
+{% extends 'ui/base.html' %}{% load i18n %}
 
-<!-- prettier ignore -->
-{% block title %}{{ block.super }} | {% translate 'About us' %}{% endblock %}
+<!---->
+{% block title %}{{ block.super }} | {% trans 'About us' %}{% endblock %}
 
-<!-- prettier ignore -->
+<!---->
 {% block content %}
-<div class="container grid gap-8 mx-auto py-16 px-4">
-  <div class="prose mx-auto">
+<div class="container mx-auto px-4">
+  <div class="prose mx-auto lg:prose-lg xl:prose-xl">
     <section id="about-our-project">
-      <h1>{% translate 'The Project' %}</h1>
+      <h1>{% trans 'The Project' %}</h1>
       <p>
-        <!-- prettier ignore -->
-        {% blocktranslate %} The Quran is a timeless beacon of guidance, wisdom,
-        and spiritual nourishment. In an age where technology connects us more
-        than ever before, our goal is to harness these digital tools to bring
-        the Divine Word to everyone—anytime, anywhere. By creating an
+        {% blocktrans trimmed %}The Quran is a timeless beacon of guidance,
+        wisdom, and spiritual nourishment. In an age where technology connects
+        us more than ever before, our goal is to harness these digital tools to
+        bring the Divine Word to everyone—anytime, anywhere. By creating an
         interactive, responsive digital platform, we honor centuries of rich
         tradition while paving a new path for contemporary seekers.
-        <!-- prettier ignore -->
-        {% endblocktranslate %}
+        <!---->
+        {% endblocktrans %}
       </p>
     </section>
 
     <section id="our-mission">
-      <h2>{% translate 'Our Mission' %}</h2>
+      <h2>{% trans 'Our Mission' %}</h2>
       <p>
-        <!-- prettier ignore -->
-        {% blocktranslate %} At the heart of our project is a deep commitment to
-        making the wisdom of the Quran accessible to a global community. We
+        {% blocktrans trimmed %}At the heart of our project is a deep commitment
+        to making the wisdom of the Quran accessible to a global community. We
         believe that true progress comes when timeless spiritual truths meet
         modern innovation. Our mission is to build an open-source app that
         empowers every individual—no matter their background or location—to
         engage with the Quran in a way that is both spiritually enriching and
-        technologically advanced.
-        <!-- prettier ignore -->
-        {% endblocktranslate %}
+        technologically advanced.{% endblocktrans %}
       </p>
     </section>
 
     <section id="our-story">
-      <h2>{% translate 'Our Story' %}</h2>
+      <h2>{% trans 'Our Story' %}</h2>
       <p>
-        <!-- prettier ignore -->
-        {% blocktranslate %} What began as a collaborative spark among
+        {% blocktrans trimmed %}What began as a collaborative spark among
         passionate developers, scholars, and community members has grown into an
         ambitious open-source project. We envisioned a digital sanctuary where
         users could quickly access translations, tafsir, and audio recitations,
         all wrapped in an intuitive and engaging design. Every line of code and
         design decision is inspired by the desire to spread knowledge, foster
         understanding, and help transform daily engagement with the Quran into a
-        deeply personal journey.
-        <!-- prettier ignore -->
-        {% endblocktranslate %}
+        deeply personal journey.{% endblocktrans %}
       </p>
     </section>
 
     <section id="our-vision">
-      <h2>{% translate 'Our Vision' %}</h2>
+      <h2>{% trans 'Our Vision' %}</h2>
       <p>
-        <!-- prettier ignore -->
-        {% blocktranslate %} Our vision is clear: a seamless digital experience
-        that brings the Quran into everyday life. Whether you're reading on your
-        desktop during a quiet morning or accessing the app on your mobile
-        device as you travel, our goal is to offer an interface that is both
-        aesthetically pleasing and powerfully functional. We aspire to build a
-        global community where learning, reflection, and spiritual growth are
-        just a tap away.
-        <!-- prettier ignore -->
-        {% endblocktranslate %}
+        {% blocktrans trimmed %}Our vision is clear: a seamless digital
+        experience that brings the Quran into everyday life. Whether you're
+        reading on your desktop during a quiet morning or accessing the app on
+        your mobile device as you travel, our goal is to offer an interface that
+        is both aesthetically pleasing and powerfully functional. We aspire to
+        build a global community where learning, reflection, and spiritual
+        growth are just a tap away.{% endblocktrans %}
       </p>
     </section>
 
     <section id="our-values">
-      <h2>{% translate 'Our Values' %}</h2>
+      <h2>{% trans 'Our Values' %}</h2>
       <ul class="list-disc list-inside text-lg leading-relaxed space-y-2">
         <li>
-          <strong>{% translate 'Integrity & Authenticity:' %}</strong>
-          <!-- prettier ignore -->
-          {% blocktranslate %} We honor the sacred traditions of the Quran while
-          embracing innovation with reverence.
-          <!-- prettier ignore -->
-          {% endblocktranslate %}
+          <strong>{% trans 'Integrity & Authenticity:' %}</strong>
+
+          {% blocktrans trimmed %}We honor the sacred traditions of the Quran
+          while embracing innovation with reverence.{% endblocktrans %}
         </li>
         <li>
-          <strong>{% translate 'Inclusivity & Accessibility:' %}</strong>
-          <!-- prettier ignore -->
-          {% blocktranslate %} Our platform is designed for everyone, featuring
-          multi-language support and responsive design to suit any device.
-          <!-- prettier ignore -->
-          {% endblocktranslate %}
+          <strong>{% trans 'Inclusivity & Accessibility:' %}</strong>
+
+          {% blocktrans trimmed %}Our platform is designed for everyone,
+          featuring multi-language support and responsive design to suit any
+          device.{% endblocktrans %}
         </li>
         <li>
-          <strong>{% translate 'Collaboration & Innovation:' %}</strong>
-          <!-- prettier ignore -->
-          {% blocktranslate %} As an open-source project, we thrive on community
-          contributions, diverse perspectives, and the shared passion for
-          creating something meaningful.
-          <!-- prettier ignore -->
-          {% endblocktranslate %}
+          <strong>{% trans 'Collaboration & Innovation:' %}</strong>
+
+          {% blocktrans trimmed %}As an open-source project, we thrive on
+          community contributions, diverse perspectives, and the shared passion
+          for creating something meaningful.{% endblocktrans %}
         </li>
         <li>
-          <strong>{% translate 'Impact & Excellence:' %}</strong>
-          <!-- prettier ignore -->
-          {% blocktranslate %} Every feature, every update, and every discussion
-          is driven by our desire to make a lasting, positive impact on users
-          lives.
-          <!-- prettier ignore -->
-          {% endblocktranslate %}
+          <strong>{% trans 'Impact & Excellence:' %}</strong>
+
+          {% blocktrans trimmed %}Every feature, every update, and every
+          discussion is driven by our desire to make a lasting, positive impact
+          on users lives.{% endblocktrans %}
         </li>
       </ul>
     </section>
 
     <section id="join-our-journey">
-      <h2>{% translate 'Join Our Journey' %}</h2>
+      <h2>{% trans 'Join Our Journey' %}</h2>
       <p>
-        <!-- prettier ignore -->
-        {% blocktranslate %} By contributing to our project, whether through
+        {% blocktrans trimmed %}By contributing to our project, whether through
         coding, design, scholarly insights, or even spreading the word, you
         become a part of a larger mission—to enhance access to the Quran and
         earn hasanat through your service. We invite you to explore our
         platform, share your feedback, and join our growing community of
         innovators, learners, and believers dedicated to merging timeless wisdom
-        with modern technology.
-        <!-- prettier ignore -->
-        {% endblocktranslate %}
+        with modern technology.{% endblocktrans %}
       </p>
     </section>
   </div>

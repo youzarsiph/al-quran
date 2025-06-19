@@ -1,7 +1,7 @@
 """API endpoints for al_quran.comp.languages"""
 
-from rest_framework.viewsets import ReadOnlyModelViewSet
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.viewsets import ReadOnlyModelViewSet
 
 from al_quran.comp.languages.models import Language
 from al_quran.comp.languages.serializers import LanguageSerializer

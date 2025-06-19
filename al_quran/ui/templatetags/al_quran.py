@@ -1,10 +1,10 @@
 """Custom template tags for Al Quran"""
 
 from typing import Optional
+
 from django import template
 
 from al_quran.comp.collections.models import Collection
-
 
 register = template.Library()
 

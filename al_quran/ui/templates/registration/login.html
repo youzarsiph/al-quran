@@ -1,78 +1,72 @@
-<!-- prettier-ignore -->
 {% extends 'registration/base.html' %}{% load i18n %}
 
-<!-- prettier-ignore -->
-{% block title %}{{ block.super }} | {% translate 'Login' %}{% endblock %}
+<!---->
+{% block title %}{{ block.super }} | {% trans 'Login' %}{% endblock %}
 
-<!-- prettier-ignore -->
-{% block main %}
-<section
-  class="flex h-full w-full items-center justify-center rounded-box bg-base-100 lg:p-40"
+<!---->
+{% block content %}
+<div
+  class="flex col-span-12 py-24 items-center justify-center rounded-box bg-base-100"
 >
-  <div class="card mx-4 max-w-md rounded-box bg-base-200 shadow-xl">
-    <div class="card-body gap-6">
-      <h1 class="text-5xl font-serif">
-        <!-- prettier-ignore -->
-        {% translate 'Al Quran' %}
-      </h1>
+  <section
+    class="card relative overflow-hidden max-w-3xl rounded-box bg-base-200 shadow-xs lg:card-lg"
+  >
+    <header
+      class="tooltip tooltip-bottom tooltip-primary mt-4 mx-auto"
+      data-tip="{% trans 'Al-Quran' %}"
+    >
+      <a
+        href="{% url 'al-quran:home' %}"
+        class="btn btn-square btn-xl btn-primary"
+      >
+        <span class="sr-only">{% trans 'Al-Quran' %}</span>
+      </a>
+    </header>
 
-      <h2 class="text-3xl">
-        <!-- prettier-ignore -->
-        {% translate 'Login' %}
+    <main class="card-body gap-6">
+      <h2 class="text-xl font-bold text-primary lg:text-3xl">
+        {% trans 'Log in' %}
       </h2>
 
-      <p>
-        <!-- prettier-ignore -->
-        {% translate 'Welcome, please login to continue.' %}
-      </p>
+      <p>{% trans 'Welcome, please login to continue.' %}</p>
 
-      <!-- prettier-ignore -->
-      {% if form.errors %}
-      <p>
-        <!-- prettier-ignore -->
-        {% translate 'Your username and password did not match. Please try again.' %}
-      </p>
-      <!-- prettier-ignore -->
+      <!---->
+      {% if next %}
+      <!---->
+      {% if user.is_authenticated %}
+      <div role="alert" class="alert alert-horizontal alert-warning">
+        <i data-lucide="triangle-alert" class="size-4 lg:size-6"></i>
+
+        <p>
+          {% blocktrans trimmed %}Your account doesn't have access to this page.
+          To proceed, please login with an account that has access.
+          <!---->
+          {% endblocktrans %}
+        </p>
+      </div>
+      <!---->
+      {% endif %}
+      <!---->
       {% endif %}
 
-      <!-- prettier-ignore -->
-      {% if next %}
-      <!-- prettier-ignore -->
-      {% if user.is_authenticated %}
-      <p>
-        <!-- prettier-ignore -->
-        {% blocktranslate %}
-        Your account doesn't have access to this page. To proceed,
-        please login with an account that has access.
-        <!-- prettier-ignore -->
-        {% endblocktranslate %}
-      </p>
-
-      <!-- prettier-ignore -->
-      {% else %}
-      <!-- prettier-ignore -->
-      <p>
-        <!-- prettier-ignore -->
-        {% translate 'Please login to see this page.' %}
-      </p>
-
-      <!-- prettier-ignore -->
-      {% endif %}{% endif %}
-      <!-- prettier-ignore -->
-
-      <!-- prettier-ignore -->
+      <!---->
       {% include 'ui/components/form.html' %}
+    </main>
 
-      <p>
-        <a href="{% url 'al-quran:signup' %}" class="btn btn-ghost">
-          {% translate 'Do not have an account?' %}
-        </a>
-        <a href="{% url 'al-quran:password_reset' %}" class="btn btn-ghost">
-          {% translate 'Lost password?' %}
-        </a>
-      </p>
-    </div>
-  </div>
-</section>
-<!-- prettier-ignore -->
+    <footer class="grid grid-cols-2">
+      <a
+        href="{% url 'al-quran:signup' %}"
+        class="btn rounded-none btn-soft btn-primary"
+      >
+        {% trans 'Sign up' %}
+      </a>
+      <a
+        href="{% url 'al-quran:password_reset' %}"
+        class="btn rounded-none btn-soft btn-primary"
+      >
+        {% trans 'Forgot password?' %}
+      </a>
+    </footer>
+  </section>
+</div>
 {% endblock %}

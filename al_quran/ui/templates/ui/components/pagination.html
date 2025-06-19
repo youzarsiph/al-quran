@@ -1,16 +1,13 @@
 {% load i18n %}
-<!-- prettier-ignore -->
-{% if page_obj %}
 <ol class="join flex-wrap">
-  <!-- prettier-ignore -->
   {% if page_obj.has_previous %}
   <li
     class="tooltip tooltip-top tooltip-primary"
-    data-tip="{% translate 'Previous' %}"
+    data-tip="{% trans 'Previous' %}"
   >
     <a
       href="?page={{ page_obj.previous_page_number }}"
-      class="btn join-item btn-primary btn-soft"
+      class="btn join-item btn-primary"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -27,52 +24,46 @@
         <path d="m15 18-6-6 6-6" />
       </svg>
 
-      <span class="sr-only">{% translate 'Previous' %}</span>
+      <span class="sr-only">{% trans 'Previous' %}</span>
     </a>
   </li>
 
   <li
     class="tooltip tooltip-top tooltip-secondary"
-    data-tip="{% translate 'First' %}"
+    data-tip="{% trans 'First' %}"
   >
     <a href="?page=1" class="btn join-item btn-secondary btn-soft">
-      <!-- prettier-ignore -->
-      {% translate 'First' %}
+      {% trans 'First' %}
     </a>
   </li>
   {% endif %}
 
   <li
     class="tooltip tooltip-top tooltip-accent"
-    data-tip="{% translate 'Current' %}"
+    data-tip="{% trans 'Current' %}"
   >
     <button class="btn join-item btn-accent btn-soft">
       {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
     </button>
   </li>
 
-  <!-- prettier-ignore -->
   {% if page_obj.has_next %}
   <li
     class="tooltip tooltip-top tooltip-secondary"
-    data-tip="{% translate 'Last' %}"
+    data-tip="{% trans 'Last' %}"
   >
     <a
       href="?page={{ page_obj.paginator.num_pages }}"
       class="btn join-item btn-secondary btn-soft"
     >
-      <!-- prettier-ignore -->
-      {% translate 'Last' %}
+      {% trans 'Last' %}
     </a>
   </li>
 
-  <li
-    class="tooltip tooltip-top tooltip-primary"
-    data-tip="{% translate 'Next' %}"
-  >
+  <li class="tooltip tooltip-top tooltip-primary" data-tip="{% trans 'Next' %}">
     <a
       href="?page={{ page_obj.next_page_number }}"
-      class="btn join-item btn-primary btn-soft"
+      class="btn join-item btn-primary"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -89,9 +80,8 @@
         <path d="m9 18 6-6-6-6" />
       </svg>
 
-      <span class="sr-only">{% translate 'Next' %}</span>
+      <span class="sr-only">{% trans 'Next' %}</span>
     </a>
   </li>
   {% endif %}
 </ol>
-{% endif %}

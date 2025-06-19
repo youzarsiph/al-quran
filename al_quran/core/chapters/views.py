@@ -1,7 +1,7 @@
 """API endpoints for al_quran.core.chapters"""
 
-from rest_framework.viewsets import ReadOnlyModelViewSet
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.viewsets import ReadOnlyModelViewSet
 
 from al_quran.core.chapters.models import Chapter
 from al_quran.core.chapters.serializers import ChapterSerializer

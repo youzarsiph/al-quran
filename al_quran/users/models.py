@@ -1,7 +1,8 @@
 """Data Models for al_quran.users"""
 
-from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from al_quran.users import FONTS, THEMES
 
@@ -15,14 +16,14 @@ class User(AbstractUser):
         null=True,
         blank=True,
         choices=FONTS,
-        help_text="Quran Font",
+        help_text=_("Quran Font"),
     )
     theme = models.CharField(
         max_length=16,
         null=True,
         blank=True,
         choices=THEMES,
-        help_text="App Theme",
+        help_text=_("App Theme"),
     )
     interpretation = models.ForeignKey(
         "collections.Collection",
@@ -30,7 +31,8 @@ class User(AbstractUser):
         null=True,
         blank=True,
         related_name="interpretations",
-        help_text="Quran interpretation",
+        help_text=_("Quran interpretation"),
+        limit_choices_to={"type": 2},
     )
     translation = models.ForeignKey(
         "collections.Collection",
@@ -38,7 +40,8 @@ class User(AbstractUser):
         null=True,
         blank=True,
         related_name="translations",
-        help_text="Quran translation",
+        help_text=_("Quran translation"),
+        limit_choices_to={"type": 0},
     )
     transliteration = models.ForeignKey(
         "collections.Collection",
@@ -46,5 +49,6 @@ class User(AbstractUser):
         null=True,
         blank=True,
         related_name="transliterations",
-        help_text="Quran transliteration",
+        help_text=_("Quran transliteration"),
+        limit_choices_to={"type": 1},
     )

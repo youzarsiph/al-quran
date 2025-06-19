@@ -1,579 +1,230 @@
-<!-- prettier-ignore -->
 {% extends 'ui/base.html' %}{% load i18n %}
 
-<!-- prettier-ignore -->
-{% block body %}
-<body class="flex h-dvh bg-base-300 overflow-hidden p-1 lg:p-2">
-  <div class="drawer rounded-box bg-base-100">
-    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+<!---->
+{% block content %}
+<section id="hero">
+  <div class="hero">
+    <div class="hero-content py-40">
+      <div class="max-w-xl">
+        <h1 class="text-3xl lg:text-5xl font-black tracking-wide">
+          {% trans 'Experience the Quran Like Never Before' %}
+        </h1>
 
-    <div class="drawer-content flex flex-col rounded-box overflow-y-auto">
-      <!-- Navbar -->
-      <header class="absolute inset-x-0 top-0 z-20">
-        <nav
-          class="navbar backdrop-blur-3xl bg-base-100/50 rounded-t-box w-full"
+        <p class="py-6 text-xl">
+          {% blocktrans trimmed %}An interactive journey to deepen your
+          understanding and connection{% endblocktrans %}
+        </p>
+
+        <a
+          href="{% url 'al-quran:chapters' %}"
+          class="btn btn-lg btn-primary font-bold"
         >
-          <div class="flex-none lg:hidden">
-            <label
-              for="my-drawer"
-              aria-label="open sidebar"
-              class="btn btn-square btn-ghost"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                class="inline-block h-6 w-6 stroke-current"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </label>
-          </div>
+          {% trans 'Begin Your Journey' %}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-          <div class="mx-2 flex-1 px-2">
-            <h1 class="text-primary text-xl">
-              <a
-                href="{% url 'al-quran:index' %}"
-                class="flex items-center gap-4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-collection-open-text lg:size-8"
-                >
-                  <path d="M12 7v14" />
-                  <path d="M16 12h2" />
-                  <path d="M16 8h2" />
-                  <path
-                    d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
-                  />
-                  <path d="M6 12h2" />
-                  <path d="M6 8h2" />
-                </svg>
+<section id="features" class="grid gap-4 lg:gap-8">
+  <h1 class="text-5xl font-bold">{% trans 'Features' %}</h1>
 
-                <span>{% translate 'Al Quran' %}</span>
-              </a>
+  <div class="grid grid-cols-12 gap-4">
+    <div class="col-span-12 lg:col-span-8">
+      <figure class="diff aspect-16/9 rounded-box" tabindex="0">
+        <div class="diff-item-1" role="img" tabindex="0">
+          <img
+            src="https://github.com/user-attachments/assets/05f0f980-1159-4258-9a59-02c732d2332e"
+            alt="{% trans 'Al Quran Screenshot' %}"
+          />
+        </div>
+        <div class="diff-item-2" role="img">
+          <img
+            src="https://github.com/user-attachments/assets/5462c9e9-3a56-4561-b7ac-2eb8754a8af1"
+            alt="{% trans 'Al Quran Screenshot' %}"
+          />
+        </div>
+        <div class="diff-resizer"></div>
+      </figure>
+    </div>
+    <div class="col-span-12 lg:col-span-4">
+      <div
+        class="hero bg-primary py-24 text-primary-content h-full rounded-box"
+      >
+        <div class="hero-content text-center">
+          <div class="max-w-lg">
+            <h1 class="text-2xl lg:text-4xl font-bold">
+              {% trans 'Interactive Reading Experience' %}
             </h1>
-          </div>
 
-          <div class="hidden flex-none lg:block">
-            <ul class="menu menu-horizontal items-center gap-4">
-              <li>
-                <a href="{% url 'al-quran:index' %}">
-                  {% translate 'Home' %}
-                </a>
-              </li>
-              <li>
-                <a href="#features"> {% translate 'Features' %} </a>
-              </li>
-              <li>
-                <a href="{% url 'al-quran:about' %}">
-                  {% translate 'About' %}
-                </a>
-              </li>
-              {% if request.user.is_authenticated %}
-              <li>
-                <a
-                  href="{% url 'al-quran:profile' %}"
-                  class="btn btn-sm btn-primary"
-                >
-                  {% translate 'Profile' %}
-                </a>
-              </li>
-              <!-- prettier-ignore -->
-              {% else %}
-              <li>
-                <a
-                  href="{% url 'al-quran:signup' %}"
-                  class="btn btn-sm btn-primary"
-                >
-                  {% translate 'Sign up' %}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="{% url 'al-quran:login' %}"
-                  class="btn btn-sm btn-secondary"
-                >
-                  {% translate 'Log in' %}
-                </a>
-              </li>
-              <!-- prettier-ignore -->
-              {% endif %}
-            </ul>
-          </div>
-        </nav>
-      </header>
-
-      <!-- Page content here -->
-      <div class="grid gap-4 lg:gap-8 h-full w-full">
-        <!-- prettier ignore -->
-        {% block content %}
-        <section id="hero">
-          <div class="hero">
-            <div class="hero-content py-40">
-              <div class="max-w-xl">
-                <h1 class="text-3xl lg:text-5xl font-black tracking-wide">
-                  {% translate 'Experience the Quran Like Never Before' %}
-                </h1>
-
-                <p class="py-6 text-xl">
-                  <!-- prettier ignore -->
-                  {% blocktranslate %} An interactive journey to deepen your
-                  understanding and connection
-                  <!-- prettier ignore -->
-                  {% endblocktranslate %}
-                </p>
-
-                <button class="btn btn-lg btn-primary font-bold">
-                  {% translate 'Begin Your Journey' %}
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="features" class="grid gap-4 p-4 lg:gap-8">
-          <h1 class="text-5xl font-bold">{% translate 'Features' %}</h1>
-
-          <div class="grid grid-cols-12 gap-4">
-            <div class="col-span-12 lg:col-span-8">
-              <figure class="diff aspect-16/9 rounded-box" tabindex="0">
-                <div class="diff-item-1" role="img" tabindex="0">
-                  <img
-                    src="https://github.com/user-attachments/assets/05f0f980-1159-4258-9a59-02c732d2332e"
-                    alt="{% translate 'Al Quran Screenshot' %}"
-                  />
-                </div>
-                <div class="diff-item-2" role="img">
-                  <img
-                    src="https://github.com/user-attachments/assets/5462c9e9-3a56-4561-b7ac-2eb8754a8af1"
-                    alt="{% translate 'Al Quran Screenshot' %}"
-                  />
-                </div>
-                <div class="diff-resizer"></div>
-              </figure>
-            </div>
-            <div class="col-span-12 lg:col-span-4">
-              <div
-                class="hero bg-primary py-24 text-primary-content h-full rounded-box"
-              >
-                <div class="hero-content text-center">
-                  <div class="max-w-lg">
-                    <h1 class="text-2xl lg:text-4xl font-bold">
-                      {% translate 'Interactive Reading Experience' %}
-                    </h1>
-
-                    <p class="py-6">
-                      <!-- prettier ignore -->
-                      {% blocktranslate %} Personalized themes and font
-                      adjustments create a comfortable reading environment.
-                      <!-- prettier ignore -->
-                      {% endblocktranslate %}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-span-12 lg:col-span-4">
-              <div
-                class="flex items-center justify-center size-full p-12 bg-base-200 rounded-box"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-audio-lines-icon lucide-audio-lines size-1/2"
-                >
-                  <path d="M2 10v3" />
-                  <path d="M6 6v11" />
-                  <path d="M10 3v18" />
-                  <path d="M14 8v7" />
-                  <path d="M18 5v13" />
-                  <path d="M22 10v3" />
-                </svg>
-              </div>
-            </div>
-            <div class="col-span-12 lg:col-span-8">
-              <div
-                class="hero bg-secondary py-24 h-full text-secondary-content rounded-box"
-              >
-                <div class="hero-content text-center">
-                  <div class="max-w-lg">
-                    <h1 class="text-2xl lg:text-4xl font-bold">
-                      {% translate 'Audio Recitations' %}
-                    </h1>
-
-                    <p class="py-6">
-                      <!-- prettier ignore -->
-                      {% blocktranslate %} Enjoy beautiful recitations by
-                      renowned Qaris.
-                      <!-- prettier ignore -->
-                      {% endblocktranslate %}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-span-12 lg:col-span-8">
-              <div
-                class="hero bg-accent h-full py-24 text-accent-content rounded-box"
-              >
-                <div class="hero-content text-center">
-                  <div class="max-w-lg">
-                    <h1 class="text-2xl lg:text-4xl font-bold">
-                      {% translate 'Advanced Search & Bookmarking' %}
-                    </h1>
-
-                    <p class="py-6">
-                      <!-- prettier ignore -->
-                      {% blocktranslate %} Quickly locate your favorite verses
-                      and track progress.
-                      <!-- prettier ignore -->
-                      {% endblocktranslate %}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-span-12 lg:col-span-4">
-              <div
-                class="flex items-center justify-center size-full p-12 bg-base-200 rounded-box"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-bookmark-icon lucide-bookmark size-1/2"
-                >
-                  <path
-                    d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"
-                  />
-                </svg>
-              </div>
-            </div>
-
-            <div class="col-span-12 lg:col-span-4">
-              <div
-                class="flex items-center justify-center size-full p-12 bg-base-200 rounded-box"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-languages-icon lucide-languages size-1/2"
-                >
-                  <path d="m5 8 6 6" />
-                  <path d="m4 14 6-6 2-3" />
-                  <path d="M2 5h12" />
-                  <path d="M7 2h1" />
-                  <path d="m22 22-5-10-5 10" />
-                  <path d="M14 18h6" />
-                </svg>
-              </div>
-            </div>
-            <div class="col-span-12 lg:col-span-8">
-              <div
-                class="hero bg-warning h-full py-24 text-warning-content rounded-box"
-              >
-                <div class="hero-content text-center">
-                  <div class="max-w-lg">
-                    <h1 class="text-2xl lg:text-4xl font-bold">
-                      {% translate 'Multi-Language & Tafsir Support' %}
-                    </h1>
-
-                    <p class="py-6">
-                      <!-- prettier ignore -->
-                      {% blocktranslate %} Access translations and scholarly
-                      commentary in several languages.
-                      <!-- prettier ignore -->
-                      {% endblocktranslate %}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-span-12 lg:col-span-8">
-              <div class="mockup-browser border border-primary w-full">
-                <div class="mockup-browser-toolbar">
-                  <div class="input input-primary bg-transparent">
-                    https://al-quran.com
-                  </div>
-                </div>
-                <div class="grid place-content-center">
-                  <img
-                    alt="{% translate 'Al Quran' %}"
-                    src="https://github.com/user-attachments/assets/8add80da-5534-46c9-a36e-1bcedf7bfde9"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="col-span-12 lg:col-span-4">
-              <div
-                class="hero bg-info py-24 text-info-content h-full rounded-box"
-              >
-                <div class="hero-content text-center">
-                  <div class="max-w-lg">
-                    <h1 class="text-2xl lg:text-4xl font-bold">
-                      {% translate 'Modern' %}
-                    </h1>
-
-                    <p class="py-6">
-                      <!-- prettier ignore -->
-                      {% blocktranslate %} Our Quran app is crafted with
-                      cutting-edge technology to provide a seamless, engaging,
-                      and personalized experience.
-                      <!-- prettier ignore -->
-                      {% endblocktranslate %}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-span-12 flex lg:col-span-4">
-              <div class="mockup-phone border-primary mx-auto">
-                <div class="mockup-phone-camera"></div>
-                <div class="mockup-phone-display">
-                  <img
-                    alt="{% translate 'Al Quran' %}"
-                    src="https://github.com/user-attachments/assets/3c29dac7-5560-496f-acea-6a6a4e67057d"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="col-span-12 lg:col-span-8">
-              <div
-                class="hero bg-error py-24 h-full text-error-content rounded-box"
-              >
-                <div class="hero-content text-center">
-                  <div class="max-w-lg">
-                    <h1 class="text-2xl lg:text-4xl font-bold">
-                      {% translate 'Designed for Every User, Everywhere' %}
-                    </h1>
-
-                    <p class="py-6">
-                      <!-- prettier ignore -->
-                      {% blocktranslate %} Whether you're browsing on a desktop,
-                      tablet, or mobile device, our platform adapts effortlessly
-                      to your needs.
-                      <!-- prettier ignore -->
-                      {% endblocktranslate %}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="join">
-          <div class="hero">
-            <div class="hero-content py-40">
-              <div class="max-w-2xl">
-                <h1 class="text-3xl lg:text-5xl font-black tracking-wide">
-                  {% translate 'Join Us & Earn Hasanat' %}
-                </h1>
-
-                <p class="py-6 text-xl">
-                  <!-- prettier ignore -->
-                  {% blocktranslate %} The Quran has always been a guiding
-                  light, offering wisdom, peace, and spiritual fulfillment.
-                  <!-- prettier ignore -->
-                  {% endblocktranslate %}
-                </p>
-
-                <a
-                  href="{% url 'al-quran:chapters' %}"
-                  class="btn btn-lg btn-primary font-bold"
-                >
-                  {% translate 'Start Earning Hasanat' %}
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        {% endblock %}
-
-        <footer
-          class="footer sm:footer-horizontal text-base-content p-10 bg-base-100 rounded-b-box"
-        >
-          <aside>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-collection-open-text size-12 text-primary"
-            >
-              <path d="M12 7v14" />
-              <path d="M16 12h2" />
-              <path d="M16 8h2" />
-              <path
-                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
-              />
-              <path d="M6 12h2" />
-              <path d="M6 8h2" />
-            </svg>
-            <p>
-              {% translate 'Al Quran' %}
-              <br />
-              {% translate 'The guiding light, offering wisdom and peace' %}
+            <p class="py-6">
+              {% blocktrans trimmed %}Personalized themes and font adjustments
+              create a comfortable reading environment.{% endblocktrans %}
             </p>
-          </aside>
-          <nav>
-            <h6 class="footer-title">{% translate 'Services' %}</h6>
-            <a href="{% url 'al-quran:chapters' %}" class="link link-hover">
-              {% translate 'Quran' %}
-            </a>
-            <a href="/api" class="link link-hover">
-              {% translate 'Quran API' %}
-            </a>
-          </nav>
-          <nav>
-            <h6 class="footer-title">{% translate 'Company' %}</h6>
-            <a href="{% url 'al-quran:about' %}" class="link link-hover">
-              {% translate 'About us' %}
-            </a>
-            <a href="{% url 'al-quran:about' %}" class="link link-hover">
-              {% translate 'Contact' %}
-            </a>
-          </nav>
-        </footer>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="drawer-side z-20">
-      <label
-        for="my-drawer"
-        aria-label="close sidebar"
-        class="drawer-overlay"
-      ></label>
-
-      <ul
-        class="menu backdrop-blur-3xl bg-base-100 rounded-box gap-4 min-h-full w-80 p-4"
+    <div class="col-span-12 lg:col-span-4">
+      <div
+        class="flex items-center justify-center size-full p-12 bg-base-200 rounded-box"
       >
-        <!-- Sidebar content here -->
-        <li class="flex flex-row items-center gap-4 justify-between">
-          <h1 class="text-xl text-primary">
-            <a
-              class="flex items-center gap-4"
-              href="{% url 'al-quran:index' %}"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-collection-open-text lg:size-8"
-              >
-                <path d="M12 7v14" />
-                <path d="M16 12h2" />
-                <path d="M16 8h2" />
-                <path
-                  d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
-                />
-                <path d="M6 12h2" />
-                <path d="M6 8h2" />
-              </svg>
-              {% translate 'Al Quran' %}
-            </a>
-          </h1>
+        <i data-lucide="audio-lines" class="size-1/2"></i>
+      </div>
+    </div>
+    <div class="col-span-12 lg:col-span-8">
+      <div
+        class="hero bg-secondary py-24 h-full text-secondary-content rounded-box"
+      >
+        <div class="hero-content text-center">
+          <div class="max-w-lg">
+            <h1 class="text-2xl lg:text-4xl font-bold">
+              {% trans 'Audio Recitations' %}
+            </h1>
 
-          <label for="my-drawer" class="btn btn-square btn-ghost">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-x"
-            >
-              <path d="M18 6 6 18" />
-              <path d="m6 6 12 12" />
-            </svg>
-          </label>
-        </li>
-        <li>
-          <a href="{% url 'al-quran:index' %}"> {% translate 'Home' %} </a>
-        </li>
-        <li>
-          <a href="#features"> {% translate 'Features' %} </a>
-        </li>
-        <li>
-          <a href="{% url 'al-quran:about' %}"> {% translate 'About' %} </a>
-        </li>
-        <!-- prettier-ignore -->
-        {% if request.user.is_authenticated %}
-        <li>
-          <a href="{% url 'al-quran:profile' %}" class="btn btn-sm btn-primary">
-            {% translate 'Profile' %}
-          </a>
-        </li>
-        <!-- prettier-ignore -->
-        {% else %}
-        <li>
-          <a href="{% url 'al-quran:signup' %}" class="btn btn-sm btn-primary">
-            {% translate 'Sign up' %}
-          </a>
-        </li>
-        <li>
-          <a href="{% url 'al-quran:login' %}" class="btn btn-sm btn-secondary">
-            {% translate 'Log in' %}
-          </a>
-        </li>
-        <!-- prettier-ignore -->
-        {% endif %}
-      </ul>
+            <p class="py-6">
+              {% blocktrans trimmed %}Enjoy beautiful recitations by renowned
+              Qaris.{% endblocktrans %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-span-12 lg:col-span-8">
+      <div class="hero bg-accent h-full py-24 text-accent-content rounded-box">
+        <div class="hero-content text-center">
+          <div class="max-w-lg">
+            <h1 class="text-2xl lg:text-4xl font-bold">
+              {% trans 'Advanced Search & Bookmarking' %}
+            </h1>
+
+            <p class="py-6">
+              {% blocktrans trimmed %}Quickly locate your favorite verses and
+              track progress.{% endblocktrans %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-span-12 lg:col-span-4">
+      <div
+        class="flex items-center justify-center size-full p-12 bg-base-200 rounded-box"
+      >
+        <i data-lucide="bookmark" class="size-1/2"></i>
+      </div>
+    </div>
+
+    <div class="col-span-12 lg:col-span-4">
+      <div
+        class="flex items-center justify-center size-full p-12 bg-base-200 rounded-box"
+      >
+        <i data-lucide="languages" class="size-1/2"></i>
+      </div>
+    </div>
+    <div class="col-span-12 lg:col-span-8">
+      <div
+        class="hero bg-warning h-full py-24 text-warning-content rounded-box"
+      >
+        <div class="hero-content text-center">
+          <div class="max-w-lg">
+            <h1 class="text-2xl lg:text-4xl font-bold">
+              {% trans 'Multi-Language & Tafsir Support' %}
+            </h1>
+
+            <p class="py-6">
+              {% blocktrans trimmed %}Access translations and scholarly
+              commentary in several languages.{% endblocktrans %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-span-12 lg:col-span-8">
+      <div class="mockup-browser border border-primary w-full">
+        <div class="mockup-browser-toolbar">
+          <div class="input input-primary bg-transparent">
+            https://al-quran.com
+          </div>
+        </div>
+        <div class="grid place-content-center">
+          <img
+            alt="{% trans 'Al Quran' %}"
+            src="https://github.com/user-attachments/assets/8add80da-5534-46c9-a36e-1bcedf7bfde9"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="col-span-12 lg:col-span-4">
+      <div class="hero bg-info py-24 text-info-content h-full rounded-box">
+        <div class="hero-content text-center">
+          <div class="max-w-lg">
+            <h1 class="text-2xl lg:text-4xl font-bold">{% trans 'Modern' %}</h1>
+
+            <p class="py-6">
+              {% blocktrans trimmed %}Our Quran app is crafted with cutting-edge
+              technology to provide a seamless, engaging, and personalized
+              experience.{% endblocktrans %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-span-12 flex lg:col-span-4">
+      <div class="mockup-phone border-primary mx-auto">
+        <div class="mockup-phone-camera"></div>
+        <div class="mockup-phone-display">
+          <img
+            alt="{% trans 'Al Quran' %}"
+            src="https://github.com/user-attachments/assets/3c29dac7-5560-496f-acea-6a6a4e67057d"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="col-span-12 lg:col-span-8">
+      <div class="hero bg-error py-24 h-full text-error-content rounded-box">
+        <div class="hero-content text-center">
+          <div class="max-w-lg">
+            <h1 class="text-2xl lg:text-4xl font-bold">
+              {% trans 'Designed for Every User, Everywhere' %}
+            </h1>
+
+            <p class="py-6">
+              {% blocktrans trimmed %}Whether you're browsing on a desktop,
+              tablet, or mobile device, our platform adapts effortlessly to your
+              needs.{% endblocktrans %}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</body>
-<!-- prettier-ignore -->
+</section>
+
+<section id="join">
+  <div class="hero">
+    <div class="hero-content py-40">
+      <div class="max-w-2xl">
+        <h1 class="text-3xl lg:text-5xl font-black tracking-wide">
+          {% trans 'Join Us & Earn Hasanat' %}
+        </h1>
+
+        <p class="py-6 text-xl">
+          {% blocktrans trimmed %}The Quran has always been a guiding light,
+          offering wisdom, peace, and spiritual fulfillment.{% endblocktrans %}
+        </p>
+
+        <a
+          href="{% url 'al-quran:chapters' %}"
+          class="btn btn-lg btn-primary font-bold"
+        >
+          {% trans 'Start Earning Hasanat' %}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}

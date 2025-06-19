@@ -1,67 +1,77 @@
-<!-- prettier-ignore -->
 {% extends 'ui/base.html' %}{% load i18n %}
 
-<!-- prettier-ignore -->
-{% block content_styles %} hidden lg:block {% endblock %}
+<!---->
+{% block content %}
+<section id="main-content" class="grid gap-8">
+  <div class="hero">
+    <div class="hero-content py-40">
+      <div class="max-w-xl">
+        <h1 class="text-3xl text-primary font-black lg:text-7xl">
+          {% block heading %}{% endblock %}
+        </h1>
+      </div>
+    </div>
+  </div>
 
-<!-- prettier-ignore -->
-{% block sidebar %}
-<section class="relative flex h-full flex-col gap-6">
-  <header class="absolute inset-x-0 top-0 z-20">
-    <nav
-      class="flex items-center justify-between p-4 gap-2 backdrop-blur-3xl rounded-t-box"
-    >
-      <h2 class="text-xl font-semibold">
-        <!-- prettier-ignore -->
-        {% block page_title %}{% endblock %}
-      </h2>
-    </nav>
-  </header>
-
-  <main
-    class="grid grow gap-2 h-full w-full p-4 py-20 max-h-dvh overflow-y-auto"
-  >
-    <ol class="list w-full rounded-box bg-base-200">
-      <!-- prettier-ignore -->
-      {% block sidebar_content %}{% endblock %}
+  <main class="grid gap-4">
+    <div class="flex items-center justify-end">
+      <div
+        data-tip="{% trans 'Filters' %}"
+        class="tooltip tooltip-left rtl:tooltip-right tooltip-primary"
+      >
+        <button
+          onclick="filters.showModal()"
+          class="btn btn-square btn-primary lg:btn-lg"
+        >
+          <i data-lucide="list-filter" class="size-4 lg:size-6"></i>
+          <span class="sr-only">{% trans 'Filters' %}</span>
+        </button>
+      </div>
+    </div>
+    <ol class="grid grid-cols-12 gap-4 lg:gap-6">
+      {% block main %}{% endblock %}
     </ol>
   </main>
 
-  <!-- prettier-ignore -->
   {% block pagination %}
-  <footer class="absolute inset-x-0 bottom-0 z-10">
-    <nav class="flex items-center p-4 gap-2 backdrop-blur-3xl rounded-b-box">
-      <!-- prettier-ignore -->
-      {% include 'ui/components/pagination.html' %}
-    </nav>
-  </footer>
-  <!-- prettier-ignore -->
+  <nav class="flex items-center p-4 gap-2 backdrop-blur-3xl rounded-b-box">
+    {% include 'ui/components/pagination.html' %}
+  </nav>
   {% endblock %}
 </section>
-<!-- prettier-ignore -->
-{% endblock %}
-<!-- prettier-ignore -->
-{% block content %}
-<section
-  class="flex h-full w-full flex-col items-center justify-center gap-12 rounded-box p-8"
->
-  <h2 class="text-4xl font-black font-serif">
-    <!-- prettier-ignore -->
-    {% translate 'In times of trouble and chaos' %}
-  </h2>
 
-  <div class="grid gap-2">
-    <h1 class="text-4xl text-primary {{ user.font|default:'font-kufi' }}">
-      إِنَّ هَـٰذَا ٱلْقُرْءَانَ يَهْدِى لِلَّتِى هِىَ أَقْوَمُ
-    </h1>
+<dialog id="filters" class="modal">
+  <section class="relative modal-box grid max-w-xl gap-6 bg-base-100">
+    <header class="flex items-center justify-between gap-4 text-primary">
+      <h1 class="text-lg font-semibold lg:text-2xl">{% trans 'Filters' %}</h1>
 
-    <span class="text-xs font-black">{% translate 'Quran 17:9' %}</span>
-  </div>
+      <div
+        class="tooltip tooltip-left rtl:tooltip-right tooltip-error"
+        data-tip="{% trans 'Close' %}"
+      >
+        <button
+          onclick="filters.close()"
+          class="btn btn-square btn-soft btn-primary hover:btn-error"
+        >
+          <i data-lucide="x" class="size-4 lg:size-6"></i>
 
-  <p class="text-xl">
-    <!-- prettier-ignore -->
-    {% translate 'Turning to the Quran can bring peace to our hearts. Its words are a source of comfort and solace.' %}
-  </p>
-</section>
-<!-- prettier-ignore -->
+          <span class="sr-only">{% trans 'Close' %}</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      {% include 'ui/components/form.html' with method='get' csrf=False form=filter.form %}
+    </main>
+
+    <footer class="-mx-5 -mb-5 grid">
+      <button
+        onclick="filters.close()"
+        class="btn rounded-none rounded-t rounded-b-box btn-primary"
+      >
+        {% trans 'Close' %}
+      </button>
+    </footer>
+  </section>
+</dialog>
 {% endblock %}

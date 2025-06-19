@@ -1,55 +1,58 @@
-<!-- prettier-ignore -->
 {% extends 'ui/list/base.html' %}{% load i18n %}
 
-<!-- prettier-ignore -->
-{% block title %}{{ block.super }} | {% translate 'Parts' %}{% endblock %}
+<!---->
+{% block title %}{{ block.super }} | {% trans 'Parts' %}{% endblock %}
 
-<!-- prettier-ignore -->
-{% block page_title %}{% translate 'Parts' %}{% endblock %}
+<!---->
+{% block heading %}{% trans 'Parts' %}{% endblock %}
 
-<!-- prettier-ignore -->
-{% block sidebar_content %}
-<!-- prettier-ignore -->
+<!---->
+{% block main %}
+<!---->
 {% for part in part_list.all %}
-<li id="item-{{ part.id }}" class="list-row relative items-center">
-  <div>
-    <div class="avatar avatar-placeholder">
-      <div class="w-10 rounded-full bg-primary text-primary-content">
-        <span class="text-lg font-black">{{ part.id }}</span>
-      </div>
-    </div>
-  </div>
-  <div>
-    <div>{{ part.name }}</div>
-    <div class="text-xs font-semibold uppercase opacity-60">
-      <!-- prettier-ignore -->
-      {{ part.page_count }} {% translate 'pages' %}, {{ part.verse_count }} {% translate 'verses' %}
-    </div>
-  </div>
-  <div class="tooltip tooltip-bottom z-10" data-tip="{% translate 'Read' %}">
-    <button class="btn btn-sm btn-square btn-ghost lg:btn-md">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="lucide lucide-chevron-right size-4 lg:size-6 rtl:rotate-180"
-      >
-        <path d="m9 18 6-6-6-6" />
-      </svg>
+<li id="item-{{ part.id }}" class="col-span-12 md:col-span-6 lg:col-span-4">
+  <div
+    class="card shadow-sm size-full rounded-box card-sm overflow-hidden hover:bg-base-200 hover:shadow-xl md:card-md lg:card-lg xl:card-xl"
+  >
+    <span
+      class="badge badge-soft badge-primary rounded-xs lg:badge-lg xl:badge-xl"
+    >
+      {% trans 'Part' %} {{ part.id }}
+    </span>
 
-      <span class="sr-only">{% translate 'Read' %}</span>
-    </button>
+    <div class="card-body gap-4 lg:gap-6">
+      <h2 class="card-title {{ user.font|default:'font-kufi' }}">
+        {% trans 'Part' %} {{ part.id }}
+      </h2>
+
+      <ul class="grid gap-2 grid-cols-2">
+        <li class="tooltip tooltip-top" data-tip="{% trans 'Pages' %}">
+          <span class="flex items-center gap-2 lg:gap-4">
+            <i data-lucide="book-open" class="size-4 lg:size-6"></i>
+            {{ part.page_count }} {% trans 'pages' %}
+          </span>
+        </li>
+        <li class="tooltip tooltip-top" data-tip="{% trans 'Verses' %}">
+          <span class="flex items-center gap-2 lg:gap-4">
+            <i data-lucide="book-text" class="size-4 lg:size-6"></i>
+            {{ part.verse_count }} {% trans 'verses' %}
+          </span>
+        </li>
+      </ul>
+
+      <a
+        href="{% url 'al-quran:part' part.id %}"
+        class="btn btn-primary lg:btn-lg"
+      >
+        {% trans 'Read' %}
+        <i
+          data-lucide="chevron-right"
+          class="size-4 lg:size-6 rtl:rotate-180"
+        ></i>
+      </a>
+    </div>
   </div>
-  <a href="{% url 'al-quran:part-details' part.id %}" class="absolute inset-0">
-    <span class="sr-only">{% translate 'Read' %}</span>
-  </a>
 </li>
 {% endfor %}
-<!-- prettier-ignore -->
+<!---->
 {% endblock %}

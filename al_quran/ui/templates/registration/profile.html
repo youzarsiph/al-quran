@@ -1,15 +1,58 @@
-<!-- prettier-ignore -->
 {% extends 'registration/base.html' %}{% load i18n %}
 
-<!-- prettier-ignore -->
-{% block title %}{{ block.super }} | {% translate 'Profile' %}{% endblock %}
-
-<!-- prettier-ignore -->
+<!---->
 {% block main_content %}
-<div class="h-full w-full flex items-center justify-center">
-  <h1 class="text-3xl lg:text-5xl">
-    {% translate 'Welcome' %} {{ request.user }}
-  </h1>
-</div>
-<!-- prettier-ignore -->
+<section id="profile" class="grid gap-4 size-full">
+  <div
+    class="card text-center card-sm rounded-box bg-base-200 shadow-sm md:card-md lg:card-lg xl:card-xl"
+  >
+    <figure class="mx-auto size-32 lg:size-56">
+      <i data-lucide="user" class="size-full"></i>
+    </figure>
+
+    <div class="card-body gap-4 lg:gap-6">
+      <h1 class="card-title text-center text-primary">{{ request.user }}</h1>
+      <p>{% trans 'Welcome to your Profile' %}</p>
+    </div>
+    <div class="join">
+      <div
+        class="tooltip tooltip-top tooltip-primary"
+        data-tip="{% trans 'Log out' %}"
+      >
+        <button
+          type="submit"
+          form="logout"
+          class="btn join-item btn-square btn-primary btn-lg lg:btn-xl"
+        >
+          <i data-lucide="log-out" class="size-4 lg:size-6"></i>
+          <span class="sr-only">{% trans 'Log out' %}</span>
+        </button>
+      </div>
+      <div
+        class="tooltip tooltip-top tooltip-success grow"
+        data-tip="{% trans 'Settings' %}"
+      >
+        <a
+          class="btn w-full join-item btn-square btn-success btn-lg lg:btn-xl"
+          href="{% url 'al-quran:update-user' request.user.id %}"
+        >
+          <i data-lucide="user-cog" class="size-4 lg:size-6"></i>
+          <span class="sr-only">{% trans 'Settings' %}</span>
+        </a>
+      </div>
+      <div
+        class="tooltip tooltip-top tooltip-error"
+        data-tip="{% trans 'Delete' %}"
+      >
+        <a
+          class="btn join-item btn-square btn-error btn-lg lg:btn-xl"
+          href="{% url 'al-quran:delete-user' request.user.id %}"
+        >
+          <i data-lucide="user-x" class="size-4 lg:size-6"></i>
+          <span class="sr-only">{% trans 'Delete account' %}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}

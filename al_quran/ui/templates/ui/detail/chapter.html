@@ -1,100 +1,42 @@
-<!-- prettier-ignore -->
 {% extends 'ui/detail/base.html' %}{% load i18n %}
 
-<!-- prettier-ignore -->
+<!---->
 {% block title %}{{ block.super }} | {{ chapter.name }}{% endblock %}
 
-<!-- prettier-ignore -->
-{% block breadcrumbs %}
-<li>
-  <a href="{% url 'al-quran:chapters' %}">
-    <!-- prettier-ignore -->
-    {% translate 'Chapters' %}</a
-  >
-</li>
-<li>
-  <h2 class="{{ user.font|default:'font-kufi' }}">
-    سُورَةُ {{ chapter.name }}
-  </h2>
-</li>
-<!-- prettier-ignore -->
-{% endblock %}
-
-<!-- prettier-ignore -->
-{% block prev_url %}{% url 'al-quran:chapter-details' prev_id %}{% endblock %}
-
-<!-- prettier-ignore -->
-{% block next_url %}{% url 'al-quran:chapter-details' next_id %}{% endblock %}
-
-<!-- prettier-ignore -->
+<!---->
 {% block extra_btns %}
 <div
   class="tooltip tooltip-bottom tooltip-primary"
-  data-tip="{% translate 'Info' %}"
+  data-tip="{% trans 'Info' %}"
 >
   <button
     type="button"
     onclick="info.showModal()"
     class="btn btn-sm btn-square btn-ghost lg:btn-md"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-badge-info size-4 lg:size-6"
-    >
-      <path
-        d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"
-      />
-      <line x1="12" x2="12" y1="16" y2="12" />
-      <line x1="12" x2="12.01" y1="8" y2="8" />
-    </svg>
-
-    <span class="sr-only">{% translate 'Info' %}</span>
+    <i data-lucide="info" class="size-4 lg:size-6"></i>
+    <span class="sr-only">{% trans 'Info' %}</span>
   </button>
 </div>
-<!-- prettier-ignore -->
 {% endblock %}
 
-<!-- prettier-ignore -->
+<!---->
 {% block scripts %}{{ block.super }}
 <dialog id="info" class="modal">
   <section class="modal-box grid gap-2 bg-base-100">
     <header class="flex items-center justify-between gap-2">
       <h1 class="text-2xl font-semibold">
-        <!-- prettier-ignore -->
-        {% translate 'Chapter' %} {{ chapter.name }}
+        {% trans 'Chapter' %} {{ chapter.name }}
       </h1>
 
       <form
         method="dialog"
         class="tooltip tooltip-bottom"
-        data-tip="{% translate 'Close' %}"
+        data-tip="{% trans 'Close' %}"
       >
         <button type="submit" class="btn flex btn-square btn-ghost">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-x size-4 lg:size-6"
-          >
-            <path d="M18 6 6 18" />
-            <path d="m6 6 12 12" />
-          </svg>
-
-          <span class="sr-only">{% translate 'Close' %}</span>
+          <i data-lucide="x" class="size-4 lg:size-6"></i>
+          <span class="sr-only">{% trans 'Close' %}</span>
         </button>
       </form>
     </header>
@@ -104,10 +46,7 @@
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">
-              <!-- prettier-ignore -->
-              {% translate 'Chapter' %}
-            </h2>
+            <h2 class="text-lg font-semibold">{% trans 'Chapter' %}</h2>
           </div>
           <div>
             <p class="badge badge-neutral">{{ chapter.id }}</p>
@@ -116,10 +55,7 @@
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">
-              <!-- prettier-ignore -->
-              {% translate 'Name' %}
-            </h2>
+            <h2 class="text-lg font-semibold">{% trans 'Name' %}</h2>
           </div>
           <div>
             <p class="badge badge-neutral {{ user.font|default:'font-kufi' }}">
@@ -130,25 +66,20 @@
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">
-              <!-- prettier-ignore -->
-              {% translate 'Type' %}
-            </h2>
+            <h2 class="text-lg font-semibold">{% trans 'Type' %}</h2>
           </div>
           <div>
             <p class="badge badge-neutral">
-              <!-- prettier-ignore -->
-              {% if chapter.type %}{% translate 'Meccan' %}{% else %}{% translate 'Medinan' %}{% endif %}
+              {% if chapter.type %}{% trans 'Meccan' %}
+              <!---->
+              {% else %}{% trans 'Medinan' %}{% endif %}
             </p>
           </div>
         </li>
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">
-              <!-- prettier-ignore -->
-              {% translate 'Order' %}
-            </h2>
+            <h2 class="text-lg font-semibold">{% trans 'Order' %}</h2>
           </div>
           <div>
             <p class="badge badge-neutral">{{ chapter.order }}</p>
@@ -157,10 +88,7 @@
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">
-              <!-- prettier-ignore -->
-              {% translate 'Page count' %}
-            </h2>
+            <h2 class="text-lg font-semibold">{% trans 'Page count' %}</h2>
           </div>
           <div>
             <p class="badge badge-neutral">{{ chapter.page_count }}</p>
@@ -169,10 +97,7 @@
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">
-              <!-- prettier-ignore -->
-              {% translate 'Verse count' %}
-            </h2>
+            <h2 class="text-lg font-semibold">{% trans 'Verse count' %}</h2>
           </div>
           <div>
             <p class="badge badge-neutral">{{ chapter.verse_count }}</p>
@@ -181,13 +106,11 @@
       </ol>
     </main>
 
-    <form method="dialog" class="modal-action justify-center">
-      <button type="submit" class="btn w-full btn-primary">
-        <!-- prettier-ignore -->
-        {% translate 'Close' %}
+    <div class="modal-action justify-center">
+      <button onclick="info.close()" class="btn w-full btn-primary">
+        {% trans 'Close' %}
       </button>
-    </form>
+    </div>
   </section>
 </dialog>
-<!-- prettier-ignore -->
 {% endblock %}

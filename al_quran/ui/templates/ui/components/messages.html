@@ -1,17 +1,10 @@
-<!-- prettier-ignore -->
 {% if messages %}
-<ol class="list">
-  <!-- prettier-ignore -->
+<ol class="grid gap-4">
   {% for message in messages %}
-  <li class="list-row alert alert-{{message.tags}}">
-    <div>
-      <span class="badge badge-soft badge-{{message.tags}} font-semibold"
-        >{{ message.tags|upper }}</span
-      >
-    </div>
-    <div>
-      <p>{{ message }}</p>
-    </div>
+  <li class="alert alert-{{message.tags}}">
+    <i data-lucide="check-circle" class="size-4 lg:size-6"></i>
+
+    <p>{{ message }}</p>
   </li>
   {% endfor %}
 </ol>

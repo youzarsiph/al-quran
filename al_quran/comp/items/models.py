@@ -1,6 +1,7 @@
 """Data Models for al_quran.comp.items"""
 
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 # Create your models here.
@@ -11,7 +12,7 @@ class Item(models.Model):
         "collections.Collection",
         on_delete=models.CASCADE,
         related_name="items",
-        help_text="Collection",
+        help_text=_("Collection"),
     )
     chapter = models.ForeignKey(
         "chapters.Chapter",
@@ -19,7 +20,7 @@ class Item(models.Model):
         null=True,
         blank=True,
         related_name="items",
-        help_text="Chapter",
+        help_text=_("Chapter"),
     )
     verse = models.ForeignKey(
         "verses.Verse",
@@ -27,19 +28,19 @@ class Item(models.Model):
         null=True,
         blank=True,
         related_name="items",
-        help_text="Verse",
+        help_text=_("Verse"),
     )
     content = models.TextField(
         db_index=True,
-        help_text="Content",
+        help_text=_("Content"),
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
-        help_text="Date created",
+        help_text=_("Date created"),
     )
     updated_at = models.DateTimeField(
         auto_now=True,
-        help_text="Last update",
+        help_text=_("Last update"),
     )
 
     def __str__(self) -> str:

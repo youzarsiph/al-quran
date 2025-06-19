@@ -1,6 +1,7 @@
 """Data Models for al_quran.core.chapters"""
 
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 # Create your models here.
@@ -11,36 +12,34 @@ class Chapter(models.Model):
         max_length=16,
         unique=True,
         db_index=True,
-        help_text="Chapter name",
+        help_text=_("Chapter name"),
     )
     order = models.PositiveSmallIntegerField(
         unique=True,
         db_index=True,
-        help_text="Refers to the chronological order "
-        "in which the chapters of the Quran were revealed",
+        help_text=_("Chronological order in which chapters were revealed"),
     )
     type = models.BooleanField(
         default=True,
-        help_text="Designates where the chapter is revealed "
-        "True = Mecca, False = Medina",
+        help_text=_("Designates where the chapter is revealed"),
     )
     verse_count = models.PositiveSmallIntegerField(
         default=1,
         db_index=True,
-        help_text="Number of verses",
+        help_text=_("Number of verses"),
     )
     page_count = models.PositiveSmallIntegerField(
         default=1,
         db_index=True,
-        help_text="Number of pages",
+        help_text=_("Number of pages"),
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
-        help_text="Date created",
+        help_text=_("Date created"),
     )
     updated_at = models.DateTimeField(
         auto_now=True,
-        help_text="Last update",
+        help_text=_("Last update"),
     )
 
     def __str__(self) -> str:

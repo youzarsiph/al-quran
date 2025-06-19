@@ -1,6 +1,6 @@
 """URLConf for al_quran"""
 
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
 from al_quran.comp.collections.views import CollectionViewSet
@@ -12,7 +12,6 @@ from al_quran.core.pages.views import PageViewSet
 from al_quran.core.parts.views import PartViewSet
 from al_quran.core.quarters.views import QuarterViewSet
 from al_quran.core.verses.views import VerseViewSet
-
 
 # Create your patterns here.
 router = DefaultRouter(trailing_slash=False)

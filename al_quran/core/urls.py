@@ -1,6 +1,6 @@
 """URLConf for al_quran.core"""
 
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
 from al_quran.core.chapters.views import ChapterViewSet
