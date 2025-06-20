@@ -1,624 +1,957 @@
-# Al Quran Arabic translations.  
-# Copyright (C) 2025 Yousuf Abu Shanab  
-# This file is distributed under the same license as the al-quran package.  
-# Yousuf Abu Shanab <youzarsiph@alquran.com>, 2025.  
-#  
-#, fuzzy  
-msgid ""  
-msgstr ""  
-"Project-Id-Version: al-quran 0.1.0\n"  
-"Report-Msgid-Bugs-To: \n"  
-"POT-Creation-Date: 2025-04-22 07:21+0000\n"  
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"  
-"Last-Translator: Yousuf Abu Shanab <youzarsiph@alquran.com>\n"  
-"Language-Team: Arabic <ar@li.org>\n"  
-"Language: \n"  
-"MIME-Version: 1.0\n"  
-"Content-Type: text/plain; charset=UTF-8\n"  
-"Content-Transfer-Encoding: 8bit\n"  
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "  
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"  
-#: al_quran/ui/templates/registration/base.html:5  
-#: al_quran/ui/templates/registration/base.html:15  
-#: al_quran/ui/templates/registration/base.html:34  
-#: al_quran/ui/templates/registration/base.html:108  
-#: al_quran/ui/templates/registration/profile.html:5  
-#: al_quran/ui/templates/ui/base.html:225  
-#: al_quran/ui/templates/ui/base.html:235  
-#: al_quran/ui/templates/ui/base.html:240  
-#: al_quran/ui/templates/ui/base.html:251  
-msgid "Profile"  
-msgstr "الملف الشخصي"  
+# Al-Quran Arabic translations.
+# Copyright (C) 2025 Yousuf Abu Shanab
+# This file is distributed under the same license as the al-quran package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: al-quran 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-20 07:36+0000\n"
+"PO-Revision-Date: 2025-6-20 HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: Arabic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+#: al_quran/comp/collections/models.py:17 al_quran/ui/templates/ui/base.html:59
+#: al_quran/ui/templates/ui/base.html:68 al_quran/ui/templates/ui/base.html:77
+msgid "Language"
+msgstr "اللغة"
 
-#: al_quran/ui/templates/registration/base.html:23  
-#: al_quran/ui/templates/registration/profile.html:9  
-msgid "Welcome"  
-msgstr "أهلاً وسهلاً"  
+#: al_quran/comp/collections/models.py:22
+msgid "Collection type"
+msgstr "نوع المجموعة"
 
-#: al_quran/ui/templates/registration/base.html:25  
-msgid "My Profile"  
-msgstr "ملفي الشخصي"  
+#: al_quran/comp/collections/models.py:28
+msgid "Collection name"
+msgstr "اسم المجموعة"
 
-#: al_quran/ui/templates/registration/base.html:37  
-msgid "App Settings"  
-msgstr "إعدادات التطبيق"  
+#: al_quran/comp/collections/models.py:33
+msgid "Collection description"
+msgstr "وصف المجموعة"
 
-#: al_quran/ui/templates/registration/base.html:47  
-msgid "Settings"  
-msgstr "الإعدادات"  
+#: al_quran/comp/collections/models.py:37 al_quran/comp/items/models.py:39
+#: al_quran/comp/languages/models.py:25 al_quran/core/chapters/models.py:38
+#: al_quran/core/groups/models.py:35 al_quran/core/pages/models.py:48
+#: al_quran/core/parts/models.py:29 al_quran/core/quarters/models.py:41
+#: al_quran/core/verses/models.py:53
+msgid "Date created"
+msgstr "تاريخ الإنشاء"
 
-#: al_quran/ui/templates/registration/base.html:50  
-msgid "Update Your Password"  
-msgstr "تحديث كلمة المرور الخاصة بك"  
+#: al_quran/comp/collections/models.py:41 al_quran/comp/items/models.py:43
+#: al_quran/comp/languages/models.py:29 al_quran/core/chapters/models.py:42
+#: al_quran/core/groups/models.py:39 al_quran/core/pages/models.py:52
+#: al_quran/core/parts/models.py:33 al_quran/core/quarters/models.py:45
+#: al_quran/core/verses/models.py:57
+msgid "Last update"
+msgstr "آخر تحديث"
 
-#: al_quran/ui/templates/registration/base.html:60  
-msgid "Change Password"  
-msgstr "تغيير كلمة المرور"  
+#: al_quran/comp/items/models.py:15
+msgid "Collection"
+msgstr "مجموعة"
 
-#: al_quran/ui/templates/registration/base.html:66  
-#: al_quran/ui/templates/registration/base.html:78  
-msgid "Delete account"  
-msgstr "حذف الحساب"  
-
-#: al_quran/ui/templates/registration/base.html:81  
-#: al_quran/ui/templates/registration/base.html:91  
-msgid "Logout"  
-msgstr "تسجيل الخروج"  
-
-#: al_quran/ui/templates/registration/logged_out.html:5  
-#: al_quran/ui/templates/registration/logged_out.html:11  
-msgid "Logged Out"  
-msgstr "تم تسجيل الخروج"  
-
-#: al_quran/ui/templates/registration/logged_out.html:13  
-msgid "Thanks for spending some quality time with us today."  
-msgstr "شكرًا لقضاء بعض الوقت الجيد معنا اليوم."  
-
-#: al_quran/ui/templates/registration/logged_out.html:16  
-#: al_quran/ui/templates/registration/login.html:5  
-#: al_quran/ui/templates/registration/login.html:16  
-msgid "Login"  
-msgstr "تسجيل الدخول"  
-
-#: al_quran/ui/templates/registration/login.html:12  
-#: al_quran/ui/templates/rest_framework/api.html:5  
-msgid "Al Quran"  
-msgstr "القرآن"  
-
-#: al_quran/ui/templates/registration/login.html:19  
-msgid "Welcome, please login to continue."  
-msgstr "مرحبًا، يرجى تسجيل الدخول للمتابعة."  
-
-#: al_quran/ui/templates/registration/login.html:23  
-msgid "Your username and password did not match. Please try again."  
-msgstr "اسم المستخدم وكلمة المرور غير متطابقين. يرجى المحاولة مرة أخرى."  
-
-#: al_quran/ui/templates/registration/login.html:30  
-msgid ""  
-"\n"  
-"        Your account doesn't have access to this page. To proceed,\n"  
-"        please login with an account that has access.\n"  
-"        "  
-msgstr ""  
-"\n"  
-"        حسابك لا يمتلك وصولًا إلى هذه الصفحة. للمضي قدمًا،\n"  
-"        يرجى تسجيل الدخول بحساب لديه وصول.\n"  
-"        "  
-
-#: al_quran/ui/templates/registration/login.html:37  
-msgid "Please login to see this page."  
-msgstr "يرجى تسجيل الدخول لرؤية هذه الصفحة."  
-
-#: al_quran/ui/templates/registration/login.html:46  
-msgid "Do not have an account?"  
-msgstr "لا تملك حسابًا؟"  
-
-#: al_quran/ui/templates/registration/login.html:49  
-#: al_quran/ui/templates/registration/signup.html:23  
-msgid "Lost password?"  
-msgstr "نسيت كلمة المرور؟"  
-
-#: al_quran/ui/templates/registration/password_change_done.html:5  
-msgid "Password Changed"  
-msgstr "تم تغيير كلمة المرور"  
-
-#: al_quran/ui/templates/registration/password_change_done.html:10  
-#: al_quran/ui/templates/registration/password_change_form.html:10  
-msgid "Password"  
-msgstr "كلمة المرور"  
-
-#: al_quran/ui/templates/registration/password_change_done.html:13  
-#: al_quran/ui/templates/registration/password_change_form.html:11  
-msgid "Change"  
-msgstr "تغيير"  
-
-#: al_quran/ui/templates/registration/password_change_done.html:16  
-msgid "Done"  
-msgstr "تم"  
-
-#: al_quran/ui/templates/registration/password_change_done.html:21  
-msgid "Congrats"  
-msgstr "تهانينا"  
-
-#: al_quran/ui/templates/registration/password_change_done.html:23  
-msgid "Your password was changed."  
-msgstr "تم تغيير كلمة المرور الخاصة بك."  
-
-#: al_quran/ui/templates/registration/password_change_form.html:5  
-msgid "Password Change"  
-msgstr "تغيير كلمة المرور"  
-
-#: al_quran/ui/templates/registration/password_change_form.html:16  
-msgid "Change password"  
-msgstr "تغيير كلمة المرور"  
-
-#: al_quran/ui/templates/registration/password_change_form.html:19  
-msgid ""  
-"\n"  
-"    Please enter your old password, for security's sake, and then enter your "  
-"new password twice so we can verify you\n"  
-"    typed it in correctly.\n"  
-"    "  
-msgstr ""  
-"\n"  
-"    يرجى إدخال كلمة المرور القديمة لأغراض الأمان، ثم أدخل كلمة المرور "  
-"الجديدة مرتين حتى نتمكن من التحقق من أنك\n"  
-"    كتبتها بشكل صحيح.\n"  
-"    "  
-
-#: al_quran/ui/templates/registration/password_reset_complete.html:5  
-#: al_quran/ui/templates/registration/password_reset_form.html:5  
-msgid "Password Reset"  
-msgstr "إعادة تعيين كلمة المرور"  
-
-#: al_quran/ui/templates/registration/password_reset_complete.html:11  
-#: al_quran/ui/templates/registration/password_reset_form.html:11  
-msgid "Reset Password"  
-msgstr "إعادة ضبط كلمة المرور"  
-
-#: al_quran/ui/templates/registration/password_reset_complete.html:14  
-msgid "Your password has been set. You may go ahead and log in now."  
-msgstr "تم ضبط كلمة المرور الخاصة بك. يمكنك تسجيل الدخول الآن."  
-
-#: al_quran/ui/templates/registration/password_reset_complete.html:17  
-#: al_quran/ui/templates/ui/base.html:283  
-msgid "Log in"  
-msgstr "تسجيل الدخول"  
-
-#: al_quran/ui/templates/registration/password_reset_confirm.html:5  
-msgid "Password Reset Confirm"  
-msgstr "تأكيد إعادة تعيين كلمة المرور"  
-
-#: al_quran/ui/templates/registration/password_reset_confirm.html:11  
-msgid "Password Reset Confirmation"  
-msgstr "تأكيد إعادة تعيين كلمة المرور"  
-
-#: al_quran/ui/templates/registration/password_reset_confirm.html:16  
-msgid ""  
-"Please enter your new password twice so we can verify you typed it in "  
-"correctly."  
-msgstr ""  
-"يرجى إدخال كلمة المرور الجديدة مرتين حتى نتمكن من التحقق من أنك "  
-"كتبتها بشكل صحيح."  
-
-#: al_quran/ui/templates/registration/password_reset_done.html:5  
-#: al_quran/ui/templates/registration/password_reset_done.html:11  
-msgid "Password Reset Done"  
-msgstr "تمت إعادة تعيين كلمة المرور"  
-
-#: al_quran/ui/templates/registration/password_reset_done.html:19  
-#: al_quran/ui/templates/rest_framework/api.html:28  
-#: al_quran/ui/templates/rest_framework/api.html:37  
-#: al_quran/ui/templates/ui/base.html:59  
-#: al_quran/ui/templates/ui/base.html:69  
-msgid "Home"  
-msgstr "الصفحة الرئيسية"  
-
-#: al_quran/ui/templates/registration/password_reset_email.html:4  
-msgid ""  
-"You're receiving this email because you requested a password reset for your user account at"  
-msgstr ""  
-"أنتم تتلقون هذا البريد الإلكتروني لأنكم طلبتم إعادة تعيين كلمة المرور لحسابكم."  
-
-#: al_quran/ui/templates/registration/password_reset_email.html:7  
-msgid "Please go to the following page and choose a new password:"  
-msgstr "يرجى الذهاب إلى الصفحة التالية واختيار كلمة مرور جديدة:"  
-
-#: al_quran/ui/templates/registration/password_reset_email.html:12  
-msgid "Your username, in case you've forgotten:"  
-msgstr "اسم المستخدم الخاص بك، في حال كنت قد نسيته:"  
-
-#: al_quran/ui/templates/registration/password_reset_email.html:14  
-msgid "Thanks for using our site!"  
-msgstr "شكرًا لاستخدامك موقعنا!"  
-
-#: al_quran/ui/templates/registration/password_reset_email.html:16  
-#, python-format  
-msgid "The %(site_name)s team"  
-msgstr "فريق %(site_name)s"  
-
-#: al_quran/ui/templates/registration/signup.html:5  
-#: al_quran/ui/templates/registration/signup.html:11  
-msgid "Sign up"  
-msgstr "إنشاء حساب"  
-
-#: al_quran/ui/templates/registration/signup.html:11  
-msgid "al-quran"  
-msgstr "القرآن"  
-
-#: al_quran/ui/templates/registration/signup.html:14  
-msgid "Welcome, please signup to continue."  
-msgstr "مرحبًا، يرجى التسجيل للمتابعة."  
-
-#: al_quran/ui/templates/registration/signup.html:20  
-msgid "Already have an account?"  
-msgstr "هل لديك حساب بالفعل؟"  
-
-#: al_quran/ui/templates/rest_framework/api.html:8  
-#: al_quran/ui/templates/rest_framework/api.html:22  
-#: al_quran/ui/templates/ui/base.html:11  
-#: al_quran/ui/templates/ui/base.html:42  
-#: al_quran/ui/templates/ui/base.html:56  
-msgid "Al-Quran"  
-msgstr "القرآن"  
-
-#: al_quran/ui/templates/rest_framework/api.html:40  
-#: al_quran/ui/templates/rest_framework/api.html:55  
-#: al_quran/ui/templates/ui/base.html:72  
-#: al_quran/ui/templates/ui/base.html:87  
-#: al_quran/ui/templates/ui/detail/chapter.html:9  
-#: al_quran/ui/templates/ui/list/chapters.html:5  
-#: al_quran/ui/templates/ui/list/chapters.html:7  
-msgid "Chapters"  
-msgstr "السور"  
-
-#: al_quran/ui/templates/rest_framework/api.html:58  
-#: al_quran/ui/templates/rest_framework/api.html:72  
-#: al_quran/ui/templates/ui/base.html:90  
-#: al_quran/ui/templates/ui/base.html:105  
-#: al_quran/ui/templates/ui/detail/part.html:9  
-#: al_quran/ui/templates/ui/list/parts.html:5  
-#: al_quran/ui/templates/ui/list/parts.html:7  
-msgid "Parts"  
-msgstr "الأجزاء"  
-
-#: al_quran/ui/templates/rest_framework/api.html:75  
-#: al_quran/ui/templates/rest_framework/api.html:85  
-#: al_quran/ui/templates/rest_framework/api.html:90  
-#: al_quran/ui/templates/ui/base.html:108  
-#: al_quran/ui/templates/ui/base.html:118  
-#: al_quran/ui/templates/ui/base.html:123  
-msgid "More"  
-msgstr "المزيد"  
-
-#: al_quran/ui/templates/rest_framework/api.html:101  
-#: al_quran/ui/templates/ui/base.html:134  
-#: al_quran/ui/templates/ui/detail/group.html:9  
-#: al_quran/ui/templates/ui/list/groups.html:5  
-#: al_quran/ui/templates/ui/list/groups.html:7  
-msgid "Groups"  
-msgstr "الأحزاب"  
-
-#: al_quran/ui/templates/rest_framework/api.html:116  
-#: al_quran/ui/templates/ui/base.html:149  
-#: al_quran/ui/templates/ui/detail/quarter.html:9  
-#: al_quran/ui/templates/ui/list/quarters.html:5  
-#: al_quran/ui/templates/ui/list/quarters.html:7  
-msgid "Quarters"  
-msgstr "الأرباع"  
-
-#: al_quran/ui/templates/rest_framework/api.html:135  
-#: al_quran/ui/templates/ui/base.html:168  
-#: al_quran/ui/templates/ui/detail/page.html:9  
-#: al_quran/ui/templates/ui/list/pages.html:5  
-#: al_quran/ui/templates/ui/list/pages.html:7  
-msgid "Pages"  
-msgstr "الصفحات"  
-
-#: al_quran/ui/templates/ui/base.html:176  
-#: al_quran/ui/templates/ui/base.html:190  
-#: al_quran/ui/templates/ui/base.html:195  
-msgid "Language"  
-msgstr "اللغة"  
-
-#: al_quran/ui/templates/ui/base.html:269  
-msgid "Log out"  
-msgstr "تسجيل الخروج"  
-
-#: al_quran/ui/templates/ui/components/form.html:9  
-msgid "Submit"  
-msgstr "إرسال"  
-
-#: al_quran/ui/templates/ui/components/page.html:7  
-#: al_quran/ui/templates/ui/components/page.html:13  
-#: al_quran/ui/templates/ui/components/page.html:55  
-#: al_quran/ui/templates/ui/components/page.html:65  
-#: al_quran/ui/templates/ui/list/chapters.html:28  
-#: al_quran/ui/templates/ui/list/chapters.html:36  
-#: al_quran/ui/templates/ui/list/chapters.html:40  
-#: al_quran/ui/templates/ui/list/groups.html:26  
-#: al_quran/ui/templates/ui/list/groups.html:34  
-#: al_quran/ui/templates/ui/list/groups.html:38  
-#: al_quran/ui/templates/ui/list/pages.html:26  
-#: al_quran/ui/templates/ui/list/pages.html:34  
-#: al_quran/ui/templates/ui/list/pages.html:38  
-#: al_quran/ui/templates/ui/list/parts.html:26  
-#: al_quran/ui/templates/ui/list/parts.html:34  
-#: al_quran/ui/templates/ui/list/parts.html:38  
-#: al_quran/ui/templates/ui/list/quarters.html:26  
-#: al_quran/ui/templates/ui/list/quarters.html:34  
-#: al_quran/ui/templates/ui/list/quarters.html:38  
-msgid "Read"  
-msgstr "اقرأ"  
-
-#: al_quran/ui/templates/ui/components/page.html:25  
-#: al_quran/ui/templates/ui/detail/chapter.html:97  
-#: al_quran/ui/templates/ui/list/chapters.html:12  
-msgid "Order"  
-msgstr "الترتيب"  
-
-#: al_quran/ui/templates/ui/components/page.html:27  
-#: al_quran/ui/templates/ui/detail/chapter.html:44  
-#: al_quran/ui/templates/ui/detail/chapter.html:66  
-msgid "Chapter"  
+#: al_quran/comp/items/models.py:23 al_quran/core/pages/models.py:15
+#: al_quran/core/verses/models.py:15
+#: al_quran/ui/templates/ui/detail/chapter.html:29
+#: al_quran/ui/templates/ui/detail/chapter.html:49
+#: al_quran/ui/templates/ui/list/chapters.html:20
+#: al_quran/ui/templates/ui/list/pages.html:29
+#: al_quran/ui/templates/ui/list/pages.html:32
+msgid "Chapter"
 msgstr "سورة"
 
-#: al_quran/ui/templates/ui/components/page.html:35
-msgid "Part"  
+#: al_quran/comp/items/models.py:31
+#: al_quran/ui/templates/ui/detail/base.html:54
+msgid "Verse"
+msgstr "آية"
+
+#: al_quran/comp/items/models.py:35
+msgid "Content"
+msgstr "المحتوى"
+
+#: al_quran/comp/languages/models.py:15
+msgid "Language name"
+msgstr "اسم اللغة"
+
+#: al_quran/comp/languages/models.py:21
+msgid "Language code"
+msgstr "رمز اللغة"
+
+#: al_quran/core/chapters/models.py:15
+msgid "Chapter name"
+msgstr "اسم السورة"
+
+#: al_quran/core/chapters/models.py:20
+msgid "Chronological order in which chapters were revealed"
+msgstr "الترتيب الزمني لنزول السور"
+
+#: al_quran/core/chapters/models.py:24
+msgid "Designates where the chapter is revealed"
+msgstr "يحدد مكان نزول السورة"
+
+#: al_quran/core/chapters/models.py:29 al_quran/core/groups/models.py:26
+#: al_quran/core/pages/models.py:44 al_quran/core/parts/models.py:20
+#: al_quran/core/quarters/models.py:32
+msgid "Number of verses"
+msgstr "عدد الآيات"
+
+#: al_quran/core/chapters/models.py:34 al_quran/core/groups/models.py:31
+#: al_quran/core/parts/models.py:25 al_quran/core/quarters/models.py:37
+msgid "Number of pages"
+msgstr "عدد الصفحات"
+
+#: al_quran/core/groups/models.py:15 al_quran/core/pages/models.py:21
+#: al_quran/core/quarters/models.py:15 al_quran/core/verses/models.py:21
+#: al_quran/ui/templates/ui/components/page.html:33
+#: al_quran/ui/templates/ui/list/groups.html:29
+#: al_quran/ui/templates/ui/list/groups.html:32
+#: al_quran/ui/templates/ui/list/pages.html:35
+#: al_quran/ui/templates/ui/list/pages.html:38
+#: al_quran/ui/templates/ui/list/parts.html:20
+#: al_quran/ui/templates/ui/list/parts.html:25
+#: al_quran/ui/templates/ui/list/quarters.html:29
+#: al_quran/ui/templates/ui/list/quarters.html:32
+msgid "Part"
 msgstr "الجزء"
 
-#: al_quran/ui/templates/ui/components/page.html:111
-msgid "Group"  
+#: al_quran/core/groups/models.py:21
+msgid "Group name"
+msgstr "اسم الحزب"
+
+#: al_quran/core/pages/models.py:27 al_quran/core/quarters/models.py:21
+#: al_quran/core/verses/models.py:27
+#: al_quran/ui/templates/ui/components/page.html:126
+#: al_quran/ui/templates/ui/list/groups.html:20
+#: al_quran/ui/templates/ui/list/groups.html:25
+#: al_quran/ui/templates/ui/list/pages.html:41
+#: al_quran/ui/templates/ui/list/pages.html:44
+#: al_quran/ui/templates/ui/list/pages.html:47
+#: al_quran/ui/templates/ui/list/quarters.html:35
+#: al_quran/ui/templates/ui/list/quarters.html:38
+msgid "Group"
 msgstr "الحزب"
 
+#: al_quran/core/pages/models.py:33
+#: al_quran/ui/templates/ui/components/page.html:147
+#: al_quran/ui/templates/ui/list/pages.html:50
+#: al_quran/ui/templates/ui/list/quarters.html:20
+#: al_quran/ui/templates/ui/list/quarters.html:25
+msgid "Quarter"
+msgstr "ربع الحزب"
+
+#: al_quran/core/pages/models.py:39
+msgid "Page name"
+msgstr "اسم الصفحة"
+
+#: al_quran/core/parts/models.py:15
+msgid "Part name"
+msgstr "اسم الجزء"
+
+#: al_quran/core/quarters/models.py:27
+msgid "Quarter name"
+msgstr "اسم ربع الحزب"
+
+#: al_quran/core/verses/models.py:33
+msgid "Verse quarter"
+msgstr "ربع الحزب للآية"
+
+#: al_quran/core/verses/models.py:39
+msgid "Verse page"
+msgstr "صفحة الآية"
+
+#: al_quran/core/verses/models.py:44
+msgid "Verse number"
+msgstr "رقم الآية"
+
+#: al_quran/core/verses/models.py:49
+msgid "Verse content"
+msgstr "محتوى الآية"
+
+#: al_quran/users/models.py:19
+msgid "Quran Font"
+msgstr "خط القرآن"
+
+#: al_quran/users/models.py:26
+msgid "App Theme"
+msgstr "سمة التطبيق"
+
+#: al_quran/users/models.py:34
+msgid "Quran interpretation"
+msgstr "تفسير القرآن"
+
+#: al_quran/users/models.py:43
+msgid "Quran translation"
+msgstr "ترجمة القرآن"
+
+#: al_quran/users/models.py:52
+msgid "Quran transliteration"
+msgstr "الترجمة الصوتية للقرآن"
+
+#: al_quran/ui/templates/registration/base.html:4
+#: al_quran/ui/templates/registration/base.html:37
+#: al_quran/ui/templates/registration/base.html:79
+#: al_quran/ui/templates/registration/base.html:106
+#: al_quran/ui/templates/ui/base.html:193
+#: al_quran/ui/templates/ui/base.html:200
+#: al_quran/ui/templates/ui/base.html:524
+#: al_quran/ui/templates/ui/base.html:531
+msgid "Profile"
+msgstr "الملف الشخصي"
+
+#: al_quran/ui/templates/registration/base.html:22
+#: al_quran/ui/templates/registration/base.html:26
+#: al_quran/ui/templates/registration/base.html:30
+#: al_quran/ui/templates/ui/base.html:53
+msgid "Open drawer"
+msgstr "فتح القائمة الجانبية"
+
+#: al_quran/ui/templates/registration/base.html:57
+#: al_quran/ui/templates/registration/base.html:88
+#: al_quran/ui/templates/ui/base.html:49 al_quran/ui/templates/ui/base.html:334
+#: al_quran/ui/templates/ui/base.html:362
+msgid "Close drawer"
+msgstr "إغلاق القائمة الجانبية"
+
+#: al_quran/ui/templates/registration/base.html:68
+#: al_quran/ui/templates/registration/base.html:75
+#: al_quran/ui/templates/registration/logged_out.html:16
+#: al_quran/ui/templates/registration/logged_out.html:22
+#: al_quran/ui/templates/registration/login.html:16
+#: al_quran/ui/templates/registration/login.html:22
+#: al_quran/ui/templates/registration/signup.html:17
+#: al_quran/ui/templates/registration/signup.html:23
+#: al_quran/ui/templates/rest_framework/api.html:7
+#: al_quran/ui/templates/rest_framework/api.html:14
+#: al_quran/ui/templates/rest_framework/api.html:18
+#: al_quran/ui/templates/ui/base.html:12 al_quran/ui/templates/ui/base.html:157
+#: al_quran/ui/templates/ui/base.html:167
+#: al_quran/ui/templates/ui/base.html:345
+#: al_quran/ui/templates/ui/base.html:352
+msgid "Al-Quran"
+msgstr "القرآن الكريم"
+
+#: al_quran/ui/templates/registration/base.html:84
+#: al_quran/ui/templates/registration/base.html:92
+#: al_quran/ui/templates/ui/base.html:358
+#: al_quran/ui/templates/ui/base.html:366
+#: al_quran/ui/templates/ui/base.html:562
+#: al_quran/ui/templates/ui/base.html:570
+#: al_quran/ui/templates/ui/base.html:602
+#: al_quran/ui/templates/ui/detail/base.html:59
+#: al_quran/ui/templates/ui/detail/base.html:66
+#: al_quran/ui/templates/ui/detail/base.html:90
+#: al_quran/ui/templates/ui/detail/chapter.html:35
+#: al_quran/ui/templates/ui/detail/chapter.html:39
+#: al_quran/ui/templates/ui/detail/chapter.html:111
+#: al_quran/ui/templates/ui/list/base.html:50
+#: al_quran/ui/templates/ui/list/base.html:58
+#: al_quran/ui/templates/ui/list/base.html:72
+msgid "Close"
+msgstr "إغلاق"
+
+#: al_quran/ui/templates/registration/base.html:109
+msgid "Admin"
+msgstr "المشرف"
+
+#: al_quran/ui/templates/registration/base.html:119
+#: al_quran/ui/templates/registration/edit.html:4
+#: al_quran/ui/templates/registration/edit.html:9
+#: al_quran/ui/templates/registration/profile.html:33
+#: al_quran/ui/templates/registration/profile.html:40
+msgid "Settings"
+msgstr "الإعدادات"
+
+#: al_quran/ui/templates/registration/base.html:128
+msgid "Change Password"
+msgstr "تغيير كلمة المرور"
+
+#: al_quran/ui/templates/registration/base.html:140
+#: al_quran/ui/templates/registration/delete.html:4
+#: al_quran/ui/templates/registration/delete.html:8
+#: al_quran/ui/templates/registration/delete.html:14
+#: al_quran/ui/templates/registration/profile.html:52
+msgid "Delete account"
+msgstr "حذف الحساب"
+
+#: al_quran/ui/templates/registration/base.html:150
+#: al_quran/ui/templates/registration/profile.html:20
+#: al_quran/ui/templates/registration/profile.html:28
+#: al_quran/ui/templates/ui/base.html:227
+#: al_quran/ui/templates/ui/base.html:235
+#: al_quran/ui/templates/ui/base.html:448
+#: al_quran/ui/templates/ui/base.html:456
+msgid "Log out"
+msgstr "تسجيل الخروج"
+
+#: al_quran/ui/templates/registration/delete.html:18
+msgid "Are your sure that you want to delete your account?"
+msgstr "هل أنت متأكد أنك تريد حذف حسابك؟"
+
+#: al_quran/ui/templates/registration/delete.html:22
+msgid "Danger"
+msgstr "خطر"
+
+#: al_quran/ui/templates/registration/delete.html:23
+msgid "This action is destructive!"
+msgstr "هذا الإجراء مدمر!"
+
+#: al_quran/ui/templates/registration/logged_out.html:4
+msgid "Logged out"
+msgstr "تم تسجيل الخروج"
+
+#: al_quran/ui/templates/registration/logged_out.html:28
+msgid "Logged Out"
+msgstr "تم تسجيل الخروج"
+
+#: al_quran/ui/templates/registration/logged_out.html:31
+msgid "Thanks for spending some quality time with us today."
+msgstr "شكرًا لقضائك وقتًا ممتعًا معنا اليوم."
+
+#: al_quran/ui/templates/registration/logged_out.html:39
+#: al_quran/ui/templates/registration/login.html:28
+#: al_quran/ui/templates/registration/password_reset_complete.html:23
+#: al_quran/ui/templates/registration/signup.html:43
+#: al_quran/ui/templates/ui/base.html:462
+#: al_quran/ui/templates/ui/base.html:469
+msgid "Log in"
+msgstr "تسجيل الدخول"
+
+#: al_quran/ui/templates/registration/logged_out.html:45
+#: al_quran/ui/templates/registration/login.html:61
+#: al_quran/ui/templates/registration/signup.html:4
+#: al_quran/ui/templates/registration/signup.html:29
+msgid "Sign up"
+msgstr "إنشاء حساب"
+
+#: al_quran/ui/templates/registration/login.html:4
+#: al_quran/ui/templates/ui/base.html:278
+#: al_quran/ui/templates/ui/base.html:285
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: al_quran/ui/templates/registration/login.html:31
+msgid "Welcome, please login to continue."
+msgstr "مرحبًا، يرجى تسجيل الدخول للمتابعة."
+
+#: al_quran/ui/templates/registration/login.html:41
+msgid ""
+"Your account doesn't have access to this page. To proceed, please login with "
+"an account that has access. <!---->"
+msgstr "حسابك لا يملك صلاحية الوصول إلى هذه الصفحة. للمتابعة، يرجى تسجيل الدخول باستخدام حساب يملك الصلاحية. <!---->"
+
+#: al_quran/ui/templates/registration/login.html:67
+#: al_quran/ui/templates/registration/signup.html:49
+msgid "Forgot password?"
+msgstr "هل نسيت كلمة المرور؟"
+
+#: al_quran/ui/templates/registration/password_change_done.html:4
+msgid "Password Changed"
+msgstr "تم تغيير كلمة المرور"
+
+#: al_quran/ui/templates/registration/password_change_done.html:8
+#: al_quran/ui/templates/registration/password_change_form.html:8
+msgid "Password"
+msgstr "كلمة المرور"
+
+#: al_quran/ui/templates/registration/password_change_done.html:10
+#: al_quran/ui/templates/registration/password_change_form.html:9
+msgid "Change"
+msgstr "تغيير"
+
+#: al_quran/ui/templates/registration/password_change_done.html:12
+msgid "Done"
+msgstr "تم"
+
+#: al_quran/ui/templates/registration/password_change_done.html:19
+msgid "Congrats"
+msgstr "تهانينا"
+
+#: al_quran/ui/templates/registration/password_change_done.html:22
+msgid "Your password was changed."
+msgstr "تم تغيير كلمة المرور الخاصة بك."
+
+#: al_quran/ui/templates/registration/password_change_form.html:4
+msgid "Password Change"
+msgstr "تغيير كلمة المرور"
+
+#: al_quran/ui/templates/registration/password_change_form.html:16
+msgid "Change password"
+msgstr "تغيير كلمة المرور"
+
+#: al_quran/ui/templates/registration/password_change_form.html:20
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr "يرجى إدخال كلمة المرور القديمة من أجل الأمان، ثم إدخال كلمة المرور الجديدة مرتين للتأكد من كتابتها بشكل صحيح."
+
+#: al_quran/ui/templates/registration/password_reset_complete.html:4
+#: al_quran/ui/templates/registration/password_reset_form.html:4
+msgid "Password Reset"
+msgstr "إعادة تعيين كلمة المرور"
+
+#: al_quran/ui/templates/registration/password_reset_complete.html:15
+#: al_quran/ui/templates/registration/password_reset_form.html:15
+msgid "Reset Password"
+msgstr "إعادة تعيين كلمة المرور"
+
+#: al_quran/ui/templates/registration/password_reset_complete.html:19
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr "تم تعيين كلمة المرور الخاصة بك. يمكنك الآن تسجيل الدخول."
+
+#: al_quran/ui/templates/registration/password_reset_confirm.html:4
+msgid "Password Reset Confirm"
+msgstr "تأكيد إعادة تعيين كلمة المرور"
+
+#: al_quran/ui/templates/registration/password_reset_confirm.html:15
+msgid "Password Reset Confirmation"
+msgstr "تأكيد إعادة تعيين كلمة المرور"
+
+#: al_quran/ui/templates/registration/password_reset_confirm.html:20
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr "يرجى إدخال كلمة المرور الجديدة مرتين للتأكد من كتابتها بشكل صحيح."
+
+#: al_quran/ui/templates/registration/password_reset_confirm.html:27
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset. <!---->"
+msgstr "رابط إعادة تعيين كلمة المرور غير صالح، ربما لأنه تم استخدامه بالفعل. يرجى طلب إعادة تعيين جديدة. <!---->"
+
+#: al_quran/ui/templates/registration/password_reset_done.html:4
+#: al_quran/ui/templates/registration/password_reset_done.html:15
+msgid "Password Reset Done"
+msgstr "تمت إعادة تعيين كلمة المرور"
+
+#: al_quran/ui/templates/registration/password_reset_done.html:19
+msgid ""
+"We've emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive them shortly."
+msgstr "لقد أرسلنا إليك عبر البريد الإلكتروني تعليمات لتعيين كلمة المرور، إذا كان هناك حساب مرتبط بالبريد الذي أدخلته. ينبغي أن تصلك قريبًا."
+
+#: al_quran/ui/templates/registration/password_reset_done.html:24
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder."
+msgstr "إذا لم يصلك البريد الإلكتروني، يرجى التأكد من إدخال العنوان الذي سجلت به، وفحص مجلد البريد العشوائي."
+
+#: al_quran/ui/templates/registration/password_reset_done.html:30
+#: al_quran/ui/templates/rest_framework/api.html:28
+#: al_quran/ui/templates/rest_framework/api.html:32
+#: al_quran/ui/templates/ui/base.html:378
+msgid "Home"
+msgstr "الرئيسية"
+
+#: al_quran/ui/templates/registration/password_reset_email.html:6
+#, python-format
+msgid ""
+"You're receiving this email because you requested a password reset for your "
+"user account at %(site_name)s."
+msgstr "أنت تتلقى هذا البريد الإلكتروني لأنك طلبت إعادة تعيين كلمة المرور لحسابك في %(site_name)s."
+
+#: al_quran/ui/templates/registration/password_reset_email.html:10
+msgid "Please go to the following page and choose a new password:"
+msgstr "يرجى التوجه إلى الصفحة التالية واختيار كلمة مرور جديدة:"
+
+#: al_quran/ui/templates/registration/password_reset_email.html:16
+msgid "Your username, in case you've forgotten:"
+msgstr "اسم المستخدم الخاص بك، في حال نسيته:"
+
+#: al_quran/ui/templates/registration/password_reset_email.html:18
+msgid "Thanks for using our site!"
+msgstr "شكرًا لاستخدامك موقعنا!"
+
+#: al_quran/ui/templates/registration/password_reset_email.html:20
+#, python-format
+msgid "The %(site_name)s team"
+msgstr "فريق موقع %(site_name)s"
+
+#: al_quran/ui/templates/registration/password_reset_form.html:19
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll email "
+"instructions for setting a new one."
+msgstr "هل نسيت كلمة المرور؟ أدخل بريدك الإلكتروني أدناه وسنرسل إليك تعليمات لتعيين كلمة مرور جديدة."
+
+#: al_quran/ui/templates/registration/profile.html:15
+msgid "Welcome to your Profile"
+msgstr "مرحبًا بك في ملفك الشخصي"
+
+#: al_quran/ui/templates/registration/profile.html:45
+msgid "Delete"
+msgstr "حذف"
+
+#: al_quran/ui/templates/registration/signup.html:32
+msgid "Welcome, please signup to continue."
+msgstr "مرحبًا، يرجى إنشاء حساب للمتابعة."
+
+#: al_quran/ui/templates/rest_framework/api.html:37
+#: al_quran/ui/templates/rest_framework/api.html:41
+#: al_quran/ui/templates/ui/base.html:143
+#: al_quran/ui/templates/ui/base.html:150
+#: al_quran/ui/templates/ui/base.html:396
+#: al_quran/ui/templates/ui/list/chapters.html:4
+#: al_quran/ui/templates/ui/list/chapters.html:7
+msgid "Chapters"
+msgstr "السور"
+
+#: al_quran/ui/templates/rest_framework/api.html:46
+#: al_quran/ui/templates/rest_framework/api.html:50
+#: al_quran/ui/templates/ui/base.html:174
+#: al_quran/ui/templates/ui/base.html:181
+#: al_quran/ui/templates/ui/base.html:405
+#: al_quran/ui/templates/ui/list/parts.html:4
+#: al_quran/ui/templates/ui/list/parts.html:7
+msgid "Parts"
+msgstr "الأجزاء"
+
+#: al_quran/ui/templates/rest_framework/api.html:55
+#: al_quran/ui/templates/rest_framework/api.html:63
+#: al_quran/ui/templates/rest_framework/api.html:72
+msgid "More"
+msgstr "المزيد"
+
+#: al_quran/ui/templates/rest_framework/api.html:76
+#: al_quran/ui/templates/ui/base.html:414
+#: al_quran/ui/templates/ui/list/groups.html:4
+#: al_quran/ui/templates/ui/list/groups.html:7
+msgid "Groups"
+msgstr "المجموعات"
+
+#: al_quran/ui/templates/rest_framework/api.html:82
+#: al_quran/ui/templates/ui/base.html:423
+#: al_quran/ui/templates/ui/list/quarters.html:4
+#: al_quran/ui/templates/ui/list/quarters.html:7
+msgid "Quarters"
+msgstr "الأرباع"
+
+#: al_quran/ui/templates/rest_framework/api.html:88
+#: al_quran/ui/templates/ui/base.html:432
+#: al_quran/ui/templates/ui/list/chapters.html:46
+#: al_quran/ui/templates/ui/list/groups.html:35
+#: al_quran/ui/templates/ui/list/pages.html:4
+#: al_quran/ui/templates/ui/list/pages.html:7
+#: al_quran/ui/templates/ui/list/parts.html:29
+#: al_quran/ui/templates/ui/list/quarters.html:41
+msgid "Pages"
+msgstr "الصفحات"
+
+#: al_quran/ui/templates/rest_framework/api.html:94
+msgid "Languages"
+msgstr "اللغات"
+
+#: al_quran/ui/templates/rest_framework/api.html:100
+msgid "Collections"
+msgstr "المجموعات"
+
+#: al_quran/ui/templates/rest_framework/api.html:106
+msgid "Items"
+msgstr "العناصر"
+
+#: al_quran/ui/templates/ui/about.html:4 al_quran/ui/templates/ui/base.html:316
+#: al_quran/ui/templates/ui/base.html:387
+msgid "About us"
+msgstr "من نحن"
+
+#: al_quran/ui/templates/ui/about.html:11
+msgid "The Project"
+msgstr "المشروع"
+
+#: al_quran/ui/templates/ui/about.html:13
+msgid ""
+"The Quran is a timeless beacon of guidance, wisdom, and spiritual "
+"nourishment. In an age where technology connects us more than ever before, "
+"our goal is to harness these digital tools to bring the Divine Word to "
+"everyone—anytime, anywhere. By creating an interactive, responsive digital "
+"platform, we honor centuries of rich tradition while paving a new path for "
+"contemporary seekers. <!---->"
+msgstr "القرآن هو منارة خالدة للهدى، الحكمة، والروحانيات. في عصر يربطنا فيه التقنيات أكثر من أي وقت مضى، هدفنا هو استغلال هذه الأدوات الرقمية لنقدم الكلمة الإلهية للجميع—في أي وقت، ومن أي مكان. من خلال إنشاء منصة رقمية تفاعلية ومتجاوبة، نكرم قرونًا من التراث الغني، مع وضع طريق جديد للباحثين المعاصرين."
+
+#: al_quran/ui/templates/ui/about.html:25
+msgid "Our Mission"
+msgstr "مهمتنا"
+
+#: al_quran/ui/templates/ui/about.html:27
+msgid ""
+"At the heart of our project is a deep commitment to making the wisdom of the "
+"Quran accessible to a global community. We believe that true progress comes "
+"when timeless spiritual truths meet modern innovation. Our mission is to "
+"build an open-source app that empowers every individual—no matter their "
+"background or location—to engage with the Quran in a way that is both "
+"spiritually enriching and technologically advanced."
+msgstr "في جوهر مشروعنا، يوجد التزام عميق بجعل الحكمة القرآنية متاحة لمجتمع عالمي. نؤمن أن التقدم الحقيقي يتحقق عندما تلتقي الحقائق الروحية الخالدة مع الابتكار الحديث. مهمتنا هي بناء تطبيق مفتوح المصدر يمكّن كل فرد—بغض النظر عن خلفيته أو مكانه—من التفاعل مع القرآن بطريقة تغني الروح وتواكب التطور التكنولوجي."
+
+#: al_quran/ui/templates/ui/about.html:38
+msgid "Our Story"
+msgstr "قصتنا"
+
+#: al_quran/ui/templates/ui/about.html:40
+msgid ""
+"What began as a collaborative spark among passionate developers, scholars, "
+"and community members has grown into an ambitious open-source project. We "
+"envisioned a digital sanctuary where users could quickly access "
+"translations, tafsir, and audio recitations, all wrapped in an intuitive and "
+"engaging design. Every line of code and design decision is inspired by the "
+"desire to spread knowledge, foster understanding, and help transform daily "
+"engagement with the Quran into a deeply personal journey."
+msgstr "بدأت المبادرة كنواة تعاون بين مطورين متحمسين وعلماء وأفراد المجتمع، وارتقت لتصبح مشروعًا مفتوح المصدر طموحًا. تخيلنا منبرًا رقميًا يمكن للمستخدمين من خلاله الوصول بسرعة إلى الترجمات، والتفسير، والتلاوات الصوتية، كل ذلك بتصميم بديهي وجذاب. كل سطر من الكود وقرار تصميم مستوحى من الرغبة في نشر المعرفة، وتعزيز الفهم، وتحويل التفاعل اليومي مع القرآن إلى رحلة شخصية عميقة."
+
+#: al_quran/ui/templates/ui/about.html:52
+msgid "Our Vision"
+msgstr "رؤيتنا"
+
+#: al_quran/ui/templates/ui/about.html:54
+msgid ""
+"Our vision is clear: a seamless digital experience that brings the Quran "
+"into everyday life. Whether you're reading on your desktop during a quiet "
+"morning or accessing the app on your mobile device as you travel, our goal "
+"is to offer an interface that is both aesthetically pleasing and powerfully "
+"functional. We aspire to build a global community where learning, "
+"reflection, and spiritual growth are just a tap away."
+msgstr "رؤيتنا واضحة: تجربة رقمية متكاملة تدمج القرآن في حياة الناس اليومية. سواء كنت تقرأ على جهاز الكمبيوتر الخاص بك خلال صباح هادئ أو تستخدم التطبيق على هاتفك أثناء التنقل، هدفنا هو تقديم واجهة جميلة وفعالة في نفس الوقت. نطمح لبناء مجتمع عالمي تكون فيه المعرفة، والتأمل، والنمو الروحي على بُعد نقرة واحدة."
+
+#: al_quran/ui/templates/ui/about.html:65
+msgid "Our Values"
+msgstr "قيمنا"
+
+#: al_quran/ui/templates/ui/about.html:68
+msgid "Integrity & Authenticity:"
+msgstr "النزاهة والأصالة:"
+
+#: al_quran/ui/templates/ui/about.html:70
+msgid ""
+"We honor the sacred traditions of the Quran while embracing innovation with "
+"reverence."
+msgstr "نحن نكرم التقاليد المقدسة للقرآن مع تبني الابتكار باحترام."
+
+#: al_quran/ui/templates/ui/about.html:74
+msgid "Inclusivity & Accessibility:"
+msgstr "الشمولية وسهولة الوصول:"
+
+#: al_quran/ui/templates/ui/about.html:76
+msgid ""
+"Our platform is designed for everyone, featuring multi-language support and "
+"responsive design to suit any device."
+msgstr "منصتنا مصممة للجميع، وتدعم لغات متعددة وتصميمًا يستجيب ليعمل على أي جهاز."
+
+#: al_quran/ui/templates/ui/about.html:81
+msgid "Collaboration & Innovation:"
+msgstr "التعاون والابتكار:"
+
+#: al_quran/ui/templates/ui/about.html:83
+msgid ""
+"As an open-source project, we thrive on community contributions, diverse "
+"perspectives, and the shared passion for creating something meaningful."
+msgstr "كمشروع مفتوح المصدر، نعتمد على مساهمات المجتمع، وجهات نظر متنوعة، والشغف المشترك لخلق شيء ذو معنى."
+
+#: al_quran/ui/templates/ui/about.html:88
+msgid "Impact & Excellence:"
+msgstr "التأثير والتميّز:"
+
+#: al_quran/ui/templates/ui/about.html:90
+msgid ""
+"Every feature, every update, and every discussion is driven by our desire to "
+"make a lasting, positive impact on users lives."
+msgstr "كل ميزة، وكل تحديث، وكل نقاش يُدفع به رغبتنا في ترك أثر إيجابي دائم على حياة المستخدمين."
+
+#: al_quran/ui/templates/ui/about.html:98
+msgid "Join Our Journey"
+msgstr "انضم إلى رحلتنا"
+
+#: al_quran/ui/templates/ui/about.html:100
+msgid ""
+"By contributing to our project, whether through coding, design, scholarly "
+"insights, or even spreading the word, you become a part of a larger mission—"
+"to enhance access to the Quran and earn hasanat through your service. We "
+"invite you to explore our platform, share your feedback, and join our "
+"growing community of innovators, learners, and believers dedicated to "
+"merging timeless wisdom with modern technology."
+msgstr "من خلال مساهمتك في مشروعنا، سواء عبر البرمجة، التصميم، الرؤى العلمية، أو حتى نشر الكلمة، أنت تصبح جزءًا من مهمة أكبر— لتعزيز الوصول إلى القرآن وكسب الحسنات من خلال خدمتكم. ندعوك لاستكشاف منصتنا، مشاركة ملاحظاتك، والانضمام إلى مجتمعنا المتنامي من المبدعين والمتعلمين والمؤمنين المكرسين لدمج الحكمة الخالدة مع التكنولوجيا الحديثة."
+
+#: al_quran/ui/templates/ui/base.html:124
+#: al_quran/ui/templates/ui/base.html:132
+#: al_quran/ui/templates/ui/base.html:557
+#: al_quran/ui/templates/ui/base.html:583
+#: al_quran/ui/templates/ui/base.html:596
+msgid "Search"
+msgstr "بحث"
+
+#: al_quran/ui/templates/ui/base.html:205
+#: al_quran/ui/templates/ui/base.html:256
+msgid "Toggle theme"
+msgstr "تبديل السمة"
+
+#: al_quran/ui/templates/ui/base.html:305
+msgid "Services"
+msgstr "الخدمات"
+
+#: al_quran/ui/templates/ui/base.html:307
+msgid "Quran App"
+msgstr "متصفح القرآن"
+
+#: al_quran/ui/templates/ui/base.html:310
+msgid "Quran API"
+msgstr "واجهة برمجة تطبيق القرآن"
+
+#: al_quran/ui/templates/ui/base.html:314
+msgid "Company"
+msgstr "الشركة"
+
+#: al_quran/ui/templates/ui/base.html:318
+msgid "Contact"
+msgstr "التواصل"
+
+#: al_quran/ui/templates/ui/base.html:321
+msgid "Legal"
+msgstr "قانوني"
+
+#: al_quran/ui/templates/ui/base.html:322
+msgid "Terms of use"
+msgstr "شروط الاستخدام"
+
+#: al_quran/ui/templates/ui/base.html:323
+msgid "Privacy policy"
+msgstr "سياسة الخصوصية"
+
+#: al_quran/ui/templates/ui/base.html:438
+msgid "API"
+msgstr "واجهة برمجة التطبيق"
+
+#: al_quran/ui/templates/ui/base.html:475
+#: al_quran/ui/templates/ui/base.html:482
+msgid "Facebook"
+msgstr "فيسبوك"
+
+#: al_quran/ui/templates/ui/base.html:487
+#: al_quran/ui/templates/ui/base.html:494
+msgid "Instagram"
+msgstr "انستجرام"
+
+#: al_quran/ui/templates/ui/base.html:499
+msgid "X"
+msgstr "اكس"
+
+#: al_quran/ui/templates/ui/base.html:511
+#: al_quran/ui/templates/ui/base.html:518
+msgid "Linkedin"
+msgstr "لينكدان"
+
+#: al_quran/ui/templates/ui/components/form.html:6
+msgid "Submit"
+msgstr "إرسال"
+
+#: al_quran/ui/templates/ui/components/page.html:13
+#: al_quran/ui/templates/ui/components/page.html:27
+#: al_quran/ui/templates/ui/components/page.html:120
+#: al_quran/ui/templates/ui/components/page.html:141
+#: al_quran/ui/templates/ui/list/chapters.html:64
+#: al_quran/ui/templates/ui/list/groups.html:53
+#: al_quran/ui/templates/ui/list/pages.html:65
+#: al_quran/ui/templates/ui/list/parts.html:47
+#: al_quran/ui/templates/ui/list/quarters.html:59
+msgid "Read"
+msgstr "اقرأ"
+
+#: al_quran/ui/templates/ui/components/page.html:48
+#: al_quran/ui/templates/ui/detail/chapter.html:82
+#: al_quran/ui/templates/ui/list/chapters.html:40
+#: al_quran/ui/templates/ui/list/chapters.html:43
+msgid "Order"
+msgstr "الترتيب الزمني"
+
+#: al_quran/ui/templates/ui/components/page.html:66
+#: al_quran/ui/templates/ui/detail/chapter.html:100
+msgid "Verse count"
+msgstr "عدد الآيات"
+
+#: al_quran/ui/templates/ui/components/page.html:101
+#: al_quran/ui/templates/ui/components/page.html:108
+msgid "Options"
+msgstr "الخيارات"
+
 #: al_quran/ui/templates/ui/components/page.html:132
-msgid "Quarter"  
-msgstr "الربع"
+#: al_quran/ui/templates/ui/list/pages.html:20
+#: al_quran/ui/templates/ui/list/pages.html:25
+msgid "Page"
+msgstr "الصفحة"
 
-#: al_quran/ui/templates/ui/components/page.html:34  
-#: al_quran/ui/templates/ui/detail/chapter.html:115  
-msgid "Verse count"  
-msgstr "عدد الآيات"  
+#: al_quran/ui/templates/ui/components/pagination.html:6
+#: al_quran/ui/templates/ui/components/pagination.html:27
+#: al_quran/ui/templates/ui/detail/base.html:11
+#: al_quran/ui/templates/ui/detail/base.html:18
+msgid "Previous"
+msgstr "السابق"
 
-#: al_quran/ui/templates/ui/components/page.html:36  
-msgid "Verses"  
-msgstr "آيات"  
+#: al_quran/ui/templates/ui/components/pagination.html:33
+#: al_quran/ui/templates/ui/components/pagination.html:36
+msgid "First"
+msgstr "الأول"
 
-#: al_quran/ui/templates/ui/components/page.html:117  
-msgid "Page"  
-msgstr "الصفحة"  
+#: al_quran/ui/templates/ui/components/pagination.html:43
+msgid "Current"
+msgstr "الحالي"
 
-#: al_quran/ui/templates/ui/components/pagination.html:6  
-#: al_quran/ui/templates/ui/components/pagination.html:14  
-#: al_quran/ui/templates/ui/detail/base.html:22  
-#: al_quran/ui/templates/ui/detail/base.html:30  
-msgid "Previous"  
-msgstr "السابق"  
+#: al_quran/ui/templates/ui/components/pagination.html:53
+#: al_quran/ui/templates/ui/components/pagination.html:59
+msgid "Last"
+msgstr "الأخير"
 
-#: al_quran/ui/templates/ui/components/pagination.html:18  
-#: al_quran/ui/templates/ui/components/pagination.html:20  
-msgid "First"  
-msgstr "الأول"  
+#: al_quran/ui/templates/ui/components/pagination.html:63
+#: al_quran/ui/templates/ui/components/pagination.html:83
+#: al_quran/ui/templates/ui/detail/base.html:27
+#: al_quran/ui/templates/ui/detail/base.html:34
+msgid "Next"
+msgstr "التالي"
 
-#: al_quran/ui/templates/ui/components/pagination.html:25  
-msgid "Current"  
-msgstr "الحالي"  
+#: al_quran/ui/templates/ui/detail/base.html:80
+msgid "Copy"
+msgstr "نسخ"
 
-#: al_quran/ui/templates/ui/components/pagination.html:32  
-#: al_quran/ui/templates/ui/components/pagination.html:34  
-msgid "Last"  
-msgstr "الأخير"  
+#: al_quran/ui/templates/ui/detail/base.html:99
+msgid "Verse copied"
+msgstr "تم نسخ الآية"
 
-#: al_quran/ui/templates/ui/components/pagination.html:38  
-#: al_quran/ui/templates/ui/components/pagination.html:46  
-#: al_quran/ui/templates/ui/detail/base.html:34  
-#: al_quran/ui/templates/ui/detail/base.html:42  
-msgid "Next"  
-msgstr "التالي"  
+#: al_quran/ui/templates/ui/detail/chapter.html:10
+#: al_quran/ui/templates/ui/detail/chapter.html:18
+msgid "Info"
+msgstr "المعلومات"
 
-#: al_quran/ui/templates/ui/detail/chapter.html:22  
-#: al_quran/ui/templates/ui/detail/chapter.html:32  
-msgid "Info"  
-msgstr "معلومات"  
+#: al_quran/ui/templates/ui/detail/chapter.html:58
+msgid "Name"
+msgstr "الاسم"
 
-#: al_quran/ui/templates/ui/detail/chapter.html:47  
-#: al_quran/ui/templates/ui/detail/chapter.html:56  
-#: al_quran/ui/templates/ui/detail/chapter.html:125  
-msgid "Close"  
-msgstr "إغلاق"  
+#: al_quran/ui/templates/ui/detail/chapter.html:69
+#: al_quran/ui/templates/ui/list/chapters.html:29
+msgid "Type"
+msgstr "النوع"
 
-#: al_quran/ui/templates/ui/detail/chapter.html:75  
-msgid "Name"  
-msgstr "اسم"  
+#: al_quran/ui/templates/ui/detail/chapter.html:73
+#: al_quran/ui/templates/ui/list/chapters.html:35
+msgid "Meccan"
+msgstr "مكية"
 
-#: al_quran/ui/templates/ui/detail/chapter.html:86  
-msgid "Type"  
-msgstr "نوع"  
+#: al_quran/ui/templates/ui/detail/chapter.html:75
+#: al_quran/ui/templates/ui/list/chapters.html:37
+msgid "Medinan"
+msgstr "مدنية"
 
-#: al_quran/ui/templates/ui/detail/chapter.html:90  
-#: al_quran/ui/templates/ui/list/chapters.html:24  
-msgid "Meccan"  
-msgstr "مكية"  
+#: al_quran/ui/templates/ui/detail/chapter.html:91
+msgid "Page count"
+msgstr "عدد الصقحات"
 
-#: al_quran/ui/templates/ui/detail/chapter.html:90  
-#: al_quran/ui/templates/ui/list/chapters.html:24  
-msgid "Medinan"  
-msgstr "مدنية"  
+#: al_quran/ui/templates/ui/index.html:10
+msgid "Experience the Quran Like Never Before"
+msgstr "تجربة القرآن كما لم تفعل من قبل"
 
-#: al_quran/ui/templates/ui/detail/chapter.html:106  
-msgid "Page count"  
-msgstr "عدد الصفحات"  
+#: al_quran/ui/templates/ui/index.html:14
+msgid "An interactive journey to deepen your understanding and connection"
+msgstr "رحلة تفاعلية لتعميق فهمك واتصالك"
 
-#: al_quran/ui/templates/ui/index.html:12  
-msgid "Experience Al-Quran Like Never Before"  
-msgstr "اختبر القرآن كما لم يحدث من قبل"  
+#: al_quran/ui/templates/ui/index.html:22
+msgid "Begin Your Journey"
+msgstr "ابدأ رحلتك"
 
-#: al_quran/ui/templates/ui/index.html:15  
-msgid ""  
-"\n"  
-"            For centuries, the Quran has guided hearts and minds. We are "  
-"honored to continue this legacy by\n"  
-"            harnessing modern technology to make its teachings more "  
-"accessible than ever before. Join us in bridging the\n"  
-"            past and the future.\n"  
-"            "  
-msgstr ""  
-"\n"  
-"            لقرون طويلة، وهب القرآن القلوب والعقول. يشرّفنا أن نستمر في هذه "  
-"ال legacy عبر\n"  
-"            استغلال التقنية الحديثة لجعل تعاليمه أكثر وصولاً من أي وقت مضى. انضموا إلينا في ربط\n"  
-"            الماضي بالمستقبل.\n"  
-"            "  
+#: al_quran/ui/templates/ui/index.html:30
+msgid "Features"
+msgstr "الخصائص"
 
-#: al_quran/ui/templates/ui/index.html:23  
-msgid "Try Now"  
-msgstr "جرب الآن"  
+#: al_quran/ui/templates/ui/index.html:57
+msgid "Interactive Reading Experience"
+msgstr "تجربة قراءة تفاعلية"
 
-#: al_quran/ui/templates/ui/index.html:29  
-msgid "Our Mission"  
-msgstr "مهمتنا"  
+#: al_quran/ui/templates/ui/index.html:61
+msgid ""
+"Personalized themes and font adjustments create a comfortable reading "
+"environment."
+msgstr "السمات المخصصة وتعديلات الخط تخلق بيئة قراءة مريحة."
 
-#: al_quran/ui/templates/ui/index.html:33  
-msgid ""  
-"\n"  
-"            We believe in the power of technology to bring hearts closer to "  
-"the Quran. Born out of a passion\n"  
-"            to serve Islam, our open-source project aims to make the "  
-"timeless wisdom of the Quran accessible to\n"  
-"            everyone, everywhere.\n"  
-"            "  
-msgstr ""  
-"\n"  
-"            نحن نؤمن بقوة التكنولوجيا في تقريب القلوب من القرآن. ولدت رغبة في "  
-"خدمة الإسلام، مشروعنا مفتوح المصدر يهدف إلى جعل\n"  
-"            حكمة القرآن الخالدة متاحة للجميع، في كل مكان.\n"  
-"            "  
+#: al_quran/ui/templates/ui/index.html:83
+msgid "Audio Recitations"
+msgstr "تلاوات صوتية"
 
-#: al_quran/ui/templates/ui/index.html:45  
-msgid "Features"  
-msgstr "الميزات"  
+#: al_quran/ui/templates/ui/index.html:87
+msgid "Enjoy beautiful recitations by renowned Qaris."
+msgstr "استمتع بتلاوات جميلة لمقرئين مشهورين."
 
-#: al_quran/ui/templates/ui/index.html:54  
-msgid "Interactive Reading Experience"  
-msgstr "تجربة قراءة تفاعلية"  
+#: al_quran/ui/templates/ui/index.html:100
+msgid "Advanced Search & Bookmarking"
+msgstr "بحث متقدم وإشارات مرجعية"
 
-#: al_quran/ui/templates/ui/index.html:59  
-msgid ""  
-"\n"  
-"                  Personalize your reading with customizable themes and "  
-"fonts. Dive deep into the Quran in a way\n"  
-"                  that feels just right for you.\n"  
-"                  "  
-msgstr ""  
-"\n"  
-"                  خصص قراءة القرآن بتصميمات وخطوط قابلة للتخصيص. اغمر نفسك في "  
-"القرآن بطريقة\n"  
-"                  تناسبك تمامًا.\n"  
-"                  "  
+#: al_quran/ui/templates/ui/index.html:104
+msgid "Quickly locate your favorite verses and track progress."
+msgstr "حدد بسرعة آياتك المفضلة وتتبع تقدمك."
 
-#: al_quran/ui/templates/ui/index.html:72  
-msgid "Beautiful Recitations"  
-msgstr "قراءات جميلة"  
+#: al_quran/ui/templates/ui/index.html:133
+msgid "Multi-Language & Tafsir Support"
+msgstr "دعم متعدد اللغات وتفسير"
 
-#: al_quran/ui/templates/ui/index.html:75  
-#: al_quran/ui/templates/ui/index.html:95  
-msgid "Soon"  
-msgstr "قريبًا"  
+#: al_quran/ui/templates/ui/index.html:137
+msgid "Access translations and scholarly commentary in several languages."
+msgstr "الوصول إلى الترجمات والتعليقات العلمية بعدة لغات."
 
-#: al_quran/ui/templates/ui/index.html:79  
-msgid ""  
-"\n"  
-"                  Listen to soulful recitations by renowned Qaris from "  
-"around the world. Let the melodious voices\n"  
-"                  enhance your connection and understanding.\n"  
-"                  "  
-msgstr ""  
-"\n"  
-"                  استمع إلى قراءات روحانية من قبل قراء مشهورين من جميع "  
-"أنحاء العالم. دع الأصوات العذبة\n"  
-"                  تعزز اتصالك وفهمك.\n"  
-"                  "  
+#: al_quran/ui/templates/ui/index.html:164
+msgid "Modern"
+msgstr "حديث"
 
-#: al_quran/ui/templates/ui/index.html:92  
-msgid "Advanced Search & Bookmarking"  
-msgstr "بحث متقدم وإضافة للمفضلة"  
+#: al_quran/ui/templates/ui/index.html:167
+msgid ""
+"Our Quran app is crafted with cutting-edge technology to provide a seamless, "
+"engaging, and personalized experience."
+msgstr "تطبيق القرآن الخاص بنا مصمم بأحدث التقنيات لتقديم تجربة سلسة وملهمة وشخصية."
 
-#: al_quran/ui/templates/ui/index.html:99  
-msgid ""  
-"\n"  
-"                  Find verses effortlessly with our powerful search tool. "  
-"Collectionmark your favorite Ayahs and\n"  
-"                  track your progress seamlessly.\n"  
-"                  "  
-msgstr ""  
-"\n"  
-"                  ابحث عن الآيات بسهولة باستخدام أداة البحث القوية لدينا. "  
-"اجمع الآيات المفضلة لديك و\n"  
-"                  تتبع تقدمك بسلاسة.\n"  
-"                  "  
+#: al_quran/ui/templates/ui/index.html:192
+msgid "Designed for Every User, Everywhere"
+msgstr "مصمم لكل مستخدم، في كل مكان"
 
-#: al_quran/ui/templates/ui/index.html:114  
-msgid "Imagine the Possibilities"  
-msgstr "تخيل الإمكانيات"  
+#: al_quran/ui/templates/ui/index.html:196
+msgid ""
+"Whether you're browsing on a desktop, tablet, or mobile device, our platform "
+"adapts effortlessly to your needs."
+msgstr "سواء كنت تتصفح على سطح مكتب، أو جهاز لوحي، أو هاتف محمول، منصتنا تتكيف بسلاسة مع احتياجاتك."
 
-#: al_quran/ui/templates/ui/index.html:118  
-msgid ""  
-"\n"  
-"            By joining us, you are not just using an app—you are becoming "  
-"part of a community dedicated to\n"  
-"            exploring and sharing the profound wisdom of the Quran. Lets "  
-"make a difference together.\n"  
-"            "  
-msgstr ""  
-"\n"  
-"            من خلال الانضمام إلينا، أنت لا تستخدم تطبيقًا فقط—بل أصبحت جزءًا من "  
-"مجتمع مكرس لاستكشاف\n"  
-"            ومشاركة الحكمة العميقة للقرآن. دعنا نحدث فرقًا معًا.\n"  
-"            "  
+#: al_quran/ui/templates/ui/index.html:212
+msgid "Join Us & Earn Hasanat"
+msgstr "انضم إلينا واضمن حسناتك"
 
-#: al_quran/ui/templates/ui/index.html:127  
-msgid "Get Involved"  
-msgstr "انضم إلينا"  
+#: al_quran/ui/templates/ui/index.html:216
+msgid ""
+"The Quran has always been a guiding light, offering wisdom, peace, and "
+"spiritual fulfillment."
+msgstr "لطالما كان القرآن نورًا هاديًا، يمنح الحكمة والسلام والإشباع الروحي."
 
-#: al_quran/ui/templates/ui/index.html:131  
-msgid ""  
-"\n"  
-"            Your feedback and support are the heartbeat of this project. "  
-"Share your thoughts, suggest\n"  
-"            features, or report issues. Together, we can build something "  
-"truly impactful.\n"  
-"            "  
-msgstr ""  
-"\n"  
-"            تعليقاتك ودعمك هما نبض هذا المشروع. شارك أفكارك، اقترح\n"  
-"            ميزات، أو أبلغ عن مشاكل. معًا، يمكننا بناء شيء يحقق تأثيرًا كبيرًا.\n"  
-"            "  
+#: al_quran/ui/templates/ui/index.html:224
+msgid "Start Earning Hasanat"
+msgstr "ابدأ في كسب الحسنات"
 
-#: al_quran/ui/templates/ui/list/base.html:36  
-msgid "In times of trouble and chaos"  
-msgstr "في أوقات الشدة والفوضى"  
-#: al_quran/ui/templates/ui/list/base.html:44  
-msgid "Quran 17:9"  
-msgstr "القرآن 17:9"  
+#: al_quran/ui/templates/ui/list/base.html:19
+#: al_quran/ui/templates/ui/list/base.html:27
+#: al_quran/ui/templates/ui/list/base.html:46
+msgid "Filters"
+msgstr "مرشحات"
 
-#: al_quran/ui/templates/ui/list/base.html:48  
-msgid ""  
-"Turning to the Quran can bring peace to our hearts. Its words are a source "  
-"of comfort and solace."  
-msgstr ""  
-"العودة إلى القرآن يمكن أن تجلب السلام إلى قلوبنا. كلماته هي مصدر "  
-"الراحة والعزاء."  
-
-#: al_quran/ui/templates/ui/list/chapters.html:25  
-#: al_quran/ui/templates/ui/list/groups.html:23  
-#: al_quran/ui/templates/ui/list/pages.html:23  
-#: al_quran/ui/templates/ui/list/parts.html:23  
-#: al_quran/ui/templates/ui/list/quarters.html:23  
-msgid "verses"  
-msgstr "آيات"  
-
-#: al_quran/ui/templates/ui/list/groups.html:22  
-#: al_quran/ui/templates/ui/list/parts.html:22  
-#: al_quran/ui/templates/ui/list/quarters.html:22  
-msgid "pages"  
+#: al_quran/ui/templates/ui/list/chapters.html:49
+#: al_quran/ui/templates/ui/list/groups.html:38
+#: al_quran/ui/templates/ui/list/parts.html:32
+#: al_quran/ui/templates/ui/list/quarters.html:44
+msgid "pages"
 msgstr "صفحات"
+
+#: al_quran/ui/templates/ui/list/chapters.html:52
+#: al_quran/ui/templates/ui/list/groups.html:41
+#: al_quran/ui/templates/ui/list/pages.html:53
+#: al_quran/ui/templates/ui/list/parts.html:35
+#: al_quran/ui/templates/ui/list/quarters.html:47
+msgid "Verses"
+msgstr "آيات"
+
+#: al_quran/ui/templates/ui/list/chapters.html:55
+#: al_quran/ui/templates/ui/list/groups.html:44
+#: al_quran/ui/templates/ui/list/pages.html:56
+#: al_quran/ui/templates/ui/list/parts.html:38
+#: al_quran/ui/templates/ui/list/quarters.html:50
+msgid "verses"
+msgstr "آيات"

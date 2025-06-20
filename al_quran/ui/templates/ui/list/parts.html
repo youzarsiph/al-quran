@@ -12,11 +12,8 @@
 {% for part in part_list.all %}
 <li id="item-{{ part.id }}" class="col-span-12 md:col-span-6 lg:col-span-4">
   <div
-    class="card shadow-sm size-full rounded-box card-sm overflow-hidden hover:bg-base-200 hover:shadow-xl md:card-md lg:card-lg xl:card-xl"
-  >
-    <span
-      class="badge badge-soft badge-primary rounded-xs lg:badge-lg xl:badge-xl"
-    >
+    class="card shadow-sm size-full rounded-box card-sm overflow-hidden hover:bg-base-200 hover:shadow-xl md:card-md lg:card-lg xl:card-xl">
+    <span class="badge badge-soft badge-primary rounded-xs lg:badge-lg xl:badge-xl">
       {% trans 'Part' %} {{ part.id }}
     </span>
 
@@ -26,13 +23,13 @@
       </h2>
 
       <ul class="grid gap-2 grid-cols-2">
-        <li class="tooltip tooltip-top" data-tip="{% trans 'Pages' %}">
+        <li class="tooltip tooltip-top" data-tip="{% trans 'pages' %}">
           <span class="flex items-center gap-2 lg:gap-4">
             <i data-lucide="book-open" class="size-4 lg:size-6"></i>
             {{ part.page_count }} {% trans 'pages' %}
           </span>
         </li>
-        <li class="tooltip tooltip-top" data-tip="{% trans 'Verses' %}">
+        <li class="tooltip tooltip-top" data-tip="{% trans 'verses' %}">
           <span class="flex items-center gap-2 lg:gap-4">
             <i data-lucide="book-text" class="size-4 lg:size-6"></i>
             {{ part.verse_count }} {% trans 'verses' %}
@@ -40,15 +37,9 @@
         </li>
       </ul>
 
-      <a
-        href="{% url 'al-quran:part' part.id %}"
-        class="btn btn-primary lg:btn-lg"
-      >
+      <a href="{% url 'al-quran:part' part.id %}" class="btn btn-primary lg:btn-lg">
         {% trans 'Read' %}
-        <i
-          data-lucide="chevron-right"
-          class="size-4 lg:size-6 rtl:rotate-180"
-        ></i>
+        <i data-lucide="chevron-right" class="size-4 lg:size-6 rtl:rotate-180"></i>
       </a>
     </div>
   </div>
