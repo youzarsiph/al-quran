@@ -25,7 +25,7 @@
 <dialog id="info" class="modal">
   <section class="modal-box grid gap-2 bg-base-100">
     <header class="flex items-center justify-between gap-2">
-      <h1 class="text-2xl font-semibold">
+      <h1 class="text-2xl font-semibold rtl:font-kufi">
         {% trans 'Chapter' %} {{ chapter.name }}
       </h1>
 
@@ -46,7 +46,9 @@
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">{% trans 'Chapter' %}</h2>
+            <h2 class="rtl:font-kufi text-lg font-semibold">
+              {% trans 'Chapter' %}
+            </h2>
           </div>
           <div>
             <p class="badge badge-neutral">{{ chapter.id }}</p>
@@ -55,7 +57,9 @@
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">{% trans 'Name' %}</h2>
+            <h2 class="rtl:font-kufi text-lg font-semibold">
+              {% trans 'Name' %}
+            </h2>
           </div>
           <div>
             <p class="badge badge-neutral {{ user.font|default:'font-kufi' }}">
@@ -66,7 +70,9 @@
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">{% trans 'Type' %}</h2>
+            <h2 class="rtl:font-kufi text-lg font-semibold">
+              {% trans 'Type' %}
+            </h2>
           </div>
           <div>
             <p class="badge badge-neutral">
@@ -79,7 +85,9 @@
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">{% trans 'Order' %}</h2>
+            <h2 class="rtl:font-kufi text-lg font-semibold">
+              {% trans 'Order' %}
+            </h2>
           </div>
           <div>
             <p class="badge badge-neutral">{{ chapter.order }}</p>
@@ -88,7 +96,9 @@
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">{% trans 'Page count' %}</h2>
+            <h2 class="rtl:font-kufi text-lg font-semibold">
+              {% trans 'Page count' %}
+            </h2>
           </div>
           <div>
             <p class="badge badge-neutral">{{ chapter.page_count }}</p>
@@ -97,7 +107,9 @@
         <li class="list-row items-center">
           <div></div>
           <div>
-            <h2 class="text-lg font-semibold">{% trans 'Verse count' %}</h2>
+            <h2 class="rtl:font-kufi text-lg font-semibold">
+              {% trans 'Verse count' %}
+            </h2>
           </div>
           <div>
             <p class="badge badge-neutral">{{ chapter.verse_count }}</p>

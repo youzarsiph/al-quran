@@ -47,63 +47,17 @@
 
 <!---->
 {% block footer %}
-<dialog id="options" class="modal">
-  <section class="relative modal-box grid max-w-xl gap-6 bg-base-100">
-    <header class="flex items-center justify-between gap-4 text-primary">
-      <h1 class="text-lg font-semibold lg:text-2xl">
-        {% trans 'Verse' %} <span id="verse-id"></span>
-      </h1>
-
-      <div
-        class="tooltip tooltip-left rtl:tooltip-right tooltip-error"
-        data-tip="{% trans 'Close' %}"
-      >
-        <button
-          onclick="options.close()"
-          class="btn btn-square btn-soft btn-primary hover:btn-error"
-        >
-          <i data-lucide="x" class="size-4 lg:size-6"></i>
-          <span class="sr-only">{% trans 'Close' %}</span>
-        </button>
-      </div>
-    </header>
-
-    <main class="grid gap-4 lg:gap-6">
-      <menu class="grid gap-4 lg:gap-6">
-        <button
-          id="copy-btn"
-          data-clipboard-action="cut"
-          data-clipboard-target="#verse-1"
-          class="btn btn-ghost btn-sm justify-start gap-4 lg:btn-md"
-        >
-          <i data-lucide="copy" class="size-4 lg:size-6"></i>
-          <span>{% trans 'Copy' %}</span>
-        </button>
-      </menu>
-    </main>
-
-    <footer class="-mx-5 -mb-5 grid">
-      <button
-        onclick="options.close()"
-        class="btn rounded-b-box rounded-tr btn-primary"
-      >
-        {% trans 'Close' %}
-      </button>
-    </footer>
-  </section>
-</dialog>
-
 <div id="notification" class="toast toast-top toast-end top-24 z-10 hidden">
   <div role="alert" class="alert alert-success">
     <i data-lucide="circle-check" class="size-4 lg:size-6"></i>
-    <span class="content">{% trans 'Verse copied' %}</span>
+    <span class="content">{% trans 'Copied' %}</span>
   </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
 
 <script>
-  const clipboard = new ClipboardJS("#copy-btn");
+  const clipboard = new ClipboardJS(".copy");
 
   clipboard.on("success", (e) => {
     const not = document.getElementById("notification");
@@ -116,13 +70,5 @@
       not.classList.toggle("hidden");
     }, 2000);
   });
-
-  const onVerseClick = (id) => {
-    document.getElementById("verse-id").innerText = id;
-    document
-      .getElementById("copy-btn")
-      .setAttribute("data-clipboard-target", "#verse-" + id);
-    options.showModal();
-  };
 </script>
 {% endblock %}

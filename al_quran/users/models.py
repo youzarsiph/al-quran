@@ -25,6 +25,11 @@ class User(AbstractUser):
         choices=THEMES,
         help_text=_("App Theme"),
     )
+    bookmarks = models.ManyToManyField(
+        "verses.Verse",
+        blank=True,
+        help_text=_("Bookmarks"),
+    )
     interpretation = models.ForeignKey(
         "collections.Collection",
         on_delete=models.SET_NULL,

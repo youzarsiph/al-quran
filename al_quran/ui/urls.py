@@ -20,14 +20,15 @@ urlpatterns = [
     path("quarters/", views.QuarterListView.as_view(), name="quarters"),
     path("quarters/<int:pk>/", views.QuarterDetailView.as_view(), name="quarter"),
     path("pages/", views.PageListView.as_view(), name="pages"),
-    path("pages/<int:pk>/", views.PageDetailView.as_view(), name="page"),
 ] + [
     path("accounts/login/", auth.LoginView.as_view(), name="login"),
     path("accounts/logout/", auth.LogoutView.as_view(), name="logout"),
     path("accounts/signup/", views.SignupView.as_view(), name="signup"),
     path("accounts/profile/", views.ProfileView.as_view(), name="profile"),
     path(
-        "accounts/<int:pk>/update/", views.UserUpdateView.as_view(), name="update-user"
+        "accounts/<int:pk>/settings/",
+        views.UserUpdateView.as_view(),
+        name="update-user",
     ),
     path(
         "accounts/<int:pk>/delete/", views.UserDeleteView.as_view(), name="delete-user"

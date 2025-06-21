@@ -2,7 +2,7 @@
 
 <!---->
 {% block main_content %}
-<section id="profile" class="grid gap-4 size-full">
+<section id="profile" class="grid gap-8 size-full">
   <div
     class="card text-center card-sm rounded-box bg-base-200 shadow-sm md:card-md lg:card-lg xl:card-xl"
   >
@@ -11,7 +11,9 @@
     </figure>
 
     <div class="card-body gap-4 lg:gap-6">
-      <h1 class="card-title text-center text-primary">{{ request.user }}</h1>
+      <h1 class="card-title text-center text-primary rtl:font-kufi">
+        {{ request.user }}
+      </h1>
       <p>{% trans 'Welcome to your Profile' %}</p>
     </div>
     <div class="join">
@@ -54,5 +56,25 @@
       </div>
     </div>
   </div>
+
+  <section class="grid gap-4 pb-4 lg:gap-6">
+    <h2 class="rtl:font-kufi text-xl font-bold text-primary lg:text-3xl">
+      {%trans 'Bookmarks' %}
+    </h2>
+    <ol class="grid gap-4">
+      {% for verse in request.user.bookmarks.all %}
+      <li>
+        <a
+          class="btn btn-sm btn-ghost w-full justify-between lg:btn-md"
+          href="{% url 'al-quran:chapter' verse.chapter_id %}#verse-{{ verse.number }}"
+        >
+          {% trans 'Chapter' %} {{ verse.chapter_id }},
+          {% trans 'verse' %} {{ verse.number }}
+          <i data-lucide="arrow-up-right" class="size-4 lg:size-6 rtl:rotate-180"></i>
+        </a>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
 </section>
 {% endblock %}

@@ -12,13 +12,16 @@
 {% for page in page_list.all %}
 <li id="item-{{ page.id }}" class="col-span-12 md:col-span-6 lg:col-span-4">
   <div
-    class="card shadow-sm size-full rounded-box card-sm overflow-hidden hover:bg-base-200 hover:shadow-xl md:card-md lg:card-lg xl:card-xl">
-    <span class="badge badge-soft badge-primary rounded-xs lg:badge-lg xl:badge-xl">
+    class="card shadow-sm size-full rounded-box card-sm overflow-hidden hover:bg-base-200 hover:shadow-xl md:card-md lg:card-lg xl:card-xl"
+  >
+    <span
+      class="badge badge-soft badge-primary rounded-xs lg:badge-lg xl:badge-xl"
+    >
       {% trans 'Page' %} {{ page.id }}
     </span>
 
     <div class="card-body gap-4 lg:gap-6">
-      <h2 class="card-title {{ user.font|default:'font-kufi' }}">
+      <h2 class="rtl:font-kufi card-title {{ user.font|default:'font-kufi' }}">
         {% trans 'Page' %} {{ page.id }}
       </h2>
 
@@ -55,9 +58,15 @@
         </li>
       </ul>
 
-      <a href="{% url 'al-quran:page' page.id %}" class="btn btn-primary lg:btn-lg">
+      <a
+        href="{% url 'al-quran:chapter' page.chapter_id %}#page-{{ page.id }}"
+        class="btn btn-primary lg:btn-lg"
+      >
         {% trans 'Read' %}
-        <i data-lucide="chevron-right" class="size-4 lg:size-6 rtl:rotate-180"></i>
+        <i
+          data-lucide="chevron-right"
+          class="size-4 lg:size-6 rtl:rotate-180"
+        ></i>
       </a>
     </div>
   </div>

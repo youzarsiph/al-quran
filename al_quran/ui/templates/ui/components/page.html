@@ -101,13 +101,76 @@
           data-tip="{% trans 'Options' %}"
         >
           <button
-            onclick="onVerseClick('{{ verse.number }}')"
+            onclick="options{{ verse.number }}.showModal()"
             class="btn btn-xs btn-square btn-primary md:btn-sm"
           >
             {{ verse.number }}
             <span class="sr-only">{% trans 'Options' %}</span>
           </button>
         </div>
+
+        <dialog id="options{{ verse.number }}" class="modal font-sans">
+          <section class="relative modal-box grid max-w-xl gap-6 bg-base-100">
+            <header class="flex items-center justify-between gap-4 text-primary">
+              <h1 class="text-lg font-semibold lg:text-2xl rtl:font-kufi">
+                {% trans 'Verse' %} {{ verse.chapter_id }}:{{ verse.number }}
+              </h1>
+        
+              <div
+                class="tooltip tooltip-left rtl:tooltip-right tooltip-error"
+                data-tip="{% trans 'Close' %}"
+              >
+                <button
+                  onclick="options{{ verse.number }}.close()"
+                  class="btn btn-square btn-soft btn-primary hover:btn-error"
+                >
+                  <i data-lucide="x" class="size-4 lg:size-6"></i>
+                  <span class="sr-only">{% trans 'Close' %}</span>
+                </button>
+              </div>
+            </header>
+        
+            <main class="grid gap-4 lg:gap-6">
+              <menu class="grid gap-2">
+                <form method="post" action="/api/verses/{{ verse.id }}/bookmark?redirect=1">
+                  {% csrf_token %}
+                  <button
+                    type="submit"
+                    class="btn copy btn-ghost btn-sm justify-start gap-4 w-full lg:btn-md"
+                  >
+                    <i data-lucide="bookmark-plus" class="size-4 lg:size-6"></i>
+                    <span>{% trans 'Bookmark' %}</span>
+                  </button>
+                </form>
+
+                <button
+                  data-clipboard-target="({{ verse.content }}), {% trans 'Chapter' %} {{ verse.chapter_id }} {% trans 'Verse' %} {{ verse.id }}"
+                  class="btn copy btn-ghost btn-sm justify-start gap-4 lg:btn-md"
+                >
+                  <i data-lucide="copy" class="size-4 lg:size-6"></i>
+                  <span>{% trans 'Copy verse' %}</span>
+                </button>
+
+                <button
+                  data-clipboard-text="{{ request.build_absolute_uri }}#verse-{{ verse.number }}"
+                  class="btn copy btn-ghost btn-sm justify-start gap-4 lg:btn-md"
+                >
+                  <i data-lucide="link" class="size-4 lg:size-6"></i>
+                  <span>{% trans 'Copy link' %}</span>
+                </button>
+              </menu>
+            </main>
+        
+            <footer class="-mx-5 -mb-5 grid">
+              <button
+                onclick="options{{ verse.number }}.close()"
+                class="btn rounded-b-box rounded-tr btn-primary"
+              >
+                {% trans 'Close' %}
+              </button>
+            </footer>
+          </section>
+        </dialog>
         {% endfor %}
       </div>
     </main>

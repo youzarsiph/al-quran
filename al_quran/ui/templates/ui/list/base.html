@@ -6,7 +6,7 @@
   <div class="hero">
     <div class="hero-content py-40">
       <div class="max-w-xl">
-        <h1 class="text-3xl text-primary font-black lg:text-7xl">
+        <h1 class="rtl:font-kufi text-3xl text-primary font-black lg:text-7xl">
           {% block heading %}{% endblock %}
         </h1>
       </div>
@@ -43,7 +43,9 @@
 <dialog id="filters" class="modal">
   <section class="relative modal-box grid max-w-xl gap-6 bg-base-100">
     <header class="flex items-center justify-between gap-4 text-primary">
-      <h1 class="text-lg font-semibold lg:text-2xl">{% trans 'Filters' %}</h1>
+      <h1 class="rtl:font-kufi text-lg font-semibold lg:text-2xl">
+        {% trans 'Filters' %}
+      </h1>
 
       <div
         class="tooltip tooltip-left rtl:tooltip-right tooltip-error"
