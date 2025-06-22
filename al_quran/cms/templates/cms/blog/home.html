@@ -1,0 +1,14 @@
+{% extends 'ui/base.html' %}{% load i18n wagtailcore_tags %}
+
+<!---->
+{% block title %}{{ block.super }} | {{ page.title }}{% endblock %}
+
+<!---->
+{% block content %}
+<section class="container mx-auto px-4">
+  <h1>{{ page.title }}</h1>
+  <div class="prose mx-auto lg:prose-lg xl:prose-xl">
+    {{ page.content|richtext }}
+  </div>
+</section>
+{% endblock %}

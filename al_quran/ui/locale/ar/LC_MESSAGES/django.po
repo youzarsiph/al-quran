@@ -850,13 +850,13 @@ msgstr "إضافة إشارة مرجعية"
 #, fuzzy
 #| msgid "verses"
 msgid "Copy verse"
-msgstr "آيات"
+msgstr "نسخ الآية"
 
 #: al_quran/ui/templates/ui/components/page.html:159
 #, fuzzy
 #| msgid "Copy"
 msgid "Copy link"
-msgstr "نسخ"
+msgstr "نسخ الرابط"
 
 #: al_quran/ui/templates/ui/components/page.html:195
 #: al_quran/ui/templates/ui/list/pages.html:20
