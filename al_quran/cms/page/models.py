@@ -37,8 +37,6 @@ class BaseHome(models.Model):
     # API fields
     api_fields = [APIField("content"), APIField("created_at"), APIField("updated_at")]
 
-    parent_page_type = ["wagtailcore.Page"]
-
     def __str__(self) -> str:
         return self.title
 
@@ -53,12 +51,14 @@ class BlogHome(BaseHome, Page):
 
     template = "cms/blog/home.html"
     page_description = _("Blog home page")
+    parent_page_type = []
     subpage_types = ["blog.Post"]
 
 
 class ResourcesHome(BaseHome, Page):
     """Resources home page"""
 
-    template = "cms/blog/home.html"
+    template = "cms/resources/home.html"
     page_description = _("Quran Resources home page")
+    parent_page_type = []
     subpage_types = ["resources.Resource"]

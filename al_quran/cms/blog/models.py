@@ -55,6 +55,8 @@ class Post(Page):
         index.SearchField("content"),
     ]
 
+    parent_page_types = ["page.BlogHome"]
+
     # API fields
     api_fields = [APIField("headline"), APIField("content"), APIField("tags")]
 

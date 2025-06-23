@@ -20,7 +20,7 @@ class ResourceTag(TaggedItemBase):
     """Through model for defining m2m rel between Resources and Tags"""
 
     content_object = ParentalKey(
-        "blog.Post",
+        "resources.Resource",
         on_delete=models.CASCADE,
         related_name="tagged_resources",
     )

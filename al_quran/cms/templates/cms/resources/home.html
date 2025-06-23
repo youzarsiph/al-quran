@@ -1,0 +1,39 @@
+{% extends 'cms/home.html' %}{% load i18n wagtailcore_tags %}
+
+<!---->
+{% block children %}
+<ol class="gird grid-cols-12 gap-4 lg:gap-6">
+  {% for resource in page.get_children.specific %}
+  <li class="col-span-12 md:col-span-6 lg:col-span-4">
+    <div
+      class="card shadow-sm size-full rounded-box card-sm overflow-hidden hover:bg-base-200 hover:shadow-xl md:card-md lg:card-lg xl:card-xl"
+    >
+      <span
+        class="badge badge-soft badge-primary rounded-xs lg:badge-lg xl:badge-xl"
+      >
+        {{ resource.type }}
+      </span>
+  
+      <div class="card-body gap-4 lg:gap-6">
+        <h2 class="card-title text-primary">{{ resource.title }}</h2>
+
+        <div class="prose prose-sm md:prose-md lg:prose-lg xl:prose-xl">
+          {{ resource.description|richtext }}
+        </div>
+  
+        <a
+          href="{% pageurl resource %}"
+          class="btn btn-primary lg:btn-lg"
+        >
+          {% trans 'Learn more' %}
+          <i
+            data-lucide="chevron-right"
+            class="size-4 lg:size-6 rtl:rotate-180"
+          ></i>
+        </a>
+      </div>
+    </div>
+  </li>
+  {% endfor %}
+</ol>
+{% endblock %}

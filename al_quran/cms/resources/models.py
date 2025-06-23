@@ -24,11 +24,11 @@ class Resource(Page):
     description = RichTextField(help_text=_("Resource description"))
     content = StreamField(
         CommonContentBlock(),
-        help_text=_("Blog content"),
+        help_text=_("Resource content"),
     )
     tags = ClusterTaggableManager(
         blank=True,
-        through="tags.PostTag",
+        through="tags.ResourceTag",
         help_text=_("Resource tags"),
     )
     created_at = models.DateTimeField(
@@ -42,8 +42,9 @@ class Resource(Page):
 
     # Dashboard UI config
     context_object_name = "resource"
-    template = "cms/resource.html"
+    template = "cms/resources/resource.html"
     content_panels = Page.content_panels + [
+        FieldPanel("type"),
         FieldPanel("description"),
         FieldPanel("content"),
         FieldPanel("tags"),
@@ -52,12 +53,20 @@ class Resource(Page):
 
     # Search fields
     search_fields = Page.search_fields + [
+        index.FilterField("type"),
         index.SearchField("description"),
         index.SearchField("content"),
     ]
 
+    parent_page_types = ["page.ResourcesHome"]
+
     # API fields
-    api_fields = [APIField("description"), APIField("content"), APIField("tags")]
+    api_fields = [
+        APIField("type"),
+        APIField("description"),
+        APIField("content"),
+        APIField("tags"),
+    ]
 
     def __str__(self) -> str:
         return self.title
