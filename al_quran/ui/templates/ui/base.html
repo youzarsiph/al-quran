@@ -10,6 +10,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}{% trans 'Al-Quran' %}{% endblock %}</title>
+    <meta name="description" content="{% trans 'Experience the Quran Like Never Before' %}">
+    <meta property="og:url" content="alquran.pythonanywhere.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% trans 'Al-Quran' %}">
+    <meta property="og:description" content="{% trans 'Experience the Quran Like Never Before' %}">
+    <meta property="og:image" content="https://github.com/user-attachments/assets/d60c1124-de69-438d-a2cd-7b64ce2e15b0">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1080">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="alquran.pythonanywhere.com">
+    <meta property="twitter:url" content="alquran.pythonanywhere.com">
+    <meta name="twitter:title" content="{% trans 'Al-Quran' %}">
+    <meta name="twitter:description" content="{% trans 'Experience the Quran Like Never Before' %}">
+    <meta name="twitter:image" content="https://github.com/user-attachments/assets/d60c1124-de69-438d-a2cd-7b64ce2e15b0">
+
     <link
       href="{% static 'ui/css/styles.css' %}"
       rel="stylesheet"
@@ -378,6 +393,17 @@
                   {% trans 'Home' %}
                 </a>
               </li>
+              {% if request.user.is_staff %}
+              <li>
+                <a
+                  href="/dashboard/"
+                  class="btn gap-4 w-full justify-start btn-ghost"
+                >
+                  <i data-lucide="layout-dashboard" class="size-4 lg:size-6"></i>
+                  {% trans 'Dashboard' %}
+                </a>
+              </li>
+              {% endif %}
               <li>
                 <a
                   href="{% url 'al-quran:about' %}"
@@ -430,12 +456,6 @@
                 >
                   <i data-lucide="grip" class="size-4 lg:size-6"></i>
                   {% trans 'Pages' %}
-                </a>
-              </li>
-              <li>
-                <a href="/api" class="btn gap-4 w-full justify-start btn-ghost">
-                  <i data-lucide="braces" class="size-4 lg:size-6"></i>
-                  {% trans 'API' %}
                 </a>
               </li>
             </ol>
@@ -553,7 +573,7 @@
     <dialog id="modal" class="modal">
       <section class="relative modal-box grid max-w-xl gap-6 bg-base-100">
         <header class="flex items-center justify-between gap-4 text-primary">
-          <h1 class="text-lg font-semibold lg:text-2xl rtl:font-kufi">
+          <h1 class="text-lg font-semibold lg:text-2xl">
             {% trans 'Search' %}
           </h1>
 
@@ -587,18 +607,17 @@
           </form>
         </main>
 
-        <footer class="-mx-5 -mb-5 grid grid-cols-2">
+        <footer
+          class="-mx-5 -mb-5 grid grid-cols-2 rounded-b-box overflow-hidden"
+        >
           <button
             type="submit"
             form="search-form"
-            class="btn rounded-none rounded-tl rounded-bl-box btn-primary"
+            class="btn rounded btn-primary"
           >
             {% trans 'Search' %}
           </button>
-          <button
-            onclick="modal.close()"
-            class="btn rounded-none rounded-tr rounded-br-box btn-ghost"
-          >
+          <button onclick="modal.close()" class="btn rounded btn-ghost">
             {% trans 'Close' %}
           </button>
         </footer>

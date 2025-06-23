@@ -11,9 +11,7 @@
     </figure>
 
     <div class="card-body gap-4 lg:gap-6">
-      <h1 class="card-title text-center text-primary rtl:font-kufi">
-        {{ request.user }}
-      </h1>
+      <h1 class="card-title text-center text-primary">{{ request.user }}</h1>
       <p>{% trans 'Welcome to your Profile' %}</p>
     </div>
     <div class="join">
@@ -58,7 +56,7 @@
   </div>
 
   <section class="grid gap-4 pb-4 lg:gap-6">
-    <h2 class="rtl:font-kufi text-xl font-bold text-primary lg:text-3xl">
+    <h2 class="text-xl font-bold text-primary lg:text-3xl">
       {%trans 'Bookmarks' %}
     </h2>
     <ol class="grid gap-4">
@@ -70,7 +68,10 @@
         >
           {% trans 'Chapter' %} {{ verse.chapter_id }},
           {% trans 'verse' %} {{ verse.number }}
-          <i data-lucide="arrow-up-right" class="size-4 lg:size-6 rtl:rotate-180"></i>
+          <i
+            data-lucide="arrow-up-right"
+            class="size-4 lg:size-6 rtl:rotate-90"
+          ></i>
         </a>
       </li>
       {% endfor %}

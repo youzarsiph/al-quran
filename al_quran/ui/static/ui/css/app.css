@@ -2,8 +2,8 @@
 npx @tailwindcss/cli -i ..\static\ui\css\app.css -o ..\static\ui\css\styles.css --cwd ..\..\templates\ -m
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Almarai&family=Amiri&family=Amiri+Quran&family=Cairo+Play&family=Fustat&family=Kufam&family=Noto+Sans+Arabic&family=Noto+Kufi+Arabic&family=Noto+Sans&family=Noto+Serif&family=Reem+Kufi&family=Reem+Kufi+Fun&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Almarai&family=Amiri&family=Amiri+Quran&family=Cairo+Play&family=Fustat&family=Kufam&family=Noto+Sans+Arabic&family=Noto+Kufi+Arabic&family=Noto+Sans&family=Noto+Serif&family=Reem+Kufi&family=Reem+Kufi+Fun&display=swap");
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
@@ -25,16 +25,26 @@ npx @tailwindcss/cli -i ..\static\ui\css\app.css -o ..\static\ui\css\styles.css 
 
 @plugin "daisyui" {
   themes:
+    silk --default,
+    luxury --prefers-dark,
     light,
     dark,
-    silk --default,
     lofi,
     caramellatte,
     cupcake,
     winter,
     dim,
-    luxury --prefers-dark,
     night,
     forest,
     sunset;
+}
+
+@layer base {
+  * {
+    @apply font-sans rtl:font-kufi;
+  }
+
+  .font-inherit * {
+    @apply font-[inherit];
+  }
 }

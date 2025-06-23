@@ -37,39 +37,7 @@ class BaseHome(models.Model):
     # API fields
     api_fields = [APIField("content"), APIField("created_at"), APIField("updated_at")]
 
-    def __str__(self) -> str:
-        return self.title
-
-    class Meta:
-        """Meta data"""
-
-        abstract = True
-
-
-class BaseIndex(models.Model):
-    """Base index page"""
-
-    content = StreamField(
-        CommonContentBlock(),
-        help_text=_("Index page content"),
-    )
-    created_at = models.DateTimeField(
-        auto_now_add=True,
-        help_text=_("Date created"),
-    )
-    updated_at = models.DateTimeField(
-        auto_now=True,
-        help_text=_("Last update"),
-    )
-
-    # Dashboard UI
-    content_panels = Page.content_panels + [FieldPanel("content")]
-
-    # Search fields
-    search_fields = Page.search_fields + [index.SearchField("content")]
-
-    # API fields
-    api_fields = [APIField("content"), APIField("created_at"), APIField("updated_at")]
+    parent_page_type = ["wagtailcore.Page"]
 
     def __str__(self) -> str:
         return self.title
@@ -83,14 +51,14 @@ class BaseIndex(models.Model):
 class BlogHome(BaseHome, Page):
     """Blog home page"""
 
-    # Dashboard UI config
     template = "cms/blog/home.html"
     page_description = _("Blog home page")
+    subpage_types = ["blog.Post"]
 
 
 class ResourcesHome(BaseHome, Page):
     """Resources home page"""
 
-    # Dashboard UI config
     template = "cms/blog/home.html"
     page_description = _("Quran Resources home page")
+    subpage_types = ["resources.Resource"]

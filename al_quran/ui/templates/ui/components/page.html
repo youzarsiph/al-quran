@@ -16,9 +16,7 @@
           href="{% url 'al-quran:chapter' page.chapter_id %}"
           class="badge badge-xs badge-soft badge-primary lg:badge-md"
         >
-          <h4 class="{{ user.font|default:'font-kufi' }}">
-            سُورَةُ {{ page.chapter }}
-          </h4>
+          سُورَةُ {{ page.chapter }}
         </a>
       </div>
 
@@ -36,7 +34,7 @@
     </header>
 
     <main class="card-body px-4 grow py-20 overflow-y-auto lg:px-6">
-      <div role="text" class="text-center {{ user.font|default:'font-kufi' }}">
+      <div role="text" class="text-center">
         {% for verse in page.verses.all %}
         <!---->
         {% if verse.number == 1 %}
@@ -109,13 +107,15 @@
           </button>
         </div>
 
-        <dialog id="options{{ verse.number }}" class="modal font-sans">
+        <dialog id="options{{ verse.number }}" class="modal font-sans rtl:font-kufi">
           <section class="relative modal-box grid max-w-xl gap-6 bg-base-100">
-            <header class="flex items-center justify-between gap-4 text-primary">
-              <h1 class="text-lg font-semibold lg:text-2xl rtl:font-kufi">
+            <header
+              class="flex items-center justify-between gap-4 text-primary"
+            >
+              <h1 class="text-lg font-semibold lg:text-2xl">
                 {% trans 'Verse' %} {{ verse.chapter_id }}:{{ verse.number }}
               </h1>
-        
+
               <div
                 class="tooltip tooltip-left rtl:tooltip-right tooltip-error"
                 data-tip="{% trans 'Close' %}"
@@ -129,10 +129,13 @@
                 </button>
               </div>
             </header>
-        
+
             <main class="grid gap-4 lg:gap-6">
               <menu class="grid gap-2">
-                <form method="post" action="/api/verses/{{ verse.id }}/bookmark?redirect=1">
+                <form
+                  method="post"
+                  action="/api/verses/{{ verse.id }}/bookmark?redirect=1"
+                >
                   {% csrf_token %}
                   <button
                     type="submit"
@@ -160,7 +163,7 @@
                 </button>
               </menu>
             </main>
-        
+
             <footer class="-mx-5 -mb-5 grid">
               <button
                 onclick="options{{ verse.number }}.close()"

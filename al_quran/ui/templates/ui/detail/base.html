@@ -38,8 +38,10 @@
 
 <!---->
 {% block content %}
-<main dir="rtl" class="size-full">
-  <div class="carousel gap-1 size-full p-px">
+<main dir="rtl" class="size-full font-inherit">
+  <div
+    class="carousel gap-1 size-full p-px {{ user.font|default:'font-kufi' }}"
+  >
     {% for page in pages %}{% include 'ui/components/page.html' %}{% endfor %}
   </div>
 </main>

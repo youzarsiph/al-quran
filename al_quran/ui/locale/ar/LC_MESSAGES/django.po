@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: al-quran 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-22 17:19+0000\n"
+"POT-Creation-Date: 2025-06-22 17:32+0000\n"
 "PO-Revision-Date: 2025-6-20 HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -223,13 +223,14 @@ msgstr "الملف الشخصي"
 #: al_quran/ui/templates/registration/base.html:22
 #: al_quran/ui/templates/registration/base.html:26
 #: al_quran/ui/templates/registration/base.html:30
+#: al_quran/ui/templates/ui/base.html:45 al_quran/ui/templates/ui/base.html:49
 #: al_quran/ui/templates/ui/base.html:53
 msgid "Open drawer"
 msgstr "فتح القائمة الجانبية"
 
 #: al_quran/ui/templates/registration/base.html:57
 #: al_quran/ui/templates/registration/base.html:90
-#: al_quran/ui/templates/ui/base.html:49 al_quran/ui/templates/ui/base.html:334
+#: al_quran/ui/templates/ui/base.html:334
 #: al_quran/ui/templates/ui/base.html:362
 msgid "Close drawer"
 msgstr "إغلاق القائمة الجانبية"
@@ -847,14 +848,10 @@ msgid "Bookmark"
 msgstr "إضافة إشارة مرجعية"
 
 #: al_quran/ui/templates/ui/components/page.html:151
-#, fuzzy
-#| msgid "verses"
 msgid "Copy verse"
 msgstr "نسخ الآية"
 
 #: al_quran/ui/templates/ui/components/page.html:159
-#, fuzzy
-#| msgid "Copy"
 msgid "Copy link"
 msgstr "نسخ الرابط"
 

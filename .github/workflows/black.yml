@@ -3,7 +3,6 @@ name: Black
 on: [push]
 
 jobs:
-
   format:
     runs-on: ubuntu-latest
 
