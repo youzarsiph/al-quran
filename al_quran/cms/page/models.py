@@ -9,23 +9,17 @@ from wagtail.models import Page
 from wagtail.search import index
 
 from al_quran.cms.blocks import CommonContentBlock
+from al_quran.mixins.models import DateTimeMixin
 
 
 # Create your models here.
-class BaseHome(models.Model):
+class BaseHome(DateTimeMixin, models.Model):
     """Base home page"""
 
     content = StreamField(
         CommonContentBlock(),
+        verbose_name=_("content"),
         help_text=_("Home page content"),
-    )
-    created_at = models.DateTimeField(
-        auto_now_add=True,
-        help_text=_("Date created"),
-    )
-    updated_at = models.DateTimeField(
-        auto_now=True,
-        help_text=_("Last update"),
     )
 
     # Dashboard UI

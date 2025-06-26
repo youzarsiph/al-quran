@@ -3,30 +3,26 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from al_quran.mixins.models import DateTimeMixin
+
 
 # Create your models here.
-class Language(models.Model):
+class Language(DateTimeMixin, models.Model):
     """Languages"""
 
     name = models.CharField(
         max_length=32,
         unique=True,
         db_index=True,
+        verbose_name=_("name"),
         help_text=_("Language name"),
     )
     code = models.CharField(
         max_length=8,
         unique=True,
         db_index=True,
+        verbose_name=_("code"),
         help_text=_("Language code"),
-    )
-    created_at = models.DateTimeField(
-        auto_now_add=True,
-        help_text=_("Date created"),
-    )
-    updated_at = models.DateTimeField(
-        auto_now=True,
-        help_text=_("Last update"),
     )
 
     def __str__(self) -> str:

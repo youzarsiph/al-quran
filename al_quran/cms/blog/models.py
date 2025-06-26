@@ -10,33 +10,29 @@ from wagtail.models import Page
 from wagtail.search import index
 
 from al_quran.cms.blocks import CommonContentBlock
+from al_quran.mixins.models import DateTimeMixin
 
 
 # Create your models here.
-class Post(Page):
+class Post(DateTimeMixin, Page):
     """Blog posts"""
 
     headline = models.CharField(
         max_length=128,
         db_index=True,
+        verbose_name=_("headline"),
         help_text=_("Blog headline"),
     )
     content = StreamField(
         CommonContentBlock(),
+        verbose_name=_("content"),
         help_text=_("Blog content"),
     )
     tags = ClusterTaggableManager(
         blank=True,
         through="tags.PostTag",
+        verbose_name=_("tags"),
         help_text=_("Post tags"),
-    )
-    created_at = models.DateTimeField(
-        auto_now_add=True,
-        help_text=_("Date created"),
-    )
-    updated_at = models.DateTimeField(
-        auto_now=True,
-        help_text=_("Last update"),
     )
 
     # Dashboard UI config

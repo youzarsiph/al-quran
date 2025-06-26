@@ -2,7 +2,6 @@
 
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from modelcluster.contrib.taggit import ClusterTaggableManager
 from wagtail.admin.panels import FieldPanel
 from wagtail.api import APIField
 from wagtail.fields import RichTextField, StreamField
@@ -11,33 +10,27 @@ from wagtail.search import index
 
 from al_quran.cms.blocks import CommonContentBlock
 from al_quran.cms.resources import RESOURCE_TYPES
+from al_quran.mixins.models import DateTimeMixin
 
 
 # Create your models here.
-class Resource(Page):
+class Resource(DateTimeMixin, Page):
     """Quran data resource"""
 
-    type = models.PositiveSmallIntegerField(
-        help_text=_("Resource type"),
+    type = models.CharField(
+        max_length=32,
         choices=RESOURCE_TYPES,
+        verbose_name=_("type"),
+        help_text=_("Resource type"),
     )
-    description = RichTextField(help_text=_("Resource description"))
+    description = RichTextField(
+        verbose_name=_("description"),
+        help_text=_("Resource description"),
+    )
     content = StreamField(
         CommonContentBlock(),
+        verbose_name=_("content"),
         help_text=_("Resource content"),
-    )
-    tags = ClusterTaggableManager(
-        blank=True,
-        through="tags.ResourceTag",
-        help_text=_("Resource tags"),
-    )
-    created_at = models.DateTimeField(
-        auto_now_add=True,
-        help_text=_("Date created"),
-    )
-    updated_at = models.DateTimeField(
-        auto_now=True,
-        help_text=_("Last update"),
     )
 
     # Dashboard UI config
@@ -47,7 +40,6 @@ class Resource(Page):
         FieldPanel("type"),
         FieldPanel("description"),
         FieldPanel("content"),
-        FieldPanel("tags"),
     ]
     page_description = _("Quran resources")
 
@@ -65,7 +57,6 @@ class Resource(Page):
         APIField("type"),
         APIField("description"),
         APIField("content"),
-        APIField("tags"),
     ]
 
     def __str__(self) -> str:

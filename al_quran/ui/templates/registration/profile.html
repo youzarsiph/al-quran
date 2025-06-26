@@ -66,8 +66,7 @@
           class="btn btn-sm btn-ghost w-full justify-between lg:btn-md"
           href="{% url 'al-quran:chapter' verse.chapter_id %}#verse-{{ verse.number }}"
         >
-          {% trans 'Chapter' %} {{ verse.chapter_id }},
-          {% trans 'verse' %} {{ verse.number }}
+          {% trans 'Verse' %} {{ verse.chapter_id }}:{{ verse.number }}
           <i
             data-lucide="arrow-up-right"
             class="size-4 lg:size-6 rtl:rotate-90"

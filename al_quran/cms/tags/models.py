@@ -1,6 +1,7 @@
 """A model to use a `through` model to define relation between models and tags"""
 
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 from modelcluster.fields import ParentalKey
 from taggit.models import TaggedItemBase
 
@@ -13,6 +14,8 @@ class PostTag(TaggedItemBase):
         "blog.Post",
         on_delete=models.CASCADE,
         related_name="tagged_posts",
+        verbose_name=_("tags"),
+        help_text=_("Tags"),
     )
 
 
@@ -23,4 +26,6 @@ class ResourceTag(TaggedItemBase):
         "resources.Resource",
         on_delete=models.CASCADE,
         related_name="tagged_resources",
+        verbose_name=_("tags"),
+        help_text=_("Tags"),
     )

@@ -1,5 +1,6 @@
 """API endpoints for al_quran.core.verses"""
 
+from django.contrib import messages
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
@@ -48,8 +49,10 @@ class VerseViewSet(ReadOnlyModelViewSet):
             request.user.bookmarks.add(verse)
 
         if request.query_params["redirect"]:
+            messages.success(request, message)
             return redirect(
-                f"{reverse_lazy('al-quran:chapter', args=[verse.chapter_id])}#verse-{verse.number}"
+                reverse_lazy("al-quran:chapter", args=[verse.chapter_id])
+                + f"#verse-{verse.chapter_id}:{verse.number}"
             )
 
         return Response({"details": message}, status=status.HTTP_200_OK)

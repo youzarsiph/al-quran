@@ -3,7 +3,8 @@
 from django.utils.translation import gettext_lazy as _
 from wagtail import blocks
 from wagtail.documents.blocks import DocumentChooserBlock
-from wagtail.images.blocks import ImageChooserBlock
+from wagtail.images.blocks import ImageBlock
+from wagtailcodeblock.blocks import CodeBlock
 
 
 # Create your blocks here.
@@ -17,5 +18,6 @@ class TextContentBlock(blocks.StreamBlock):
 class CommonContentBlock(TextContentBlock):
     """Custom StreamBlock for Text and Media content"""
 
-    image = ImageChooserBlock(help_text=_("Image"))
+    code = CodeBlock(help_text=_("Code"))
+    image = ImageBlock(help_text=_("Image"))
     document = DocumentChooserBlock(help_text=_("Document"))

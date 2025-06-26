@@ -3,16 +3,19 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from al_quran.mixins.models import DateTimeMixin
+
 
 # Create your models here.
-class Item(models.Model):
+class Item(DateTimeMixin, models.Model):
     """Items"""
 
     collection = models.ForeignKey(
         "collections.Collection",
         on_delete=models.CASCADE,
         related_name="items",
-        help_text=_("Collection"),
+        verbose_name=_("collection"),
+        help_text=_("Item collection"),
     )
     chapter = models.ForeignKey(
         "chapters.Chapter",
@@ -20,7 +23,8 @@ class Item(models.Model):
         null=True,
         blank=True,
         related_name="items",
-        help_text=_("Chapter"),
+        verbose_name=_("chapter"),
+        help_text=_("Item chapter"),
     )
     verse = models.ForeignKey(
         "verses.Verse",
@@ -28,19 +32,13 @@ class Item(models.Model):
         null=True,
         blank=True,
         related_name="items",
-        help_text=_("Verse"),
+        verbose_name=_("verse"),
+        help_text=_("Item verse"),
     )
     content = models.TextField(
         db_index=True,
-        help_text=_("Content"),
-    )
-    created_at = models.DateTimeField(
-        auto_now_add=True,
-        help_text=_("Date created"),
-    )
-    updated_at = models.DateTimeField(
-        auto_now=True,
-        help_text=_("Last update"),
+        verbose_name=_("content"),
+        help_text=_("Item content"),
     )
 
     def __str__(self) -> str:

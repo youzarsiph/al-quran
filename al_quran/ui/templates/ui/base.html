@@ -10,20 +10,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}{% trans 'Al-Quran' %}{% endblock %}</title>
-    <meta name="description" content="{% trans 'Experience the Quran Like Never Before' %}">
-    <meta property="og:url" content="alquran.pythonanywhere.com">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{% trans 'Al-Quran' %}">
-    <meta property="og:description" content="{% trans 'Experience the Quran Like Never Before' %}">
-    <meta property="og:image" content="https://github.com/user-attachments/assets/d60c1124-de69-438d-a2cd-7b64ce2e15b0">
-    <meta property="og:image:width" content="1920">
-    <meta property="og:image:height" content="1080">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="alquran.pythonanywhere.com">
-    <meta property="twitter:url" content="alquran.pythonanywhere.com">
-    <meta name="twitter:title" content="{% trans 'Al-Quran' %}">
-    <meta name="twitter:description" content="{% trans 'Experience the Quran Like Never Before' %}">
-    <meta name="twitter:image" content="https://github.com/user-attachments/assets/d60c1124-de69-438d-a2cd-7b64ce2e15b0">
+    <meta
+      name="description"
+      content="{% trans 'Experience the Quran Like Never Before' %}"
+    />
+    <meta property="og:url" content="alquran.pythonanywhere.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{% trans 'Al-Quran' %}" />
+    <meta
+      property="og:description"
+      content="{% trans 'Experience the Quran Like Never Before' %}"
+    />
+    <meta
+      property="og:image"
+      content="https://github.com/user-attachments/assets/d60c1124-de69-438d-a2cd-7b64ce2e15b0"
+    />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="alquran.pythonanywhere.com" />
+    <meta property="twitter:url" content="alquran.pythonanywhere.com" />
+    <meta name="twitter:title" content="{% trans 'Al-Quran' %}" />
+    <meta
+      name="twitter:description"
+      content="{% trans 'Experience the Quran Like Never Before' %}"
+    />
+    <meta
+      name="twitter:image"
+      content="https://github.com/user-attachments/assets/d60c1124-de69-438d-a2cd-7b64ce2e15b0"
+    />
 
     <link
       href="{% static 'ui/css/styles.css' %}"
@@ -253,7 +268,7 @@
                   {% else %}
                   <div
                     class="tooltip tooltip-left rtl:tooltip-right tooltip-success"
-                    data-tip="{% trans 'sign up' %}"
+                    data-tip="{% trans 'Sign up' %}"
                   >
                     <a
                       href="{% url 'al-quran:signup' %}"
@@ -263,7 +278,7 @@
                         data-lucide="heart-handshake"
                         class="size-4 lg:size-6"
                       ></i>
-                      <span class="sr-only">{% trans 'sign up' %}</span>
+                      <span class="sr-only">{% trans 'Sign up' %}</span>
                     </a>
                   </div>
                   <div
@@ -309,6 +324,9 @@
           <section
             class="m-auto flex size-full max-h-[calc(100dvh-0.5rem)] max-w-[calc(100dvw-0.5rem)] flex-col gap-16 overflow-y-auto rounded-box bg-base-100 p-2 pt-20 lg:max-h-[calc(100dvh-1rem)] lg:max-w-[calc(100dvw-1rem)]"
           >
+            {% include 'ui/components/messages.html' %}
+
+            <!---->
             {% block content %}{% endblock %}
 
             <!---->
@@ -317,25 +335,26 @@
               class="footer w-full rounded-box bg-base-200 p-10 text-base-content sm:footer-horizontal"
             >
               <nav>
-                <h6 class="footer-title">{% trans 'Services' %}</h6>
-                <a href="{% url 'al-quran:chapters' %}" class="link link-hover">
-                  {% trans 'Quran App' %}
-                </a>
-                <a href="/api" class="link link-hover">
-                  {% trans 'Quran API' %}
-                </a>
-              </nav>
-              <nav>
                 <h6 class="footer-title">{% trans 'Company' %}</h6>
                 <a href="{% url 'al-quran:about' %}" class="link link-hover">
                   {% trans 'About us' %}
                 </a>
                 <a class="link link-hover">{% trans 'Contact' %}</a>
+                <a href="/blog" class="link link-hover"> {% trans 'Blog' %} </a>
               </nav>
               <nav>
                 <h6 class="footer-title">{% trans 'Legal' %}</h6>
                 <a class="link link-hover">{% trans 'Terms of use' %}</a>
                 <a class="link link-hover">{% trans 'Privacy policy' %}</a>
+              </nav>
+              <nav>
+                <h6 class="footer-title">{% trans 'Developers' %}</h6>
+                <a href="/api" class="link link-hover"
+                  >{% trans 'Quran API' %}</a
+                >
+                <a href="/resources/" class="link link-hover"
+                  >{% trans 'Resources' %}</a
+                >
               </nav>
             </footer>
             {% endblock %}
@@ -399,7 +418,10 @@
                   href="/dashboard/"
                   class="btn gap-4 w-full justify-start btn-ghost"
                 >
-                  <i data-lucide="layout-dashboard" class="size-4 lg:size-6"></i>
+                  <i
+                    data-lucide="layout-dashboard"
+                    class="size-4 lg:size-6"
+                  ></i>
                   {% trans 'Dashboard' %}
                 </a>
               </li>
@@ -554,14 +576,14 @@
             {% else %}
             <div
               class="tooltip tooltip-top tooltip-primary grow"
-              data-tip="{% trans 'sign up' %}"
+              data-tip="{% trans 'Sign up' %}"
             >
               <a
                 href="{% url 'al-quran:signup' %}"
                 class="btn btn-square btn-lg join-item btn-primary btn-soft w-full rounded-none"
               >
                 <i data-lucide="heart-handshake" class="size-4 lg:size-6"></i>
-                <span class="sr-only">{% trans 'sign up' %}</span>
+                <span class="sr-only">{% trans 'Sign up' %}</span>
               </a>
             </div>
             {% endif %}

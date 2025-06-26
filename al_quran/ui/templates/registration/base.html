@@ -33,16 +33,14 @@
             <div class="breadcrumbs p-0">
               <ol>
                 <li>
-                  <a href="{% url 'al-quran:profile' %}"
-                    >{% trans 'Profile' %}</a
-                  >
+                  <a href="{% url 'al-quran:profile' %}">
+                    {% trans 'Profile' %}
+                  </a>
                 </li>
                 {% block breadcrumbs %}{% endblock %}
               </ol>
             </div>
           </nav>
-          <!---->
-          {% include 'ui/components/messages.html' %}
 
           <!---->
           {% block main_content %}{% endblock %}

@@ -3,58 +3,59 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from al_quran.mixins.models import DateTimeMixin
+
 
 # Create your models here.
-class Verse(models.Model):
+class Verse(DateTimeMixin, models.Model):
     """Aayat Al-Quran"""
 
     chapter = models.ForeignKey(
         "chapters.Chapter",
         on_delete=models.CASCADE,
         related_name="verses",
-        help_text=_("Chapter"),
+        verbose_name=_("chapter"),
+        help_text=_("Verse chapter"),
     )
     part = models.ForeignKey(
         "parts.Part",
         on_delete=models.CASCADE,
         related_name="verses",
-        help_text=_("Part"),
+        verbose_name=_("part"),
+        help_text=_("Verse part"),
     )
     group = models.ForeignKey(
         "groups.Group",
         on_delete=models.CASCADE,
         related_name="verses",
-        help_text=_("Group"),
+        verbose_name=_("group"),
+        help_text=_("Verse group"),
     )
     quarter = models.ForeignKey(
         "quarters.Quarter",
         on_delete=models.CASCADE,
         related_name="verses",
+        verbose_name=_("quarter"),
         help_text=_("Verse quarter"),
     )
     page = models.ForeignKey(
         "pages.Page",
         on_delete=models.CASCADE,
         related_name="verses",
+        verbose_name=_("page"),
         help_text=_("Verse page"),
     )
     number = models.PositiveSmallIntegerField(
         default=1,
         db_index=True,
+        verbose_name=_("number"),
         help_text=_("Verse number"),
     )
     content = models.CharField(
         max_length=1024,
         db_index=True,
+        verbose_name=_("content"),
         help_text=_("Verse content"),
-    )
-    created_at = models.DateTimeField(
-        auto_now_add=True,
-        help_text=_("Date created"),
-    )
-    updated_at = models.DateTimeField(
-        auto_now=True,
-        help_text=_("Last update"),
     )
 
     def __str__(self) -> str:
