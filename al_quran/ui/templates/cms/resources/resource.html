@@ -1,4 +1,4 @@
-{% extends 'ui/base.html' %}{% load i18n wagtailuserbar %}
+{% extends 'ui/base.html' %}{% load i18n wagtailcore_tags wagtailuserbar %}
 
 <!---->
 {% block title %}{{ block.super }} | {{ resource.title }}{% endblock %}
@@ -7,6 +7,34 @@
 {% block content %}
 <section class="container mx-auto px-4">
   {% if request.user.is_staff %}{% wagtailuserbar %}{% endif %}
+  <div
+    class="tooltip tooltip-primary tooltip-right rtl:tooltip-left"
+    data-tip="{% trans 'Language' %}"
+  >
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-sm btn-square btn-primary lg:btn-md">
+        <i data-lucide="languages" class="size-4 lg:size-6"></i>
+        <span class="sr-only">{% trans 'Language' %}</span>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu bg-base-200 min-w-32 rounded-box z-10 shadow-sm">
+        {% for translation in page.get_translations.live %}
+        <li>
+          {% get_language_info for translation.locale.language_code as lang %}
+          <a href="{% pageurl translation %}" rel="alternate" hreflang="{{ lang.code }}">
+            {{ lang.name_local }}
+          </a>
+        </li>
+        {% empty %}
+        <li>
+          <button class="btn btn-ghost">
+            {% trans 'None' %}
+          </button>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
   <article
     class="prose prose-neutral mx-auto prose-pre:font-mono prose-headings:text-primary prose-headings:font-serif rtl:prose-headings:font-kufi prose-img:rounded-box prose-img:w-full prose-video:rounded-box xl:prose-lg 2xl:prose-xl"
   >

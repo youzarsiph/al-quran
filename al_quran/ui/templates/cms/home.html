@@ -5,8 +5,36 @@
 
 <!---->
 {% block content %}
-<section class="container mx-auto px-4">
+<section class="relative container mx-auto px-4">
   {% if request.user.is_staff %}{% wagtailuserbar %}{% endif %}
+  <div
+    class="tooltip tooltip-primary tooltip-right rtl:tooltip-left"
+    data-tip="{% trans 'Language' %}"
+  >
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-sm btn-square btn-primary lg:btn-md">
+        <i data-lucide="languages" class="size-4 lg:size-6"></i>
+        <span class="sr-only">{% trans 'Language' %}</span>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu bg-base-200 min-w-32 rounded-box z-10 shadow-sm">
+        {% for translation in page.get_translations.live %}
+        <li>
+          {% get_language_info for translation.locale.language_code as lang %}
+          <a href="{% pageurl translation %}" rel="alternate" hreflang="{{ lang.code }}">
+            {{ lang.name_local }}
+          </a>
+        </li>
+        {% empty %}
+        <li>
+          <button class="btn btn-ghost">
+            {% trans 'None' %}
+          </button>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
   <div class="prose mx-auto lg:prose-lg xl:prose-xl">
     <h1>{{ page.title }}</h1>
     {{ page.content }}

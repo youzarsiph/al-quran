@@ -60,21 +60,17 @@
       class="m-1 flex h-full max-h-[calc(100dvh-0.5rem)] w-full max-w-[calc(100dvw-0.5rem)] flex-col justify-between overflow-hidden rounded-box bg-base-100 backdrop-blur-3xl sm:w-10/12 md:w-8/12 lg:m-2 lg:max-h-[calc(100dvh-1rem)] lg:w-1/3 lg:max-w-[calc(100dvw-1rem)] lg:rounded-r-box xl:w-1/4"
     >
       <header class="flex items-center justify-between gap-4 p-4">
-        <div class="flex items-center gap-4">
-          <div
-            class="tooltip tooltip-right rtl:tooltip-left tooltip-primary"
-            data-tip="{% trans 'Al-Quran' %}"
+        <div
+          class="tooltip tooltip-right rtl:tooltip-left tooltip-primary tooltip-open"
+          data-tip="{% trans 'Profile' %}"
+        >
+          <a
+            href="{% url 'al-quran:home' %}"
+            class="btn btn-square btn-lg btn-primary"
           >
-            <a
-              href="{% url 'al-quran:home' %}"
-              class="btn btn-square btn-lg btn-primary"
-            >
-              <i data-lucide="book-open-text" class="size-6 lg:size-8"></i>
-              <span class="sr-only">{% trans 'Al-Quran' %}</span>
-            </a>
-          </div>
-
-          <h1 class="text-xl font-bold text-primary">{% trans 'Profile' %}</h1>
+            <i data-lucide="book-open-text" class="size-6 lg:size-8"></i>
+            <span class="sr-only">{% trans 'Al-Quran' %}</span>
+          </a>
         </div>
 
         <div

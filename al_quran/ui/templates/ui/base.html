@@ -375,7 +375,7 @@
           <div class="grid gap-4">
             <header class="flex items-center justify-between gap-4 p-4">
               <div
-                class="tooltip tooltip-right rtl:tooltip-left tooltip-primary"
+                class="tooltip tooltip-right rtl:tooltip-left tooltip-primary tooltip-open"
                 data-tip="{% trans 'Al-Quran' %}"
               >
                 <a
@@ -428,11 +428,11 @@
               {% endif %}
               <li>
                 <a
-                  href="{% url 'al-quran:about' %}"
+                  href="/blog/"
                   class="btn gap-4 w-full justify-start btn-ghost"
                 >
-                  <i data-lucide="info" class="size-4 lg:size-6"></i>
-                  {% trans 'About us' %}
+                  <i data-lucide="rss" class="size-4 lg:size-6"></i>
+                  {% trans 'Blog' %}
                 </a>
               </li>
               <li>
