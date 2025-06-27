@@ -127,6 +127,7 @@
 
             <main class="grid gap-4 lg:gap-6">
               <menu class="grid gap-2">
+                {% if request.user.is_authenticated %}
                 <form
                   method="post"
                   action="/api/verses/{{ verse.id }}/bookmark?redirect=1"
@@ -140,6 +141,7 @@
                     <span>{% trans 'Bookmark' %}</span>
                   </button>
                 </form>
+                {% endif %}
 
                 <button
                   data-clipboard-text="({{ verse.content }}), {% trans 'Chapter' %} {{ verse.chapter_id }} {% trans 'Verse' %} {{ verse.id }}"

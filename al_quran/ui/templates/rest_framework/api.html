@@ -1,7 +1,7 @@
 {% extends 'rest_framework/base.html' %}{% load i18n %}
 
 <!---->
-{% block theme %}{{ user.theme|default:'default' }}{% endblock %}
+{% block theme %}{{ user.theme|default:'silk' }}{% endblock %}
 
 <!---->
 {% block title %}{% trans 'Al-Quran' %} | API {% endblock %}
@@ -10,7 +10,7 @@
 {% block branding %}
 <li
   role="heading"
-  class="tooltip tooltip-right tooltip-primary"
+  class="tooltip tooltip-right tooltip-primary tooltip-open"
   data-tip="{% trans 'Al-Quran' %}"
 >
   <a href="/api" class="btn btn-square btn-primary lg:btn-lg">
@@ -22,9 +22,7 @@
 
 <!---->
 {% block branding_text %}
-<h1 class="hidden text-xl font-semibold text-primary lg:block">
-  {% trans 'Al-Quran' %}
-</h1>
+<div></div>
 {% endblock %}
 
 <!---->
@@ -114,12 +112,4 @@
     </li>
   </ul>
 </li>
-{% endblock %}
-
-<!---->
-{% block script %}{{ block.super }}
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  lucide.createIcons();
-</script>
 {% endblock %}
