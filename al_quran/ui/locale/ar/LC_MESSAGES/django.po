@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: al-quran 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-26 08:36+0000\n"
+"POT-Creation-Date: 2025-06-27 07:34+0000\n"
 "PO-Revision-Date: 2025-6-20 HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,7 +132,7 @@ msgid "Quran resources"
 msgstr "موارد القرآن"
 
 #: al_quran/cms/tags/models.py:18 al_quran/cms/tags/models.py:30
-#: al_quran/ui/templates/cms/blog/post.html:22
+#: al_quran/ui/templates/cms/blog/post.html:50
 msgid "Tags"
 msgstr "الوسوم"
 
@@ -321,13 +321,13 @@ msgstr "عدد الصقحات"
 #, fuzzy
 #| msgid "Quarter"
 msgid "quarter"
-msgstr "ربع الحزب"
+msgstr "الربع"
 
 #: al_quran/core/pages/models.py:39
 #, fuzzy
 #| msgid "Verse quarter"
 msgid "Page quarter"
-msgstr "ربع الحزب للآية"
+msgstr "ربع الصفحة"
 
 #: al_quran/core/pages/models.py:45
 #, fuzzy
@@ -357,13 +357,13 @@ msgstr "ربع الحزب"
 
 #: al_quran/core/quarters/models.py:32
 msgid "Quarter name"
-msgstr "اسم ربع الحزب"
+msgstr "اسم الربع"
 
 #: al_quran/core/verses/models.py:18
 #, fuzzy
 #| msgid "Verse quarter"
 msgid "Verse chapter"
-msgstr "ربع الحزب للآية"
+msgstr "سورة الآية"
 
 #: al_quran/core/verses/models.py:25
 #, fuzzy
@@ -379,7 +379,7 @@ msgstr "عدد الآيات"
 
 #: al_quran/core/verses/models.py:39
 msgid "Verse quarter"
-msgstr "ربع الحزب للآية"
+msgstr "ربع الآية"
 
 #: al_quran/core/verses/models.py:45
 #, fuzzy
@@ -455,10 +455,27 @@ msgstr "المنشورات الحديثة"
 msgid "Learn more"
 msgstr "اعلم المزيد"
 
+#: al_quran/ui/templates/cms/blog/post.html:16
+#: al_quran/ui/templates/cms/blog/post.html:21
+#: al_quran/ui/templates/cms/home.html:12
+#: al_quran/ui/templates/cms/home.html:17
+#: al_quran/ui/templates/cms/resources/resource.html:12
+#: al_quran/ui/templates/cms/resources/resource.html:17
+#: al_quran/ui/templates/ui/base.html:89 al_quran/ui/templates/ui/base.html:98
+#: al_quran/ui/templates/ui/base.html:107
+msgid "Language"
+msgstr "اللغة"
+
+#: al_quran/ui/templates/cms/blog/post.html:34
+#: al_quran/ui/templates/cms/home.html:30
+#: al_quran/ui/templates/cms/resources/resource.html:30
+msgid "None"
+msgstr ""
+
 #: al_quran/ui/templates/registration/base.html:4
 #: al_quran/ui/templates/registration/base.html:37
-#: al_quran/ui/templates/registration/base.html:77
-#: al_quran/ui/templates/registration/base.html:104
+#: al_quran/ui/templates/registration/base.html:65
+#: al_quran/ui/templates/registration/base.html:100
 #: al_quran/ui/templates/ui/base.html:223
 #: al_quran/ui/templates/ui/base.html:230
 #: al_quran/ui/templates/ui/base.html:566
@@ -475,24 +492,22 @@ msgid "Open drawer"
 msgstr "فتح القائمة الجانبية"
 
 #: al_quran/ui/templates/registration/base.html:55
-#: al_quran/ui/templates/registration/base.html:86
+#: al_quran/ui/templates/registration/base.html:82
 #: al_quran/ui/templates/ui/base.html:368
 #: al_quran/ui/templates/ui/base.html:396
 msgid "Close drawer"
 msgstr "إغلاق القائمة الجانبية"
 
-#: al_quran/ui/templates/registration/base.html:66
-#: al_quran/ui/templates/registration/base.html:73
+#: al_quran/ui/templates/registration/base.html:72
 #: al_quran/ui/templates/registration/logged_out.html:16
 #: al_quran/ui/templates/registration/logged_out.html:23
 #: al_quran/ui/templates/registration/login.html:16
 #: al_quran/ui/templates/registration/login.html:23
-#: al_quran/ui/templates/registration/signup.html:17
-#: al_quran/ui/templates/registration/signup.html:24
+#: al_quran/ui/templates/registration/signup.html:16
+#: al_quran/ui/templates/registration/signup.html:23
 #: al_quran/ui/templates/rest_framework/api.html:7
 #: al_quran/ui/templates/rest_framework/api.html:14
 #: al_quran/ui/templates/rest_framework/api.html:18
-#: al_quran/ui/templates/rest_framework/api.html:26
 #: al_quran/ui/templates/ui/base.html:12 al_quran/ui/templates/ui/base.html:19
 #: al_quran/ui/templates/ui/base.html:33 al_quran/ui/templates/ui/base.html:187
 #: al_quran/ui/templates/ui/base.html:197
@@ -501,8 +516,8 @@ msgstr "إغلاق القائمة الجانبية"
 msgid "Al-Quran"
 msgstr "القرآن الكريم"
 
-#: al_quran/ui/templates/registration/base.html:82
-#: al_quran/ui/templates/registration/base.html:90
+#: al_quran/ui/templates/registration/base.html:78
+#: al_quran/ui/templates/registration/base.html:86
 #: al_quran/ui/templates/ui/base.html:392
 #: al_quran/ui/templates/ui/base.html:400
 #: al_quran/ui/templates/ui/base.html:604
@@ -510,18 +525,18 @@ msgstr "القرآن الكريم"
 #: al_quran/ui/templates/ui/base.html:643
 #: al_quran/ui/templates/ui/components/page.html:116
 #: al_quran/ui/templates/ui/components/page.html:123
-#: al_quran/ui/templates/ui/components/page.html:167
+#: al_quran/ui/templates/ui/components/page.html:169
 #: al_quran/ui/templates/ui/list/base.html:50
 #: al_quran/ui/templates/ui/list/base.html:58
-#: al_quran/ui/templates/ui/list/base.html:73
+#: al_quran/ui/templates/ui/list/base.html:72
 msgid "Close"
 msgstr "إغلاق"
 
-#: al_quran/ui/templates/registration/base.html:107
+#: al_quran/ui/templates/registration/base.html:103
 msgid "Admin"
 msgstr "المشرف"
 
-#: al_quran/ui/templates/registration/base.html:117
+#: al_quran/ui/templates/registration/base.html:113
 #: al_quran/ui/templates/registration/edit.html:4
 #: al_quran/ui/templates/registration/edit.html:9
 #: al_quran/ui/templates/registration/profile.html:33
@@ -529,11 +544,11 @@ msgstr "المشرف"
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: al_quran/ui/templates/registration/base.html:126
+#: al_quran/ui/templates/registration/base.html:122
 msgid "Change Password"
 msgstr "تغيير كلمة المرور"
 
-#: al_quran/ui/templates/registration/base.html:138
+#: al_quran/ui/templates/registration/base.html:134
 #: al_quran/ui/templates/registration/delete.html:4
 #: al_quran/ui/templates/registration/delete.html:8
 #: al_quran/ui/templates/registration/delete.html:14
@@ -541,7 +556,7 @@ msgstr "تغيير كلمة المرور"
 msgid "Delete account"
 msgstr "حذف الحساب"
 
-#: al_quran/ui/templates/registration/base.html:148
+#: al_quran/ui/templates/registration/base.html:144
 #: al_quran/ui/templates/registration/profile.html:20
 #: al_quran/ui/templates/registration/profile.html:28
 #: al_quran/ui/templates/ui/base.html:257
@@ -575,7 +590,7 @@ msgstr "شكرًا لقضائك وقتًا ممتعًا معنا اليوم."
 #: al_quran/ui/templates/registration/login.html:4
 #: al_quran/ui/templates/registration/login.html:29
 #: al_quran/ui/templates/registration/password_reset_complete.html:23
-#: al_quran/ui/templates/registration/signup.html:44
+#: al_quran/ui/templates/registration/signup.html:43
 #: al_quran/ui/templates/ui/base.html:308
 #: al_quran/ui/templates/ui/base.html:315
 #: al_quran/ui/templates/ui/base.html:504
@@ -586,7 +601,7 @@ msgstr "تسجيل الدخول"
 #: al_quran/ui/templates/registration/logged_out.html:46
 #: al_quran/ui/templates/registration/login.html:62
 #: al_quran/ui/templates/registration/signup.html:4
-#: al_quran/ui/templates/registration/signup.html:30
+#: al_quran/ui/templates/registration/signup.html:29
 #: al_quran/ui/templates/ui/base.html:271
 #: al_quran/ui/templates/ui/base.html:281
 #: al_quran/ui/templates/ui/base.html:579
@@ -607,7 +622,7 @@ msgstr ""
 "باستخدام حساب يملك الصلاحية. <!---->"
 
 #: al_quran/ui/templates/registration/login.html:68
-#: al_quran/ui/templates/registration/signup.html:50
+#: al_quran/ui/templates/registration/signup.html:49
 msgid "Forgot password?"
 msgstr "هل نسيت كلمة المرور؟"
 
@@ -711,8 +726,8 @@ msgstr ""
 "وفحص مجلد البريد العشوائي."
 
 #: al_quran/ui/templates/registration/password_reset_done.html:30
-#: al_quran/ui/templates/rest_framework/api.html:34
-#: al_quran/ui/templates/rest_framework/api.html:38
+#: al_quran/ui/templates/rest_framework/api.html:32
+#: al_quran/ui/templates/rest_framework/api.html:36
 #: al_quran/ui/templates/ui/base.html:412
 msgid "Home"
 msgstr "الرئيسية"
@@ -761,16 +776,16 @@ msgstr "حذف"
 
 #: al_quran/ui/templates/registration/profile.html:69
 #: al_quran/ui/templates/ui/components/page.html:111
-#: al_quran/ui/templates/ui/components/page.html:145
+#: al_quran/ui/templates/ui/components/page.html:147
 msgid "Verse"
 msgstr "آية"
 
-#: al_quran/ui/templates/registration/signup.html:33
+#: al_quran/ui/templates/registration/signup.html:32
 msgid "Welcome, please signup to continue."
 msgstr "مرحبًا، يرجى إنشاء حساب للمتابعة."
 
-#: al_quran/ui/templates/rest_framework/api.html:43
-#: al_quran/ui/templates/rest_framework/api.html:47
+#: al_quran/ui/templates/rest_framework/api.html:41
+#: al_quran/ui/templates/rest_framework/api.html:45
 #: al_quran/ui/templates/ui/base.html:173
 #: al_quran/ui/templates/ui/base.html:180
 #: al_quran/ui/templates/ui/base.html:444
@@ -779,8 +794,8 @@ msgstr "مرحبًا، يرجى إنشاء حساب للمتابعة."
 msgid "Chapters"
 msgstr "السور"
 
-#: al_quran/ui/templates/rest_framework/api.html:52
-#: al_quran/ui/templates/rest_framework/api.html:56
+#: al_quran/ui/templates/rest_framework/api.html:50
+#: al_quran/ui/templates/rest_framework/api.html:54
 #: al_quran/ui/templates/ui/base.html:204
 #: al_quran/ui/templates/ui/base.html:211
 #: al_quran/ui/templates/ui/base.html:453
@@ -789,47 +804,46 @@ msgstr "السور"
 msgid "Parts"
 msgstr "الأجزاء"
 
-#: al_quran/ui/templates/rest_framework/api.html:61
-#: al_quran/ui/templates/rest_framework/api.html:69
-#: al_quran/ui/templates/rest_framework/api.html:78
+#: al_quran/ui/templates/rest_framework/api.html:59
+#: al_quran/ui/templates/rest_framework/api.html:67
+#: al_quran/ui/templates/rest_framework/api.html:76
 msgid "More"
 msgstr "المزيد"
 
-#: al_quran/ui/templates/rest_framework/api.html:82
+#: al_quran/ui/templates/rest_framework/api.html:80
 #: al_quran/ui/templates/ui/base.html:462
 #: al_quran/ui/templates/ui/list/groups.html:4
 #: al_quran/ui/templates/ui/list/groups.html:7
 msgid "Groups"
 msgstr "المجموعات"
 
-#: al_quran/ui/templates/rest_framework/api.html:88
+#: al_quran/ui/templates/rest_framework/api.html:86
 #: al_quran/ui/templates/ui/base.html:471
 #: al_quran/ui/templates/ui/list/quarters.html:4
 #: al_quran/ui/templates/ui/list/quarters.html:7
 msgid "Quarters"
 msgstr "الأرباع"
 
-#: al_quran/ui/templates/rest_framework/api.html:94
+#: al_quran/ui/templates/rest_framework/api.html:92
 #: al_quran/ui/templates/ui/base.html:480
 #: al_quran/ui/templates/ui/list/pages.html:4
 #: al_quran/ui/templates/ui/list/pages.html:7
 msgid "Pages"
 msgstr "الصفحات"
 
-#: al_quran/ui/templates/rest_framework/api.html:100
+#: al_quran/ui/templates/rest_framework/api.html:98
 msgid "Languages"
 msgstr "اللغات"
 
-#: al_quran/ui/templates/rest_framework/api.html:106
+#: al_quran/ui/templates/rest_framework/api.html:104
 msgid "Collections"
 msgstr "المجموعات"
 
-#: al_quran/ui/templates/rest_framework/api.html:112
+#: al_quran/ui/templates/rest_framework/api.html:110
 msgid "Items"
 msgstr "العناصر"
 
 #: al_quran/ui/templates/ui/about.html:4 al_quran/ui/templates/ui/base.html:340
-#: al_quran/ui/templates/ui/base.html:435
 msgid "About us"
 msgstr "من نحن"
 
@@ -981,11 +995,6 @@ msgstr ""
 msgid "Experience the Quran Like Never Before"
 msgstr "تجربة القرآن كما لم تفعل من قبل"
 
-#: al_quran/ui/templates/ui/base.html:89 al_quran/ui/templates/ui/base.html:98
-#: al_quran/ui/templates/ui/base.html:107
-msgid "Language"
-msgstr "اللغة"
-
 #: al_quran/ui/templates/ui/base.html:154
 #: al_quran/ui/templates/ui/base.html:162
 #: al_quran/ui/templates/ui/base.html:599
@@ -1008,6 +1017,7 @@ msgid "Contact"
 msgstr "التواصل"
 
 #: al_quran/ui/templates/ui/base.html:343
+#: al_quran/ui/templates/ui/base.html:435
 msgid "Blog"
 msgstr "المدونة"
 
@@ -1065,8 +1075,8 @@ msgstr "إرسال"
 
 #: al_quran/ui/templates/ui/components/page.html:13
 #: al_quran/ui/templates/ui/components/page.html:25
-#: al_quran/ui/templates/ui/components/page.html:181
-#: al_quran/ui/templates/ui/components/page.html:202
+#: al_quran/ui/templates/ui/components/page.html:183
+#: al_quran/ui/templates/ui/components/page.html:204
 #: al_quran/ui/templates/ui/list/chapters.html:62
 #: al_quran/ui/templates/ui/list/groups.html:53
 #: al_quran/ui/templates/ui/list/pages.html:63
@@ -1102,26 +1112,26 @@ msgstr "عدد الآيات"
 msgid "Options"
 msgstr "الخيارات"
 
-#: al_quran/ui/templates/ui/components/page.html:140
+#: al_quran/ui/templates/ui/components/page.html:141
 msgid "Bookmark"
 msgstr "إضافة إشارة مرجعية"
 
-#: al_quran/ui/templates/ui/components/page.html:145
+#: al_quran/ui/templates/ui/components/page.html:147
 #: al_quran/ui/templates/ui/list/chapters.html:20
 #: al_quran/ui/templates/ui/list/pages.html:27
 #: al_quran/ui/templates/ui/list/pages.html:30
 msgid "Chapter"
 msgstr "سورة"
 
-#: al_quran/ui/templates/ui/components/page.html:149
+#: al_quran/ui/templates/ui/components/page.html:151
 msgid "Copy verse"
 msgstr "نسخ الآية"
 
-#: al_quran/ui/templates/ui/components/page.html:157
+#: al_quran/ui/templates/ui/components/page.html:159
 msgid "Copy link"
 msgstr "نسخ الرابط"
 
-#: al_quran/ui/templates/ui/components/page.html:187
+#: al_quran/ui/templates/ui/components/page.html:189
 #: al_quran/ui/templates/ui/list/groups.html:20
 #: al_quran/ui/templates/ui/list/groups.html:25
 #: al_quran/ui/templates/ui/list/pages.html:39
@@ -1132,18 +1142,18 @@ msgstr "نسخ الرابط"
 msgid "Group"
 msgstr "الحزب"
 
-#: al_quran/ui/templates/ui/components/page.html:193
+#: al_quran/ui/templates/ui/components/page.html:195
 #: al_quran/ui/templates/ui/list/pages.html:20
 #: al_quran/ui/templates/ui/list/pages.html:24
 msgid "Page"
 msgstr "الصفحة"
 
-#: al_quran/ui/templates/ui/components/page.html:208
+#: al_quran/ui/templates/ui/components/page.html:210
 #: al_quran/ui/templates/ui/list/pages.html:48
 #: al_quran/ui/templates/ui/list/quarters.html:20
 #: al_quran/ui/templates/ui/list/quarters.html:25
 msgid "Quarter"
-msgstr "ربع الحزب"
+msgstr "الربع"
 
 #: al_quran/ui/templates/ui/components/pagination.html:6
 #: al_quran/ui/templates/ui/components/pagination.html:27
